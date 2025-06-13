@@ -1,0 +1,452 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\backend\\logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|solutionrelative:backend\\logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\backend\\logicadespensa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|solutionrelative:backend\\logicadespensa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\entity\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\entity\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23DB3D24-A3E4-4FA2-8770-42F5005906F4}|API\\API.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23DB3D24-A3E4-4FA2-8770-42F5005906F4}|API\\API.csproj|solutionrelative:api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|solutionrelative:backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF6E169D-B99A-45DB-9243-33A765FB0401}|AcccesoDatos\\AcccesoDatos.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\acccesodatos\\linkq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{FF6E169D-B99A-45DB-9243-33A765FB0401}|AcccesoDatos\\AcccesoDatos.csproj|solutionrelative:acccesodatos\\linkq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460E3F-C6B5-47C1-8A57-C4B59B756E48}|Backend\\Backend.csproj|solutionrelative:backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23DB3D24-A3E4-4FA2-8770-42F5005906F4}|API\\API.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23DB3D24-A3E4-4FA2-8770-42F5005906F4}|API\\API.csproj|solutionrelative:api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqagregarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqobtenerrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqobtenerrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resobtenerrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resobtenerrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resinsertarreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resinsertarreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqinsertarreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqinsertarreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\reslogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\reslogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\response\\resobtenerproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resobtenerproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\request\\reqobtenerproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6274EA37-2DD9-4678-93B2-B0D4ADDA7FEA}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqobtenerproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogicaDespensa.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaDespensa.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaDespensa.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaDespensa.cs",
+              "RelativeToolTip": "Backend\\LogicaDespensa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T23:42:53.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LinkQ.dbml",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\AcccesoDatos\\LinkQ.dbml",
+              "RelativeDocumentMoniker": "AcccesoDatos\\LinkQ.dbml",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\AcccesoDatos\\LinkQ.dbml",
+              "RelativeToolTip": "AcccesoDatos\\LinkQ.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-06-11T23:21:54.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogicaUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaUsuario.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaUsuario.cs",
+              "RelativeToolTip": "Backend\\LogicaUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:52:02.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogicaSesion.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaSesion.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaSesion.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\LogicaSesion.cs",
+              "RelativeToolTip": "Backend\\LogicaSesion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:52:17.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sesion.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Sesion.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Sesion.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Sesion.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Sesion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:53:05.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Usuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Usuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Usuario.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:52:49.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Error.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Error.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Error.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Entity\\Error.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Error.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:53:25.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:47:52.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnumErrores.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Enum\\EnumErrores.cs",
+              "RelativeDocumentMoniker": "Entidades\\Enum\\EnumErrores.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Enum\\EnumErrores.cs",
+              "RelativeToolTip": "Entidades\\Enum\\EnumErrores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:56:34.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Utilitarios.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeDocumentMoniker": "Backend\\Utilitarios.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeToolTip": "Backend\\Utilitarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:52:34.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\API\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\API\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "API\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:44:37.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResAgregarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResAgregarProducto.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResAgregarProducto.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResAgregarProducto.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResAgregarProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:38:55.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReqAgregarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqAgregarProducto.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqAgregarProducto.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqAgregarProducto.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqAgregarProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:38:39.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ResObtenerRecetas.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerRecetas.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResObtenerRecetas.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerRecetas.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResObtenerRecetas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:36:50.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ReqObtenerRecetas.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerRecetas.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqObtenerRecetas.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerRecetas.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqObtenerRecetas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:36:19.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ResInsertarReceta.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResInsertarReceta.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResInsertarReceta.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResInsertarReceta.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResInsertarReceta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:34:58.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReqInsertarReceta.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqInsertarReceta.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqInsertarReceta.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqInsertarReceta.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqInsertarReceta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:34:47.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ResObtenerUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResObtenerUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerUsuario.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResObtenerUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:34:21.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ReqObtenerUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqObtenerUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerUsuario.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqObtenerUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:34:09.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ResLogin.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResLogin.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResLogin.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResLogin.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:33:36.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReqLogin.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqLogin.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:33:23.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ResInsertarUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResInsertarUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResInsertarUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResInsertarUsuario.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResInsertarUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:32:53.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ReqInsertarUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqInsertarUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqInsertarUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqInsertarUsuario.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqInsertarUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:32:36.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ResObtenerProductos.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerProductos.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResObtenerProductos.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Response\\ResObtenerProductos.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResObtenerProductos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:31:51.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ReqObtenerProductos.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerProductos.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqObtenerProductos.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\Backend\\Entidades\\Request\\ReqObtenerProductos.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqObtenerProductos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T22:31:29.876Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
