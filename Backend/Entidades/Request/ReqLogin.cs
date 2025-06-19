@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades.Request
 {
-    class ReqLogin
+    public class ReqLogin
     {
+        public string correo { get; set; }
+        public string password { get; set; }
+        public string origen { get; set; }
     }
 }

@@ -8,9 +8,9 @@ namespace Entidades.Entity
 {
     public class Sesion
     {
-        public int id;
-        public Usuario usuario;
-        public string token;
-        public string origen;
+        public int Id { get; set; }
+        public Usuario Usuario { get; set; }
+        public string Token { get; set; }
+        public string Origen { get; set; }
     }
 }

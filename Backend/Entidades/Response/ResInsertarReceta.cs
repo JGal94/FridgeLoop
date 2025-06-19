@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Response
 {
-    class ResInsertarReceta
+    public class ResInsertarReceta
     {
     }
 }

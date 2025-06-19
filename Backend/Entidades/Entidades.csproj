@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Error.cs" />
+    <Compile Include="Entity\Ingrediente.cs" />
+    <Compile Include="Entity\Productos.cs" />
+    <Compile Include="Entity\Receta.cs" />
     <Compile Include="Entity\Sesion.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Enum\EnumErrores.cs" />
@@ -56,6 +59,7 @@
     <Compile Include="Request\ReqObtenerUsuario.cs" />
     <Compile Include="Request\ReqObtenerRecetas.cs" />
     <Compile Include="Response\ResAgregarProducto.cs" />
+    <Compile Include="Response\ResBase.cs" />
     <Compile Include="Response\ResInsertarReceta.cs" />
     <Compile Include="Response\ResInsertarUsuario.cs" />
     <Compile Include="Response\ResLogin.cs" />

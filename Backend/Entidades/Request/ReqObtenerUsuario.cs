@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Request
 {
-    class ReqObtenerUsuario
+    public class ReqObtenerUsuario
     {
+        public int UsuarioID { get; set; }
+
     }
 }

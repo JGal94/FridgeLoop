@@ -8,5 +8,7 @@ namespace Entidades.Request
 {
     class ReqObtenerProductos
     {
+        public int UsuarioID { get; set; }
+
     }
 }

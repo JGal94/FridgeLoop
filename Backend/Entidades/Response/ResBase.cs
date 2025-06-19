@@ -7,8 +7,10 @@ using Entidades.Entity;
 
 namespace Entidades.Response
 {
-    public class ResObtenerProductos
+    public class ResBase
     {
-        public List<Productos> Productos { get; set; }
+        public bool resultado { get; set; }
+        public List<Error> listaDeErrores { get; set; }
     }
+
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Response
 {
-    class ResInsertarUsuario
+    public class ResInsertarUsuario : ResBase
     {
     }
 }
