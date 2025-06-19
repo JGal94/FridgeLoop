@@ -163,3 +163,11 @@ BEGIN
 END;
 GO
 
+
+CREATE PROCEDURE CleanupExpiredSessions
+AS
+BEGIN
+    DELETE FROM UserSessions
+    WHERE IsActive = 0 AND ExpiresAt < DATEADD(DAY, -7, GETDATE());
+END;
+
