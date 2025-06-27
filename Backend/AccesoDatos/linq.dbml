@@ -3,6 +3,15 @@
   <Function Name="dbo.CleanupExpiredSessions" Method="CleanupExpiredSessions">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ActiveUser" Method="ActiveUser">
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Parameter Name="FilasAfectadas" Parameter="filasAfectadas" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.CreateUserSession" Method="CreateUserSession">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
@@ -48,6 +57,16 @@
       <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetUserInventory" Method="GetUserInventory">
+    <ElementType Name="GetUserInventoryResult">
+      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.GetUsers" Method="GetUsers">
     <ElementType Name="GetUsersResult">
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -57,16 +76,6 @@
       <Column Name="RegistrationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="VerificationCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetUserInventory" Method="GetUserInventory">
-    <ElementType Name="GetUserInventoryResult">
-      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.InsertProduct" Method="InsertProduct">
@@ -115,30 +124,21 @@
     <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
-    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.UpdateUser" Method="UpdateUser">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.UpdateUserInventory" Method="UpdateUserInventory">
     <Parameter Name="InventoryID" Parameter="inventoryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ActiveUSer" Method="ActiveUSer">
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
-    <Parameter Name="FilasAfectadas" Parameter="filasAfectadas" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -69,6 +69,17 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActiveUser")]
+		public int ActiveUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="NVarChar(100)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Codigo", DbType="NVarChar(10)")] string codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_USUARIO", DbType="Int")] ref System.Nullable<int> iD_USUARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(255)")] ref string errorMensaje, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FilasAfectadas", DbType="Int")] ref System.Nullable<int> filasAfectadas)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correo, codigo, iD_USUARIO, errorId, errorMensaje, filasAfectadas);
+			iD_USUARIO = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			errorId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			errorMensaje = ((string)(result.GetParameterValue(4)));
+			filasAfectadas = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateUserSession")]
 		public int CreateUserSession([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Token", DbType="NVarChar(255)")] string token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExpiresAt", DbType="DateTime")] System.Nullable<System.DateTime> expiresAt, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Device", DbType="NVarChar(100)")] string device, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IPAddress", DbType="NVarChar(50)")] string iPAddress)
 		{
@@ -104,18 +115,18 @@ namespace AccesoDatos
 			return ((ISingleResult<GetUserByIdResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUsers")]
-		public ISingleResult<GetUsersResult> GetUsers()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetUsersResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserInventory")]
 		public ISingleResult<GetUserInventoryResult> GetUserInventory()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<GetUserInventoryResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUsers")]
+		public ISingleResult<GetUsersResult> GetUsers()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetUsersResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertProduct")]
@@ -167,13 +178,6 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdatePurchase")]
-		public int UpdatePurchase([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PurchaseID", DbType="Int")] System.Nullable<int> purchaseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalAmount", DbType="Decimal(10,2)")] System.Nullable<decimal> totalAmount)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), purchaseID, totalAmount);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateUser")]
 		public int UpdateUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FullName", DbType="NVarChar(100)")] string fullName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email)
 		{
@@ -181,21 +185,17 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdatePurchase")]
+		public int UpdatePurchase([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PurchaseID", DbType="Int")] System.Nullable<int> purchaseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalAmount", DbType="Decimal(10,2)")] System.Nullable<decimal> totalAmount)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), purchaseID, totalAmount);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateUserInventory")]
 		public int UpdateUserInventory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InventoryID", DbType="Int")] System.Nullable<int> inventoryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Decimal(10,2)")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExpirationDate", DbType="Date")] System.Nullable<System.DateTime> expirationDate)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), inventoryID, quantity, expirationDate);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ActiveUSer")]
-		public int ActiveUSer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="NVarChar(100)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Codigo", DbType="NVarChar(10)")] string codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_USUARIO", DbType="Int")] ref System.Nullable<int> iD_USUARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(255)")] ref string errorMensaje, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FilasAfectadas", DbType="Int")] ref System.Nullable<int> filasAfectadas)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correo, codigo, iD_USUARIO, errorId, errorMensaje, filasAfectadas);
-			iD_USUARIO = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			errorId = ((System.Nullable<int>)(result.GetParameterValue(3)));
-			errorMensaje = ((string)(result.GetParameterValue(4)));
-			filasAfectadas = ((System.Nullable<int>)(result.GetParameterValue(5)));
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -574,6 +574,122 @@ namespace AccesoDatos
 		}
 	}
 	
+	public partial class GetUserInventoryResult
+	{
+		
+		private int _InventoryID;
+		
+		private System.Nullable<int> _UserID;
+		
+		private System.Nullable<int> _ProductID;
+		
+		private System.Nullable<decimal> _Quantity;
+		
+		private System.Nullable<System.DateTime> _ExpirationDate;
+		
+		private System.Nullable<System.DateTime> _CreatedAt;
+		
+		public GetUserInventoryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryID", DbType="Int NOT NULL")]
+		public int InventoryID
+		{
+			get
+			{
+				return this._InventoryID;
+			}
+			set
+			{
+				if ((this._InventoryID != value))
+				{
+					this._InventoryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int")]
+		public System.Nullable<int> ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpirationDate", DbType="Date")]
+		public System.Nullable<System.DateTime> ExpirationDate
+		{
+			get
+			{
+				return this._ExpirationDate;
+			}
+			set
+			{
+				if ((this._ExpirationDate != value))
+				{
+					this._ExpirationDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this._CreatedAt = value;
+				}
+			}
+		}
+	}
+	
 	public partial class GetUsersResult
 	{
 		
@@ -703,122 +819,6 @@ namespace AccesoDatos
 				if ((this._VerificationCode != value))
 				{
 					this._VerificationCode = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetUserInventoryResult
-	{
-		
-		private int _InventoryID;
-		
-		private System.Nullable<int> _UserID;
-		
-		private System.Nullable<int> _ProductID;
-		
-		private System.Nullable<decimal> _Quantity;
-		
-		private System.Nullable<System.DateTime> _ExpirationDate;
-		
-		private System.Nullable<System.DateTime> _CreatedAt;
-		
-		public GetUserInventoryResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryID", DbType="Int NOT NULL")]
-		public int InventoryID
-		{
-			get
-			{
-				return this._InventoryID;
-			}
-			set
-			{
-				if ((this._InventoryID != value))
-				{
-					this._InventoryID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		public System.Nullable<int> UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int")]
-		public System.Nullable<int> ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					this._ProductID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this._Quantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpirationDate", DbType="Date")]
-		public System.Nullable<System.DateTime> ExpirationDate
-		{
-			get
-			{
-				return this._ExpirationDate;
-			}
-			set
-			{
-				if ((this._ExpirationDate != value))
-				{
-					this._ExpirationDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreatedAt
-		{
-			get
-			{
-				return this._CreatedAt;
-			}
-			set
-			{
-				if ((this._CreatedAt != value))
-				{
-					this._CreatedAt = value;
 				}
 			}
 		}
