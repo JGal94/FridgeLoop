@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Response
 {
-    public class ResAgregarProducto
+    class ResAgregarProducto
     {
     }
 }

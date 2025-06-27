@@ -1,0 +1,6 @@
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\bin\Release\Entidades.dll
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\bin\Release\Entidades.pdb
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.csproj.AssemblyReference.cache
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.dll
+C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.pdb

@@ -13,8 +13,11 @@ CREATE TABLE Users (
     FullName NVARCHAR(100),
     Email NVARCHAR(100) UNIQUE,
     PasswordHash NVARCHAR(255),
-    RegistrationDate DATETIME DEFAULT GETDATE()
+    RegistrationDate DATETIME DEFAULT GETDATE(),
+    IsActive BIT DEFAULT 0,
+    VerificationCode NVARCHAR(10)
 );
+
 
 CREATE TABLE UserSessions (
     SessionID INT PRIMARY KEY IDENTITY,

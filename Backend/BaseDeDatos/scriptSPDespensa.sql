@@ -170,4 +170,82 @@ BEGIN
     DELETE FROM UserSessions
     WHERE IsActive = 0 AND ExpiresAt < DATEADD(DAY, -7, GETDATE());
 END;
+GO
+
+CREATE PROCEDURE Login
+    @Email NVARCHAR(100),
+    @PasswordHash NVARCHAR(255)
+AS
+BEGIN
+    SELECT 
+        UserID AS ID_USUARIO,
+        FullName AS NOMBRE,
+        Email AS CORREO_ELECTRONICO
+    FROM Users
+    WHERE Email = @Email AND PasswordHash = @PasswordHash
+END;
+GO
+CREATE PROCEDURE GetUserById
+    @UserID INT
+AS
+BEGIN
+    SELECT 
+        UserID AS ID_USUARIO,
+        FullName AS NOMBRE,
+        Email AS CORREO_ELECTRONICO
+    FROM Users
+    WHERE UserID = @UserID
+END;
+GO
+
+
+
+CREATE PROCEDURE ActiveUSer
+    @Correo NVARCHAR(100),
+    @Codigo NVARCHAR(10),
+    @ID_USUARIO INT OUTPUT,
+    @ErrorId INT OUTPUT,
+    @ErrorMensaje NVARCHAR(255) OUTPUT,
+    @FilasAfectadas INT OUTPUT
+AS
+BEGIN
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = '';
+    SET @FilasAfectadas = 0;
+
+    BEGIN TRY
+        UPDATE Users
+        SET IsActive = 1
+        WHERE Email = @Correo AND VerificationCode = @Codigo;
+
+        SET @FilasAfectadas = @@ROWCOUNT;
+
+        IF @FilasAfectadas = 0
+        BEGIN
+            SET @ErrorId = 302; -- UsuarioNoActivado
+            SET @ErrorMensaje = 'Correo o código inválido.';
+        END
+        ELSE
+        BEGIN
+            SELECT @ID_USUARIO = UserID FROM Users WHERE Email = @Correo;
+        END
+    END TRY
+    BEGIN CATCH
+        SET @ErrorId = 101; -- ErrorDeBaseDatos
+        SET @ErrorMensaje = ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+ALTER PROCEDURE InsertUser
+    @FullName NVARCHAR(100),
+    @Email NVARCHAR(100),
+    @PasswordHash NVARCHAR(255),
+    @VerificationCode NVARCHAR(10)
+AS
+BEGIN
+    INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode)
+    VALUES (@FullName, @Email, @PasswordHash, @VerificationCode)
+END;
+GO
 

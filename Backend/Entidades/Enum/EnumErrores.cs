@@ -64,4 +64,3 @@ namespace Entidades.Enum
         IARecomendacionFallida = 503
     }
 }
-//pedirle a una ia que arregle esto

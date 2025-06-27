@@ -1,0 +1,7 @@
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\bin\Release\AccesoDatos.dll.config
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.pdb

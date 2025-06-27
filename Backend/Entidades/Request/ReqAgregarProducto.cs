@@ -7,7 +7,7 @@ using Entidades.Entity;
 
 namespace Entidades.Request
 {
-    class ReqAgregarProducto
+    public class ReqAgregarProducto
     {
         public Productos producto;
     }

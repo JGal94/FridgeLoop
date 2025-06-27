@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{51460E3F-C6B5-47C1-8A57-C4B59B756E48}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{51D666A5-3C23-450B-AC5C-F22A80B8E639}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Backend</RootNamespace>
     <AssemblyName>Backend</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,12 +51,12 @@
     <Compile Include="Utilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcccesoDatos\AcccesoDatos.csproj">
-      <Project>{ff6e169d-b99a-45db-9243-33a765fb0401}</Project>
-      <Name>AcccesoDatos</Name>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{91c0b920-a160-4210-9fc5-12d4358987a7}</Project>
+      <Name>AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{6274ea37-2dd9-4678-93b2-b0d4adda7fea}</Project>
+      <Project>{b9aef6a1-9d4c-4f61-9a13-d0601d621c8a}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>

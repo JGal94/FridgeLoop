@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +11,7 @@ namespace Backend
     public class Utilitarios
     {
         #region
-        public const string passwordAplicacion = "SuPasswordUltraSecreto =P";
+        public  const string passwordAplicacion = "SuPasswordUltraSecreto =P";
         #endregion
 
         // Configuración de la cuenta de Gmail

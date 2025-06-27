@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Entity
 {
-    public class Ingrediente
+    class Ingrediente
     {
-        public string Nombre {get; set;}
-        public string Cantidad { get; set;}
-        public string Unidad { get; set;}
-
     }
 }

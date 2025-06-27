@@ -8,7 +8,6 @@ namespace Entidades.Request
 {
     public class ReqObtenerUsuario
     {
-        public int UsuarioID { get; set; }
-
+        public int idUsuario {  get; set; }
     }
 }

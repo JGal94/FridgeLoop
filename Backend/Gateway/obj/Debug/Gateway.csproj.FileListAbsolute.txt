@@ -1,0 +1,12 @@
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\bin\Debug\Gateway.dll
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\bin\Debug\Gateway.pdb
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\obj\Debug\Gateway.dll
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Gateway\obj\Debug\Gateway.pdb
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\bin\Debug\Gateway.dll
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\bin\Debug\Gateway.pdb
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\obj\Debug\Gateway.dll
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Gateway\obj\Debug\Gateway.pdb

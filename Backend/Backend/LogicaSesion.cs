@@ -1,41 +1,58 @@
-﻿using System;
+﻿using AccesoDatos;
+using Entidades.Entity;
+using Entidades.Response;
+using Entidades.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Collections.Specialized.BitVector32;
-using Entidades.Entity;
-using AcccesoDatos;
 
 namespace Backend
 {
-    class LogicaSesion
+    public class LogicaSesion
     {
-        public bool abrir(Sesion sesion)
+        public ResBase AbrirSesion(Sesion sesion)
         {
+            var res = new ResBase();
+            res.listaDeErrores = new List<Error>();
+
             try
             {
-                int? idBD = 0;
-                int? errorId = 0;
-                string errorBD = "";
-
-                using (linqDataContext linq = new linqDataContext())
+                if (sesion == null || sesion.usuario == null)
                 {
-                    linq.CreateUserSession(sesion.Token, sesion.Usuario.id, sesion.Origen, ref idBD, ref errorId, ref errorBD);
+                    res.resultado = false;
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.RequestNulo,
+                        Message = "La sesión o el usuario no pueden ser nulos."
+                    });
+                    return res;
                 }
 
-                if (idBD == 0)
+                using (var linq = new linqDataContext())
                 {
-                    return false;
+                    linq.CreateUserSession(
+                        sesion.usuario.id,
+                        sesion.token,
+                        sesion.fechaExpiracion,
+                        sesion.origen,
+                        sesion.direccionIP
+                    );
                 }
-                else
-                {
-                    return true;
-                }
+
+                res.resultado = true;
+                return res;
             }
             catch (Exception ex)
             {
-                return false;
+                res.resultado = false;
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.ErrorNoControlado,
+                    Message = ex.Message
+                });
+                return res;
             }
         }
     }

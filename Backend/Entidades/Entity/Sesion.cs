@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,18 @@ namespace Entidades.Entity
 {
     public class Sesion
     {
-        public int Id { get; set; }
-        public Usuario Usuario { get; set; }
-        public string Token { get; set; }
-        public string Origen { get; set; }
+        public int id { get; set; }
+
+        public Usuario usuario { get; set; }
+
+        public string token { get; set; }
+
+        public string origen { get; set; } // Dispositivo o app
+
+        public string direccionIP { get; set; }
+
+        public DateTime fechaExpiracion { get; set; }
+
+        public DateTime fechaCreacion { get; set; } // opcional, si lo quieres rastrear
     }
 }
