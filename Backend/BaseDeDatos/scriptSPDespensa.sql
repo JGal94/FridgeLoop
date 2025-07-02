@@ -6,14 +6,24 @@ Go
 -- ========================================
 
 -- USERS
+GO
+DROP PROCEDURE IF EXISTS InsertUser;
+GO
+
 CREATE PROCEDURE InsertUser
-    @FullName NVARCHAR(100),
-    @Email NVARCHAR(100),
-    @PasswordHash NVARCHAR(255)
+    @Nombre NVARCHAR(100),
+    @CorreoElectronico NVARCHAR(100),
+    @Password NVARCHAR(255),
+    @CodigoVerificacion NVARCHAR(10),
+    @ID_USUARIO INT OUTPUT
 AS
 BEGIN
-    INSERT INTO Users (FullName, Email, PasswordHash)
-    VALUES (@FullName, @Email, @PasswordHash)
+    SET NOCOUNT ON;
+
+    INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode, IsActive)
+    VALUES (@Nombre, @CorreoElectronico, @Password, @CodigoVerificacion, 0);
+
+    SET @ID_USUARIO = SCOPE_IDENTITY();
 END;
 GO
 
@@ -44,7 +54,9 @@ CREATE PROCEDURE InsertProduct
 AS
 BEGIN
     INSERT INTO Products (Name, CategoryID, Unit)
-    VALUES (@Name, @CategoryID, @Unit)
+    VALUES (@Name, @CategoryID, @Unit)--revisar las columnas porque faltan
+	--validad que si el producto ya existe, en caso de que exista se debe no se inserta y se obtiene el ID del producto ya existente
+	--se debe activar el sp de InsertuserInventory donde creamos un registro nuevo con el ID del producto.
 END;
 GO
 
@@ -200,7 +212,7 @@ GO
 
 
 
-CREATE PROCEDURE ActiveUSer
+CREATE PROCEDURE ActiveUser
     @Correo NVARCHAR(100),
     @Codigo NVARCHAR(10),
     @ID_USUARIO INT OUTPUT,
@@ -209,9 +221,12 @@ CREATE PROCEDURE ActiveUSer
     @FilasAfectadas INT OUTPUT
 AS
 BEGIN
+    SET NOCOUNT ON;
+
     SET @ErrorId = 0;
     SET @ErrorMensaje = '';
     SET @FilasAfectadas = 0;
+    SET @ID_USUARIO = 0;
 
     BEGIN TRY
         UPDATE Users
@@ -231,11 +246,12 @@ BEGIN
         END
     END TRY
     BEGIN CATCH
-        SET @ErrorId = 101; -- ErrorDeBaseDatos
+        SET @ErrorId = 101; -- Error de base de datos
         SET @ErrorMensaje = ERROR_MESSAGE();
     END CATCH
 END;
 GO
+
 
 ALTER PROCEDURE InsertUser
     @FullName NVARCHAR(100),
@@ -246,6 +262,31 @@ AS
 BEGIN
     INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode)
     VALUES (@FullName, @Email, @PasswordHash, @VerificationCode)
+END;
+GO
+
+CREATE PROCEDURE CloseUserSession
+    @Token NVARCHAR(255),
+    @ErrorId INT OUTPUT,
+    @ErrorMensaje NVARCHAR(255) OUTPUT
+AS
+BEGIN
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = '';
+
+    BEGIN TRY
+        DELETE FROM UserSessions WHERE Token = @Token;
+
+        IF @@ROWCOUNT = 0
+        BEGIN
+            SET @ErrorId = 301; -- Token no encontrado
+            SET @ErrorMensaje = 'No se encontró una sesión con ese token.';
+        END
+    END TRY
+    BEGIN CATCH
+        SET @ErrorId = 101;
+        SET @ErrorMensaje = ERROR_MESSAGE();
+    END CATCH
 END;
 GO
 

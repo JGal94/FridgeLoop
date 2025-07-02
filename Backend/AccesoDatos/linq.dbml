@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DespensaDB" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=M322;Initial Catalog=DespensaDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DespensaDBConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.CleanupExpiredSessions" Method="CleanupExpiredSessions">
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.ActiveUser" Method="ActiveUser">
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(10)" />
@@ -10,6 +7,15 @@
     <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
     <Parameter Name="FilasAfectadas" Parameter="filasAfectadas" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CleanupExpiredSessions" Method="CleanupExpiredSessions">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CloseUserSession" Method="CloseUserSession">
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CreateUserSession" Method="CreateUserSession">
@@ -91,10 +97,11 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.InsertUser" Method="InsertUser">
-    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="VerificationCode" Parameter="verificationCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CodigoVerificacion" Parameter="codigoVerificacion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.InsertUserInventory" Method="InsertUserInventory">
@@ -124,27 +131,21 @@
     <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.UpdateUser" Method="UpdateUser">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
-    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.UpdateUserInventory" Method="UpdateUserInventory">
     <Parameter Name="InventoryID" Parameter="inventoryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.CloseUserSession" Method="CloseUserSession">
-    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

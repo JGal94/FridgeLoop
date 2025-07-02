@@ -129,3 +129,4 @@ CREATE TABLE AuditLog (
     PreviousData NVARCHAR(MAX),
     NewData NVARCHAR(MAX)
 );
+--Agregar tabla que registre las compras 

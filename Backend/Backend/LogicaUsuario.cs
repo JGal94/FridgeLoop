@@ -46,15 +46,35 @@ namespace Backend
 
                 string codigoVerificacion = GenerarCodigoVerificacion();
 
+                int? idUsuario = 0;
+
                 using (var linq = new linqDataContext())
                 {
+                    bool correoExiste = linq.Users.Any(u => u.Email == req.usuario.correoElectronico);
+
+                    if (correoExiste)
+                    {
+                        res.listaDeErrores.Add(new Error
+                        {
+                            ErrorCode = EnumErrores.CorreoDuplicado,
+                            Message = "Ya existe un usuario registrado con este correo electrónico."
+                        });
+                        res.resultado = false;
+                        return res;
+                    }
+
                     linq.InsertUser(
                         req.usuario.nombre,
                         req.usuario.correoElectronico,
                         req.usuario.password,
-                        codigoVerificacion
+                        codigoVerificacion,
+                        ref idUsuario
                     );
                 }
+
+                // guardar el ID en la respuesta
+                req.usuario.id = idUsuario ?? 0;
+                //res.usuario = req.usuario;
 
                 if (!Utilitarios.EnviarCorreoValidacion(req.usuario.correoElectronico, codigoVerificacion))
                 {

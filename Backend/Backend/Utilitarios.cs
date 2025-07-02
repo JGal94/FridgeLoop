@@ -17,8 +17,8 @@ namespace Backend
         // Configuración de la cuenta de Gmail
         private const string GMAIL_SMTP = "smtp.gmail.com";
         private const int GMAIL_PORT = 587;
-        private const string GMAIL_EMAIL = "suPropio@correo.com"; // Cambia por tu email
-        private const string GMAIL_APP_PASSWORD = passwordAplicacion; // Cambia por tu password de aplicación
+        private const string GMAIL_EMAIL = "tudespensaia@gmail.com"; // Cambia por tu email
+        private const string GMAIL_APP_PASSWORD = "2025despensa++**2025"; // Cambia por tu password de aplicación
 
         /// <summary>
         /// Envía un correo de validación de cuenta

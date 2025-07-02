@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Request
 {
-    class ReqObtenerReceta
+    public class ReqObtenerReceta
     {
     }
 }

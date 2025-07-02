@@ -10,6 +10,6 @@ namespace Entidades.Request
     public class ReqInsertarUsuario
     {
         public Usuario usuario {  get; set; }
-        public string numeroVerificacion {  get; set; }
+        
     }
 }
