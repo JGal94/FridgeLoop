@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades.Response
 {
-    class ResInsertarReceta
+  public  class ResInsertarReceta
     {
+
+            public bool Exito { get; set; }
+            public string Mensaje { get; set; }
+        
     }
 }

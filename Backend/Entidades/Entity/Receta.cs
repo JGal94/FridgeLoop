@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades.Entity
 {
-    class Receta
+   public class Receta
     {
+        public int RecipeID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int PreparationTime { get; set; }
+        public string Difficulty { get; set; }
+        public int Calories { get; set; }
+        public string Style { get; set; }
     }
 }

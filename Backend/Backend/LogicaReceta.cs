@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades.Request
+namespace Backend
 {
-    public class ReqObtenerReceta
+   public class LogicaReceta
     {
-        public int UserID { get; set; }
+
+
+
+
+
     }
 }

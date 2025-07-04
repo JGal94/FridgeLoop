@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades.Request
 {
-    public class ReqObtenerReceta
+    public class ReqObtenerIngredientes
     {
-        public int UserID { get; set; }
+        public List<int> RecipeIDs { get; set; }
     }
 }
