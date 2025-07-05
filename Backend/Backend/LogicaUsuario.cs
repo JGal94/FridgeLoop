@@ -45,37 +45,39 @@ namespace Backend
                 }
 
                 string codigoVerificacion = GenerarCodigoVerificacion();
-
                 int? idUsuario = 0;
+                int? errorId = 0;
+                string errorMensaje = "";
 
                 using (var linq = new linqDataContext())
                 {
-                    bool correoExiste = linq.Users.Any(u => u.Email == req.usuario.correoElectronico);
-
-                    if (correoExiste)
-                    {
-                        res.listaDeErrores.Add(new Error
-                        {
-                            ErrorCode = EnumErrores.CorreoDuplicado,
-                            Message = "Ya existe un usuario registrado con este correo electrónico."
-                        });
-                        res.resultado = false;
-                        return res;
-                    }
-
                     linq.InsertUser(
                         req.usuario.nombre,
                         req.usuario.correoElectronico,
                         req.usuario.password,
                         codigoVerificacion,
-                        ref idUsuario
+                        ref idUsuario,
+                        ref errorId,
+                        ref errorMensaje
                     );
                 }
 
-                // guardar el ID en la respuesta
-                req.usuario.id = idUsuario ?? 0;
-                //res.usuario = req.usuario;
+                // Verificar si hubo error desde el SP
+                if (errorId != 0)
+                {
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = (EnumErrores)errorId,
+                        Message = errorMensaje
+                    });
+                    res.resultado = false;
+                    return res;
+                }
 
+                // Guardar ID en la entidad si todo fue exitoso
+                req.usuario.id = idUsuario ?? 0;
+
+                // Enviar correo
                 if (!Utilitarios.EnviarCorreoValidacion(req.usuario.correoElectronico, codigoVerificacion))
                 {
                     res.listaDeErrores.Add(new Error
@@ -101,6 +103,7 @@ namespace Backend
                 return res;
             }
         }
+
 
         public ResLogin Login(ReqLogin req)
         {

@@ -15,15 +15,36 @@ CREATE PROCEDURE InsertUser
     @CorreoElectronico NVARCHAR(100),
     @Password NVARCHAR(255),
     @CodigoVerificacion NVARCHAR(10),
-    @ID_USUARIO INT OUTPUT
+    @ID_USUARIO INT OUTPUT,
+    @ErrorId INT OUTPUT,
+    @ErrorMensaje NVARCHAR(255) OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode, IsActive)
-    VALUES (@Nombre, @CorreoElectronico, @Password, @CodigoVerificacion, 0);
+    SET @ID_USUARIO = 0;
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = '';
 
-    SET @ID_USUARIO = SCOPE_IDENTITY();
+    -- Verificar si el correo ya existe
+    IF EXISTS (SELECT 1 FROM Users WHERE Email = @CorreoElectronico)
+    BEGIN
+        SET @ErrorId = 201; -- Código para "Correo ya registrado"
+        SET @ErrorMensaje = 'Ya existe un usuario registrado con este correo electrónico.';
+        RETURN;
+    END
+
+    -- Insertar usuario
+    BEGIN TRY
+        INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode, IsActive)
+        VALUES (@Nombre, @CorreoElectronico, @Password, @CodigoVerificacion, 0);
+
+        SET @ID_USUARIO = SCOPE_IDENTITY();
+    END TRY
+    BEGIN CATCH
+        SET @ErrorId = 101; -- Código genérico de error de base de datos
+        SET @ErrorMensaje = ERROR_MESSAGE();
+    END CATCH
 END;
 GO
 
@@ -50,13 +71,45 @@ GO
 CREATE PROCEDURE InsertProduct
     @Name NVARCHAR(100),
     @CategoryID INT,
-    @Unit NVARCHAR(50)
+    @Unit NVARCHAR(50),
+    @UserID INT,
+    @Quantity DECIMAL(10,2),
+    @ExpirationDate DATE,
+    @ProductID INT OUTPUT,
+    @ErrorId INT OUTPUT,
+    @ErrorMensaje NVARCHAR(255) OUTPUT
 AS
 BEGIN
-    INSERT INTO Products (Name, CategoryID, Unit)
-    VALUES (@Name, @CategoryID, @Unit)--revisar las columnas porque faltan
-	--validad que si el producto ya existe, en caso de que exista se debe no se inserta y se obtiene el ID del producto ya existente
-	--se debe activar el sp de InsertuserInventory donde creamos un registro nuevo con el ID del producto.
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = '';
+    SET @ProductID = 0;
+
+    BEGIN TRY
+        -- Buscar si el producto ya existe
+        SELECT TOP 1 @ProductID = ProductID
+        FROM Products
+        WHERE Name = @Name AND CategoryID = @CategoryID AND Unit = @Unit;
+
+        -- Si no existe, insertarlo
+        IF @ProductID = 0
+        BEGIN
+            INSERT INTO Products (Name, CategoryID, Unit)
+            VALUES (@Name, @CategoryID, @Unit);
+
+            SET @ProductID = SCOPE_IDENTITY();
+        END
+
+        -- Llamar al SP que ya existe para insertar en el inventario
+        EXEC InsertUserInventory
+            @UserID = @UserID,
+            @ProductID = @ProductID,
+            @Quantity = @Quantity,
+            @ExpirationDate = @ExpirationDate;
+    END TRY
+    BEGIN CATCH
+        SET @ErrorId = 101;
+        SET @ErrorMensaje = ERROR_MESSAGE();
+    END CATCH
 END;
 GO
 
