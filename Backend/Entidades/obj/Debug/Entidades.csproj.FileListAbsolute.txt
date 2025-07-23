@@ -16,9 +16,9 @@ C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entida
 C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\bin\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\bin\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\obj\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Entidades\obj\Debug\Entidades.pdb
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\bin\Debug\Entidades.dll
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\bin\Debug\Entidades.pdb
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\obj\Debug\Entidades.dll
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\obj\Debug\Entidades.pdb

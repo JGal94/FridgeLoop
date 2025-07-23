@@ -43,27 +43,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Error.cs" />
+    <Compile Include="Entity\Ingrediente.cs" />
+    <Compile Include="Entity\Productos.cs" />
+    <Compile Include="Entity\Receta.cs" />
     <Compile Include="Entity\Sesion.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Enum\EnumErrores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\ReqActivarUsuario.cs" />
-    <Compile Include="Request\ReqAgregarPruducto.cs" />
+    <Compile Include="Request\ReqActualizarProducto.cs" />
     <Compile Include="Request\ReqCerrarSesion.cs" />
+    <Compile Include="Request\ReqInsertarProducto.cs" />
     <Compile Include="Request\ReqInsertarReseta.cs" />
     <Compile Include="Request\ReqInsertarUsuario.cs" />
     <Compile Include="Request\ReqLogin.cs" />
-    <Compile Include="Request\ReqObtenerProducto.cs" />
+    <Compile Include="Request\ReqObtenerProductos.cs" />
     <Compile Include="Request\ReqObtenerReceta.cs" />
     <Compile Include="Request\ReqObtenerUsuario.cs" />
     <Compile Include="Response\ResActivarUsuario.cs" />
-    <Compile Include="Response\ResAgregarProducto.cs" />
+    <Compile Include="Response\ResActualizarProducto.cs" />
     <Compile Include="Response\ResBase.cs" />
     <Compile Include="Response\ResCerrarSesion.cs" />
+    <Compile Include="Response\ResInsertarProducto.cs" />
     <Compile Include="Response\ResInsertarReceta.cs" />
     <Compile Include="Response\ResInsertarUsuario.cs" />
     <Compile Include="Response\ResLogin.cs" />
-    <Compile Include="Response\ResObtenerProducto.cs" />
+    <Compile Include="Response\ResObtenerProductos.cs" />
     <Compile Include="Response\ResObtenerReceta.cs" />
     <Compile Include="Response\ResObtenerUsuario.cs" />
   </ItemGroup>

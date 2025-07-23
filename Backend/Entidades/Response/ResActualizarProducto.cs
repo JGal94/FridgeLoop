@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades.Request
+namespace Entidades.Response
 {
-    public class ReqObtenerProductos
+    public class ResActualizarProducto : ResBase
     {
-        public int UsuarioID { get; set; }
-
+        public string mensaje { get; set; }
     }
 }

@@ -343,3 +343,8 @@ BEGIN
 END;
 GO
 
+
+
+DELETE  FROM Users
+
+SELECT * FROM Users

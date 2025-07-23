@@ -7,8 +7,10 @@ using Entidades.Entity;
 
 namespace Entidades.Response
 {
-    public class ResObtenerProductos
+    // Heredamos de ResBase para mantener estructura estándar
+    public class ResObtenerProductos : ResBase
     {
-        public List<Productos> Productos { get; set; }
+        // Lista de productos que se devolverá en la respuesta
+        public List<Productos> productos { get; set; }
     }
 }

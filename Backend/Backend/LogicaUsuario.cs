@@ -45,6 +45,20 @@ namespace Backend
                 }
 
                 string codigoVerificacion = GenerarCodigoVerificacion();
+
+                // Primero intentamos enviar el correo
+                if (!Utilitarios.EnviarCorreoValidacion(req.usuario.correoElectronico, codigoVerificacion))
+                {
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.NoSeEnvioElCorreo,
+                        Message = "No se pudo enviar el correo de verificación."
+                    });
+                    res.resultado = false;
+                    return res;
+                }
+
+                // Si el correo se envió correctamente, insertamos al usuario
                 int? idUsuario = 0;
                 int? errorId = 0;
                 string errorMensaje = "";
@@ -74,20 +88,8 @@ namespace Backend
                     return res;
                 }
 
-                // Guardar ID en la entidad si todo fue exitoso
+                // Guardar ID si todo fue exitoso
                 req.usuario.id = idUsuario ?? 0;
-
-                // Enviar correo
-                if (!Utilitarios.EnviarCorreoValidacion(req.usuario.correoElectronico, codigoVerificacion))
-                {
-                    res.listaDeErrores.Add(new Error
-                    {
-                        ErrorCode = EnumErrores.NoSeEnvioElCorreo,
-                        Message = "No se pudo enviar el correo de verificación."
-                    });
-                    res.resultado = false;
-                    return res;
-                }
 
                 res.resultado = true;
                 return res;
@@ -103,6 +105,7 @@ namespace Backend
                 return res;
             }
         }
+
 
 
         public ResLogin Login(ReqLogin req)

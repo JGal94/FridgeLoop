@@ -18,6 +18,6 @@ namespace Entidades.Response
         public string Style { get; set; }
         public DateTime PreparedAt { get; set; }
 
-        public List<Ingrediente> Ingredientes { get; set; } 
+       // public List<Ingrediente> Ingredientes { get; set; } 
     }
 }

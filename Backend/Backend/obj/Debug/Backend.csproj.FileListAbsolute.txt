@@ -36,15 +36,5 @@ C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\bac
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Backend\obj\Debug\Backend.pdb
 C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
 C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\Backend.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\Backend.pdb
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\AccesoDatos.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\AccesoDatos.pdb
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\AccesoDatos.dll.config
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\bin\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\obj\Debug\Backend.csproj.Up2Date
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\obj\Debug\Backend.dll
-C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\backend\Backend\obj\Debug\Backend.pdb
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache

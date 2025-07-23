@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades.Entity;
 
 namespace Entidades.Request
 {
-    public class ReqObtenerProductos
+    public class ReqInsertarProducto
     {
-        public int UsuarioID { get; set; }
-
+        public Productos productos { get; set; }
     }
 }
