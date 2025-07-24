@@ -348,3 +348,4 @@ GO
 DELETE  FROM Users
 
 SELECT * FROM Users
+SELECT* FROM UserSessions

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades.Response
 {
-    public class ResCerrarSesion
+    public class ResCerrarSesion : ResBase
     {
+        public string mensaje { get; set; }
     }
 }

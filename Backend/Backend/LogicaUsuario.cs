@@ -3,16 +3,22 @@ using Entidades.Entity;
 using Entidades.Enum;
 using Entidades.Request;
 using Entidades.Response;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
-using System.Data.Linq;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Mail;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+
+
+
+
+
+
+
+
 
 namespace Backend
 {
@@ -149,10 +155,10 @@ namespace Backend
                     nombre = loginResult.NOMBRE,
                     correoElectronico = loginResult.CORREO_ELECTRONICO
                 };
-
+                string jwtToken = GenerarJwtToken(res.Usuario); // ← Generar el token JWT
                 var sesion = new Sesion
                 {
-                    token = Guid.NewGuid().ToString(),
+                    token = jwtToken,
                     usuario = res.Usuario,
                     origen = req.origen,
                     fechaCreacion = DateTime.Now
@@ -278,6 +284,54 @@ namespace Backend
             }
         }
 
+        public ResCerrarSesion CerrarSesion(ReqCerrarSesion req)
+        {
+            var res = new ResCerrarSesion();
+
+            try
+            {
+                // Validación de parámetros requeridos
+                if (string.IsNullOrWhiteSpace(req.token))
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error>
+            {
+                new Error
+                {
+                    ErrorCode = EnumErrores.CampoRequeridoFaltante,
+                    Message = "El token de sesión es requerido para cerrar sesión."
+                }
+            };
+                    return res;
+                }
+
+                using (var linq = new linqDataContext())
+                {
+                    // Llamada al stored procedure InvalidateSession
+                    // Este SP actualiza UserSessions SET IsActive = 0 WHERE Token = @Token
+                    linq.InvalidateSession(req.token);
+
+                    // Operación exitosa
+                    res.resultado = true;
+                    res.mensaje = "Sesión cerrada correctamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                res.listaDeErrores = new List<Error>
+        {
+            new Error
+            {
+                ErrorCode = EnumErrores.ErrorNoControlado,
+                Message = ex.Message
+            }
+        };
+            }
+
+            return res;
+        }
+
         private void ValidarUsuario(Usuario usuario, List<Error> errores)
         {
             if (string.IsNullOrEmpty(usuario.nombre))
@@ -322,5 +376,32 @@ namespace Backend
             var random = new Random();
             return new string(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        private string GenerarJwtToken(Usuario usuario)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Felipensativo"));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+        new Claim(JwtRegisteredClaimNames.Sub, usuario.correoElectronico),
+        new Claim("id", usuario.id.ToString()),
+        new Claim("nombre", usuario.nombre),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
+
+            var token = new JwtSecurityToken(
+                issuer: "tuApp",
+                audience: "tusUsuarios",
+                claims: claims,
+                expires: DateTime.Now.AddHours(4),
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
     }
+
+
 }

@@ -33,5 +33,12 @@ namespace API.Controllers
         {
             return new LogicaUsuario().ActivarUsuario(req);
         }
+
+        [HttpPost]
+        [Route("api/usuario/cerrarsesion")]
+        public ResCerrarSesion cerrarSesion(ReqCerrarSesion req)
+        {
+            return new LogicaUsuario().CerrarSesion(req);
+        }
     }
 }

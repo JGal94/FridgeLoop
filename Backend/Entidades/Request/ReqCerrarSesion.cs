@@ -8,6 +8,6 @@ namespace Entidades.Request
 {
     public class ReqCerrarSesion
     {
-        public int token { get; set; }
+        public string token { get; set; }
     }
 }
