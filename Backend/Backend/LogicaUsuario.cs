@@ -14,12 +14,6 @@ using System.Text;
 
 
 
-
-
-
-
-
-
 namespace Backend
 {
     public class LogicaUsuario
@@ -111,8 +105,6 @@ namespace Backend
                 return res;
             }
         }
-
-
 
         public ResLogin Login(ReqLogin req)
         {
@@ -287,50 +279,60 @@ namespace Backend
         public ResCerrarSesion CerrarSesion(ReqCerrarSesion req)
         {
             var res = new ResCerrarSesion();
+            res.listaDeErrores = new List<Error>();
 
             try
             {
-                // Validación de parámetros requeridos
+                // Validación del token
                 if (string.IsNullOrWhiteSpace(req.token))
                 {
                     res.resultado = false;
-                    res.listaDeErrores = new List<Error>
-            {
-                new Error
-                {
-                    ErrorCode = EnumErrores.CampoRequeridoFaltante,
-                    Message = "El token de sesión es requerido para cerrar sesión."
-                }
-            };
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.CampoRequeridoFaltante,
+                        Message = "El token de sesión es requerido para cerrar sesión."
+                    });
                     return res;
                 }
 
+                int? errorId = 0;
+                string errorMensaje = "";
+
                 using (var linq = new linqDataContext())
                 {
-                    // Llamada al stored procedure InvalidateSession
-                    // Este SP actualiza UserSessions SET IsActive = 0 WHERE Token = @Token
-                    linq.InvalidateSession(req.token);
-
-                    // Operación exitosa
-                    res.resultado = true;
-                    res.mensaje = "Sesión cerrada correctamente.";
+                    // Llamar al SP con parámetros de salida
+                    linq.CloseUserSession(req.token, ref errorId, ref errorMensaje);
                 }
+
+                // Si hubo error según SP
+                if (errorId != 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = (EnumErrores)errorId.Value,
+                        Message = errorMensaje
+                    });
+                    return res;
+                }
+
+                // Operación exitosa
+                res.resultado = true;
+                res.mensaje = "Sesión cerrada correctamente.";
             }
             catch (Exception ex)
             {
                 res.resultado = false;
-                res.listaDeErrores = new List<Error>
-        {
-            new Error
-            {
-                ErrorCode = EnumErrores.ErrorNoControlado,
-                Message = ex.Message
-            }
-        };
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.ErrorNoControlado,
+                    Message = ex.Message
+                });
             }
 
             return res;
         }
+
 
         private void ValidarUsuario(Usuario usuario, List<Error> errores)
         {
