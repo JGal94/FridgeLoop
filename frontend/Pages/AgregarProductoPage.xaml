@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.AgregarProductoPage"
+             Title="Agregar Producto"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Agregar nuevo producto"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Nombre del producto"
+                       FontSize="16"
+                       BackgroundColor="Transparent"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Cantidad"
+                       FontSize="16"
+                       Keyboard="Numeric"
+                       BackgroundColor="Transparent"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Unidad (ej: kg, unidades, ml)"
+                       FontSize="16"
+                       BackgroundColor="Transparent"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <DatePicker TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Picker Title="Seleccionar categoría"
+                        TextColor="#003366">
+                    <Picker.Items>
+                        <x:String>Enlatados</x:String>
+                        <x:String>Lácteos</x:String>
+                        <x:String>Verduras</x:String>
+                        <x:String>Frutas</x:String>
+                        <x:String>Otros</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <Button Text="📷 Escanear código de barras"
+                    BackgroundColor="#005A9E"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnEscanearClicked" />
+
+            <Button Text="Agregar al inventario"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnAgregarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.ListaComprasPage"
+             Title="Lista de Compras"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="Lista sugerida por la app"
+                       FontSize="20"
+                       FontFamily="OpenSansBold"
+                       TextColor="#003366"
+                       Grid.Column="0"
+                       VerticalOptions="Center" />  
+
+                <Button Text="📊 Ver historial de compras"
+                        BackgroundColor="#5A738E"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontSize="14"
+                        Padding="10,5"
+                        Clicked="OnVerHistorialClicked"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Margin="10,0,0,0"/>
+            </Grid>
+
+
+            <!-- Lista de productos -->
+            <Frame BackgroundColor="#FFFFFF" CornerRadius="12" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="• Tomates (3)"
+                           FontSize="16"
+                           TextColor="#003366" />
+                    <Label Text="• Pasta (500g)"
+                           FontSize="16"
+                           TextColor="#003366" />
+                    <Label Text="• Leche (2)"
+                           FontSize="16"
+                           TextColor="#003366" />
+                    <Label Text="• Atún (2 latas)"
+                           FontSize="16"
+                           TextColor="#003366" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botones -->
+            <Button Text="✏️ Editar manualmente"
+                    BackgroundColor="#5A738E"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnEditarClicked" />
+
+            <Button Text="📤 Exportar / Imprimir"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnExportarClicked" />
+
+            <Button Text="🔄 Sincronizar con apps"
+                    BackgroundColor="#28A745"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnSincronizarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

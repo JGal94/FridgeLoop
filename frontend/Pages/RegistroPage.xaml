@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.RegistroPage"
+             BackgroundColor="#EAF4FF"
+             Title="Registro de Usuario">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="220"
+                   Margin="0,10,0,10"/>
+
+            <Label Text="Crea tu cuenta"
+                   FontSize="28"
+                   FontFamily="OpenSansBold"
+                   HorizontalOptions="Center"
+                   TextColor="#003366" />
+
+            <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
+                <Entry Placeholder="Nombre completo"
+                       FontSize="16"
+                       BackgroundColor="Transparent"
+                       TextColor="Black" />
+            </Frame>
+
+            <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
+                <Entry Placeholder="Correo electrónico"
+                       FontSize="16"
+                       Keyboard="Email"
+                       BackgroundColor="Transparent"
+                       TextColor="Black" />
+            </Frame>
+
+            <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
+                <Entry Placeholder="Contraseña"
+                       FontSize="16"
+                       IsPassword="True"
+                       BackgroundColor="Transparent"
+                       TextColor="Black" />
+            </Frame>
+            
+            <Button Text="Registrarse"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#007ACC"
+                    CornerRadius="10"
+                    Clicked="OnRegisterClicked" 
+                    />
+            
+            <!-- CheckBox de aceptación -->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <CheckBox x:Name="chkAceptarTerminos" Color="#007ACC" />
+                <Label Text="Acepto los Términos y Políticas."
+                       FontSize="12"
+                       VerticalOptions="Center"
+                       TextColor="#666" />
+                
+            </HorizontalStackLayout>
+            <Label Text="Se enviará un código de verificación a tu correo"
+                   FontSize="12"
+                   HorizontalOptions="Center"
+                   TextColor="#666" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

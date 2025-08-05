@@ -106,7 +106,21 @@ namespace Backend
                 });
                 return res;
             }
+
         }
+
+        public bool EsSesionActiva(string token)
+        {
+            if (string.IsNullOrWhiteSpace(token))
+                return false;
+
+            using (var linq = new linqDataContext())
+            {
+                var resultado = linq.GetActiveSession(token).FirstOrDefault();
+                return resultado != null;
+            }
+        }
+
 
     }
 }

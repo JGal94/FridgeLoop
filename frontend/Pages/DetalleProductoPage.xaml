@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.DetalleProductoPage"
+             Title="Detalle del Producto"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Información del Producto"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="Nombre: Leche"
+                       FontSize="16"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="Categoría: Lácteos"
+                       FontSize="16"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="Cantidad: 2 unidades"
+                       FontSize="16"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="Unidad: unidades"
+                       FontSize="16"
+                       TextColor="#003366" />
+            </Frame>
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="Fecha de vencimiento: 03/08/2025"
+                       FontSize="16"
+                       TextColor="#003366" />
+            </Frame>
+
+            <!-- Acciones -->
+            <Button Text="✏️ Editar"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnEditarClicked" />
+
+            <Button Text="🗑 Eliminar"
+                    BackgroundColor="#D9534F"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnEliminarClicked" />
+
+            <Button Text="🔁 Mover"
+                    BackgroundColor="#5A738E"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnMoverClicked" />
+
+            <Button Text="✅ Consumir parcialmente"
+                    BackgroundColor="#28A745"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnConsumirClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

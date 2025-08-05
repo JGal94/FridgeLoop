@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.DashboardPage"
+             BackgroundColor="#EAF4FF"
+             Title="Pagina Principal">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
+                <Label Text="Resumen rápido"
+                       FontSize="28"
+                       FontFamily="OpenSansBold"
+                       TextColor="#003366"
+                       Grid.Column="0"
+                       VerticalOptions="Center" />
+
+                <Button Text="🔔"
+                        BackgroundColor="#5A738E"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="10"
+                        Clicked="OnNotificacionesClicked"
+                        Grid.Column="1" />
+
+                <Button Text="👤"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="10"
+                        Clicked="OnPerfilClicked"
+                        Grid.Column="2" />
+
+                <Button Text="⚙️"
+                        BackgroundColor="#28A745"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="10"
+                        Clicked="OnConfiguracionClicked"
+                        Grid.Column="3" />  
+            </Grid>
+
+
+
+
+            <!-- Tarjetas de resumen -->
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="🕒 Productos por vencer"
+                           FontSize="18"
+                           TextColor="#333" />
+                    <Label Text="3 productos vencen esta semana"
+                           FontSize="14"
+                           TextColor="#666" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="🍽 Recetas recomendadas"
+                           FontSize="18"
+                           TextColor="#333" />
+                    <Label Text="Tenemos 4 recetas ideales para hoy"
+                           FontSize="14"
+                           TextColor="#666" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="⚠️ Alertas"
+                           FontSize="18"
+                           TextColor="#333" />
+                    <Label Text="Hay 2 productos repetidos"
+                           FontSize="14"
+                           TextColor="#666" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Accesos rápidos -->
+            <Label Text="Accesos rápidos"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="20" RowSpacing="20">
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        Text="Inventario"
+                        FontSize="16"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="GoToInventario" /> 
+
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="Compras"
+                        FontSize="16"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="GoToCompras"/> 
+
+                <Button Grid.Row="1" Grid.Column="0"
+                        Text="Recetas"
+                        FontSize="16"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                         Clicked="GoToRecetas"/>
+
+                <Button Grid.Row="1" Grid.Column="1"
+                        Text="Gastos"
+                        FontSize="16"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="GoToGastos"  /> 
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

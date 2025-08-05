@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.ConfiguracionPage"
+             Title="Configuración"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="180"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Configuración General"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <!-- Sincronización -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="15">
+                <Label Text="🔗 Sincronizar con apps externas (delivery, supermercados)"
+                       FontSize="14"
+                       TextColor="#003366" />
+            </Frame>
+
+            <!-- Gestión de sesiones -->
+            <Frame BackgroundColor="#FFF3CD" CornerRadius="10" Padding="15">
+                <Label Text="👥 Gestionar sesiones y dispositivos conectados"
+                       FontSize="14"
+                       TextColor="#856404" />
+            </Frame>
+
+            <!-- Política y cierre -->
+            <Frame BackgroundColor="#F8D7DA" CornerRadius="10" Padding="15">
+                <Label Text="🔐 Política de privacidad y cierre de sesión"
+                       FontSize="14"
+                       TextColor="#721C24" />
+            </Frame>
+
+            <Button Text="⚙️ Ajustes avanzados (futuros)"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnAvanzadoClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

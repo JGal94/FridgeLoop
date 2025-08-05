@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.PerfilPage"
+             Title="Perfil de Usuario"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="180"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Editar Perfil"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <!-- Nombre -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Nombre completo"
+                       FontSize="16"
+                       TextColor="#003366"
+                       BackgroundColor="Transparent" />
+            </Frame>
+
+            <!-- Correo -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Correo electrónico"
+                       FontSize="16"
+                       Keyboard="Email"
+                       TextColor="#003366"
+                       BackgroundColor="Transparent" />
+            </Frame>
+
+            <!-- Contraseña -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry Placeholder="Contraseña"
+                       FontSize="16"
+                       IsPassword="True"
+                       TextColor="#003366"
+                       BackgroundColor="Transparent" />
+            </Frame>
+
+            <!-- Idioma -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Picker Title="Idioma" TextColor="#003366">
+                    <Picker.Items>
+                        <x:String>Español (ES)</x:String>
+                        <x:String>English (EN)</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <!-- Preferencias de dieta -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Picker Title="Preferencia de dieta" TextColor="#003366">
+                    <Picker.Items>
+                        <x:String>Ninguna</x:String>
+                        <x:String>Vegano</x:String>
+                        <x:String>Keto</x:String>
+                        <x:String>Sin gluten</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <!-- Botón guardar -->
+            <Button Text="💾 Guardar cambios"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnGuardarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

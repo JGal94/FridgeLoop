@@ -343,6 +343,38 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE InsertNotification
+    @UserID INT,
+    @Message NVARCHAR(255),
+    @Type NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO Notifications (UserID, Message, Type)
+    VALUES (@UserID, @Message, @Type)
+END;
+GO
+
+CREATE PROCEDURE GetUserNotifications
+    @UserID INT
+AS
+BEGIN
+    SELECT *
+    FROM Notifications
+    WHERE UserID = @UserID
+    ORDER BY SentAt DESC
+END;
+GO
+
+CREATE PROCEDURE MarkNotificationAsRead
+    @NotificationID INT
+AS
+BEGIN
+    UPDATE Notifications
+    SET IsRead = 1
+    WHERE NotificationID = @NotificationID
+END;
+GO
+
 
 
 DELETE  FROM Users

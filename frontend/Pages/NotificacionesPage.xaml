@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.NotificacionesPage"
+             Title="Notificaciones"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Centro de notificaciones"
+                   FontSize="22"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <!-- Notificación 1 -->
+            <Frame BackgroundColor="#FFF8E1" CornerRadius="10" Padding="15">
+                <Label Text="🕒 3 productos están por vencer esta semana"
+                       FontSize="14"
+                       TextColor="#856404" />
+            </Frame>
+
+            <!-- Notificación 2 -->
+            <Frame BackgroundColor="#E2F0D9" CornerRadius="10" Padding="15">
+                <Label Text="🔁 Hay productos repetidos en tu inventario"
+                       FontSize="14"
+                       TextColor="#155724" />
+            </Frame>
+
+            <!-- Notificación 3 -->
+            <Frame BackgroundColor="#F8D7DA" CornerRadius="10" Padding="15">
+                <Label Text="⚠️ Has superado el 90% de tu presupuesto mensual"
+                       FontSize="14"
+                       TextColor="#721C24" />
+            </Frame>
+
+            <!-- Notificación 4 -->
+            <Frame BackgroundColor="#D1ECF1" CornerRadius="10" Padding="15">
+                <Label Text="📌 Hoy podrías preparar: Ensalada con atún"
+                       FontSize="14"
+                       TextColor="#0C5460" />
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

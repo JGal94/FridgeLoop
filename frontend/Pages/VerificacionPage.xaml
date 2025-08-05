@@ -1,0 +1,60 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.VerificacionPage"
+             BackgroundColor="#EAF4FF"
+             Title="Verificación de Cuenta">
+
+    <VerticalStackLayout 
+        Padding="20" 
+        Spacing="20">
+
+        <!-- Botón de regreso -->
+        <HorizontalStackLayout>
+            
+            <ImageButton 
+                Source="arrow_back.png"
+                WidthRequest="30"
+                HeightRequest="30"
+                BackgroundColor="Transparent"
+                Clicked="OnBackClicked" />
+            
+        </HorizontalStackLayout>
+
+        <Label 
+            Text="Verifica tu cuenta"
+            FontSize="28"
+            FontFamily="OpenSansBold"
+            HorizontalOptions="Center"
+            TextColor="#003366" />
+
+        <Label 
+            Text="Ingresa el código que enviamos a tu correo"
+            FontSize="14"
+            HorizontalOptions="Center"
+            TextColor="#444" />
+
+        <Frame 
+            CornerRadius="8" 
+            Padding="0" 
+            HasShadow="False" 
+            BackgroundColor="White">
+            
+            <Entry 
+                Placeholder="Código de verificación"
+                FontSize="16"
+                Keyboard="Numeric"
+                BackgroundColor="Transparent"
+                TextColor="Black" />
+            
+        </Frame>
+
+        <Button 
+            Text="Activar cuenta"
+            FontSize="18"
+            TextColor="White"
+            BackgroundColor="#007ACC"
+            CornerRadius="10"
+            Clicked="OnActivateClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

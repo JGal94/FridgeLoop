@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogicaDespensa.cs" />
+    <Compile Include="LogicaNotificaciones.cs" />
     <Compile Include="LogicaProducto.cs" />
     <Compile Include="LogicaSesion.cs" />
     <Compile Include="LogicaUsuario.cs" />

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.HistorialRecetasPage"
+             Title="Historial de Recetas"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Label Text="Recetas preparadas"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <!-- Tarjeta de receta preparada -->
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="15" HasShadow="True" Margin="0,10">
+                <VerticalStackLayout>
+                    <Label Text="🍝 Pasta con vegetales"
+                           FontSize="18"
+                           FontFamily="OpenSansSemiBold"
+                           TextColor="#004C99" />
+
+                    <Label Text="Preparada el: 28/07/2025"
+                           FontSize="14"
+                           TextColor="#666" />
+
+                    <Button Text="Repetir Receta"
+                            BackgroundColor="#28A745"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Clicked="OnRepetirRecetaClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Puedes duplicar el frame anterior para más recetas -->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

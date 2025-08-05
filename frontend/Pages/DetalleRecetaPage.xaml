@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.DetalleRecetaPage"
+             Title="Detalle de Receta"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Margin="0,10,0,10" />
+
+            <Label Text="🥗 Ensalada con atún"
+                   FontSize="24"
+                   FontFamily="OpenSansBold"
+                   TextColor="#003366" />
+
+            <Label Text="Estilo: Keto"
+                   FontSize="14"
+                   TextColor="#5A738E" />
+
+            <Label Text="Calorías: 200 kcal"
+                   FontSize="14"
+                   TextColor="#5A738E" />
+
+            <!-- Ingredientes -->
+            <Label Text="Ingredientes:"
+                   FontSize="18"
+                   FontFamily="OpenSansSemiBold"
+                   TextColor="#003366" />
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="- Atún (1 lata)\n- Lechuga (1 taza)\n- Tomate (1)\n- Aceite de oliva (1 cda)"
+                       FontSize="14"
+                       TextColor="#003366" />
+            </Frame>
+
+            <!-- Pasos -->
+            <Label Text="Pasos:"
+                   FontSize="18"
+                   FontFamily="OpenSansSemiBold"
+                   TextColor="#003366" />
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Label Text="1. Lava y corta la lechuga y el tomate.\n2. Mezcla con el atún.\n3. Añade aceite de oliva.\n4. Serví frío."
+                       FontSize="14"
+                       TextColor="#003366" />
+            </Frame>
+
+            <!-- Botones -->
+            <Button Text="👨‍🍳 Preparar"
+                    BackgroundColor="#28A745"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnPrepararClicked" />
+
+            <Button Text="💾 Guardar Receta"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnGuardarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

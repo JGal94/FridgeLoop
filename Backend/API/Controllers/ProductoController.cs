@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Http; // ← no System.Web.Mvc
 using Backend;
 using Entidades.Request;
 using Entidades.Response;
 
 namespace API.Controllers
 {
-    public class ProductoController : Controller
+    [JwtAuthorize]
+    public class ProductoController : ApiController // ✅ API Controller
     {
         [HttpPost]
         [Route("api/producto/insertar")]

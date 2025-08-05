@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.InventarioPage"
+             Title="Inventario"
+             BackgroundColor="#F0F6FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Mi Inventario"
+                   FontSize="28"
+                   FontFamily="OpenSansBold"
+                   TextColor="#004C99" />
+
+            <!-- Filtros -->
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Por vencer"
+                        BackgroundColor="Transparent"
+                        TextColor="#007BFF"
+                        BorderColor="#007BFF"
+                        BorderWidth="1"
+                        CornerRadius="8"
+                         /> <!--Clicked="OnFiltroVencerClicked"-->
+
+                <Button Text="Más usados"
+                        BackgroundColor="Transparent"
+                        TextColor="#007BFF"
+                        BorderColor="#007BFF"
+                        BorderWidth="1"
+                        CornerRadius="8"
+                         /> <!--Clicked="OnFiltroUsadosClicked"-->
+            </HorizontalStackLayout>
+
+            <!-- Lista de productos -->
+            <CollectionView x:Name="InventarioList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,5"
+                               CornerRadius="12"
+                               BackgroundColor="White"
+                               HasShadow="True"
+                               Padding="15">
+
+                            <VerticalStackLayout>
+                                <Label Text="🥫 Producto Ejemplo"
+                                       FontSize="18"
+                                       TextColor="#004C99"
+                                       FontFamily="OpenSansSemiBold" />
+                                <Label Text="Categoría: Enlatados"
+                                       FontSize="14"
+                                       TextColor="#5A738E" />
+                                <Label Text="Cantidad: 3 unidades"
+                                       FontSize="14"
+                                       TextColor="#5A738E" />
+                                <Label Text="Vence: 05/08/2025"
+                                       FontSize="14"
+                                       TextColor="#D9534F" />
+                            </VerticalStackLayout>
+
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Botón para agregar producto -->
+            <Button Text="Agregar Producto"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="10"
+                    Clicked="OnAgregarProductoClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

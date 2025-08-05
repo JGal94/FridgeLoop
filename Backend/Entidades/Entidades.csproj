@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Entity\Error.cs" />
     <Compile Include="Entity\Ingrediente.cs" />
+    <Compile Include="Entity\Notificacion.cs" />
     <Compile Include="Entity\Productos.cs" />
     <Compile Include="Entity\Receta.cs" />
     <Compile Include="Entity\Sesion.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="Request\ReqInsertarReseta.cs" />
     <Compile Include="Request\ReqInsertarUsuario.cs" />
     <Compile Include="Request\ReqLogin.cs" />
+    <Compile Include="Request\ReqMarcarLeida.cs" />
+    <Compile Include="Request\ReqObtenerNotificaciones.cs" />
     <Compile Include="Request\ReqObtenerProductos.cs" />
     <Compile Include="Request\ReqObtenerReceta.cs" />
     <Compile Include="Request\ReqObtenerUsuario.cs" />
@@ -64,10 +67,13 @@
     <Compile Include="Response\ResActualizarProducto.cs" />
     <Compile Include="Response\ResBase.cs" />
     <Compile Include="Response\ResCerrarSesion.cs" />
+    <Compile Include="Response\ResInsertarNotificacion.cs" />
     <Compile Include="Response\ResInsertarProducto.cs" />
     <Compile Include="Response\ResInsertarReceta.cs" />
     <Compile Include="Response\ResInsertarUsuario.cs" />
     <Compile Include="Response\ResLogin.cs" />
+    <Compile Include="Response\ResMarcarLeida.cs" />
+    <Compile Include="Response\ResObtenerNotificaciones.cs" />
     <Compile Include="Response\ResObtenerProductos.cs" />
     <Compile Include="Response\ResObtenerReceta.cs" />
     <Compile Include="Response\ResObtenerUsuario.cs" />
