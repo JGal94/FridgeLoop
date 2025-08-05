@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\onedrive\\escritorio\\u\\programovil\\proyectofinal\\backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,19 +94,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LogicaNotificaciones.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\Backend\\LogicaNotificaciones.cs",
-              "RelativeDocumentMoniker": "Backend\\LogicaNotificaciones.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\Backend\\LogicaNotificaciones.cs*",
-              "RelativeToolTip": "Backend\\LogicaNotificaciones.cs*",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T22:50:48.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "JwtAuthorizeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\API\\Security\\JwtAuthorizeAttribute.cs",
@@ -115,8 +102,7 @@
               "RelativeToolTip": "API\\Security\\JwtAuthorizeAttribute.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAAACYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T20:39:01.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T20:39:01.71Z"
             },
             {
               "$type": "Document",
@@ -140,8 +126,7 @@
               "RelativeToolTip": "API\\Controllers\\ProductoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T02:47:49.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-29T02:47:49.024Z"
             },
             {
               "$type": "Document",
@@ -153,8 +138,7 @@
               "RelativeToolTip": "API\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T03:56:06.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T03:56:06.272Z"
             },
             {
               "$type": "Document",
@@ -164,10 +148,22 @@
               "RelativeDocumentMoniker": "Entidades\\Entity\\Notificacion.cs",
               "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\Entidades\\Entity\\Notificacion.cs",
               "RelativeToolTip": "Entidades\\Entity\\Notificacion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T22:51:03.469Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogicaNotificaciones.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\Backend\\LogicaNotificaciones.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaNotificaciones.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\u\\PrograMovil\\ProyectoFinal\\backend\\Backend\\LogicaNotificaciones.cs",
+              "RelativeToolTip": "Backend\\LogicaNotificaciones.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T22:50:48.213Z"
             },
             {
               "$type": "Document",
