@@ -98,6 +98,7 @@
     <Compile Include="LogicaDespensa.cs" />
     <Compile Include="LogicaNotificaciones.cs" />
     <Compile Include="LogicaProducto.cs" />
+    <Compile Include="LogicaReceta.cs" />
     <Compile Include="LogicaSesion.cs" />
     <Compile Include="LogicaUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,10 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{b9aef6a1-9d4c-4f61-9a13-d0601d621c8a}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gateway\Gateway.csproj">
+      <Project>{c3b35007-52b7-44f3-a7ed-cb9b0ce1ea03}</Project>
+      <Name>Gateway</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
