@@ -7,14 +7,18 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades.Entity; // ← Para acceder a Productos y Receta
+
 namespace Gateway
 {
     public sealed class DeepSeekApiClient : IDisposable
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
-        private const string ApiBaseUrl = "https://api.deepseek.com/v1"; // Reemplazar con la URL real
+        private const string ApiBaseUrl = "https://api.deepseek.com/v1"; // Reemplazar con URL real
 
+        public DeepSeekApiClient()
+        { }
         public DeepSeekApiClient(string apiKey)
         {
             _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
@@ -44,7 +48,7 @@ namespace Gateway
             }
             catch (HttpRequestException ex)
             {
-                throw new Exception($"Error HTTP: {ex.InnerException.Source} - {ex.Message}");
+                throw new Exception($"Error HTTP: {ex.InnerException?.Source ?? "Unknown"} - {ex.Message}");
             }
             catch (TaskCanceledException)
             {
@@ -53,6 +57,49 @@ namespace Gateway
             catch (JsonException ex)
             {
                 throw new Exception($"Error al parsear la respuesta JSON: {ex.Message}");
+            }
+        }
+
+        public async Task<List<Receta>> ObtenerRecetasDesdeIngredientes(List<Productos> productos)
+        {
+            if (productos == null || !productos.Any())
+                throw new ArgumentException("La lista de productos no puede estar vacía.");
+
+            // 1. Generar prompt con ingredientes del usuario
+            var ingredientesPrompt = string.Join(", ", productos.Select(p => $"{p.nombre} ({p.quantity} {p.unidad})"));
+            string prompt = $"Tengo los siguientes ingredientes en casa: {ingredientesPrompt}. " +
+                            "¿Podés sugerirme 3 recetas en formato JSON? Cada receta debe tener: nombre, descripción, calorías, dificultad, tiempo de preparación (en minutos), estilo y lista de ingredientes (nombre y cantidad).";
+
+            // 2. Construir el request a DeepSeek
+            var request = new DeepSeekRequest
+            {
+                Model = "deepseek-chat", // ← Usar modelo correcto si es distinto
+                Messages = new List<ChatMessage>
+                {
+                    new ChatMessage
+                    {
+                        Role = "user",
+                        Content = prompt
+                    }
+                }
+            };
+
+            // 3. Enviar request a la IA
+            var response = await SendChatRequestAsync(request);
+
+            string rawJson = response?.Choices?.FirstOrDefault()?.Message?.Content;
+
+            if (string.IsNullOrWhiteSpace(rawJson))
+                throw new Exception("La respuesta de la IA está vacía o no fue válida.");
+
+            try
+            {
+                var recetas = JsonConvert.DeserializeObject<List<Receta>>(rawJson);
+                return recetas ?? new List<Receta>();
+            }
+            catch (JsonException ex)
+            {
+                throw new Exception("Error al convertir la respuesta de la IA a recetas: " + ex.Message);
             }
         }
 
