@@ -4,9 +4,11 @@ using Entidades.Enum;
 using Entidades.Request;
 using Entidades.Response;
 using Gateway;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Backend.Logica
@@ -88,5 +90,60 @@ namespace Backend.Logica
                 return res;
             }
         }
+
+        public ResInsertarReceta PrepararReceta(ReqInsertarReceta req)
+        {
+            var res = new ResInsertarReceta();
+            res.Exito = false;
+
+            try
+            {
+                if (req == null || req.Ingredients == null || !req.Ingredients.Any())
+                {
+                    res.Mensaje = $"Error {(int)EnumErrores.RequestNulo} - La solicitud o los ingredientes son inválidos.";
+                    return res;
+                }
+
+                string ingredientesJson = JsonConvert.SerializeObject(req.Ingredients);
+
+                int? recetaID = 0;
+                int? errorId = 0;
+                string errorMensaje = "";
+
+                using (var linq = new linqDataContext())
+                {
+                    linq.SP_RegistrarRecetaYActualizarInventario(
+                        req.UserID,
+                        req.Name,
+                        req.Description,
+                        req.PreparationTime,
+                        req.Difficulty,
+                        req.Calories,
+                        req.Style,
+                        ingredientesJson,
+                        ref recetaID,
+                        ref errorId,
+                        ref errorMensaje
+                    );
+                }
+
+                if (errorId != 0)
+                {
+                    res.Mensaje = $"Error {(EnumErrores)errorId}: {errorMensaje}";
+                    return res;
+                }
+
+                res.Exito = true;
+                res.Mensaje = $"Receta registrada exitosamente con ID: {recetaID}";
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.Mensaje = $"Error {(int)EnumErrores.ErrorNoControlado} - {ex.Message}";
+                return res;
+            }
+        }
+
+
     }
 }

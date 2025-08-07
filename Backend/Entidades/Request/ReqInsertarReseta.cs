@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Request
 {
-   public class ReqInsertarReseta
-    {
+  
 
         public class ReqInsertarReceta
         {
@@ -28,5 +27,5 @@ namespace Entidades.Request
             public decimal Quantity { get; set; }
         }
 
-    }
+    
 }
