@@ -29,8 +29,8 @@ BEGIN
     -- Verificar si el correo ya existe
     IF EXISTS (SELECT 1 FROM Users WHERE Email = @CorreoElectronico)
     BEGIN
-        SET @ErrorId = 201; -- Código para "Correo ya registrado"
-        SET @ErrorMensaje = 'Ya existe un usuario registrado con este correo electrónico.';
+        SET @ErrorId = 201; -- Cï¿½digo para "Correo ya registrado"
+        SET @ErrorMensaje = 'Ya existe un usuario registrado con este correo electrï¿½nico.';
         RETURN;
     END
 
@@ -42,7 +42,7 @@ BEGIN
         SET @ID_USUARIO = SCOPE_IDENTITY();
     END TRY
     BEGIN CATCH
-        SET @ErrorId = 101; -- Código genérico de error de base de datos
+        SET @ErrorId = 101; -- Cï¿½digo genï¿½rico de error de base de datos
         SET @ErrorMensaje = ERROR_MESSAGE();
     END CATCH
 END;
@@ -195,7 +195,7 @@ BEGIN
 END;
 GO
 
--- Crear sesión
+-- Crear sesiï¿½n
 CREATE PROCEDURE CreateUserSession
     @UserID INT,
     @Token NVARCHAR(255),
@@ -219,7 +219,7 @@ BEGIN
 END;
 GO
 
--- Cerrar sesión
+-- Cerrar sesiï¿½n
 CREATE PROCEDURE InvalidateSession
     @Token NVARCHAR(255)
 AS
@@ -291,7 +291,7 @@ BEGIN
         IF @FilasAfectadas = 0
         BEGIN
             SET @ErrorId = 302; -- UsuarioNoActivado
-            SET @ErrorMensaje = 'Correo o código inválido.';
+            SET @ErrorMensaje = 'Correo o cï¿½digo invï¿½lido.';
         END
         ELSE
         BEGIN
@@ -333,7 +333,7 @@ BEGIN
         IF @@ROWCOUNT = 0
         BEGIN
             SET @ErrorId = 301; -- Token no encontrado
-            SET @ErrorMensaje = 'No se encontró una sesión con ese token.';
+            SET @ErrorMensaje = 'No se encontrï¿½ una sesiï¿½n con ese token.';
         END
     END TRY
     BEGIN CATCH
@@ -377,7 +377,103 @@ GO
 
 
 
-DELETE  FROM Users
 
-SELECT * FROM Users
-SELECT* FROM UserSessions
+GO
+
+IF OBJECT_ID('GetProductosInventarioUsuario', 'P') IS NOT NULL
+    DROP PROCEDURE GetProductosInventarioUsuario;
+GO
+
+CREATE PROCEDURE GetProductosInventarioUsuario
+    @UserID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        p.ProductID,
+        p.Name AS nombre,
+        p.CategoryID AS idCategoria,
+        p.Unit AS unidad,
+        ui.UserID AS userID,
+        ui.Quantity AS quantity,
+        ui.ExpirationDate AS expirationDate
+    FROM UserInventory ui
+    INNER JOIN Products p ON ui.ProductID = p.ProductID
+    WHERE ui.UserID = @UserID AND ui.Quantity > 0
+END;
+GO
+
+CREATE PROCEDURE SP_RegistrarRecetaYActualizarInventario
+    @UserID INT,
+    @Name NVARCHAR(100),
+    @Description NVARCHAR(MAX),
+    @PreparationTime INT,
+    @Difficulty NVARCHAR(50),
+    @Calories INT,
+    @Style NVARCHAR(50),
+    @IngredientesJson NVARCHAR(MAX), -- Lista en formato JSON: [{ "ProductID": 1, "Quantity": 2.5 }, ...]
+    @RecetaID INT OUTPUT,
+    @ErrorId INT OUTPUT,
+    @ErrorMensaje NVARCHAR(500) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- 1. Insertar la receta
+        INSERT INTO Recetas (Name, Description, PreparationTime, Difficulty, Calories, Style, PreparedAt)
+        VALUES (@Name, @Description, @PreparationTime, @Difficulty, @Calories, @Style, GETDATE());
+
+        SET @RecetaID = SCOPE_IDENTITY();
+
+        -- 2. Crear tabla temporal para ingredientes
+        CREATE TABLE #Ingredientes (
+            ProductID INT,
+            Quantity DECIMAL(18,2)
+        );
+
+        -- 3. Parsear JSON a la tabla temporal
+        INSERT INTO #Ingredientes (ProductID, Quantity)
+        SELECT ProductID, Quantity
+        FROM OPENJSON(@IngredientesJson)
+        WITH (
+            ProductID INT '$.ProductID',
+            Quantity DECIMAL(18,2) '$.Quantity'
+        );
+
+        -- 4. Insertar ingredientes a la tabla Ingredientes
+        INSERT INTO Ingredientes (RecipeID, ProductID, Quantity)
+        SELECT @RecetaID, ProductID, Quantity
+        FROM #Ingredientes;
+
+        -- 5. Actualizar inventario del usuario
+        UPDATE IU
+        SET IU.Quantity = IU.Quantity - I.Quantity
+        FROM InventarioUsuario IU
+        INNER JOIN #Ingredientes I ON IU.ProductID = I.ProductID
+        WHERE IU.UserID = @UserID;
+
+        -- 6. Validar que no haya cantidades negativas en el inventario (rollback si ocurre)
+        IF EXISTS (
+            SELECT 1 FROM InventarioUsuario 
+            WHERE UserID = @UserID AND Quantity < 0
+        )
+        BEGIN
+            ROLLBACK;
+            SET @ErrorId = 404; -- IngredientesInsuficientes
+            SET @ErrorMensaje = 'Uno o mÃ¡s ingredientes superan el inventario disponible.';
+            RETURN;
+        END
+
+        COMMIT;
+        SET @ErrorId = 0;
+        SET @ErrorMensaje = '';
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        SET @ErrorId = 101; -- ErrorDeBaseDatos
+        SET @ErrorMensaje = ERROR_MESSAGE();
+    END CATCH
+END;
