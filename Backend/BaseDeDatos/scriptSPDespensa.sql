@@ -422,6 +422,15 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
+        -- Validar que se enviaron ingredientes
+        IF NOT EXISTS (SELECT 1 FROM OPENJSON(@IngredientesJson))
+        BEGIN
+            ROLLBACK;
+            SET @ErrorId = 208; -- CampoRequeridoFaltante
+            SET @ErrorMensaje = 'No se proporcionaron ingredientes válidos.';
+            RETURN;
+        END
+
         -- 1. Insertar la receta
         INSERT INTO Recetas (Name, Description, PreparationTime, Difficulty, Calories, Style, PreparedAt)
         VALUES (@Name, @Description, @PreparationTime, @Difficulty, @Calories, @Style, GETDATE());
@@ -443,19 +452,33 @@ BEGIN
             Quantity DECIMAL(18,2) '$.Quantity'
         );
 
-        -- 4. Insertar ingredientes a la tabla Ingredientes
+        -- 4. Validar inventario suficiente antes de actualizar
+        IF EXISTS (
+            SELECT 1
+            FROM #Ingredientes I
+            INNER JOIN InventarioUsuario IU ON IU.ProductID = I.ProductID
+            WHERE IU.UserID = @UserID AND IU.Quantity < I.Quantity
+        )
+        BEGIN
+            ROLLBACK;
+            SET @ErrorId = 404; -- IngredientesInsuficientes
+            SET @ErrorMensaje = 'Inventario insuficiente para uno o más ingredientes.';
+            RETURN;
+        END
+
+        -- 5. Insertar ingredientes a la tabla Ingredientes
         INSERT INTO Ingredientes (RecipeID, ProductID, Quantity)
         SELECT @RecetaID, ProductID, Quantity
         FROM #Ingredientes;
 
-        -- 5. Actualizar inventario del usuario
+        -- 6. Actualizar inventario del usuario
         UPDATE IU
         SET IU.Quantity = IU.Quantity - I.Quantity
         FROM InventarioUsuario IU
         INNER JOIN #Ingredientes I ON IU.ProductID = I.ProductID
         WHERE IU.UserID = @UserID;
 
-        -- 6. Validar que no haya cantidades negativas en el inventario (rollback si ocurre)
+        -- 7. Validación extra (por seguridad): verificar que no quedaron cantidades negativas
         IF EXISTS (
             SELECT 1 FROM InventarioUsuario 
             WHERE UserID = @UserID AND Quantity < 0
@@ -467,6 +490,10 @@ BEGIN
             RETURN;
         END
 
+        -- 8. Limpieza de tabla temporal (opcional, ya que se elimina al finalizar el scope)
+        DROP TABLE IF EXISTS #Ingredientes;
+
+        -- 9. Fin exitoso
         COMMIT;
         SET @ErrorId = 0;
         SET @ErrorMensaje = '';
@@ -476,4 +503,4 @@ BEGIN
         SET @ErrorId = 101; -- ErrorDeBaseDatos
         SET @ErrorMensaje = ERROR_MESSAGE();
     END CATCH
-END;
+END
