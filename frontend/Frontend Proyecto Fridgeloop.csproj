@@ -116,4 +116,9 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Entidades\Response\" />
+	  <Folder Include="Entidades\Request\" />
+	</ItemGroup>
+
 </Project>
