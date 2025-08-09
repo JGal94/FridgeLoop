@@ -132,3 +132,5 @@ D:\Universidad\programacion movil\Proyecto-Movil\Backend\Backend\obj\Debug\Backe
 D:\Universidad\programacion movil\Proyecto-Movil\Backend\Backend\obj\Debug\Backend.pdb
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache

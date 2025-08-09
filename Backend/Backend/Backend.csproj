@@ -117,7 +117,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gateway\Gateway.csproj">
-      <Project>{c3b35007-52b7-44f3-a7ed-cb9b0ce1ea03}</Project>
+      <Project>{926001f7-35d7-48f3-8cdb-69a85faeac4d}</Project>
       <Name>Gateway</Name>
     </ProjectReference>
   </ItemGroup>
