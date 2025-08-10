@@ -34,3 +34,9 @@ C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.pdb
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\bin\Debug\Entidades.dll
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\bin\Debug\Entidades.pdb
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\obj\Debug\Entidades.dll
+D:\Universidad\programacion movil\proyecto-final\Backend\Entidades\obj\Debug\Entidades.pdb

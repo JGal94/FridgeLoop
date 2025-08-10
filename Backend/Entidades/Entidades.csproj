@@ -42,11 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\AuditLog.cs" />
+    <Compile Include="Entity\Categoria.cs" />
+    <Compile Include="Entity\Compra.cs" />
+    <Compile Include="Entity\DetalleCompra.cs" />
     <Compile Include="Entity\Error.cs" />
     <Compile Include="Entity\Ingrediente.cs" />
+    <Compile Include="Entity\InventarioUsuario.cs" />
     <Compile Include="Entity\Notificacion.cs" />
+    <Compile Include="Entity\Presupuesto.cs" />
     <Compile Include="Entity\Productos.cs" />
     <Compile Include="Entity\Receta.cs" />
+    <Compile Include="Entity\RecetaPreparada.cs" />
     <Compile Include="Entity\Sesion.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Enum\EnumErrores.cs" />
