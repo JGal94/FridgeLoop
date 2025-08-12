@@ -12,5 +12,6 @@ namespace Entidades.Request
         public string correo {  get; set; }
         public string password { get; set; }
         public string origen { get; set; }
+        public string direccionIP { get; set; }
     }
 }

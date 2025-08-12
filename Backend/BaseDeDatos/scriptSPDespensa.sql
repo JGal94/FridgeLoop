@@ -47,7 +47,7 @@ BEGIN
     END CATCH
 END;
 GO
-
+----------------------------------------------------------------------------------------------------
 CREATE PROCEDURE UpdateUser
     @UserID INT,
     @FullName NVARCHAR(100),
@@ -59,6 +59,7 @@ BEGIN
     WHERE UserID = @UserID
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetUsers
 AS
@@ -67,7 +68,7 @@ BEGIN
 END;
 GO
 
--- PRODUCTS
+-- PRODUCTS--------------------------------------------------------------
 CREATE PROCEDURE InsertProduct
     @Name NVARCHAR(100),
     @CategoryID INT,
@@ -112,6 +113,7 @@ BEGIN
     END CATCH
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE UpdateProduct
     @ProductID INT,
@@ -125,6 +127,7 @@ BEGIN
     WHERE ProductID = @ProductID
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetProducts
 AS
@@ -133,7 +136,8 @@ BEGIN
 END;
 GO
 
--- USER INVENTORY
+-- USER INVENTORY------------------------------------------------------------------------------------
+
 CREATE PROCEDURE InsertUserInventory
     @UserID INT,
     @ProductID INT,
@@ -145,6 +149,7 @@ BEGIN
     VALUES (@UserID, @ProductID, @Quantity, @ExpirationDate)
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE UpdateUserInventory
     @InventoryID INT,
@@ -157,6 +162,7 @@ BEGIN
     WHERE InventoryID = @InventoryID
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetUserInventory
 AS
@@ -165,7 +171,8 @@ BEGIN
 END;
 GO
 
--- PURCHASES
+-- PURCHASES-----------------------------------------------------------------------------------------
+
 CREATE PROCEDURE InsertPurchase
     @UserID INT,
     @PurchaseDate DATETIME,
@@ -176,6 +183,7 @@ BEGIN
     VALUES (@UserID, @PurchaseDate, @TotalAmount)
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE UpdatePurchase
     @PurchaseID INT,
@@ -187,6 +195,7 @@ BEGIN
     WHERE PurchaseID = @PurchaseID
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetPurchases
 AS
@@ -195,7 +204,8 @@ BEGIN
 END;
 GO
 
--- Crear sesi�n
+-- Crear sesi�n------------------------------------------------------------------------------------
+
 CREATE PROCEDURE CreateUserSession
     @UserID INT,
     @Token NVARCHAR(255),
@@ -209,17 +219,23 @@ BEGIN
 END;
 GO
 
--- Validar token
-CREATE PROCEDURE GetActiveSession
-    @Token NVARCHAR(255)
+-- Validar token----------------------------------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE GetActiveSession
+  @Token NVARCHAR(255)
 AS
 BEGIN
-    SELECT * FROM UserSessions
-    WHERE Token = @Token AND IsActive = 1 AND ExpiresAt > GETDATE()
+  SET NOCOUNT ON;
+  SELECT *
+  FROM UserSessions
+  WHERE Token = @Token
+    AND IsActive = 1
+    AND ExpiresAt > GETUTCDATE();
 END;
 GO
 
--- Cerrar sesi�n
+-- Cerrar sesi�n----------------------------------------------------------------------------------
+
 CREATE PROCEDURE InvalidateSession
     @Token NVARCHAR(255)
 AS
@@ -227,6 +243,7 @@ BEGIN
     UPDATE UserSessions SET IsActive = 0 WHERE Token = @Token
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 
 CREATE PROCEDURE CleanupExpiredSessions
@@ -236,6 +253,7 @@ BEGIN
     WHERE IsActive = 0 AND ExpiresAt < DATEADD(DAY, -7, GETDATE());
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE Login
     @Email NVARCHAR(100),
@@ -250,6 +268,8 @@ BEGIN
     WHERE Email = @Email AND PasswordHash = @PasswordHash
 END;
 GO
+----------------------------------------------------------------------------------------------------
+
 CREATE PROCEDURE GetUserById
     @UserID INT
 AS
@@ -262,6 +282,7 @@ BEGIN
     WHERE UserID = @UserID
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -305,18 +326,8 @@ BEGIN
 END;
 GO
 
+----------------------------------------------------------------------------------------------------
 
-ALTER PROCEDURE InsertUser
-    @FullName NVARCHAR(100),
-    @Email NVARCHAR(100),
-    @PasswordHash NVARCHAR(255),
-    @VerificationCode NVARCHAR(10)
-AS
-BEGIN
-    INSERT INTO Users (FullName, Email, PasswordHash, VerificationCode)
-    VALUES (@FullName, @Email, @PasswordHash, @VerificationCode)
-END;
-GO
 
 CREATE PROCEDURE CloseUserSession
     @Token NVARCHAR(255),
@@ -342,6 +353,7 @@ BEGIN
     END CATCH
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE InsertNotification
     @UserID INT,
@@ -353,6 +365,7 @@ BEGIN
     VALUES (@UserID, @Message, @Type)
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetUserNotifications
     @UserID INT
@@ -364,6 +377,7 @@ BEGIN
     ORDER BY SentAt DESC
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE MarkNotificationAsRead
     @NotificationID INT
@@ -375,14 +389,13 @@ BEGIN
 END;
 GO
 
+----------------------------------------------------------------------------------------------------
 
-
-
-GO
 
 IF OBJECT_ID('GetProductosInventarioUsuario', 'P') IS NOT NULL
     DROP PROCEDURE GetProductosInventarioUsuario;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE GetProductosInventarioUsuario
     @UserID INT
@@ -403,6 +416,7 @@ BEGIN
     WHERE ui.UserID = @UserID AND ui.Quantity > 0
 END;
 GO
+----------------------------------------------------------------------------------------------------
 
 CREATE OR ALTER PROCEDURE SP_RegistrarRecetaYActualizarInventario
     @UserID INT,
@@ -488,3 +502,22 @@ BEGIN
         SET @ErrorMensaje = ERROR_MESSAGE();
     END CATCH
 END
+
+
+GO 
+----------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE GetUserByEmail
+  @Email NVARCHAR(100)
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SELECT 
+    UserID       AS ID_USUARIO,
+    FullName     AS NOMBRE,
+    Email        AS CORREO_ELECTRONICO,
+    IsActive     AS IS_ACTIVE,
+    PasswordHash AS PASSWORD_HASH
+  FROM Users
+  WHERE Email = @Email;
+END;
+GO

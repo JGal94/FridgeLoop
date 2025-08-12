@@ -49,6 +49,7 @@
     <Compile Include="Entity\Error.cs" />
     <Compile Include="Entity\Ingrediente.cs" />
     <Compile Include="Entity\InventarioUsuario.cs" />
+    <Compile Include="Entity\JwtSettings.cs" />
     <Compile Include="Entity\Notificacion.cs" />
     <Compile Include="Entity\Presupuesto.cs" />
     <Compile Include="Entity\Productos.cs" />

@@ -11,13 +11,14 @@ using System.Linq;
 using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
-
+using BCrypt.Net;
 
 
 namespace Backend
 {
     public class LogicaUsuario
     {
+        
         public ResInsertarUsuario InsertarUsuario(ReqInsertarUsuario req)
         {
             var res = new ResInsertarUsuario();
@@ -46,7 +47,9 @@ namespace Backend
 
                 string codigoVerificacion = GenerarCodigoVerificacion();
 
-                // Primero intentamos enviar el correo
+                // 🔐 Hash de la contraseña
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(req.usuario.password);
+
                 if (!Utilitarios.EnviarCorreoValidacion(req.usuario.correoElectronico, codigoVerificacion))
                 {
                     res.listaDeErrores.Add(new Error
@@ -58,7 +61,6 @@ namespace Backend
                     return res;
                 }
 
-                // Si el correo se envió correctamente, insertamos al usuario
                 int? idUsuario = 0;
                 int? errorId = 0;
                 string errorMensaje = "";
@@ -68,7 +70,7 @@ namespace Backend
                     linq.InsertUser(
                         req.usuario.nombre,
                         req.usuario.correoElectronico,
-                        req.usuario.password,
+                        hashedPassword, // Guardamos la contraseña encriptada
                         codigoVerificacion,
                         ref idUsuario,
                         ref errorId,
@@ -76,7 +78,6 @@ namespace Backend
                     );
                 }
 
-                // Verificar si hubo error desde el SP
                 if (errorId != 0)
                 {
                     res.listaDeErrores.Add(new Error
@@ -88,9 +89,7 @@ namespace Backend
                     return res;
                 }
 
-                // Guardar ID si todo fue exitoso
                 req.usuario.id = idUsuario ?? 0;
-
                 res.resultado = true;
                 return res;
             }
@@ -106,58 +105,90 @@ namespace Backend
             }
         }
 
+
+
         public ResLogin Login(ReqLogin req)
         {
-            var res = new ResLogin();
-            res.listaDeErrores = new List<Error>();
+            var res = new ResLogin { listaDeErrores = new List<Error>() };
 
             try
             {
-                if (string.IsNullOrEmpty(req.correo) || string.IsNullOrEmpty(req.password))
+                if (string.IsNullOrWhiteSpace(req.correo) || string.IsNullOrWhiteSpace(req.password))
                 {
                     res.listaDeErrores.Add(new Error
                     {
                         ErrorCode = EnumErrores.CredencialesIncorrectas,
                         Message = "Correo o contraseña vacíos."
                     });
-                    res.resultado = false;
                     return res;
                 }
 
-                var loginResult = new LoginResult();
+                GetUserByEmailResult userRow;
                 using (var linq = new linqDataContext())
-                {
-                    loginResult = linq.Login(req.correo, req.password).FirstOrDefault();
-                }
+                    userRow = linq.GetUserByEmail(req.correo).FirstOrDefault();
 
-                if (loginResult == null)
+                if (userRow == null)
                 {
                     res.listaDeErrores.Add(new Error
                     {
                         ErrorCode = EnumErrores.UsuarioNoEncontrado,
-                        Message = "Usuario no encontrado o no activado."
+                        Message = "Usuario no encontrado."
                     });
-                    res.resultado = false;
                     return res;
                 }
 
-                res.Usuario = new Usuario
+                if (!(userRow.IS_ACTIVE ?? false))
                 {
-                    id = loginResult.ID_USUARIO,
-                    nombre = loginResult.NOMBRE,
-                    correoElectronico = loginResult.CORREO_ELECTRONICO
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.UsuarioNoActivado,
+                        Message = "El usuario no está activado."
+                    });
+                    return res;
+                }
+
+                var hash = userRow.PASSWORD_HASH ?? string.Empty;
+                if (!BCrypt.Net.BCrypt.Verify(req.password, hash))
+                {
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.CredencialesIncorrectas,
+                        Message = "Correo o contraseña incorrectos."
+                    });
+                    return res;
+                }
+
+                var usuario = new Usuario
+                {
+                    id = userRow.ID_USUARIO,  
+                    nombre = userRow.NOMBRE,
+                    correoElectronico = userRow.CORREO_ELECTRONICO
                 };
-                string jwtToken = GenerarJwtToken(res.Usuario); // ← Generar el token JWT
+                res.Usuario = usuario;
+
+                // JWT y sesión en UTC
+                var nowUtc = DateTime.UtcNow;
+                var expiresUtc = nowUtc.AddHours(_jwt.HoursToExpire);
+
+                var token = GenerarJwtToken(usuario);  // usa UtcNow adentro
+                res.TokenJwt = token;
+
                 var sesion = new Sesion
                 {
-                    token = jwtToken,
-                    usuario = res.Usuario,
-                    origen = req.origen,
-                    fechaCreacion = DateTime.Now
+                    token = token,
+                    usuario = usuario,
+                    origen = string.IsNullOrWhiteSpace(req.origen) ? "api" : req.origen,
+                    direccionIP = req.direccionIP ?? string.Empty,
+                    fechaCreacion = nowUtc,
+                    fechaExpiracion = expiresUtc
                 };
 
-                var logSesion = new LogicaSesion();
-                logSesion.AbrirSesion(sesion);
+                var resSesion = new LogicaSesion().AbrirSesion(sesion);
+                if (!resSesion.resultado)
+                {
+                    if (resSesion.listaDeErrores != null) res.listaDeErrores.AddRange(resSesion.listaDeErrores);
+                    return res;
+                }
 
                 res.resultado = true;
                 return res;
@@ -169,10 +200,10 @@ namespace Backend
                     ErrorCode = EnumErrores.ErrorNoControlado,
                     Message = ex.Message
                 });
-                res.resultado = false;
                 return res;
             }
         }
+
 
         public ResObtenerUsuario ObtenerUsuario(ReqObtenerUsuario req)
         {
@@ -378,11 +409,20 @@ namespace Backend
             var random = new Random();
             return new string(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+
+        private readonly JwtSettings _jwt;
+        public LogicaUsuario(JwtSettings jwt) { _jwt = jwt; }
 
         private string GenerarJwtToken(Usuario usuario)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Felipensativo"));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Secret));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var nowUtc = DateTime.UtcNow;
+            var expiresUtc = nowUtc.AddHours(_jwt.HoursToExpire);
 
             var claims = new[]
             {
@@ -393,15 +433,18 @@ namespace Backend
     };
 
             var token = new JwtSecurityToken(
-                issuer: "tuApp",
-                audience: "tusUsuarios",
+                issuer: _jwt.Issuer,
+                audience: _jwt.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddHours(4),
-                signingCredentials: credentials
+                notBefore: nowUtc,          // <-- importante
+                expires: expiresUtc,       // <-- en UTC
+                signingCredentials: creds
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
 
     }
 

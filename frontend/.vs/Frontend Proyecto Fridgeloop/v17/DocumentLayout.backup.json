@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\",
+  "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\saulg\\onedrive\\escritorio\\proyectomovil\\fridgeloop\\frontend\\pages\\scanpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\scanpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\scanpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\saulg\\onedrive\\escritorio\\proyectomovil\\fridgeloop\\frontend\\pages\\agregarproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\agregarproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\agregarproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\saulg\\onedrive\\escritorio\\proyectomovil\\fridgeloop\\frontend\\pages\\agregarproductopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\agregarproductopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\agregarproductopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\saulg\\onedrive\\escritorio\\proyectomovil\\fridgeloop\\frontend\\pages\\scanpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\scanpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\scanpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +35,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -48,37 +52,35 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AgregarProductoPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\AgregarProductoPage.xaml.cs",
-              "ToolTip": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml.cs",
               "RelativeToolTip": "Pages\\AgregarProductoPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T02:57:17.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T02:57:17.309Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AgregarProductoPage.xaml",
-              "DocumentMoniker": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml",
               "RelativeDocumentMoniker": "Pages\\AgregarProductoPage.xaml",
-              "ToolTip": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\AgregarProductoPage.xaml",
               "RelativeToolTip": "Pages\\AgregarProductoPage.xaml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-12T02:57:12.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T02:57:12.599Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ScanPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\ScanPage.xaml.cs",
-              "ToolTip": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml.cs",
               "RelativeToolTip": "Pages\\ScanPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T02:55:48.992Z",
               "EditorCaption": ""
@@ -87,14 +89,13 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ScanPage.xaml",
-              "DocumentMoniker": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml",
               "RelativeDocumentMoniker": "Pages\\ScanPage.xaml",
-              "ToolTip": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProyectoMovil\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ScanPage.xaml",
               "RelativeToolTip": "Pages\\ScanPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-12T02:55:08.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T02:55:08.44Z"
             }
           ]
         }

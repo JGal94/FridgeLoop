@@ -441,3 +441,5 @@ C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\D
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.csproj.Up2Date
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.dll
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.pdb
+C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.CoreCompileInputs.cache

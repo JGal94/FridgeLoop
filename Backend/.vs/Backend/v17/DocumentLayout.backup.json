@@ -1,84 +1,76 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\",
+  "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
-      "RelativeMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\api\\controllers\\despensacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\despensacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\entidades\\entity\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\backend\\logicanotificaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicanotificaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicanotificaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicadespensa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicadespensa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{926001F7-35D7-48F3-8CDB-69A85FAEAC4D}|Gateway\\Gateway.csproj|c:\\users\\juanf\\fridgeloop\\backend\\gateway\\deepseekapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{926001F7-35D7-48F3-8CDB-69A85FAEAC4D}|Gateway\\Gateway.csproj|solutionrelative:gateway\\deepseekapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\RecetaPreparada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\RecetaPreparada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Presupuesto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\Presupuesto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\security\\jwtauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\security\\jwtauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\InventarioUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\InventarioUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\entity\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\DetalleCompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\DetalleCompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\Compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\AuditLog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entidades\\Entity\\AuditLog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "DockedHeight": 308,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,10 +82,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
@@ -102,207 +90,212 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RecetaPreparada.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\RecetaPreparada.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\RecetaPreparada.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\RecetaPreparada.cs",
-              "RelativeToolTip": "Entidades\\Entity\\RecetaPreparada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "LogicaReceta.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaReceta.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
+              "RelativeToolTip": "Backend\\LogicaReceta.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwFsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:44.336Z"
+              "WhenOpened": "2025-08-12T22:43:23.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Productos.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Productos.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\Productos.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Productos.cs",
-              "RelativeToolTip": "Entidades\\Entity\\Productos.cs",
+              "DocumentIndex": 2,
+              "Title": "LogicaProducto.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaProducto.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
+              "RelativeToolTip": "Backend\\LogicaProducto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:42.184Z"
+              "WhenOpened": "2025-08-12T22:43:22.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LogicaNotificaciones.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaNotificaciones.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaNotificaciones.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaNotificaciones.cs",
+              "RelativeToolTip": "Backend\\LogicaNotificaciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T22:43:21.755Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Notificacion.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Notificacion.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\Notificacion.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Notificacion.cs",
-              "RelativeToolTip": "Entidades\\Entity\\Notificacion.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "LogicaDespensa.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaDespensa.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaDespensa.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaDespensa.cs",
+              "RelativeToolTip": "Backend\\LogicaDespensa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:34.283Z"
+              "WhenOpened": "2025-08-12T22:43:13.45Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogicaReceta.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
-              "RelativeDocumentMoniker": "Backend\\LogicaReceta.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
-              "RelativeToolTip": "Backend\\LogicaReceta.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAWwHUAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DeepSeekApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Gateway\\DeepSeekApiClient.cs",
+              "RelativeDocumentMoniker": "Gateway\\DeepSeekApiClient.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Gateway\\DeepSeekApiClient.cs",
+              "RelativeToolTip": "Gateway\\DeepSeekApiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T09:17:32.008Z",
+              "WhenOpened": "2025-08-12T22:42:59.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "linq.dbml",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\AccesoDatos\\linq.dbml",
-              "RelativeDocumentMoniker": "AccesoDatos\\linq.dbml",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\AccesoDatos\\linq.dbml",
-              "RelativeToolTip": "AccesoDatos\\linq.dbml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-08-11T22:48:50.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LogicaUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaUsuario.cs",
-              "RelativeDocumentMoniker": "Backend\\LogicaUsuario.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaUsuario.cs",
-              "RelativeToolTip": "Backend\\LogicaUsuario.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAewEgAAAAmAAAAAAAAAA==",
+              "Title": "LogicaSesion.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaSesion.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaSesion.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaSesion.cs",
+              "RelativeToolTip": "Backend\\LogicaSesion.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:43:07.22Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DespensaController.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\DespensaController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\DespensaController.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\DespensaController.cs",
-              "RelativeToolTip": "API\\Controllers\\DespensaController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:57:23.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Presupuesto.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Presupuesto.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\Presupuesto.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Presupuesto.cs",
-              "RelativeToolTip": "Entidades\\Entity\\Presupuesto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:39.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "InventarioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\InventarioUsuario.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\InventarioUsuario.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\InventarioUsuario.cs",
-              "RelativeToolTip": "Entidades\\Entity\\InventarioUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:28.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DetalleCompra.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\DetalleCompra.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\DetalleCompra.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\DetalleCompra.cs",
-              "RelativeToolTip": "Entidades\\Entity\\DetalleCompra.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:27.364Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Compra.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Compra.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\Compra.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Compra.cs",
-              "RelativeToolTip": "Entidades\\Entity\\Compra.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:26.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Categoria.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\Categoria.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\Categoria.cs",
-              "RelativeToolTip": "Entidades\\Entity\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:25.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuditLog.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\AuditLog.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entity\\AuditLog.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Entidades\\Entity\\AuditLog.cs",
-              "RelativeToolTip": "Entidades\\Entity\\AuditLog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:58:24.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LogicaNotificaciones.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaNotificaciones.cs",
-              "RelativeDocumentMoniker": "Backend\\LogicaNotificaciones.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\Backend\\LogicaNotificaciones.cs",
-              "RelativeToolTip": "Backend\\LogicaNotificaciones.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:57:55.476Z"
+              "WhenOpened": "2025-08-12T21:39:58.977Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "API\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:57:32.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
               "RelativeToolTip": "API\\Controllers\\ProductoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:57:25.547Z"
+              "WhenOpened": "2025-08-12T21:41:02.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\Backend\\API\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\HomeController.cs",
               "RelativeToolTip": "API\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T22:57:24.439Z"
+              "WhenOpened": "2025-08-12T21:41:01.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\JwtSettings.cs",
+              "RelativeToolTip": "Entidades\\Entity\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T18:42:39.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T18:18:43.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Web.config",
+              "RelativeDocumentMoniker": "API\\Web.config",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Web.config",
+              "RelativeToolTip": "API\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-08-12T18:16:40.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Utilitarios.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeDocumentMoniker": "Backend\\Utilitarios.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeToolTip": "Backend\\Utilitarios.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIAwwCEAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T06:30:11.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LogicaUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaUsuario.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaUsuario.cs",
+              "RelativeToolTip": "Backend\\LogicaUsuario.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAiwKIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T22:43:07.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "JwtAuthorizeAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Security\\JwtAuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "API\\Security\\JwtAuthorizeAttribute.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Security\\JwtAuthorizeAttribute.cs",
+              "RelativeToolTip": "API\\Security\\JwtAuthorizeAttribute.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T06:29:12.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReqLogin.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqLogin.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T06:14:58.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 92,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

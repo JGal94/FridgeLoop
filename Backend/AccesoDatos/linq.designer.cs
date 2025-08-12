@@ -251,6 +251,13 @@ namespace AccesoDatos
 			errorMensaje = ((string)(result.GetParameterValue(10)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserByEmail")]
+		public ISingleResult<GetUserByEmailResult> GetUserByEmail([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email);
+			return ((ISingleResult<GetUserByEmailResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class GetActiveSessionResult
@@ -1184,6 +1191,104 @@ namespace AccesoDatos
 				if ((this._CORREO_ELECTRONICO != value))
 				{
 					this._CORREO_ELECTRONICO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserByEmailResult
+	{
+		
+		private int _ID_USUARIO;
+		
+		private string _NOMBRE;
+		
+		private string _CORREO_ELECTRONICO;
+		
+		private string _PASSWORD_HASH;
+		
+		private System.Nullable<bool> _IS_ACTIVE;
+		
+		public GetUserByEmailResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL")]
+		public int ID_USUARIO
+		{
+			get
+			{
+				return this._ID_USUARIO;
+			}
+			set
+			{
+				if ((this._ID_USUARIO != value))
+				{
+					this._ID_USUARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="NVarChar(100)")]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO_ELECTRONICO", DbType="NVarChar(100)")]
+		public string CORREO_ELECTRONICO
+		{
+			get
+			{
+				return this._CORREO_ELECTRONICO;
+			}
+			set
+			{
+				if ((this._CORREO_ELECTRONICO != value))
+				{
+					this._CORREO_ELECTRONICO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD_HASH", DbType="NVarChar(255)")]
+		public string PASSWORD_HASH
+		{
+			get
+			{
+				return this._PASSWORD_HASH;
+			}
+			set
+			{
+				if ((this._PASSWORD_HASH != value))
+				{
+					this._PASSWORD_HASH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ACTIVE", DbType="Bit")]
+		public System.Nullable<bool> IS_ACTIVE
+		{
+			get
+			{
+				return this._IS_ACTIVE;
+			}
+			set
+			{
+				if ((this._IS_ACTIVE != value))
+				{
+					this._IS_ACTIVE = value;
 				}
 			}
 		}

@@ -10,83 +10,96 @@ using System.Web.Http.Filters;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Backend; // Para LogicaSesion
+using System.Configuration;
+
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
 public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
 {
-    // Estos valores deben coincidir con los usados al generar el token
-    private const string Issuer = "tuApp";
-    private const string Audience = "tusUsuarios";
-    private const string Secret = "Felipensativo"; // Mueve esto al web.config en producción
+
+    
 
     public override void OnAuthorization(HttpActionContext actionContext)
     {
+
         try
         {
-            // 1. Obtener el token del header Authorization: Bearer {token}
+            // 1) Tomar el header Authorization: Bearer {token}
             var authHeader = actionContext.Request.Headers.Authorization;
-            if (authHeader == null || !string.Equals(authHeader.Scheme, "Bearer", StringComparison.OrdinalIgnoreCase))
+            if (authHeader == null || !string.Equals(authHeader.Scheme, "Bearer", StringComparison.OrdinalIgnoreCase) || string.IsNullOrWhiteSpace(authHeader.Parameter))
             {
-                Denegar(actionContext, "Encabezado Authorization no presente o mal formado.");
+                Deny(actionContext, "Falta el token Bearer.");
                 return;
             }
 
             var token = authHeader.Parameter;
-            if (string.IsNullOrWhiteSpace(token))
+
+            // 2) Leer configuración desde web.config (solo en la API)
+            var issuer = ConfigurationManager.AppSettings["Jwt:Issuer"];
+            var audience = ConfigurationManager.AppSettings["Jwt:Audience"];
+            var secret = ConfigurationManager.AppSettings["Jwt:Secret"];
+
+            if (string.IsNullOrWhiteSpace(issuer) || string.IsNullOrWhiteSpace(audience) || string.IsNullOrWhiteSpace(secret))
             {
-                Denegar(actionContext, "Token vacío.");
+                Deny(actionContext, "Configuración JWT incompleta en web.config.");
                 return;
             }
 
-            // 2. Validar el JWT (firma, expiración, issuer, audience)
+            // 3) Validar firma/claims/expiración del JWT
             var tokenHandler = new JwtSecurityTokenHandler();
-            var clave = Encoding.UTF8.GetBytes(Secret);
-            var parametros = new TokenValidationParameters
+            var key = Encoding.UTF8.GetBytes(secret);
+            var parameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
-                ValidIssuer = Issuer,
+                ValidIssuer = issuer,
                 ValidateAudience = true,
-                ValidAudience = Audience,
+                ValidAudience = audience,
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(clave),
-                ClockSkew = TimeSpan.Zero // Sin tolerancia de tiempo
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ClockSkew = TimeSpan.Zero
             };
 
-            SecurityToken tokenValidado;
-            var principal = tokenHandler.ValidateToken(token, parametros, out tokenValidado);
-
-            // 3. Verificar si la sesión está activa en la base de datos
-            var logSesion = new LogicaSesion();
-            if (!logSesion.EsSesionActiva(token))
+            ClaimsPrincipal principal;
+            SecurityToken validatedToken;
+            try
             {
-                Denegar(actionContext, "Sesión no activa o ya cerrada.");
+                principal = tokenHandler.ValidateToken(token, parameters, out validatedToken);
+            }
+            catch (Exception)
+            {
+                Deny(actionContext, "Token inválido o expirado.");
                 return;
             }
 
-            // 4. Asignar usuario autenticado al contexto actual
-            Thread.CurrentPrincipal = principal;
-            if (actionContext.RequestContext != null)
+            // 4) Verificar sesión activa en BD
+            var sesionActiva = new LogicaSesion().EsSesionActiva(token);
+            if (!sesionActiva)
             {
-                actionContext.RequestContext.Principal = principal;
+                Deny(actionContext, "Sesión no activa o expirada.");
+                return;
+            }
+
+            // 5) Setear principal para el pipeline de Web API
+            Thread.CurrentPrincipal = principal;
+            if (actionContext.ControllerContext != null)
+            {
+                // Si usas ApiController.User, esto lo hace visible
+                actionContext.ControllerContext.RequestContext.Principal = principal;
             }
         }
-        catch (SecurityTokenException ex)
+        catch (Exception)
         {
-            Denegar(actionContext, "Token inválido o expirado: " + ex.Message);
-        }
-        catch (Exception ex)
-        {
-            Denegar(actionContext, "Error al validar token: " + ex.Message);
+            Deny(actionContext, "Error interno al validar autorización.");
         }
     }
 
-    private void Denegar(HttpActionContext ctx, string mensaje)
+    private void Deny(HttpActionContext ctx, string message)
     {
         ctx.Response = ctx.Request.CreateResponse(HttpStatusCode.Unauthorized, new
         {
-            resultado = false,
-            mensaje = mensaje
+            ok = false,
+            error = message
         });
     }
 }

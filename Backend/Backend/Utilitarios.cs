@@ -26,6 +26,11 @@ namespace Backend
         /// <param name="emailUsuario">Email del usuario que se está registrando</param>
         /// <param name="codigoActivacion">Código de activación para validar la cuenta</param>
         /// <returns>True si se envió correctamente, False si hubo error</returns>
+        /// 
+
+        
+
+
         public static bool EnviarCorreoValidacion(string emailUsuario, string codigoActivacion)
         {
             try
