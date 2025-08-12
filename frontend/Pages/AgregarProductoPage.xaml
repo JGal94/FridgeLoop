@@ -56,6 +56,16 @@
                     </Picker.Items>
                 </Picker>
             </Frame>
+            
+            <!-- NUEVO: campo para mostrar el código escaneado -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
+                <Entry x:Name="codigoEntry"
+                       Placeholder="Código de barras (se completa al escanear)"
+                       IsReadOnly="True"
+                       FontSize="16"
+                       BackgroundColor="Transparent"
+                       TextColor="#003366" />
+            </Frame>
 
             <Button Text="📷 Escanear código de barras"
                     BackgroundColor="#005A9E"

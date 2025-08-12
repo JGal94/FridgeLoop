@@ -320,6 +320,9 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Essentials.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Graphics.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\zxing.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ZXing.Net.MAUI.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ZXing.Net.MAUI.Controls.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -558,6 +561,10 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet-nativeaot.a
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.a
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.dylib
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ZXing.Net.Maui.Controls;
 
 namespace Frontend_Proyecto_Fridgeloop
 {
@@ -13,11 +14,15 @@ namespace Frontend_Proyecto_Fridgeloop
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                #if ANDROID || IOS || MACCATALYST
+                .UseBarcodeReader()
+                #endif
+                ;
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+            #if DEBUG
+            builder.Logging.AddDebug();
+            #endif
 
             return builder.Build();
         }

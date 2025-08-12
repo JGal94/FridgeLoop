@@ -126,6 +126,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgelo
 build_metadata.AdditionalFiles.TargetPath = Pages\RegistroPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\RegistroPage.xaml
 
+[C:/Users/saulg/OneDrive/Escritorio/ProyectoMovil/FridgeLoop/frontend/Pages/ScanPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.ScanPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScanPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScanPage.xaml
+
 [C:/Users/saulg/OneDrive/Escritorio/ProyectoMovil/FridgeLoop/frontend/Pages/StartPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.StartPage.xaml

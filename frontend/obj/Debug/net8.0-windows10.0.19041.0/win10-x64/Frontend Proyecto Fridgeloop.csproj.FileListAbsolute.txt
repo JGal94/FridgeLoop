@@ -380,7 +380,6 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Options.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Primitives.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.Interop.dll
-C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Compatibility.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Xaml.dll
@@ -403,6 +402,9 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Widgets.Projection.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\zxing.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ZXing.Net.MAUI.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ZXing.Net.MAUI.Controls.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -441,6 +443,10 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.SDK.NET.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\WinRT.Runtime.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.csproj.AssemblyReference.cache
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.inputs
@@ -462,8 +468,8 @@ C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf
-C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png
+C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png
 C:\Users\saulg\OneDrive\Escritorio\ProyectoMovil\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png

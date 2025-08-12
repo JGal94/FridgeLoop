@@ -12,8 +12,15 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         
         private async void OnEscanearClicked(object sender, EventArgs e)
         {
-            // Escaneo aún no implementado
-            await DisplayAlert("Escaneo", "Funcionalidad en desarrollo", "OK");
+
+            MessagingCenter.Subscribe<ScanPage, string>(this, "BarcodeScanned", (sender2, code) =>
+            {
+                // Mostrar el código en un Entry, por ejemplo
+                codigoEntry.Text = code;
+                MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned");
+            });
+
+            await Navigation.PushAsync(new ScanPage());
         }
          
         private async void OnAgregarClicked(object sender, EventArgs e)
