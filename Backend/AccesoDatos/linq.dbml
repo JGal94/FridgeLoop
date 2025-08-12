@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DespensaDB" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=M322;Initial Catalog=DespensaDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DespensaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:sqladminfl.database.windows.net,1433;Initial Catalog=DespensaDB;Persist Security Info=True;User ID=sqladminfl;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DespensaDBConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.ActiveUser" Method="ActiveUser">
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(10)" />
@@ -131,13 +131,6 @@
     <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.InsertUser" Method="InsertUser">
-    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="VerificationCode" Parameter="verificationCode" Type="System.String" DbType="NVarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.InsertUserInventory" Method="InsertUserInventory">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
@@ -184,6 +177,30 @@
     <Parameter Name="InventoryID" Parameter="inventoryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertUser" Method="InsertUser">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CodigoVerificacion" Parameter="codigoVerificacion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_RegistrarRecetaYActualizarInventario" Method="SP_RegistrarRecetaYActualizarInventario">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PreparationTime" Parameter="preparationTime" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Difficulty" Parameter="difficulty" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Calories" Parameter="calories" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Style" Parameter="style" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IngredientesJson" Parameter="ingredientesJson" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

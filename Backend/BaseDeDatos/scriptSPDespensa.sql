@@ -404,7 +404,7 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE SP_RegistrarRecetaYActualizarInventario
+CREATE OR ALTER PROCEDURE SP_RegistrarRecetaYActualizarInventario
     @UserID INT,
     @Name NVARCHAR(100),
     @Description NVARCHAR(MAX),
@@ -412,95 +412,79 @@ CREATE PROCEDURE SP_RegistrarRecetaYActualizarInventario
     @Difficulty NVARCHAR(50),
     @Calories INT,
     @Style NVARCHAR(50),
-    @IngredientesJson NVARCHAR(MAX), -- Lista en formato JSON: [{ "ProductID": 1, "Quantity": 2.5 }, ...]
-    @RecetaID INT OUTPUT,
+    @IngredientesJson NVARCHAR(MAX),
+    @RecipeID INT OUTPUT,
     @ErrorId INT OUTPUT,
     @ErrorMensaje NVARCHAR(500) OUTPUT
 AS
 BEGIN
+    SET FMTONLY OFF;  -- <-- clave para que el diseñador pueda leer el SP
     SET NOCOUNT ON;
-    BEGIN TRY
-        BEGIN TRANSACTION;
 
-        -- Validar que se enviaron ingredientes
-        IF NOT EXISTS (SELECT 1 FROM OPENJSON(@IngredientesJson))
+    BEGIN TRY
+        BEGIN TRAN;
+
+        IF (@IngredientesJson IS NULL OR LTRIM(RTRIM(@IngredientesJson)) = '' OR ISJSON(@IngredientesJson) <> 1
+            OR NOT EXISTS (SELECT 1 FROM OPENJSON(@IngredientesJson)))
         BEGIN
             ROLLBACK;
-            SET @ErrorId = 208; -- CampoRequeridoFaltante
+            SET @ErrorId = 208;
             SET @ErrorMensaje = 'No se proporcionaron ingredientes válidos.';
             RETURN;
         END
 
-        -- 1. Insertar la receta
-        INSERT INTO Recetas (Name, Description, PreparationTime, Difficulty, Calories, Style, PreparedAt)
-        VALUES (@Name, @Description, @PreparationTime, @Difficulty, @Calories, @Style, GETDATE());
+        INSERT INTO Recipes (Name, Description, PreparationTime, Difficulty, Calories, Style)
+        VALUES (@Name, @Description, @PreparationTime, @Difficulty, @Calories, @Style);
 
-        SET @RecetaID = SCOPE_IDENTITY();
+        SET @RecipeID = SCOPE_IDENTITY();
 
-        -- 2. Crear tabla temporal para ingredientes
-        CREATE TABLE #Ingredientes (
-            ProductID INT,
-            Quantity DECIMAL(18,2)
-        );
+        CREATE TABLE #Ingredientes (ProductID INT, Quantity DECIMAL(18,2));
 
-        -- 3. Parsear JSON a la tabla temporal
         INSERT INTO #Ingredientes (ProductID, Quantity)
         SELECT ProductID, Quantity
         FROM OPENJSON(@IngredientesJson)
-        WITH (
-            ProductID INT '$.ProductID',
-            Quantity DECIMAL(18,2) '$.Quantity'
-        );
+        WITH (ProductID INT '$.ProductID', Quantity DECIMAL(18,2) '$.Quantity');
 
-        -- 4. Validar inventario suficiente antes de actualizar
         IF EXISTS (
             SELECT 1
             FROM #Ingredientes I
-            INNER JOIN InventarioUsuario IU ON IU.ProductID = I.ProductID
-            WHERE IU.UserID = @UserID AND IU.Quantity < I.Quantity
+            JOIN UserInventory UI ON UI.ProductID = I.ProductID
+            WHERE UI.UserID = @UserID
+              AND (UI.Quantity IS NULL OR UI.Quantity < I.Quantity)
         )
         BEGIN
             ROLLBACK;
-            SET @ErrorId = 404; -- IngredientesInsuficientes
+            SET @ErrorId = 404;
             SET @ErrorMensaje = 'Inventario insuficiente para uno o más ingredientes.';
             RETURN;
         END
 
-        -- 5. Insertar ingredientes a la tabla Ingredientes
-        INSERT INTO Ingredientes (RecipeID, ProductID, Quantity)
-        SELECT @RecetaID, ProductID, Quantity
-        FROM #Ingredientes;
+        INSERT INTO RecipeIngredients (RecipeID, ProductID, Quantity)
+        SELECT @RecipeID, ProductID, Quantity FROM #Ingredientes;
 
-        -- 6. Actualizar inventario del usuario
-        UPDATE IU
-        SET IU.Quantity = IU.Quantity - I.Quantity
-        FROM InventarioUsuario IU
-        INNER JOIN #Ingredientes I ON IU.ProductID = I.ProductID
-        WHERE IU.UserID = @UserID;
+        UPDATE UI
+        SET UI.Quantity = UI.Quantity - I.Quantity
+        FROM UserInventory UI
+        JOIN #Ingredientes I ON UI.ProductID = I.ProductID
+        WHERE UI.UserID = @UserID;
 
-        -- 7. Validación extra (por seguridad): verificar que no quedaron cantidades negativas
-        IF EXISTS (
-            SELECT 1 FROM InventarioUsuario 
-            WHERE UserID = @UserID AND Quantity < 0
-        )
+        IF EXISTS (SELECT 1 FROM UserInventory WHERE UserID = @UserID AND Quantity < 0)
         BEGIN
             ROLLBACK;
-            SET @ErrorId = 404; -- IngredientesInsuficientes
+            SET @ErrorId = 404;
             SET @ErrorMensaje = 'Uno o más ingredientes superan el inventario disponible.';
             RETURN;
         END
 
-        -- 8. Limpieza de tabla temporal (opcional, ya que se elimina al finalizar el scope)
-        DROP TABLE IF EXISTS #Ingredientes;
+        DROP TABLE #Ingredientes;
 
-        -- 9. Fin exitoso
         COMMIT;
         SET @ErrorId = 0;
         SET @ErrorMensaje = '';
     END TRY
     BEGIN CATCH
-        ROLLBACK;
-        SET @ErrorId = 101; -- ErrorDeBaseDatos
+        IF XACT_STATE() <> 0 ROLLBACK;
+        SET @ErrorId = 101;
         SET @ErrorMensaje = ERROR_MESSAGE();
     END CATCH
 END

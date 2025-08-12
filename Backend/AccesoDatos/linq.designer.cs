@@ -33,7 +33,7 @@ namespace AccesoDatos
     #endregion
 		
 		public linqDataContext() : 
-				base(global::AccesoDatos.Properties.Settings.Default.DespensaDBConnectionString, mappingSource)
+				base(global::AccesoDatos.Properties.Settings.Default.DespensaDBConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -176,13 +176,6 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUser")]
-		public int InsertUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FullName", DbType="NVarChar(100)")] string fullName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PasswordHash", DbType="NVarChar(255)")] string passwordHash, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="VerificationCode", DbType="NVarChar(10)")] string verificationCode)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fullName, email, passwordHash, verificationCode);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUserInventory")]
 		public int InsertUserInventory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="Int")] System.Nullable<int> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Decimal(10,2)")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExpirationDate", DbType="Date")] System.Nullable<System.DateTime> expirationDate)
 		{
@@ -236,6 +229,26 @@ namespace AccesoDatos
 		public int UpdateUserInventory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InventoryID", DbType="Int")] System.Nullable<int> inventoryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Decimal(10,2)")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExpirationDate", DbType="Date")] System.Nullable<System.DateTime> expirationDate)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), inventoryID, quantity, expirationDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUser")]
+		public int InsertUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="NVarChar(100)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="NVarChar(100)")] string correoElectronico, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(255)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodigoVerificacion", DbType="NVarChar(10)")] string codigoVerificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_USUARIO", DbType="Int")] ref System.Nullable<int> iD_USUARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(255)")] ref string errorMensaje)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, correoElectronico, password, codigoVerificacion, iD_USUARIO, errorId, errorMensaje);
+			iD_USUARIO = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			errorId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			errorMensaje = ((string)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_RegistrarRecetaYActualizarInventario")]
+		public int SP_RegistrarRecetaYActualizarInventario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="NVarChar(MAX)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PreparationTime", DbType="Int")] System.Nullable<int> preparationTime, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Difficulty", DbType="NVarChar(50)")] string difficulty, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Calories", DbType="Int")] System.Nullable<int> calories, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Style", DbType="NVarChar(50)")] string style, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IngredientesJson", DbType="NVarChar(MAX)")] string ingredientesJson, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RecipeID", DbType="Int")] ref System.Nullable<int> recipeID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(500)")] ref string errorMensaje)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, name, description, preparationTime, difficulty, calories, style, ingredientesJson, recipeID, errorId, errorMensaje);
+			recipeID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			errorId = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			errorMensaje = ((string)(result.GetParameterValue(10)));
 			return ((int)(result.ReturnValue));
 		}
 	}

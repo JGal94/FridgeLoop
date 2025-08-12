@@ -44,5 +44,17 @@ namespace AccesoDatos.Properties {
                 return ((string)(this["DespensaDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=tcp:sqladminfl.database.windows.net,1433;Initial Catalog=DespensaDB;P" +
+            "ersist Security Info=True;User ID=sqladminfl;Password=20FLSJA++;Encrypt=True;Tru" +
+            "stServerCertificate=True")]
+        public string DespensaDBConnectionString1 {
+            get {
+                return ((string)(this["DespensaDBConnectionString1"]));
+            }
+        }
     }
 }
