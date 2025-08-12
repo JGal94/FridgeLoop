@@ -103,6 +103,13 @@ namespace AccesoDatos
 			return ((ISingleResult<GetActiveSessionResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProductosInventarioUsuario")]
+		public ISingleResult<GetProductosInventarioUsuarioResult> GetProductosInventarioUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<GetProductosInventarioUsuarioResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProducts")]
 		public ISingleResult<GetProductsResult> GetProducts()
 		{
@@ -131,11 +138,25 @@ namespace AccesoDatos
 			return ((ISingleResult<GetUserInventoryResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserNotifications")]
+		public ISingleResult<GetUserNotificationsResult> GetUserNotifications([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<GetUserNotificationsResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUsers")]
 		public ISingleResult<GetUsersResult> GetUsers()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<GetUsersResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertNotification")]
+		public int InsertNotification([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Message", DbType="NVarChar(255)")] string message, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(50)")] string type)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, message, type);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertProduct")]
@@ -152,6 +173,13 @@ namespace AccesoDatos
 		public int InsertPurchase([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PurchaseDate", DbType="DateTime")] System.Nullable<System.DateTime> purchaseDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalAmount", DbType="Decimal(10,2)")] System.Nullable<decimal> totalAmount)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, purchaseDate, totalAmount);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUser")]
+		public int InsertUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FullName", DbType="NVarChar(100)")] string fullName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PasswordHash", DbType="NVarChar(255)")] string passwordHash, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="VerificationCode", DbType="NVarChar(10)")] string verificationCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fullName, email, passwordHash, verificationCode);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -174,6 +202,13 @@ namespace AccesoDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, passwordHash);
 			return ((ISingleResult<LoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MarkNotificationAsRead")]
+		public int MarkNotificationAsRead([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NotificationID", DbType="Int")] System.Nullable<int> notificationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), notificationID);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateProduct")]
@@ -202,37 +237,6 @@ namespace AccesoDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), inventoryID, quantity, expirationDate);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUser")]
-		public int InsertUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="NVarChar(100)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CorreoElectronico", DbType="NVarChar(100)")] string correoElectronico, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(255)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodigoVerificacion", DbType="NVarChar(10)")] string codigoVerificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_USUARIO", DbType="Int")] ref System.Nullable<int> iD_USUARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(255)")] ref string errorMensaje)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, correoElectronico, password, codigoVerificacion, iD_USUARIO, errorId, errorMensaje);
-			iD_USUARIO = ((System.Nullable<int>)(result.GetParameterValue(4)));
-			errorId = ((System.Nullable<int>)(result.GetParameterValue(5)));
-			errorMensaje = ((string)(result.GetParameterValue(6)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MarkNotificationAsRead")]
-		public int MarkNotificationAsRead([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NotificationID", DbType="Int")] System.Nullable<int> notificationID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), notificationID);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertNotification")]
-		public int InsertNotification([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Message", DbType="NVarChar(255)")] string message, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(50)")] string type)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, message, type);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserNotifications")]
-		public ISingleResult<GetUserNotificationsResult> GetUserNotifications([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
-			return ((ISingleResult<GetUserNotificationsResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -383,6 +387,140 @@ namespace AccesoDatos
 				if ((this._IsActive != value))
 				{
 					this._IsActive = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetProductosInventarioUsuarioResult
+	{
+		
+		private int _ProductID;
+		
+		private string _nombre;
+		
+		private System.Nullable<int> _idCategoria;
+		
+		private string _unidad;
+		
+		private System.Nullable<int> _userID;
+		
+		private System.Nullable<decimal> _quantity;
+		
+		private System.Nullable<System.DateTime> _expirationDate;
+		
+		public GetProductosInventarioUsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NVarChar(100)")]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCategoria", DbType="Int")]
+		public System.Nullable<int> idCategoria
+		{
+			get
+			{
+				return this._idCategoria;
+			}
+			set
+			{
+				if ((this._idCategoria != value))
+				{
+					this._idCategoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidad", DbType="NVarChar(50)")]
+		public string unidad
+		{
+			get
+			{
+				return this._unidad;
+			}
+			set
+			{
+				if ((this._unidad != value))
+				{
+					this._unidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userID", DbType="Int")]
+		public System.Nullable<int> userID
+		{
+			get
+			{
+				return this._userID;
+			}
+			set
+			{
+				if ((this._userID != value))
+				{
+					this._userID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this._quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expirationDate", DbType="Date")]
+		public System.Nullable<System.DateTime> expirationDate
+		{
+			get
+			{
+				return this._expirationDate;
+			}
+			set
+			{
+				if ((this._expirationDate != value))
+				{
+					this._expirationDate = value;
 				}
 			}
 		}
@@ -726,6 +864,122 @@ namespace AccesoDatos
 		}
 	}
 	
+	public partial class GetUserNotificationsResult
+	{
+		
+		private int _NotificationID;
+		
+		private System.Nullable<int> _UserID;
+		
+		private string _Message;
+		
+		private string _Type;
+		
+		private System.Nullable<bool> _IsRead;
+		
+		private System.Nullable<System.DateTime> _SentAt;
+		
+		public GetUserNotificationsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotificationID", DbType="Int NOT NULL")]
+		public int NotificationID
+		{
+			get
+			{
+				return this._NotificationID;
+			}
+			set
+			{
+				if ((this._NotificationID != value))
+				{
+					this._NotificationID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(255)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRead", DbType="Bit")]
+		public System.Nullable<bool> IsRead
+		{
+			get
+			{
+				return this._IsRead;
+			}
+			set
+			{
+				if ((this._IsRead != value))
+				{
+					this._IsRead = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SentAt", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SentAt
+		{
+			get
+			{
+				return this._SentAt;
+			}
+			set
+			{
+				if ((this._SentAt != value))
+				{
+					this._SentAt = value;
+				}
+			}
+		}
+	}
+	
 	public partial class GetUsersResult
 	{
 		
@@ -917,122 +1171,6 @@ namespace AccesoDatos
 				if ((this._CORREO_ELECTRONICO != value))
 				{
 					this._CORREO_ELECTRONICO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetUserNotificationsResult
-	{
-		
-		private int _NotificationID;
-		
-		private System.Nullable<int> _UserID;
-		
-		private string _Message;
-		
-		private string _Type;
-		
-		private System.Nullable<bool> _IsRead;
-		
-		private System.Nullable<System.DateTime> _SentAt;
-		
-		public GetUserNotificationsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotificationID", DbType="Int NOT NULL")]
-		public int NotificationID
-		{
-			get
-			{
-				return this._NotificationID;
-			}
-			set
-			{
-				if ((this._NotificationID != value))
-				{
-					this._NotificationID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		public System.Nullable<int> UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(255)")]
-		public string Message
-		{
-			get
-			{
-				return this._Message;
-			}
-			set
-			{
-				if ((this._Message != value))
-				{
-					this._Message = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50)")]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRead", DbType="Bit")]
-		public System.Nullable<bool> IsRead
-		{
-			get
-			{
-				return this._IsRead;
-			}
-			set
-			{
-				if ((this._IsRead != value))
-				{
-					this._IsRead = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SentAt", DbType="DateTime")]
-		public System.Nullable<System.DateTime> SentAt
-		{
-			get
-			{
-				return this._SentAt;
-			}
-			set
-			{
-				if ((this._SentAt != value))
-				{
-					this._SentAt = value;
 				}
 			}
 		}

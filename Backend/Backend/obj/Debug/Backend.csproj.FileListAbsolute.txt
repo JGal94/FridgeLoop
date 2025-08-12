@@ -34,8 +34,6 @@ C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\bac
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Backend\obj\Debug\Backend.csproj.Up2Date
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Backend\obj\Debug\Backend.dll
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Backend\obj\Debug\Backend.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Backend\bin\Debug\Backend.dll.config
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Backend\bin\Debug\Backend.dll
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Backend\bin\Debug\Backend.pdb
@@ -134,3 +132,5 @@ C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\ob
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache

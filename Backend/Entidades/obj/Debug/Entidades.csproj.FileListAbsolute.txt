@@ -10,12 +10,6 @@ C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\bac
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\juanf\Downloads\movilViernesEstudiantesS4\movilViernesEstudiantesS4\backend\Entidades\obj\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\bin\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\bin\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\backend\Entidades\obj\Debug\Entidades.pdb
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\bin\Debug\Entidades.dll
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\bin\Debug\Entidades.pdb
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
@@ -34,3 +28,9 @@ C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Entidades\obj\Debug\Entidades.pdb
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
+C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb
