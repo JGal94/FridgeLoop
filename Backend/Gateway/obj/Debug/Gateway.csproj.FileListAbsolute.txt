@@ -9,14 +9,3 @@ D:\Universidad\programacion movil\proyecto-final\Backend\Gateway\obj\Debug\Gatew
 D:\Universidad\programacion movil\proyecto-final\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
 D:\Universidad\programacion movil\proyecto-final\Backend\Gateway\obj\Debug\Gateway.dll
 D:\Universidad\programacion movil\proyecto-final\Backend\Gateway\obj\Debug\Gateway.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Gateway.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Gateway.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Entidades.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Newtonsoft.Json.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Entidades.pdb
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\bin\Debug\Newtonsoft.Json.xml
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.dll
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.pdb

@@ -132,5 +132,3 @@ C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\ob
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
-C:\Users\juanf\OneDrive\Escritorio\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
