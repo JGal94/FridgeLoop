@@ -2,31 +2,154 @@
 using Backend;
 using Entidades.Request;
 using Entidades.Response;
+using System.Security.Claims;
+using Entidades.Enum;
+using Entidades.Entity;
+using System.Collections.Generic;
 
-namespace API.Controllers
+namespace API.Controllers   // <-- ajusta si tu namespace difiere
 {
     [JwtAuthorize]
-    public class ProductoController : ApiController // ✅ API Controller
+    [RoutePrefix("api/producto")]
+    public class ProductoController : ApiController
     {
-        [HttpPost]
-        [Route("api/producto/insertar")]
-        public ResInsertarProducto InsertarProducto(ReqInsertarProducto req)
+        private LogicaProducto CreateLogic() => new LogicaProducto();
+
+        private int GetUserId()
         {
-            return new LogicaProducto().InsertarProducto(req);
+            var identity = User as ClaimsPrincipal;
+            var idStr = identity?.FindFirst("id")?.Value;
+            return int.TryParse(idStr, out var uid) ? uid : 0;
+        }
+
+        [HttpPost]
+        [Route("insertar")]
+        public ResInsertarProducto InsertarProducto([FromBody] ReqInsertarProducto req)
+        {
+            if (req == null)
+            {
+                return new ResInsertarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.RequestNulo, Message = "El request no puede ser nulo." }
+                    }
+                };
+            }
+            if (!ModelState.IsValid)
+            {
+                return new ResInsertarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.FormatoDatoInvalido, Message = "Datos inválidos en la solicitud." }
+                    }
+                };
+            }
+
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResInsertarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+                    }
+                };
+            }
+
+            // Forzamos pertenencia por token
+            return CreateLogic().InsertarProducto(userId, req);
         }
 
         [HttpGet]
-        [Route("api/producto/obtener")]
-        public ResObtenerProductos ObtenerProductos()
+        [Route("obtener")]
+        public ResObtenerProductos ObtenerProductos([FromUri] int page = 1, [FromUri] int pageSize = 20, [FromUri] string q = null)
         {
-            return new LogicaProducto().ObtenerProductos();
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResObtenerProductos
+                {
+                    resultado = false,
+                    productos = new List<Productos>(),
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+                    }
+                };
+            }
+
+            return CreateLogic().ObtenerProductos(userId, page, pageSize, q);
         }
 
-        [HttpPost]
-        [Route("api/producto/actualizar")]
-        public ResActualizarProducto ActualizarProducto(ReqActualizarProducto req)
+        [HttpPut]
+        [Route("actualizar")]
+        public ResActualizarProducto ActualizarProducto([FromBody] ReqActualizarProducto req)
         {
-            return new LogicaProducto().ActualizarProducto(req);
+            if (req == null)
+            {
+                return new ResActualizarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.RequestNulo, Message = "El request no puede ser nulo." }
+                    }
+                };
+            }
+            if (!ModelState.IsValid)
+            {
+                return new ResActualizarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.FormatoDatoInvalido, Message = "Datos inválidos en la solicitud." }
+                    }
+                };
+            }
+
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResActualizarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+                    }
+                };
+            }
+
+            return CreateLogic().ActualizarProducto(userId, req);
+        }
+        [HttpPut]
+        [Route("inventario")]
+        public ResActualizarProducto ActualizarInventario([FromBody] ReqActualizarInventario req)
+        {
+            if (req == null)
+            {
+                return new ResActualizarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.RequestNulo, Message = "El request no puede ser nulo." }
+            }
+                };
+            }
+
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResActualizarProducto
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+            }
+                };
+            }
+
+            return CreateLogic().ActualizarInventario(userId, req);
         }
     }
 }

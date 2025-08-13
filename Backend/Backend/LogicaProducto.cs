@@ -13,76 +13,73 @@ namespace Backend
 {
     public class LogicaProducto
     {
-        public ResInsertarProducto InsertarProducto(ReqInsertarProducto req)
+        // INSERTAR: mantiene tu flujo actual (crea producto y registra inventario si tu SP lo hace)
+        public ResInsertarProducto InsertarProducto(int userId, ReqInsertarProducto req)
         {
             var res = new ResInsertarProducto();
 
             try
             {
-                // Validación - ahora accedemos a través de req.productos
-                if (req.productos == null ||
+                if (userId <= 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+                    };
+                    return res;
+                }
+
+                if (req?.productos == null ||
                     string.IsNullOrWhiteSpace(req.productos.nombre) ||
                     string.IsNullOrWhiteSpace(req.productos.unidad) ||
                     req.productos.idCategoria <= 0)
                 {
                     res.resultado = false;
-                    res.listaDeErrores = new List<Error>
-                    {
-                        new Error
-                        {
-                            ErrorCode = EnumErrores.CampoRequeridoFaltante,
-                            Message = "Todos los campos del producto son obligatorios."
-                        }
+                    res.listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "Todos los campos del producto son obligatorios." }
                     };
                     return res;
                 }
 
+                // Normaliza
+                req.productos.nombre = req.productos.nombre.Trim();
+                req.productos.unidad = req.productos.unidad.Trim();
+
+                var expUtc = req.productos.expirationDate?.ToUniversalTime();
+
                 using (var linq = new linqDataContext())
                 {
-                    // Variables para los parámetros de salida del stored procedure
                     int? productID = null;
                     int? errorId = null;
                     string errorMensaje = null;
 
-                    // Llamada al stored procedure con TODOS los parámetros requeridos
+                    // Tu SP actual: inserta producto (y normalmente también inventario)
                     linq.InsertProduct(
-                        req.productos.nombre,                    // name (string)
-                        req.productos.idCategoria,               // categoryID (int?)
-                        req.productos.unidad,                    // unit (string)
-                        req.productos.userID ?? 1,               // userID (int?) - valor por defecto si es null
-                        req.productos.quantity,                  // quantity (decimal?)
-                        req.productos.expirationDate,            // expirationDate (DateTime?)
-                        ref productID,                           // productID (ref int?)
-                        ref errorId,                             // errorId (ref int?)
-                        ref errorMensaje                         // errorMensaje (ref string)
+                        req.productos.nombre,
+                        req.productos.idCategoria,
+                        req.productos.unidad,
+                        userId,                         // dueño desde el token
+                        req.productos.quantity,
+                        expUtc,
+                        ref productID,
+                        ref errorId,
+                        ref errorMensaje
                     );
 
-                    // Verificar si hubo error en el stored procedure
-                    if (errorId.HasValue && errorId.Value > 0)
+                    if (errorId.GetValueOrDefault() > 0)
                     {
                         res.resultado = false;
-                        res.listaDeErrores = new List<Error>
-                        {
-                            new Error
-                            {
-                                ErrorCode = EnumErrores.ErrorDeBaseDatos,
-                                Message = errorMensaje ?? "Error al insertar el producto."
-                            }
+                        res.listaDeErrores = new List<Error> {
+                            new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = errorMensaje ?? "Error al insertar el producto." }
                         };
                         return res;
                     }
 
-                    // Verificar que se obtuvo un ID válido
                     if (!productID.HasValue || productID.Value <= 0)
                     {
                         res.resultado = false;
-                        res.listaDeErrores = new List<Error>
-                        {
-                            new Error
-                            {
-                                ErrorCode = EnumErrores.ErrorDeBaseDatos,
-                                Message = "No se pudo insertar el producto."
-                            }
+                        res.listaDeErrores = new List<Error> {
+                            new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = "No se pudo insertar el producto." }
                         };
                         return res;
                     }
@@ -95,103 +92,117 @@ namespace Backend
             catch (Exception ex)
             {
                 res.resultado = false;
-                res.listaDeErrores = new List<Error>
-                {
-                    new Error
-                    {
-                        ErrorCode = EnumErrores.ErrorNoControlado,
-                        Message = ex.Message
-                    }
+                res.listaDeErrores = new List<Error> {
+                    new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
                 };
             }
 
             return res;
         }
 
-        public ResObtenerProductos ObtenerProductos()
+        // OBTENER: usa GetProductsByUser (paginación + búsqueda). Fallback a GetProducts() si aún no agregas el SP al .dbml
+        public ResObtenerProductos ObtenerProductos(int userId, int page = 1, int pageSize = 20, string q = null)
         {
-            // Creamos la respuesta que vamos a devolver
-            ResObtenerProductos res = new ResObtenerProductos
-            {
-                productos = new List<Productos>()
-            };
+            var res = new ResObtenerProductos { productos = new List<Productos>() };
 
             try
             {
+                if (userId <= 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+            };
+                    return res;
+                }
+
                 using (var linq = new linqDataContext())
                 {
-                    // Ejecuta el SP que obtiene todos los productos
-                    var productos = linq.GetProducts().ToList();
+                    // Fallback que siempre compila con los SP actuales:
+                    var prods = linq.GetProducts().ToList();              // Products: ProductID, Name, CategoryID, Unit
+                    var inv = linq.GetUserInventory().ToList();         // UserInventory: InventoryID, UserID, ProductID, Quantity, ExpirationDate
 
-                    // Recorremos los productos devueltos por la base de datos
-                    foreach (var p in productos)
+                    var items = (from ui in inv
+                                 where ui.UserID == userId
+                                 join p in prods on ui.ProductID equals p.ProductID
+                                 where string.IsNullOrWhiteSpace(q) || p.Name.Contains(q)
+                                 orderby p.Name, p.ProductID
+                                 select new { p, ui })
+                                .Skip((page - 1) * pageSize)
+                                .Take(pageSize)
+                                .ToList();
+
+                    foreach (var it in items)
                     {
-                        // Agregamos cada producto a la lista usando la entidad personalizada
                         res.productos.Add(new Productos
                         {
-                            nombre = p.Name,                    // Cambiado de Nombre a nombre para consistencia
-                            idCategoria = p.CategoryID ?? 0,    // Cambiado de Categoria string a idCategoria int
-                            unidad = p.Unit                     // Cambiado de Unidad a unidad para consistencia
+                            // idProducto = it.p.ProductID,           // descomenta si tu DTO lo tiene
+                            nombre = it.p.Name,
+                            idCategoria = it.p.CategoryID ?? 0,
+                            unidad = it.p.Unit,
+                            quantity = it.ui.Quantity,
+                            expirationDate = it.ui.ExpirationDate
                         });
                     }
 
-                    // Indicamos que todo salió bien
                     res.resultado = true;
+                    return res;
                 }
             }
             catch (Exception ex)
             {
-                // Si ocurre un error, devolvemos una respuesta con error controlado
                 res.resultado = false;
-                res.listaDeErrores = new List<Error>
-                {
-                    new Error
-                    {
-                        ErrorCode = EnumErrores.ErrorNoControlado,
-                        Message = ex.Message
-                    }
-                };
+                res.listaDeErrores = new List<Error> {
+            new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
+        };
+                return res;
             }
-
-            // Retornamos la respuesta con los productos o el error
-            return res;
         }
 
-        public ResActualizarProducto ActualizarProducto(ReqActualizarProducto req)
+
+        // ACTUALIZAR METADATOS DEL PRODUCTO (nombre/categoría/unidad)
+        public ResActualizarProducto ActualizarProducto(int userId, ReqActualizarProducto req)
         {
             var res = new ResActualizarProducto();
 
             try
             {
-                // Valida que los datos sean correctos
-                if (req.idProducto <= 0 || string.IsNullOrWhiteSpace(req.nombre) ||
-                    string.IsNullOrWhiteSpace(req.unidad) || req.idCategoria <= 0)
+                if (userId <= 0)
                 {
-                    // Si faltan datos devuelve error
                     res.resultado = false;
-                    res.listaDeErrores = new List<Error>
-                    {
-                        new Error
-                        {
-                            ErrorCode = EnumErrores.CampoRequeridoFaltante,
-                            Message = "Todos los campos del producto son obligatorios."
-                        }
+                    res.listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
                     };
                     return res;
                 }
 
-                // Ejecuta linq
+                if (req == null || req.idProducto <= 0 ||
+                    string.IsNullOrWhiteSpace(req.nombre) ||
+                    string.IsNullOrWhiteSpace(req.unidad) ||
+                    req.idCategoria <= 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "Todos los campos del producto son obligatorios." }
+                    };
+                    return res;
+                }
+
+                req.nombre = req.nombre.Trim();
+                req.unidad = req.unidad.Trim();
+
                 using (var linq = new linqDataContext())
                 {
-                    // Llama al stored procedure SIN parámetros de salida (según el error)
+                    // Si creaste el SP que asegura pertenencia:
+                    // linq.UpdateProductForUser(req.idProducto, userId, req.nombre, req.idCategoria, req.unidad);
+                    // Fallback: UpdateProduct "global" (NO valida pertenencia)
                     linq.UpdateProduct(
-                        req.idProducto,   // ProductID
-                        req.nombre,       // Name  
-                        req.idCategoria,  // CategoryID
-                        req.unidad        // Unit
+                        req.idProducto,
+                        req.nombre,
+                        req.idCategoria,
+                        req.unidad
                     );
 
-                    // Si no lanza excepción, operación exitosa
                     res.resultado = true;
                     res.mensaje = "Producto actualizado correctamente.";
                 }
@@ -199,17 +210,55 @@ namespace Backend
             catch (Exception ex)
             {
                 res.resultado = false;
-                res.listaDeErrores = new List<Error>
+                res.listaDeErrores = new List<Error> {
+                    new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
+                };
+            }
+
+            return res;
+        }
+
+        // NUEVO: ACTUALIZAR INVENTARIO DEL USUARIO (cantidad/fecha)
+        public ResActualizarProducto ActualizarInventario(int userId, ReqActualizarInventario req)
+        {
+            var res = new ResActualizarProducto();
+
+            try
+            {
+                if (userId <= 0 || req == null || req.idProducto <= 0)
                 {
-                    new Error
-                    {
-                        ErrorCode = EnumErrores.ErrorNoControlado,
-                        Message = ex.Message
-                    }
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                        new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "UserId y datos de inventario son obligatorios." }
+                    };
+                    return res;
+                }
+
+                var expUtc = req.fechaExpiracion?.ToUniversalTime();
+
+                using (var linq = new linqDataContext())
+                {
+                    linq.UpdateUserInventoryForUser(
+                        userId,
+                        req.idProducto,
+                        req.cantidad,
+                        expUtc
+                    );
+
+                    res.resultado = true;
+                    res.mensaje = "Inventario actualizado correctamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                res.listaDeErrores = new List<Error> {
+                    new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
                 };
             }
 
             return res;
         }
     }
+
 }

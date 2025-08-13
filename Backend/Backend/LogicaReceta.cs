@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Backend.Logica
 {
     public class LogicaReceta
-    {
+    {/*
         public async Task<ResRecetasIA> ObtenerRecetasIA(ReqRecetasIA req)
         {
             var res = new ResRecetasIA();
@@ -89,7 +89,7 @@ namespace Backend.Logica
                 });
                 return res;
             }
-        }
+        }*/
 
         public ResInsertarReceta PrepararReceta(ReqInsertarReceta req)
         {

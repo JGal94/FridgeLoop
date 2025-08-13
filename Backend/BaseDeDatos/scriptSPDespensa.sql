@@ -521,3 +521,88 @@ BEGIN
   WHERE Email = @Email;
 END;
 GO
+
+-- Lista por usuario + búsqueda + paginación------------------------------------------------------
+CREATE OR ALTER PROCEDURE GetProductsByUser
+ @UserID   INT,
+ @Q        NVARCHAR(100) = NULL,
+ @Page     INT = 1,
+ @PageSize INT = 20
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  WITH base AS (
+    SELECT
+      ui.InventoryID,
+      ui.UserID,
+      ui.ProductID,
+      p.Name,
+      p.CategoryID,
+      p.Unit,
+      ui.Quantity,
+      ui.ExpirationDate,
+      ui.CreatedAt
+    FROM UserInventory ui
+    INNER JOIN Products p ON p.ProductID = ui.ProductID
+    WHERE ui.UserID = @UserID
+      AND (@Q IS NULL OR p.Name LIKE '%' + @Q + '%')
+  )
+  SELECT *
+  FROM base
+  ORDER BY Name
+  OFFSET (@Page-1)*@PageSize ROWS
+  FETCH NEXT @PageSize ROWS ONLY;
+END
+GO
+-------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE UpdateUserInventoryForUser
+ @UserID        INT,
+ @ProductID     INT,
+ @Quantity      DECIMAL(10,2),
+ @ExpirationDate DATE = NULL
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  UPDATE ui
+  SET Quantity = @Quantity,
+      ExpirationDate = @ExpirationDate
+  FROM UserInventory ui
+  WHERE ui.UserID = @UserID
+    AND ui.ProductID = @ProductID;
+
+  IF @@ROWCOUNT = 0
+    RAISERROR('No existe inventario para ese producto/usuario.', 16, 1);
+END
+GO
+--------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE UpdateProductForUser
+ @ProductID  INT,
+ @UserID     INT,
+ @Name       NVARCHAR(100),
+ @CategoryID INT,
+ @Unit       NVARCHAR(50)
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  UPDATE p
+  SET Name = @Name,
+      CategoryID = @CategoryID,
+      Unit = @Unit
+  FROM Products p
+  WHERE p.ProductID = @ProductID
+    AND EXISTS (
+      SELECT 1 FROM UserInventory ui
+      WHERE ui.ProductID = p.ProductID AND ui.UserID = @UserID
+    );
+
+  IF @@ROWCOUNT = 0
+    RAISERROR('Producto no pertenece al usuario o no existe.', 16, 1);
+END
+GO
+
+
+
