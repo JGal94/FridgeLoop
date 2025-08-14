@@ -69,29 +69,32 @@ END;
 GO
 
 -- PRODUCTS--------------------------------------------------------------
-CREATE PROCEDURE InsertProduct
-    @Name NVARCHAR(100),
-    @CategoryID INT,
-    @Unit NVARCHAR(50),
-    @UserID INT,
-    @Quantity DECIMAL(10,2),
+CREATE OR ALTER PROCEDURE InsertProduct
+    @Name           NVARCHAR(100),
+    @CategoryID     INT,
+    @Unit           NVARCHAR(50),
+    @UserID         INT,
+    @Quantity       DECIMAL(10,2),
     @ExpirationDate DATE,
-    @ProductID INT OUTPUT,
-    @ErrorId INT OUTPUT,
-    @ErrorMensaje NVARCHAR(255) OUTPUT
+    @ProductID      INT OUTPUT,
+    @ErrorId        INT OUTPUT,
+    @ErrorMensaje   NVARCHAR(255) OUTPUT
 AS
 BEGIN
+    SET NOCOUNT ON;
+
     SET @ErrorId = 0;
     SET @ErrorMensaje = '';
     SET @ProductID = 0;
 
     BEGIN TRY
-        -- Buscar si el producto ya existe
-        SELECT TOP 1 @ProductID = ProductID
-        FROM Products
-        WHERE Name = @Name AND CategoryID = @CategoryID AND Unit = @Unit;
+        /* 1) Resolver ProductID (crear si no existe) */
+        SELECT TOP (1) @ProductID = p.ProductID
+        FROM Products p
+        WHERE p.Name = @Name
+          AND p.CategoryID = @CategoryID
+          AND p.Unit = @Unit;
 
-        -- Si no existe, insertarlo
         IF @ProductID = 0
         BEGIN
             INSERT INTO Products (Name, CategoryID, Unit)
@@ -100,12 +103,38 @@ BEGIN
             SET @ProductID = SCOPE_IDENTITY();
         END
 
-        -- Llamar al SP que ya existe para insertar en el inventario
-        EXEC InsertUserInventory
-            @UserID = @UserID,
-            @ProductID = @ProductID,
-            @Quantity = @Quantity,
-            @ExpirationDate = @ExpirationDate;
+        /* 2) UPSERT en UserInventory:
+              - si existe (UserID,ProductID) => sumo cantidad
+              - si no existe => inserto fila nueva
+           Regla de fecha: si llega @ExpirationDate:
+              - si la actual es NULL, pongo la nueva
+              - si ambas tienen valor, me quedo con la MÁS PRÓXIMA (MIN), para ser conservador
+              (Cambia a MAX si prefieres conservar la más lejana) */
+        IF EXISTS (
+            SELECT 1
+            FROM UserInventory
+            WHERE UserID = @UserID
+              AND ProductID = @ProductID
+        )
+        BEGIN
+            UPDATE ui
+            SET Quantity = ISNULL(ui.Quantity, 0) + ISNULL(@Quantity, 0),
+                ExpirationDate =
+                    CASE
+                        WHEN @ExpirationDate IS NULL THEN ui.ExpirationDate
+                        WHEN ui.ExpirationDate IS NULL THEN @ExpirationDate
+                        WHEN @ExpirationDate < ui.ExpirationDate THEN @ExpirationDate  -- MIN (más próxima)
+                        ELSE ui.ExpirationDate
+                    END
+            FROM UserInventory ui
+            WHERE ui.UserID = @UserID
+              AND ui.ProductID = @ProductID;
+        END
+        ELSE
+        BEGIN
+            INSERT INTO UserInventory (UserID, ProductID, Quantity, ExpirationDate)
+            VALUES (@UserID, @ProductID, @Quantity, @ExpirationDate);
+        END
     END TRY
     BEGIN CATCH
         SET @ErrorId = 101;
@@ -603,6 +632,10 @@ BEGIN
     RAISERROR('Producto no pertenece al usuario o no existe.', 16, 1);
 END
 GO
+SELECT * FROM Products
+SELECT * FROM UserInventory
+SELECT * FROM Categories
+
 
 
 

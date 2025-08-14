@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\request\\reqactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\response\\resactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\response\\resactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,19 +31,19 @@
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicadespensa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|c:\\users\\juanf\\fridgeloop\\backend\\accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "AbsoluteMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
       "RelativeMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,11 +51,11 @@
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\api\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\despensacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\api\\controllers\\despensacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\despensacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -97,7 +97,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 265,
+          "DockedHeight": 266,
           "SelectedChildIndex": 7,
           "Children": [
             {
@@ -126,8 +126,7 @@
               "RelativeToolTip": "Entidades\\Response\\ResActualizarInventario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:08:29.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T08:08:29.222Z"
             },
             {
               "$type": "Document",
@@ -139,8 +138,7 @@
               "RelativeToolTip": "Entidades\\Request\\ReqActualizarInventario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:08:11.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T08:08:11.012Z"
             },
             {
               "$type": "Document",
@@ -152,8 +150,7 @@
               "RelativeToolTip": "API\\Controllers\\ProductoController.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAtwH4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T21:41:02.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T21:41:02.084Z"
             },
             {
               "$type": "Document",
@@ -163,7 +160,7 @@
               "RelativeDocumentMoniker": "Backend\\LogicaProducto.cs",
               "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
               "RelativeToolTip": "Backend\\LogicaProducto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAvwN0AAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwN0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T22:43:22.608Z",
               "EditorCaption": ""
@@ -178,8 +175,7 @@
               "RelativeToolTip": "API\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T21:41:01.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T21:41:01.274Z"
             },
             {
               "$type": "Document",
@@ -191,8 +187,7 @@
               "RelativeToolTip": "Backend\\LogicaDespensa.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T22:43:13.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T22:43:13.45Z"
             },
             {
               "$type": "Document",
@@ -203,8 +198,7 @@
               "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\AccesoDatos\\linq.dbml",
               "RelativeToolTip": "AccesoDatos\\linq.dbml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-08-13T07:26:46.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T07:26:46.701Z"
             },
             {
               "$type": "Document",
@@ -216,8 +210,7 @@
               "RelativeToolTip": "Backend\\LogicaNotificaciones.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T22:43:21.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T22:43:21.755Z"
             },
             {
               "$type": "Document",
@@ -229,8 +222,7 @@
               "RelativeToolTip": "Backend\\LogicaReceta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T22:43:23.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T22:43:23.577Z"
             },
             {
               "$type": "Document",
@@ -242,8 +234,7 @@
               "RelativeToolTip": "Entidades\\Enum\\EnumErrores.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T05:22:12.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T05:22:12.193Z"
             },
             {
               "$type": "Document",
@@ -255,8 +246,7 @@
               "RelativeToolTip": "Entidades\\Entity\\Error.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T05:16:35.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T05:16:35.706Z"
             },
             {
               "$type": "Document",
@@ -268,8 +258,7 @@
               "RelativeToolTip": "API\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAgwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T18:18:43.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T18:18:43.895Z"
             },
             {
               "$type": "Document",
@@ -281,8 +270,7 @@
               "RelativeToolTip": "API\\Controllers\\ValuesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T01:43:40.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T01:43:40.048Z"
             },
             {
               "$type": "Document",
@@ -294,8 +282,7 @@
               "RelativeToolTip": "API\\Security\\JwtAuthorizeAttribute.cs",
               "ViewState": "AgIAAFgAAAAAAAAAAAAQwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T06:29:12.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T06:29:12.288Z"
             },
             {
               "$type": "Document",
@@ -319,8 +306,7 @@
               "RelativeToolTip": "API\\Controllers\\DespensaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T01:43:35.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T01:43:35.725Z"
             },
             {
               "$type": "Document",
@@ -398,7 +384,7 @@
           ]
         },
         {
-          "DockedHeight": 135,
+          "DockedHeight": 134,
           "SelectedChildIndex": -1,
           "Children": [
             {
