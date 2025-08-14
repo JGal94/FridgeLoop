@@ -67,6 +67,7 @@
     <Compile Include="Request\ReqCerrarSesion.cs" />
     <Compile Include="Request\ReqCompraInsertar.cs" />
     <Compile Include="Request\ReqDetalleCompraInsertar.cs" />
+    <Compile Include="Request\ReqEliminarCompra.cs" />
     <Compile Include="Request\ReqInsertarProducto.cs" />
     <Compile Include="Request\ReqInsertarReseta.cs" />
     <Compile Include="Request\ReqInsertarUsuario.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Request\ReqLogin.cs" />
     <Compile Include="Request\ReqMarcarLeida.cs" />
     <Compile Include="Request\ReqNotificacionInsertar.cs" />
+    <Compile Include="Request\ReqObtenerCompra.cs" />
+    <Compile Include="Request\ReqObtenerCompras.cs" />
     <Compile Include="Request\ReqObtenerIngredientes.cs" />
     <Compile Include="Request\ReqObtenerNotificaciones.cs" />
     <Compile Include="Request\ReqObtenerProductos.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Request\ReqPresupuestoInsertar.cs" />
     <Compile Include="Request\ReqRecetaPreparadaInsertar.cs" />
     <Compile Include="Request\ReqRecetasIA.cs" />
+    <Compile Include="Request\ReqRegistrarCompra.cs" />
     <Compile Include="Response\ResActivarUsuario.cs" />
     <Compile Include="Response\ResActualizarInventario.cs" />
     <Compile Include="Response\ResActualizarProducto.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Response\ResCerrarSesion.cs" />
     <Compile Include="Response\ResCompraObtener.cs" />
     <Compile Include="Response\ResDetalleCompraObtener.cs" />
+    <Compile Include="Response\ResEliminarCompra.cs" />
     <Compile Include="Response\ResInsertarNotificacion.cs" />
     <Compile Include="Response\ResInsertarProducto.cs" />
     <Compile Include="Response\ResInsertarReceta.cs" />
@@ -99,6 +104,8 @@
     <Compile Include="Response\ResLogin.cs" />
     <Compile Include="Response\ResMarcarLeida.cs" />
     <Compile Include="Response\ResNotificacionObtener.cs" />
+    <Compile Include="Response\ResObtenerCompra.cs" />
+    <Compile Include="Response\ResObtenerCompras.cs" />
     <Compile Include="Response\ResObtenerIngredientes.cs" />
     <Compile Include="Response\ResObtenerNotificaciones.cs" />
     <Compile Include="Response\ResObtenerProductos.cs" />
@@ -107,6 +114,7 @@
     <Compile Include="Response\ResPresupuestoObtener.cs" />
     <Compile Include="Response\ResRecetaPreparadaObtener.cs" />
     <Compile Include="Response\ResRecetasIA.cs" />
+    <Compile Include="Response\ResRegistrarCompra.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

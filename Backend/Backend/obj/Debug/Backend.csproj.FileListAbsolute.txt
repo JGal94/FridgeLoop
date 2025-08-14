@@ -132,6 +132,8 @@ C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\ob
 C:\Users\ale19\OneDrive\Escritorio\Universidad\Proyecto Final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
 D:\Universidad\programacion movil\proyecto-final\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\Backend.dll.config
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\Backend.dll
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\Backend.pdb
@@ -180,8 +182,6 @@ C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\System.Text.Encodings.Web.xm
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\System.Text.Json.xml
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\juanf\FridgeLoop\Backend\Backend\bin\Debug\System.ValueTuple.xml
-C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.AssemblyReference.cache
-C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.csproj.Up2Date
 C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.dll
 C:\Users\juanf\FridgeLoop\Backend\Backend\obj\Debug\Backend.pdb

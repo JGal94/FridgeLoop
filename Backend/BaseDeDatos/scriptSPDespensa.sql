@@ -632,10 +632,206 @@ BEGIN
     RAISERROR('Producto no pertenece al usuario o no existe.', 16, 1);
 END
 GO
+--------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Compras_Registrar
+ @UserID        INT,
+ @FechaCompra   DATETIME = NULL,
+ @ItemsJson     NVARCHAR(MAX),      -- JSON: [{ProductID, Quantity, UnitPrice?, ExpirationDate?}]
+ @PurchaseID    INT OUTPUT,
+ @ErrorId       INT OUTPUT,
+ @ErrorMensaje  NVARCHAR(500) OUTPUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SET XACT_ABORT ON;
+
+  SET @ErrorId = 0; 
+  SET @ErrorMensaje = N''; 
+  SET @PurchaseID = 0;
+
+  BEGIN TRY
+    BEGIN TRAN;
+
+    -- Validación básica de JSON
+    IF (@ItemsJson IS NULL OR LTRIM(RTRIM(@ItemsJson)) = N'' OR ISJSON(@ItemsJson) <> 1
+        OR NOT EXISTS (SELECT 1 FROM OPENJSON(@ItemsJson)))
+    BEGIN
+      RAISERROR(N'No se proporcionaron items válidos.', 16, 1);
+    END
+
+    -- Usamos tabla variable en lugar de CTE
+    DECLARE @Items TABLE
+    (
+      ProductID      INT           NOT NULL,
+      Quantity       DECIMAL(10,2) NOT NULL,
+      UnitPrice      DECIMAL(10,2) NULL,
+      ExpirationDate DATE          NULL
+    );
+
+    INSERT INTO @Items (ProductID, Quantity, UnitPrice, ExpirationDate)
+    SELECT 
+      CONVERT(INT,             JSON_VALUE([value], '$.ProductID')),
+      CONVERT(DECIMAL(10,2),   JSON_VALUE([value], '$.Quantity')),
+      TRY_CONVERT(DECIMAL(10,2), JSON_VALUE([value], '$.UnitPrice')),
+      TRY_CONVERT(DATE,        JSON_VALUE([value], '$.ExpirationDate'))
+    FROM OPENJSON(@ItemsJson);
+
+    -- Validación de cantidades > 0
+    IF EXISTS (SELECT 1 FROM @Items WHERE ProductID IS NULL OR Quantity IS NULL OR Quantity <= 0)
+    BEGIN
+      RAISERROR(N'Items con ProductID/cantidad inválidos.', 16, 1);
+    END
+
+    DECLARE @Fecha DATETIME = ISNULL(@FechaCompra, GETUTCDATE());
+    DECLARE @Total DECIMAL(12,2) = (SELECT SUM(ISNULL(UnitPrice,0) * Quantity) FROM @Items);
+
+    -- 1) Header
+    INSERT INTO Purchases(UserID, PurchaseDate, TotalAmount)
+    VALUES(@UserID, @Fecha, ISNULL(@Total, 0));
+
+    SET @PurchaseID = SCOPE_IDENTITY();
+
+    -- 2) Detalles
+    INSERT INTO PurchaseDetails(PurchaseID, ProductID, Quantity, UnitPrice)
+    SELECT @PurchaseID, ProductID, Quantity, UnitPrice
+    FROM @Items;
+
+    -- 3) Upsert inventario del usuario
+    MERGE UserInventory AS tgt
+    USING @Items AS src
+      ON (tgt.UserID = @UserID AND tgt.ProductID = src.ProductID)
+    WHEN MATCHED THEN
+      UPDATE SET 
+        Quantity = ISNULL(tgt.Quantity,0) + ISNULL(src.Quantity,0),
+        ExpirationDate =
+          CASE
+            WHEN src.ExpirationDate IS NULL THEN tgt.ExpirationDate
+            WHEN tgt.ExpirationDate IS NULL THEN src.ExpirationDate
+            WHEN src.ExpirationDate < tgt.ExpirationDate THEN src.ExpirationDate  -- más próxima
+            ELSE tgt.ExpirationDate
+          END
+    WHEN NOT MATCHED THEN
+      INSERT(UserID, ProductID, Quantity, ExpirationDate)
+      VALUES(@UserID, src.ProductID, src.Quantity, src.ExpirationDate);
+
+    COMMIT;
+    SET @ErrorId = 0; 
+    SET @ErrorMensaje = N'';
+  END TRY
+  BEGIN CATCH
+    IF XACT_STATE() <> 0 ROLLBACK;
+    SET @ErrorId = 101;
+    SET @ErrorMensaje = ERROR_MESSAGE();
+  END CATCH
+END
+GO
+-----------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Compras_ObtenerPorUsuario
+ @UserID   INT,
+ @Page     INT = 1,
+ @PageSize INT = 20,
+ @Desde    DATETIME = NULL,
+ @Hasta    DATETIME = NULL
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  ;WITH base AS (
+    SELECT p.PurchaseID, p.PurchaseDate, p.TotalAmount,
+           Items = ISNULL(SUM(d.Quantity), 0)
+    FROM Purchases p
+    LEFT JOIN PurchaseDetails d ON d.PurchaseID = p.PurchaseID
+    WHERE p.UserID = @UserID
+      AND (@Desde IS NULL OR p.PurchaseDate >= @Desde)
+      AND (@Hasta IS NULL OR p.PurchaseDate <  DATEADD(DAY, 1, @Hasta))
+    GROUP BY p.PurchaseID, p.PurchaseDate, p.TotalAmount
+  )
+  SELECT *
+  FROM base
+  ORDER BY PurchaseDate DESC, PurchaseID DESC
+  OFFSET (@Page-1)*@PageSize ROWS
+  FETCH NEXT @PageSize ROWS ONLY;
+END
+GO
+-------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Compras_ObtenerDetalle
+ @UserID     INT,
+ @PurchaseID INT
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  -- Header (solo si pertenece al usuario)
+  SELECT TOP 1 p.PurchaseID, p.UserID, p.PurchaseDate, p.TotalAmount
+  FROM Purchases p
+  WHERE p.PurchaseID = @PurchaseID AND p.UserID = @UserID;
+
+  -- Items
+  SELECT d.DetailID, d.ProductID, d.Quantity, d.UnitPrice
+  FROM PurchaseDetails d
+  WHERE d.PurchaseID = @PurchaseID;
+END
+GO
+----------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Compras_Eliminar
+ @UserID             INT,
+ @PurchaseID         INT,
+ @RevertirInventario BIT,
+ @ErrorId            INT OUTPUT,
+ @ErrorMensaje       NVARCHAR(500) OUTPUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SET @ErrorId = 0; SET @ErrorMensaje = '';
+
+  BEGIN TRY
+    BEGIN TRAN;
+
+    -- Verifica pertenencia
+    IF NOT EXISTS (SELECT 1 FROM Purchases WHERE PurchaseID=@PurchaseID AND UserID=@UserID)
+    BEGIN
+      ROLLBACK;
+      SET @ErrorId = 400;   -- Producto/Entidad no encontrada (usa el que prefieras)
+      SET @ErrorMensaje = 'Compra no encontrada para este usuario.';
+      RETURN;
+    END
+
+    IF (@RevertirInventario = 1)
+    BEGIN
+      ;WITH det AS (
+        SELECT d.ProductID, SUM(d.Quantity) AS Qty
+        FROM PurchaseDetails d
+        WHERE d.PurchaseID = @PurchaseID
+        GROUP BY d.ProductID
+      )
+      UPDATE ui
+      SET ui.Quantity = CASE 
+                          WHEN ui.Quantity - det.Qty < 0 THEN 0 
+                          ELSE ui.Quantity - det.Qty 
+                        END
+      FROM UserInventory ui
+      JOIN det ON det.ProductID = ui.ProductID
+      WHERE ui.UserID = @UserID;
+    END
+
+    DELETE FROM PurchaseDetails WHERE PurchaseID = @PurchaseID;
+    DELETE FROM Purchases       WHERE PurchaseID = @PurchaseID;
+
+    COMMIT;
+    SET @ErrorId = 0; SET @ErrorMensaje = '';
+  END TRY
+  BEGIN CATCH
+    IF XACT_STATE() <> 0 ROLLBACK;
+    SET @ErrorId = 101;
+    SET @ErrorMensaje = ERROR_MESSAGE();
+  END CATCH
+END
+GO
+
+GO
 SELECT * FROM Products
 SELECT * FROM UserInventory
 SELECT * FROM Categories
-
 
 
 
