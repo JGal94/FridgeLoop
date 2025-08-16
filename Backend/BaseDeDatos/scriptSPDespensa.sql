@@ -827,6 +827,47 @@ BEGIN
   END CATCH
 END
 GO
+-----------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_UserInventory_PorVencer
+ @UserID             INT,
+ @Dias               INT = 7,          -- ventana hacia adelante
+ @IncluirVencidos    BIT = 0,          -- incluir vencidos (hacia atrás)
+ @MaxDiasVencidos    INT = 7,          -- cuánto hacia atrás (si @IncluirVencidos=1)
+ @Page               INT = 1,
+ @PageSize           INT = 50
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  DECLARE @hoy DATE = CONVERT(date, GETUTCDATE());
+
+  ;WITH base AS (
+    SELECT 
+      p.ProductID,
+      p.Name,
+      CategoryID    = ISNULL(p.CategoryID, 0),
+      p.Unit,
+      Quantity      = ISNULL(ui.Quantity, 0),
+      ui.ExpirationDate,
+      DiasRestantes = DATEDIFF(DAY, @hoy, ui.ExpirationDate)
+    FROM UserInventory ui
+    JOIN Products p ON p.ProductID = ui.ProductID
+    WHERE ui.UserID = @UserID
+      AND ISNULL(ui.Quantity,0) > 0
+      AND ui.ExpirationDate IS NOT NULL
+  )
+  SELECT 
+    ProductID, Name, CategoryID, Unit, Quantity, ExpirationDate, DiasRestantes
+  FROM base
+  WHERE
+    (@IncluirVencidos = 0 AND DiasRestantes BETWEEN 0 AND @Dias)
+    OR
+    (@IncluirVencidos = 1 AND DiasRestantes BETWEEN -@MaxDiasVencidos AND @Dias)
+  ORDER BY DiasRestantes ASC, ExpirationDate ASC, Name
+  OFFSET (@Page-1)*@PageSize ROWS
+  FETCH NEXT @PageSize ROWS ONLY;
+END
+GO
 
 GO
 SELECT * FROM Products

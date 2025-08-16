@@ -285,4 +285,21 @@
     <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_UserInventory_PorVencer" Method="SP_UserInventory_PorVencer">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dias" Parameter="dias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IncluirVencidos" Parameter="incluirVencidos" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="MaxDiasVencidos" Parameter="maxDiasVencidos" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Page" Parameter="page" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_UserInventory_PorVencerResult">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiasRestantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

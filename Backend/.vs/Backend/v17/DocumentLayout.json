@@ -3,35 +3,79 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\response\\resproductosporvencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resproductosporvencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqproductosporvencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqproductosporvencer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|c:\\users\\juanf\\fridgeloop\\backend\\accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{91C0B920-A160-4210-9FC5-12D4358987A7}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\linq.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqinsertarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqinsertarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqinsertarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqauditloginsertar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqauditloginsertar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqactualizarinventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicareceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\entity\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\entity\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\api\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicacompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\backend\\logicacompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicacompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\logicaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqdetallecomprainsertar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\request\\reqdetallecomprainsertar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqdetallecomprainsertar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\request\\reqactivarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\request\\reqactivarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\request\\reqactivarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|c:\\users\\juanf\\fridgeloop\\backend\\entidades\\response\\resregistrarcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|C:\\Users\\juanf\\FridgeLoop\\Backend\\entidades\\response\\resregistrarcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\response\\resregistrarcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -41,18 +85,18 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 225,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 310,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "LogicaProducto.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
               "RelativeDocumentMoniker": "Backend\\LogicaProducto.cs",
               "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
               "RelativeToolTip": "Backend\\LogicaProducto.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAowB8BAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T05:26:34.846Z",
               "IsPinned": true,
@@ -60,15 +104,157 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogicaReceta.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
-              "RelativeDocumentMoniker": "Backend\\LogicaReceta.cs",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
-              "RelativeToolTip": "Backend\\LogicaReceta.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAwFsAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "EnumErrores.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Enum\\EnumErrores.cs",
+              "RelativeDocumentMoniker": "Entidades\\Enum\\EnumErrores.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Enum\\EnumErrores.cs",
+              "RelativeToolTip": "Entidades\\Enum\\EnumErrores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T07:57:35.969Z",
+              "WhenOpened": "2025-08-16T06:34:26.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Error.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\Error.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Error.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\Error.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Error.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T06:33:57.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReqProductosPorVencer.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqProductosPorVencer.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqProductosPorVencer.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqProductosPorVencer.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqProductosPorVencer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:30:48.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ResProductosPorVencer.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Response\\ResProductosPorVencer.cs",
+              "RelativeDocumentMoniker": "Entidades\\Response\\ResProductosPorVencer.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Response\\ResProductosPorVencer.cs",
+              "RelativeToolTip": "Entidades\\Response\\ResProductosPorVencer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:29:51.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAqwAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T06:52:25.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "linq.dbml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\AccesoDatos\\linq.dbml",
+              "RelativeDocumentMoniker": "AccesoDatos\\linq.dbml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\AccesoDatos\\linq.dbml",
+              "RelativeToolTip": "AccesoDatos\\linq.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-08-16T01:47:25.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReqInsertarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqInsertarProducto.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqInsertarProducto.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqInsertarProducto.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqInsertarProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:26:24.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReqInsertarUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqInsertarUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqInsertarUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqInsertarUsuario.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqInsertarUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:26:15.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReqLogin.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqLogin.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqLogin.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:26:09.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReqAuditLogInsertar.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqAuditLogInsertar.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqAuditLogInsertar.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqAuditLogInsertar.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqAuditLogInsertar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:26:04.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReqActualizarInventario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqActualizarInventario.cs",
+              "RelativeDocumentMoniker": "Entidades\\Request\\ReqActualizarInventario.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqActualizarInventario.cs",
+              "RelativeToolTip": "Entidades\\Request\\ReqActualizarInventario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:26:00.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Productos.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\Productos.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Productos.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Entity\\Productos.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Productos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T01:23:15.905Z",
               "EditorCaption": ""
             },
             {
@@ -89,20 +275,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "API\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "LogicaReceta.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
+              "RelativeDocumentMoniker": "Backend\\LogicaReceta.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaReceta.cs",
+              "RelativeToolTip": "Backend\\LogicaReceta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T06:52:25.727Z",
+              "WhenOpened": "2025-08-14T07:57:35.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "CompraController.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\CompraController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\CompraController.cs",
@@ -115,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "ReqDetalleCompraInsertar.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqDetalleCompraInsertar.cs",
               "RelativeDocumentMoniker": "Entidades\\Request\\ReqDetalleCompraInsertar.cs",
@@ -128,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "ReqActivarUsuario.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqActivarUsuario.cs",
               "RelativeDocumentMoniker": "Entidades\\Request\\ReqActivarUsuario.cs",
@@ -141,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "LogicaCompras.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaCompras.cs",
               "RelativeDocumentMoniker": "Backend\\LogicaCompras.cs",
@@ -154,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "ResRegistrarCompra.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Response\\ResRegistrarCompra.cs",
               "RelativeDocumentMoniker": "Entidades\\Response\\ResRegistrarCompra.cs",
@@ -168,7 +354,7 @@
           ]
         },
         {
-          "DockedHeight": 175,
+          "DockedHeight": 90,
           "SelectedChildIndex": -1,
           "Children": [
             {

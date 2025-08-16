@@ -83,6 +83,7 @@
     <Compile Include="Request\ReqObtenerReceta.cs" />
     <Compile Include="Request\ReqObtenerUsuario.cs" />
     <Compile Include="Request\ReqPresupuestoInsertar.cs" />
+    <Compile Include="Request\ReqProductosPorVencer.cs" />
     <Compile Include="Request\ReqRecetaPreparadaInsertar.cs" />
     <Compile Include="Request\ReqRecetasIA.cs" />
     <Compile Include="Request\ReqRegistrarCompra.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Response\ResObtenerReceta.cs" />
     <Compile Include="Response\ResObtenerUsuario.cs" />
     <Compile Include="Response\ResPresupuestoObtener.cs" />
+    <Compile Include="Response\ResProductosPorVencer.cs" />
     <Compile Include="Response\ResRecetaPreparadaObtener.cs" />
     <Compile Include="Response\ResRecetasIA.cs" />
     <Compile Include="Response\ResRegistrarCompra.cs" />

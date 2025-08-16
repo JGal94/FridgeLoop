@@ -441,8 +441,6 @@ C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\D
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.csproj.Up2Date
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.dll
 C:\Users\juanf\OneDrive\Escritorio\u\PrograMovil\ProyectoFinal\Backend\API\obj\Debug\API.pdb
-C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.AssemblyReference.cache
-C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\API\bin\API.dll.config
 C:\Users\juanf\FridgeLoop\Backend\API\bin\API.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\API.pdb
@@ -577,6 +575,8 @@ C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Web.Razor.resources.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Web.WebPages.resources.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.csproj.Up2Date
 C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.dll
 C:\Users\juanf\FridgeLoop\Backend\API\obj\Debug\API.pdb

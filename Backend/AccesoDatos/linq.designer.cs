@@ -312,6 +312,13 @@ namespace AccesoDatos
 			errorMensaje = ((string)(result.GetParameterValue(5)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_UserInventory_PorVencer")]
+		public ISingleResult<SP_UserInventory_PorVencerResult> SP_UserInventory_PorVencer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dias", DbType="Int")] System.Nullable<int> dias, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncluirVencidos", DbType="Bit")] System.Nullable<bool> incluirVencidos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaxDiasVencidos", DbType="Int")] System.Nullable<int> maxDiasVencidos, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, dias, incluirVencidos, maxDiasVencidos, page, pageSize);
+			return ((ISingleResult<SP_UserInventory_PorVencerResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class GetActiveSessionResult
@@ -1673,6 +1680,140 @@ namespace AccesoDatos
 				if ((this._Items != value))
 				{
 					this._Items = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_UserInventory_PorVencerResult
+	{
+		
+		private int _ProductID;
+		
+		private string _Name;
+		
+		private int _CategoryID;
+		
+		private string _Unit;
+		
+		private decimal _Quantity;
+		
+		private System.Nullable<System.DateTime> _ExpirationDate;
+		
+		private System.Nullable<int> _DiasRestantes;
+		
+		public SP_UserInventory_PorVencerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int NOT NULL")]
+		public int CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					this._CategoryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(50)")]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this._Unit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpirationDate", DbType="Date")]
+		public System.Nullable<System.DateTime> ExpirationDate
+		{
+			get
+			{
+				return this._ExpirationDate;
+			}
+			set
+			{
+				if ((this._ExpirationDate != value))
+				{
+					this._ExpirationDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiasRestantes", DbType="Int")]
+		public System.Nullable<int> DiasRestantes
+		{
+			get
+			{
+				return this._DiasRestantes;
+			}
+			set
+			{
+				if ((this._DiasRestantes != value))
+				{
+					this._DiasRestantes = value;
 				}
 			}
 		}

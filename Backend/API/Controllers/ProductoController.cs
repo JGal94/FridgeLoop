@@ -1,4 +1,4 @@
-﻿using System.Web.Http; // ← no System.Web.Mvc
+﻿using System.Web.Http; 
 using Backend;
 using Entidades.Request;
 using Entidades.Response;
@@ -7,7 +7,7 @@ using Entidades.Enum;
 using Entidades.Entity;
 using System.Collections.Generic;
 
-namespace API.Controllers   // <-- ajusta si tu namespace difiere
+namespace API.Controllers   
 {
     [JwtAuthorize]
     [RoutePrefix("api/producto")]
@@ -151,5 +151,30 @@ namespace API.Controllers   // <-- ajusta si tu namespace difiere
 
             return CreateLogic().ActualizarInventario(userId, req);
         }
+
+        // GET api/producto/porvencer?dias=7&incluirVencidos=false&page=1&pageSize=50
+        [HttpGet]
+        [Route("porvencer")]
+        [JwtAuthorize]
+        public ResProductosPorVencer ProductosPorVencer([FromUri] int dias = 7, [FromUri] bool incluirVencidos = false,
+                                                        [FromUri] int maxDiasVencidos = 7, [FromUri] int page = 1, [FromUri] int pageSize = 50)
+        {
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResProductosPorVencer
+                {
+                    resultado = false,
+                    listaDeErrores = new List<Error>   
+    {
+        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+    },
+                    productos = new List<ProductoPorVencer>()
+                };
+            }
+
+            return CreateLogic().ObtenerProductosPorVencer_SP(userId, dias, incluirVencidos, maxDiasVencidos, page, pageSize);
+        }
+
     }
 }

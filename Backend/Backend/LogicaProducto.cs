@@ -259,6 +259,47 @@ namespace Backend
 
             return res;
         }
+        public ResProductosPorVencer ObtenerProductosPorVencer_SP(
+    int userId, int dias = 7, bool incluirVencidos = false, int maxDiasVencidos = 7, int page = 1, int pageSize = 50)
+        {
+            var res = new ResProductosPorVencer { productos = new List<ProductoPorVencer>(), listaDeErrores = new List<Error>() };
+
+            try
+            {
+                if (userId <= 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." });
+                    return res;
+                }
+
+                using (var linq = new linqDataContext())
+                {
+                    var rows = linq.SP_UserInventory_PorVencer(userId, dias, incluirVencidos, maxDiasVencidos, page, pageSize).ToList();
+
+                    res.productos = rows.Select(r => new ProductoPorVencer
+                    {
+                        idProducto = r.ProductID,
+                        nombre = r.Name,
+                        idCategoria = r.CategoryID,
+                        unidad = r.Unit,
+                        cantidad = r.Quantity,
+                        fechaExpiracion = r.ExpirationDate,
+                        diasRestantes = r.DiasRestantes
+                    }).ToList();
+
+                    res.resultado = true;
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                if (res.listaDeErrores == null) res.listaDeErrores = new List<Error>();
+                res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message });
+                return res;
+            }
+        }
     }
 
 }
