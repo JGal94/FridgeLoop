@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-08-12T04:58:12.190</Modified>
+      <Modified>2025-08-16T23:37:09.317</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-08-12T04:58:11.852</Modified>
+      <Modified>2025-08-16T23:37:09.075</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.runtimeconfig.json">
       <PackagePath>Frontend Proyecto Fridgeloop.runtimeconfig.json</PackagePath>
-      <Modified>2025-08-12T04:58:11.698</Modified>
+      <Modified>2025-08-16T23:37:08.796</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.dll">
       <PackagePath>Frontend Proyecto Fridgeloop.dll</PackagePath>
-      <Modified>2025-08-12T04:58:10.134</Modified>
+      <Modified>2025-08-16T23:37:07.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Frontend Proyecto Fridgeloop.exe</PackagePath>
-      <Modified>2025-08-12T04:58:10.147</Modified>
+      <Modified>2025-08-16T23:37:07.304</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,23 +55,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:02.910</Modified>
+      <Modified>2025-08-16T23:37:03.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:02.944</Modified>
+      <Modified>2025-08-16T23:37:03.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:02.987</Modified>
+      <Modified>2025-08-16T23:37:03.847</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:03.054</Modified>
+      <Modified>2025-08-16T23:37:03.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:03.320</Modified>
+      <Modified>2025-08-16T23:37:04.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -83,219 +83,219 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG">
       <PackagePath>arrow_back.scale-100.PNG</PackagePath>
-      <Modified>2025-08-12T04:58:08.318</Modified>
+      <Modified>2025-08-16T23:37:06.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png">
       <PackagePath>logofridgeloop.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.319</Modified>
+      <Modified>2025-08-16T23:37:06.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.320</Modified>
+      <Modified>2025-08-16T23:37:06.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.320</Modified>
+      <Modified>2025-08-16T23:37:06.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.321</Modified>
+      <Modified>2025-08-16T23:37:06.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.321</Modified>
+      <Modified>2025-08-16T23:37:06.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.321</Modified>
+      <Modified>2025-08-16T23:37:06.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.321</Modified>
+      <Modified>2025-08-16T23:37:06.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.322</Modified>
+      <Modified>2025-08-16T23:37:06.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.322</Modified>
+      <Modified>2025-08-16T23:37:06.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.323</Modified>
+      <Modified>2025-08-16T23:37:06.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.323</Modified>
+      <Modified>2025-08-16T23:37:06.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.324</Modified>
+      <Modified>2025-08-16T23:37:06.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.325</Modified>
+      <Modified>2025-08-16T23:37:06.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.325</Modified>
+      <Modified>2025-08-16T23:37:06.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.325</Modified>
+      <Modified>2025-08-16T23:37:06.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.326</Modified>
+      <Modified>2025-08-16T23:37:06.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.326</Modified>
+      <Modified>2025-08-16T23:37:06.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.327</Modified>
+      <Modified>2025-08-16T23:37:06.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.327</Modified>
+      <Modified>2025-08-16T23:37:06.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.327</Modified>
+      <Modified>2025-08-16T23:37:06.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.328</Modified>
+      <Modified>2025-08-16T23:37:06.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.328</Modified>
+      <Modified>2025-08-16T23:37:06.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.329</Modified>
+      <Modified>2025-08-16T23:37:06.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.329</Modified>
+      <Modified>2025-08-16T23:37:06.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.330</Modified>
+      <Modified>2025-08-16T23:37:06.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.330</Modified>
+      <Modified>2025-08-16T23:37:06.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.330</Modified>
+      <Modified>2025-08-16T23:37:06.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.330</Modified>
+      <Modified>2025-08-16T23:37:06.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.330</Modified>
+      <Modified>2025-08-16T23:37:06.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.332</Modified>
+      <Modified>2025-08-16T23:37:06.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.332</Modified>
+      <Modified>2025-08-16T23:37:06.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.333</Modified>
+      <Modified>2025-08-16T23:37:06.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.333</Modified>
+      <Modified>2025-08-16T23:37:06.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.333</Modified>
+      <Modified>2025-08-16T23:37:06.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.333</Modified>
+      <Modified>2025-08-16T23:37:06.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.334</Modified>
+      <Modified>2025-08-16T23:37:06.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.334</Modified>
+      <Modified>2025-08-16T23:37:06.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.335</Modified>
+      <Modified>2025-08-16T23:37:06.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.335</Modified>
+      <Modified>2025-08-16T23:37:06.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.335</Modified>
+      <Modified>2025-08-16T23:37:06.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.336</Modified>
+      <Modified>2025-08-16T23:37:06.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.336</Modified>
+      <Modified>2025-08-16T23:37:06.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.337</Modified>
+      <Modified>2025-08-16T23:37:06.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.337</Modified>
+      <Modified>2025-08-16T23:37:06.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.338</Modified>
+      <Modified>2025-08-16T23:37:06.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.338</Modified>
+      <Modified>2025-08-16T23:37:06.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-08-12T04:58:08.338</Modified>
+      <Modified>2025-08-16T23:37:06.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.338</Modified>
+      <Modified>2025-08-16T23:37:06.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.340</Modified>
+      <Modified>2025-08-16T23:37:06.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.340</Modified>
+      <Modified>2025-08-16T23:37:06.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.341</Modified>
+      <Modified>2025-08-16T23:37:06.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-08-12T04:58:08.341</Modified>
+      <Modified>2025-08-16T23:37:06.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.deps.json">
       <PackagePath>Frontend Proyecto Fridgeloop.deps.json</PackagePath>
-      <Modified>2025-08-12T04:58:11.692</Modified>
+      <Modified>2025-08-16T23:37:08.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\juanf\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
