@@ -9,7 +9,7 @@ namespace Entidades.Entity
     public class Productos
     {
         public string nombre { get; set; }
-        public int idCategoria { get; set; }
+        public int? idCategoria { get; set; }
         public string unidad { get; set; }
         public int? userID { get; set; }
         public decimal? quantity { get; set; }
