@@ -14,7 +14,7 @@ namespace Gateway
     public sealed class DeepSeekApiClient : IDisposable
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey;
+        private readonly string _apiKey = "sk-768e8b2116f148328d53458675ab0f1a";
         private const string ApiBaseUrl = "https://api.deepseek.com/v1"; // Reemplazar con URL real
 
         public DeepSeekApiClient()
