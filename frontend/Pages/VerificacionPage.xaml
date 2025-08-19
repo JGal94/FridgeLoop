@@ -40,6 +40,7 @@
             BackgroundColor="White">
             
             <Entry 
+                x:Name="txtCodigo"
                 Placeholder="Código de verificación"
                 FontSize="16"
                 Keyboard="Numeric"

@@ -20,7 +20,7 @@
     <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5" MinVersion="5001.70.1338.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
   </Dependencies>
   <Resources>
-    <Resource Language="EN-US" />
+    <Resource Language="ES" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="Frontend Proyecto Fridgeloop.exe" EntryPoint="Windows.FullTrustApplication">

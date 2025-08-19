@@ -20,14 +20,16 @@
                    TextColor="#003366" />
 
             <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
-                <Entry Placeholder="Nombre completo"
+                <Entry x:Name="txtNombre"
+                       Placeholder="Nombre completo"
                        FontSize="16"
                        BackgroundColor="Transparent"
                        TextColor="Black" />
             </Frame>
 
             <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
-                <Entry Placeholder="Correo electrónico"
+                <Entry x:Name="txtCorreo"
+                       Placeholder="Correo electrónico"
                        FontSize="16"
                        Keyboard="Email"
                        BackgroundColor="Transparent"
@@ -35,7 +37,8 @@
             </Frame>
 
             <Frame CornerRadius="8" Padding="0" HasShadow="False" BackgroundColor="White">
-                <Entry Placeholder="Contraseña"
+                <Entry x:Name="txtPassword"
+                       Placeholder="Contraseña"
                        FontSize="16"
                        IsPassword="True"
                        BackgroundColor="Transparent"

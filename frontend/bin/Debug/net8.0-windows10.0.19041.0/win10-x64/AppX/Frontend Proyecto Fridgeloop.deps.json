@@ -12,6 +12,7 @@
           "Microsoft.Extensions.Logging.Debug": "8.0.1",
           "Microsoft.Maui.Controls": "8.0.40",
           "Microsoft.Maui.Controls.Compatibility": "8.0.40",
+          "Newtonsoft.Json": "13.0.4-beta1",
           "ZXing.Net.Maui": "0.4.0",
           "ZXing.Net.Maui.Controls": "0.4.0",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.57"
@@ -438,6 +439,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.4-beta1": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.4.30731"
+          }
+        }
+      },
       "ZXing.Net/0.16.9": {
         "runtime": {
           "lib/net7.0/zxing.dll": {
@@ -635,6 +644,13 @@
       "sha512": "sha512-7AYbQt/XPSbsOwLWeyP+TquJGFwfDsxRRutWZJEKhoyj9pkGDI4VgtX+Uy030PzkuuKsCm1Fz8c8H7saRyAoPg==",
       "path": "microsoft.windowsappsdk/1.5.240311000",
       "hashPath": "microsoft.windowsappsdk.1.5.240311000.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.4-beta1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6V0WDUzcU5p3R2/RN6UC+1wJtWfCB9YahSUe37mSGbPoH+Q84HTOjmsLIgynkZwJb/NYv0vFARSvDdUse3ZODA==",
+      "path": "newtonsoft.json/13.0.4-beta1",
+      "hashPath": "newtonsoft.json.13.0.4-beta1.nupkg.sha512"
     },
     "ZXing.Net/0.16.9": {
       "type": "package",
