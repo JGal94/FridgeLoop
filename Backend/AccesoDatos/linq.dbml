@@ -67,14 +67,6 @@
       <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetUserById" Method="GetUserById">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="GetUserByIdResult">
-      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetUserInventory" Method="GetUserInventory">
     <ElementType Name="GetUserInventoryResult">
       <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -300,6 +292,39 @@
       <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
       <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DiasRestantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Usuario_ActualizarNombre" Method="SP_Usuario_ActualizarNombre">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Usuario_CambiarPassword" Method="SP_Usuario_CambiarPassword">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Sesion_CerrarTodasPorUsuario" Method="SP_Sesion_CerrarTodasPorUsuario">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetUserSecurityById" Method="GetUserSecurityById">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetUserSecurityByIdResult">
+      <Column Name="PASSWORD_HASH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUserById" Method="GetUserById">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetUserByIdResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

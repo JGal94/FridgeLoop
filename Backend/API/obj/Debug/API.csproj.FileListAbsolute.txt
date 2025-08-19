@@ -528,6 +528,7 @@ C:\Users\juanf\FridgeLoop\Backend\API\bin\System.Web.WebPages.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\System.Web.WebPages.Razor.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\WebGrease.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\AccesoDatos.dll
+C:\Users\juanf\FridgeLoop\Backend\API\bin\Gateway.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\BCrypt.Net-Next.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\Backend.pdb
 C:\Users\juanf\FridgeLoop\Backend\API\bin\Backend.dll.config
@@ -564,6 +565,7 @@ C:\Users\juanf\FridgeLoop\Backend\API\bin\Antlr3.Runtime.pdb
 C:\Users\juanf\FridgeLoop\Backend\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\juanf\FridgeLoop\Backend\API\bin\AccesoDatos.pdb
 C:\Users\juanf\FridgeLoop\Backend\API\bin\AccesoDatos.dll.config
+C:\Users\juanf\FridgeLoop\Backend\API\bin\Gateway.pdb
 C:\Users\juanf\FridgeLoop\Backend\API\bin\BCrypt.Net-Next.xml
 C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Net.Http.Formatting.resources.dll
 C:\Users\juanf\FridgeLoop\Backend\API\bin\es\System.Web.Helpers.resources.dll

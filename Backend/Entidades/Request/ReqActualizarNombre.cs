@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades.Response
+namespace Entidades.Request
 {
-    public class ResInsertarNotificacion : ResBase
+    public class ReqActualizarNombre
     {
-        public int idNotificacion { get; set; }
+        public string nuevoNombre { get; set; }
     }
 }

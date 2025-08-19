@@ -104,7 +104,7 @@
   <ItemGroup>
     <Compile Include="LogicaCompras.cs" />
     <Compile Include="LogicaDespensa.cs" />
-    <Compile Include="LogicaNotificaciones.cs" />
+    <Compile Include="LogicaPerfil.cs" />
     <Compile Include="LogicaProducto.cs" />
     <Compile Include="LogicaReceta.cs" />
     <Compile Include="LogicaSesion.cs" />

@@ -124,13 +124,6 @@ namespace AccesoDatos
 			return ((ISingleResult<GetPurchasesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserById")]
-		public ISingleResult<GetUserByIdResult> GetUserById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
-			return ((ISingleResult<GetUserByIdResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserInventory")]
 		public ISingleResult<GetUserInventoryResult> GetUserInventory()
 		{
@@ -318,6 +311,45 @@ namespace AccesoDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, dias, incluirVencidos, maxDiasVencidos, page, pageSize);
 			return ((ISingleResult<SP_UserInventory_PorVencerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Usuario_ActualizarNombre")]
+		public int SP_Usuario_ActualizarNombre([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="NVarChar(100)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(500)")] ref string errorMensaje)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, nombre, errorId, errorMensaje);
+			errorId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			errorMensaje = ((string)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Usuario_CambiarPassword")]
+		public int SP_Usuario_CambiarPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PasswordHash", DbType="NVarChar(255)")] string passwordHash, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorId", DbType="Int")] ref System.Nullable<int> errorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ErrorMensaje", DbType="NVarChar(500)")] ref string errorMensaje)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, passwordHash, errorId, errorMensaje);
+			errorId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			errorMensaje = ((string)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Sesion_CerrarTodasPorUsuario")]
+		public int SP_Sesion_CerrarTodasPorUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserSecurityById")]
+		public ISingleResult<GetUserSecurityByIdResult> GetUserSecurityById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<GetUserSecurityByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserById")]
+		public ISingleResult<GetUserByIdResult> GetUserById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<GetUserByIdResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -762,68 +794,6 @@ namespace AccesoDatos
 				if ((this._TotalAmount != value))
 				{
 					this._TotalAmount = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetUserByIdResult
-	{
-		
-		private int _ID_USUARIO;
-		
-		private string _NOMBRE;
-		
-		private string _CORREO_ELECTRONICO;
-		
-		public GetUserByIdResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL")]
-		public int ID_USUARIO
-		{
-			get
-			{
-				return this._ID_USUARIO;
-			}
-			set
-			{
-				if ((this._ID_USUARIO != value))
-				{
-					this._ID_USUARIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="NVarChar(100)")]
-		public string NOMBRE
-		{
-			get
-			{
-				return this._NOMBRE;
-			}
-			set
-			{
-				if ((this._NOMBRE != value))
-				{
-					this._NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO_ELECTRONICO", DbType="NVarChar(100)")]
-		public string CORREO_ELECTRONICO
-		{
-			get
-			{
-				return this._CORREO_ELECTRONICO;
-			}
-			set
-			{
-				if ((this._CORREO_ELECTRONICO != value))
-				{
-					this._CORREO_ELECTRONICO = value;
 				}
 			}
 		}
@@ -1814,6 +1784,112 @@ namespace AccesoDatos
 				if ((this._DiasRestantes != value))
 				{
 					this._DiasRestantes = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserSecurityByIdResult
+	{
+		
+		private string _PASSWORD_HASH;
+		
+		private System.Nullable<bool> _IS_ACTIVE;
+		
+		public GetUserSecurityByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD_HASH", DbType="NVarChar(255)")]
+		public string PASSWORD_HASH
+		{
+			get
+			{
+				return this._PASSWORD_HASH;
+			}
+			set
+			{
+				if ((this._PASSWORD_HASH != value))
+				{
+					this._PASSWORD_HASH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ACTIVE", DbType="Bit")]
+		public System.Nullable<bool> IS_ACTIVE
+		{
+			get
+			{
+				return this._IS_ACTIVE;
+			}
+			set
+			{
+				if ((this._IS_ACTIVE != value))
+				{
+					this._IS_ACTIVE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserByIdResult
+	{
+		
+		private int _ID_USUARIO;
+		
+		private string _NOMBRE;
+		
+		private string _CORREO_ELECTRONICO;
+		
+		public GetUserByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL")]
+		public int ID_USUARIO
+		{
+			get
+			{
+				return this._ID_USUARIO;
+			}
+			set
+			{
+				if ((this._ID_USUARIO != value))
+				{
+					this._ID_USUARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="NVarChar(100)")]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO_ELECTRONICO", DbType="NVarChar(100)")]
+		public string CORREO_ELECTRONICO
+		{
+			get
+			{
+				return this._CORREO_ELECTRONICO;
+			}
+			set
+			{
+				if ((this._CORREO_ELECTRONICO != value))
+				{
+					this._CORREO_ELECTRONICO = value;
 				}
 			}
 		}
