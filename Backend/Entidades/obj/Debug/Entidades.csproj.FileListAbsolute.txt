@@ -46,3 +46,9 @@ C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyR
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb

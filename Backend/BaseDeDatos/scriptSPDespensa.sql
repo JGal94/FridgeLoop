@@ -6,11 +6,9 @@ Go
 -- ========================================
 
 -- USERS
-GO
-DROP PROCEDURE IF EXISTS InsertUser;
-GO
 
-CREATE PROCEDURE InsertUser
+
+CREATE OR ALTER PROCEDURE InsertUser
     @Nombre NVARCHAR(100),
     @CorreoElectronico NVARCHAR(100),
     @Password NVARCHAR(255),
@@ -48,7 +46,7 @@ BEGIN
 END;
 GO
 ----------------------------------------------------------------------------------------------------
-CREATE PROCEDURE UpdateUser
+CREATE OR ALTER PROCEDURE UpdateUser
     @UserID INT,
     @FullName NVARCHAR(100),
     @Email NVARCHAR(100)
@@ -61,7 +59,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetUsers
+CREATE OR ALTER PROCEDURE GetUsers
 AS
 BEGIN
     SELECT * FROM Users
@@ -144,7 +142,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE UpdateProduct
+CREATE OR ALTER PROCEDURE UpdateProduct
     @ProductID INT,
     @Name NVARCHAR(100),
     @CategoryID INT,
@@ -158,7 +156,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetProducts
+CREATE OR ALTER PROCEDURE GetProducts
 AS
 BEGIN
     SELECT * FROM Products
@@ -167,7 +165,7 @@ GO
 
 -- USER INVENTORY------------------------------------------------------------------------------------
 
-CREATE PROCEDURE InsertUserInventory
+CREATE OR ALTER PROCEDURE InsertUserInventory
     @UserID INT,
     @ProductID INT,
     @Quantity DECIMAL(10,2),
@@ -180,7 +178,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE UpdateUserInventory
+CREATE OR ALTER PROCEDURE UpdateUserInventory
     @InventoryID INT,
     @Quantity DECIMAL(10,2),
     @ExpirationDate DATE
@@ -193,7 +191,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetUserInventory
+CREATE OR ALTER PROCEDURE GetUserInventory
 AS
 BEGIN
     SELECT * FROM UserInventory
@@ -202,7 +200,7 @@ GO
 
 -- PURCHASES-----------------------------------------------------------------------------------------
 
-CREATE PROCEDURE InsertPurchase
+CREATE OR ALTER PROCEDURE InsertPurchase
     @UserID INT,
     @PurchaseDate DATETIME,
     @TotalAmount DECIMAL(10,2)
@@ -214,7 +212,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE UpdatePurchase
+CREATE OR ALTER PROCEDURE UpdatePurchase
     @PurchaseID INT,
     @TotalAmount DECIMAL(10,2)
 AS
@@ -226,7 +224,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetPurchases
+CREATE OR ALTER PROCEDURE GetPurchases
 AS
 BEGIN
     SELECT * FROM Purchases
@@ -235,7 +233,7 @@ GO
 
 -- Crear sesi�n------------------------------------------------------------------------------------
 
-CREATE PROCEDURE CreateUserSession
+CREATE OR ALTER PROCEDURE CreateUserSession
     @UserID INT,
     @Token NVARCHAR(255),
     @ExpiresAt DATETIME,
@@ -265,7 +263,7 @@ GO
 
 -- Cerrar sesi�n----------------------------------------------------------------------------------
 
-CREATE PROCEDURE InvalidateSession
+CREATE OR ALTER PROCEDURE InvalidateSession
     @Token NVARCHAR(255)
 AS
 BEGIN
@@ -275,7 +273,7 @@ GO
 ----------------------------------------------------------------------------------------------------
 
 
-CREATE PROCEDURE CleanupExpiredSessions
+CREATE OR ALTER PROCEDURE CleanupExpiredSessions
 AS
 BEGIN
     DELETE FROM UserSessions
@@ -284,7 +282,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE Login
+CREATE OR ALTER PROCEDURE Login
     @Email NVARCHAR(100),
     @PasswordHash NVARCHAR(255)
 AS
@@ -299,7 +297,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetUserById
+CREATE OR ALTER PROCEDURE GetUserById
     @UserID INT
 AS
 BEGIN
@@ -315,7 +313,7 @@ GO
 
 
 
-CREATE PROCEDURE ActiveUser
+CREATE OR ALTER PROCEDURE ActiveUser
     @Correo NVARCHAR(100),
     @Codigo NVARCHAR(10),
     @ID_USUARIO INT OUTPUT,
@@ -358,7 +356,7 @@ GO
 ----------------------------------------------------------------------------------------------------
 
 
-CREATE PROCEDURE CloseUserSession
+CREATE OR ALTER PROCEDURE CloseUserSession
     @Token NVARCHAR(255),
     @ErrorId INT OUTPUT,
     @ErrorMensaje NVARCHAR(255) OUTPUT
@@ -384,7 +382,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE InsertNotification
+CREATE OR ALTER PROCEDURE InsertNotification
     @UserID INT,
     @Message NVARCHAR(255),
     @Type NVARCHAR(50)
@@ -396,7 +394,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetUserNotifications
+CREATE OR ALTER PROCEDURE GetUserNotifications
     @UserID INT
 AS
 BEGIN
@@ -408,7 +406,7 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE MarkNotificationAsRead
+CREATE OR ALTER PROCEDURE MarkNotificationAsRead
     @NotificationID INT
 AS
 BEGIN
@@ -418,7 +416,6 @@ BEGIN
 END;
 GO
 
-----------------------------------------------------------------------------------------------------
 
 
 IF OBJECT_ID('GetProductosInventarioUsuario', 'P') IS NOT NULL
@@ -426,7 +423,7 @@ IF OBJECT_ID('GetProductosInventarioUsuario', 'P') IS NOT NULL
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE GetProductosInventarioUsuario
+CREATE OR ALTER PROCEDURE GetProductosInventarioUsuario
     @UserID INT
 AS
 BEGIN
@@ -870,9 +867,7 @@ END
 GO
 
 GO
-SELECT * FROM Products
-SELECT * FROM UserInventory
-SELECT * FROM Categories
+
 
 
 
