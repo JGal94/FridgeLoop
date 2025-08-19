@@ -42,3 +42,14 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Gateway\obj\
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.pdb
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Gateway.dll
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Gateway.pdb
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Entidades.dll
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Newtonsoft.Json.dll
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Entidades.pdb
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\bin\Debug\Newtonsoft.Json.xml
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\obj\Debug\Gateway.dll
+D:\Universidad\programacion movil\proyecto ale 2\Backend\Gateway\obj\Debug\Gateway.pdb

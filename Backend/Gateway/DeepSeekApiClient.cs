@@ -17,11 +17,11 @@ namespace Gateway
         private readonly string _apiKey = "sk-768e8b2116f148328d53458675ab0f1a";
         private const string ApiBaseUrl = "https://api.deepseek.com/v1"; // Reemplazar con URL real
 
+        //public DeepSeekApiClient()
+        //{ }
         public DeepSeekApiClient()
-        { }
-        public DeepSeekApiClient(string apiKey)
         {
-            _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
+           // _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
             _httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
