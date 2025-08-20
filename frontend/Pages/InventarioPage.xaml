@@ -6,70 +6,62 @@
              BackgroundColor="#F0F6FF">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Padding="12" Spacing="10">
 
-            <Label Text="Mi Inventario"
-                   FontSize="28"
-                   FontFamily="OpenSansBold"
-                   TextColor="#004C99" />
+            <!-- Búsqueda (usa TextChanged con debounce en .cs) -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+                <Entry x:Name="txtBuscar"
+                   Placeholder="Buscar por nombre..."
+                   TextChanged="OnBuscarTextChanged"
+                   BackgroundColor="Transparent"
+                   TextColor="#003366" />
+            </Frame>
 
-            <!-- Filtros -->
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="Por vencer"
-                        BackgroundColor="Transparent"
-                        TextColor="#007BFF"
-                        BorderColor="#007BFF"
-                        BorderWidth="1"
-                        CornerRadius="8"
-                         /> <!--Clicked="OnFiltroVencerClicked"-->
+            <!-- Pull-to-refresh (opcional) -->
+            <RefreshView x:Name="rv" RefreshColor="#007ACC" Refreshing="OnRefreshRequested">
+                <CollectionView x:Name="cvInventario" SelectionMode="None">
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="20" Spacing="6">
+                            <Label Text="No hay productos" HorizontalOptions="Center" TextColor="#003366"/>
+                            <Label Text="Agrega uno con el botón de abajo" HorizontalOptions="Center" FontSize="12" TextColor="#336699"/>
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto,Auto" BackgroundColor="White">
+                                <Label Grid.ColumnSpan="2" Grid.Row="0"
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   TextColor="#003366" />
+                                <Label Grid.Row="1" Text="{Binding Unit}" FontSize="12" TextColor="#336699" />
+                                <Label Grid.Row="2" Text="{Binding Quantity, StringFormat='Cantidad: {0}'}" FontSize="12" TextColor="#336699" />
+                                <Label Grid.Row="3" Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#336699" />
 
-                <Button Text="Más usados"
-                        BackgroundColor="Transparent"
-                        TextColor="#007BFF"
-                        BorderColor="#007BFF"
-                        BorderWidth="1"
-                        CornerRadius="8"
-                         /> <!--Clicked="OnFiltroUsadosClicked"-->
+                                <Button Grid.Column="1" Grid.RowSpan="4"
+                                    Text="Detalle"
+                                    BackgroundColor="#007ACC"
+                                    TextColor="White"
+                                    CornerRadius="8"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnIrDetalleClicked" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+
+            <!-- Paginación -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="16" Padding="4">
+                <Button Text="⟨ Anterior" Clicked="OnPrevClicked" />
+                <Label x:Name="lblPagina" VerticalTextAlignment="Center" TextColor="#003366" />
+                <Button Text="Siguiente ⟩" Clicked="OnNextClicked" />
             </HorizontalStackLayout>
 
-            <!-- Lista de productos -->
-            <CollectionView x:Name="InventarioList">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Margin="0,5"
-                               CornerRadius="12"
-                               BackgroundColor="White"
-                               HasShadow="True"
-                               Padding="15">
-
-                            <VerticalStackLayout>
-                                <Label Text="🥫 Producto Ejemplo"
-                                       FontSize="18"
-                                       TextColor="#004C99"
-                                       FontFamily="OpenSansSemiBold" />
-                                <Label Text="Categoría: Enlatados"
-                                       FontSize="14"
-                                       TextColor="#5A738E" />
-                                <Label Text="Cantidad: 3 unidades"
-                                       FontSize="14"
-                                       TextColor="#5A738E" />
-                                <Label Text="Vence: 05/08/2025"
-                                       FontSize="14"
-                                       TextColor="#D9534F" />
-                            </VerticalStackLayout>
-
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <!-- Botón para agregar producto -->
-            <Button Text="Agregar Producto"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    FontSize="16"
-                    CornerRadius="10"
-                    Clicked="OnAgregarProductoClicked" />
+            <Button Text="Agregar producto"
+                BackgroundColor="#28A745"
+                TextColor="White"
+                CornerRadius="10"
+                Clicked="OnAgregarClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

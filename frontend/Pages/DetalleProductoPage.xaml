@@ -4,74 +4,38 @@
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.DetalleProductoPage"
              Title="Detalle del Producto"
              BackgroundColor="#EAF4FF">
-
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+        <VerticalStackLayout Padding="20" Spacing="14">
 
-            <Image Source="logofridgeloop.png"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0,10,0,10" />
-
-            <Label Text="Información del Producto"
-                   FontSize="24"
-                   FontFamily="OpenSansBold"
-                   TextColor="#003366" />
-
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="Nombre: Leche"
-                       FontSize="16"
+            <!-- Solo mostramos el nombre -->
+            <Label Text="Producto" FontAttributes="Bold" TextColor="#003366" />
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+                <Label x:Name="lblNombre"
                        TextColor="#003366" />
             </Frame>
 
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="Categoría: Lácteos"
-                       FontSize="16"
-                       TextColor="#003366" />
+            <Label Text="Inventario (usuario)" FontAttributes="Bold" TextColor="#003366" />
+
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+                <Entry x:Name="txtCantidad"
+                       Placeholder="Quantity"
+                       Keyboard="Numeric"
+                       TextColor="#003366"
+                       BackgroundColor="Transparent" />
             </Frame>
 
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="Cantidad: 2 unidades"
-                       FontSize="16"
-                       TextColor="#003366" />
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                    <Label Text="Expira:" VerticalTextAlignment="Center" TextColor="#003366" />
+                    <DatePicker x:Name="dpExpira" Grid.Column="1" TextColor="#003366" />
+                </Grid>
             </Frame>
 
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="Unidad: unidades"
-                       FontSize="16"
-                       TextColor="#003366" />
-            </Frame>
-
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="Fecha de vencimiento: 03/08/2025"
-                       FontSize="16"
-                       TextColor="#003366" />
-            </Frame>
-
-            <!-- Acciones -->
-            <Button Text="✏️ Editar"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnEditarClicked" />
-
-            <Button Text="🗑 Eliminar"
-                    BackgroundColor="#D9534F"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnEliminarClicked" />
-
-            <Button Text="🔁 Mover"
-                    BackgroundColor="#5A738E"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnMoverClicked" />
-
-            <Button Text="✅ Consumir parcialmente"
+            <Button Text="Actualizar inventario"
                     BackgroundColor="#28A745"
                     TextColor="White"
                     CornerRadius="10"
-                    Clicked="OnConsumirClicked" />
+                    Clicked="OnGuardarInventarioClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

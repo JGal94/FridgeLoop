@@ -1,33 +1,127 @@
+using Frontend_Proyecto_Fridgeloop.Services;
+using Frontend_Proyecto_Fridgeloop.Helpers;
 using Microsoft.Maui.Controls;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
 {
     public partial class AgregarProductoPage : ContentPage
     {
-        public AgregarProductoPage()
+        private readonly ProductService _svc = new();
+        private CancellationTokenSource? _cts;
+
+        // Mapea índice del Picker a IDs reales
+        private readonly int[] _categoryIdByIndex = new[] { 1, 2, 3, 4, 99 };
+
+        public AgregarProductoPage() => InitializeComponent();
+
+        private async void OnGuardarProductoClicked(object sender, EventArgs e)
         {
-            InitializeComponent();
+            if (IsBusy) return;
+            IsBusy = true;
+
+            try
+            {
+                // SOLO requerimos: Nombre, Unidad y Categoría
+                if (string.IsNullOrWhiteSpace(txtNombre?.Text))
+                { await DisplayAlert("Faltan datos", "Nombre obligatorio.", "OK"); return; }
+
+                if (string.IsNullOrWhiteSpace(txtUnidad?.Text))
+                { await DisplayAlert("Faltan datos", "Unidad obligatoria.", "OK"); return; }
+
+                if (pkCategoria?.SelectedIndex is null || pkCategoria.SelectedIndex < 0)
+                { await DisplayAlert("Faltan datos", "Selecciona una categoría.", "OK"); return; }
+
+                // Mapeo de categoría (ajusta si tu arreglo es distinto)
+                var categoryMap = new[] { 1, 2, 3, 4, 99 };
+                var catId = categoryMap[pkCategoria.SelectedIndex];
+
+                // Opcionales
+                decimal? qty = null;
+                if (decimal.TryParse(txtCantidad?.Text?.Trim(), out var q)) qty = q;
+
+                DateTime? exp = dpExpira?.Date;
+
+                // Código de barras: OPCIONAL (NO se valida)
+                // string? barcode = string.IsNullOrWhiteSpace(codigoEntry?.Text) ? null : codigoEntry.Text.Trim();
+                // Si más adelante tu backend acepta barcode, añade la propiedad al DTO y envíala solo si no es null.
+
+                var dto = new ProductService.ProductoDto
+                {
+                    Name = txtNombre.Text!.Trim(),
+                    CategoryID = catId,
+                    Unit = txtUnidad.Text!.Trim(),
+                    UserID = Sesion.Id,
+                    Quantity = qty,               // opcional
+                    ExpirationDate = exp                // opcional
+                                                        // Barcode = barcode (solo si tu API lo soporta)
+                };
+
+                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
+                var r = await _svc.InsertarAsync(dto, cts.Token);
+
+                if (r?.resultado == true)
+                {
+                    await DisplayAlert("OK", "Producto insertado.", "Cerrar");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", ProductService.FirstError(r, "No se pudo insertar."), "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Excepción", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
-        
+        // Escáner con MessagingCenter (tu lógica)
         private async void OnEscanearClicked(object sender, EventArgs e)
         {
+            // Evita dobles suscripciones si tocan varias veces
+            try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
 
-            MessagingCenter.Subscribe<ScanPage, string>(this, "BarcodeScanned", (sender2, code) =>
+            // Si tienes ScanPage, nos suscribimos
+            MessagingCenter.Subscribe<object, string>(this, "BarcodeScanned", (sender2, code) =>
             {
-                // Mostrar el código en un Entry, por ejemplo
                 codigoEntry.Text = code;
-                MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned");
+                MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned");
             });
 
-            await Navigation.PushAsync(new ScanPage());
+            // Intenta crear ScanPage; si no existe, avisa y sal
+            var scanType = Type.GetType("Frontend_Proyecto_Fridgeloop.Pages.ScanPage");
+            if (scanType == null)
+            {
+                await DisplayAlert("Escáner no disponible",
+                    "Aún no está implementada la pantalla de escaneo.",
+                    "OK");
+                // Limpia la suscripción que creamos arriba
+                try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
+                return;
+            }
+
+            try
+            {
+                if (Activator.CreateInstance(scanType) is Page scanPage)
+                    await Navigation.PushAsync(scanPage);
+                else
+                    await DisplayAlert("Escáner no disponible", "No se pudo crear la pantalla de escaneo.", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Escáner no disponible", ex.Message, "OK");
+            }
         }
-         
-        private async void OnAgregarClicked(object sender, EventArgs e)
+
+        protected override void OnDisappearing()
         {
-            // Simulación de confirmación
-            await DisplayAlert("Producto agregado", "Tu producto fue añadido al inventario", "OK");
+            base.OnDisappearing();
+            try { MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned"); } catch { }
+            _cts?.Cancel();
         }
-        
     }
 }

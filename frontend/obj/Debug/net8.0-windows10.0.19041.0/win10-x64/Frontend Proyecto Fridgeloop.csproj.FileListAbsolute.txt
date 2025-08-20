@@ -734,6 +734,7 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x6
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.exe
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.deps.json
@@ -837,8 +838,8 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png
@@ -919,4 +920,3 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
