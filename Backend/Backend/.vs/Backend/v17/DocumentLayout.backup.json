@@ -3,11 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\backend\\logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend.csproj|solutionrelative:logicasesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|..\\API\\API.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9AEF6A1-9D4C-4F61-9A13-D0601D621C8A}|..\\Entidades\\Entidades.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\entidades\\enum\\enumerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|..\\API\\API.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\api\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend.csproj|c:\\users\\juanf\\onedrive\\escritorio\\fridgeloop\\backend\\backend\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend.csproj|solutionrelative:logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,19 +20,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EnumErrores.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Entidades\\Enum\\EnumErrores.cs",
-              "RelativeDocumentMoniker": "..\\Entidades\\Enum\\EnumErrores.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Entidades\\Enum\\EnumErrores.cs*",
-              "RelativeToolTip": "..\\Entidades\\Enum\\EnumErrores.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Title": "ValuesController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\API\\Controllers\\ValuesController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\ValuesController.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\API\\Controllers\\ValuesController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\ValuesController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T00:58:17.765Z",
+              "WhenOpened": "2025-06-27T01:03:42.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T01:01:44.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LogicaUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Backend\\LogicaUsuario.cs",
+              "RelativeDocumentMoniker": "LogicaUsuario.cs",
+              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Backend\\LogicaUsuario.cs",
+              "RelativeToolTip": "LogicaUsuario.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwNEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T01:00:10.894Z",
               "EditorCaption": ""
             },
             {
@@ -39,19 +68,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogicaSesion.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Backend\\LogicaSesion.cs",
-              "RelativeDocumentMoniker": "LogicaSesion.cs",
-              "ToolTip": "C:\\Users\\juanf\\OneDrive\\Escritorio\\FridgeLoop\\backend\\Backend\\LogicaSesion.cs",
-              "RelativeToolTip": "LogicaSesion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T00:57:54.562Z",
-              "EditorCaption": ""
             }
           ]
         }

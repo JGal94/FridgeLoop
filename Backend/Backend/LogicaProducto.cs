@@ -134,15 +134,17 @@ namespace Backend
 
                     foreach (var it in items)
                     {
+                        // Backend/LogicaProducto.cs (dentro de ObtenerProductos)
                         res.productos.Add(new Productos
                         {
-                            // idProducto = it.p.ProductID,           // descomenta si tu DTO lo tiene
+                            idProducto = it.p.ProductID,                 // <- DESCOMENTAR / AÑADIR
                             nombre = it.p.Name,
                             idCategoria = it.p.CategoryID ?? 0,
                             unidad = it.p.Unit,
                             quantity = it.ui.Quantity,
                             expirationDate = it.ui.ExpirationDate
                         });
+
                     }
 
                     res.resultado = true;

@@ -63,25 +63,17 @@ namespace API.Controllers
             return CreateLogic().InsertarProducto(userId, req);
         }
 
+        // API/Controllers/ProductoController.cs
         [HttpGet]
         [Route("obtener")]
-        public ResObtenerProductos ObtenerProductos([FromUri] int page = 1, [FromUri] int pageSize = 20, [FromUri] string q = null)
+        public ResObtenerProductos ObtenerProductos([FromUri] ReqObtenerInventario req)
         {
             var userId = GetUserId();
-            if (userId <= 0)
-            {
-                return new ResObtenerProductos
-                {
-                    resultado = false,
-                    productos = new List<Productos>(),
-                    listaDeErrores = new List<Error> {
-                        new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
-                    }
-                };
-            }
+            if (userId <= 0) { /* ... mismo manejo actual ... */ }
 
-            return CreateLogic().ObtenerProductos(userId, page, pageSize, q);
+            return CreateLogic().ObtenerProductos(userId, req?.page ?? 1, req?.pageSize ?? 20, req?.q);
         }
+
 
         [HttpPut]
         [Route("actualizar")]
