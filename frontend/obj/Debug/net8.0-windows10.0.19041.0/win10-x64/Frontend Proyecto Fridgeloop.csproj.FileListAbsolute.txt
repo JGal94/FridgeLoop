@@ -919,3 +919,4 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

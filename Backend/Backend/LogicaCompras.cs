@@ -11,6 +11,7 @@ using Entidades.Response;
 using Entidades.Request;
 
 using Tx = System.Transactions;
+using Newtonsoft.Json;
 
 
 
@@ -24,6 +25,7 @@ namespace Backend
         public ResRegistrarCompra RegistrarCompra(int userId, ReqRegistrarCompra req)
         {
             var res = new ResRegistrarCompra { listaDeErrores = new List<Error>() };
+
             try
             {
                 if (userId <= 0)
@@ -32,6 +34,7 @@ namespace Backend
                     res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." });
                     return res;
                 }
+
                 if (req == null || req.items == null || req.items.Count == 0)
                 {
                     res.resultado = false;
@@ -39,14 +42,13 @@ namespace Backend
                     return res;
                 }
 
-                var fechaUtc = (req.fechaCompra ?? DateTime.UtcNow);
-                decimal total = 0m;
+                // Validaciones rápidas de cada item
                 foreach (var it in req.items)
                 {
                     if (it.idProducto <= 0 || it.cantidad <= 0)
                     {
                         res.resultado = false;
-                        res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "idProducto y cantidad son obligatorios." });
+                        res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "idProducto y cantidad son obligatorios y deben ser > 0." });
                         return res;
                     }
                     if (it.precioUnitario.HasValue && it.precioUnitario.Value < 0)
@@ -55,61 +57,49 @@ namespace Backend
                         res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.FormatoDatoInvalido, Message = "precioUnitario no puede ser negativo." });
                         return res;
                     }
-                    total += (it.precioUnitario ?? 0m) * it.cantidad;
                 }
 
-                using (var scope = new Tx.TransactionScope(
-                    Tx.TransactionScopeOption.Required,
-                    new Tx.TransactionOptions { IsolationLevel = Tx.IsolationLevel.ReadCommitted },
-                    Tx.TransactionScopeAsyncFlowOption.Enabled))
+                // JSON que espera el SP: [{ProductID, Quantity, UnitPrice?, ExpirationDate?}]
+                var itemsJson = JsonConvert.SerializeObject(
+                    req.items.Select(i => new
+                    {
+                        ProductID = i.idProducto,
+                        Quantity = i.cantidad,
+                        UnitPrice = i.precioUnitario,                          // null si no viene
+                        ExpirationDate = i.fechaExpiracion?.Date               // el SP lo lee como DATE
+                    })
+                );
+
                 using (var linq = new linqDataContext())
                 {
-                    
-                    var snapshot = linq.GetUserInventory().Where(x => x.UserID == userId).ToList();
+                    int? purchaseId = 0;
+                    int? errorId = 0;
+                    string errorMsg = "";
 
-                    foreach (var it in req.items)
+                    // El SP inserta Purchases + PurchaseDetails y actualiza inventario en una transacción
+                    linq.SP_Compras_Registrar(
+                        userId,
+                        req.fechaCompra ?? DateTime.UtcNow,                    // el SP usa GETUTCDATE() si viene NULL
+                        itemsJson,
+                        ref purchaseId,
+                        ref errorId,
+                        ref errorMsg
+                    ); // 
+
+                    if ((errorId ?? 0) != 0)
                     {
-                        var expUtc = it.fechaExpiracion?.ToUniversalTime();
-                        var existente = snapshot.FirstOrDefault(x => x.ProductID == it.idProducto);
-
-                        if (existente == null)
-                        {
-                            linq.InsertUserInventory(userId, it.idProducto, it.cantidad, expUtc);
-                            snapshot.Add(new GetUserInventoryResult
-                            {
-                                InventoryID = 0,
-                                UserID = userId,
-                                ProductID = it.idProducto,
-                                Quantity = it.cantidad,
-                                ExpirationDate = expUtc
-                            });
-                        }
-                        else
-                        {
-                            var newQty = (existente.Quantity ?? 0m) + it.cantidad;
-                            var newExp = existente.ExpirationDate;
-                            if (expUtc.HasValue)
-                            {
-                                if (!newExp.HasValue || expUtc.Value < newExp.Value)
-                                    newExp = expUtc; // conservar la más próxima
-                            }
-
-                            linq.UpdateUserInventory(existente.InventoryID, newQty, newExp);
-                            existente.Quantity = newQty;
-                            existente.ExpirationDate = newExp;
-                        }
-
-                        // (Opcional futuro) detalle de compra:
-                        // linq.InsertPurchaseItem(res.idCompra, it.idProducto, it.cantidad, it.precioUnitario, expUtc);
+                        res.resultado = false;
+                        res.listaDeErrores.Add(new Error { ErrorCode = (EnumErrores)(errorId ?? 0), Message = errorMsg });
+                        return res;
                     }
 
-                    res.total = total;
+                    // Total calculado igual que en el SP (suma de UnitPrice*Quantity)
+                    res.total = req.items.Sum(i => (i.precioUnitario ?? 0m) * i.cantidad);
+                    res.idCompra = purchaseId ?? 0;
                     res.resultado = true;
-                    res.mensaje = "Compra registrada y inventario actualizado.";
-                    scope.Complete();
+                    res.mensaje = "Compra registrada correctamente.";
+                    return res;
                 }
-
-                return res;
             }
             catch (Exception ex)
             {
@@ -122,21 +112,85 @@ namespace Backend
                     ErrorCode = EnumErrores.ErrorNoControlado,
                     Message = ex.Message
                 });
+
                 return res;
             }
+
         }
 
         // Placeholders: implementa cuando tengas tablas de compras en BD
         public ResObtenerCompras ObtenerCompras(int userId, ReqObtenerCompras req)
         {
-            return new ResObtenerCompras
+            var res = new ResObtenerCompras
             {
                 resultado = false,
-                mensaje = "Listado de compras pendiente de persistencia en BD.",
-                listaDeErrores = new List<Error> { new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = "No existe tabla de compras/detalle." } },
-                compras = new System.Collections.Generic.List<CompraResumen>(),
+                mensaje = null,
+                listaDeErrores = new List<Error>(),
+                compras = new List<CompraResumen>(),
                 totalFiltrado = 0
             };
+
+            try
+            {
+                // 1) Validaciones básicas
+                if (userId <= 0)
+                {
+                    res.listaDeErrores.Add(new Error
+                    {
+                        ErrorCode = EnumErrores.TokenInvalido,
+                        Message = "Usuario no autenticado."
+                    });
+                    return res;
+                }
+
+                // 2) Saneo de paginación
+                var page = (req?.page ?? 1);
+                var pageSize = (req?.pageSize ?? 20);
+                if (page < 1) page = 1;
+                if (pageSize < 1) pageSize = 20;
+                if (pageSize > 100) pageSize = 100;
+
+                // 3) Filtros de fecha (opcionales)
+                var desde = req?.desde;
+                var hasta = req?.hasta;
+
+                using (var linq = new linqDataContext())
+                {
+                    // SP: devuelve PurchaseID, PurchaseDate, TotalAmount, Items (SUM de Quantity)
+                    //    y aplica filtros por usuario, rango de fechas y paginación
+                    var rows = linq
+                        .SP_Compras_ObtenerPorUsuario(userId, page, pageSize, desde, hasta)
+                        .ToList(); // ← LINQ to SQL mapea el resultset
+
+                    // 4) Mapeo a tu DTO actual (items:int). OJO: Items es decimal? en el SP, por eso hago cast.
+                    res.compras = rows.Select(r => new CompraResumen
+                    {
+                        idCompra = r.PurchaseID,
+                        fechaCompra = r.PurchaseDate ?? DateTime.UtcNow,
+                        total = r.TotalAmount ?? 0m,
+                        items = (int)r.Items,   // 👈 sin ?? porque es decimal, casteo a int
+                        notas = null
+                    }).ToList();
+
+
+                    // 5) Total mostrado (del tamaño de la página recuperada)
+                    //    Si quieres el total global, agrega un segundo resultset al SP que devuelva COUNT(*)
+                    res.totalFiltrado = res.compras.Count;
+                    res.resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                res.mensaje = "Error al obtener las compras.";
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.ErrorNoControlado,
+                    Message = ex.Message
+                });
+            }
+
+            return res;
         }
 
         public ResObtenerCompra ObtenerCompra(int userId, ReqObtenerCompra req)

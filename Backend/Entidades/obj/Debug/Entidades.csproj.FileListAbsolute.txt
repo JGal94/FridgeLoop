@@ -40,12 +40,6 @@ D:\Universidad\programacion movil\proyecto ale\Backend\Entidades\obj\Debug\Entid
 D:\Universidad\programacion movil\proyecto ale\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Universidad\programacion movil\proyecto ale\Backend\Entidades\obj\Debug\Entidades.dll
 D:\Universidad\programacion movil\proyecto ale\Backend\Entidades\obj\Debug\Entidades.pdb
-C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
-C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
-C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
-C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
-C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb
 C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
 C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
 C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
@@ -58,3 +52,9 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\ob
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb
+C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
+C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb

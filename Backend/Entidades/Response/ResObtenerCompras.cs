@@ -19,9 +19,10 @@ namespace Entidades.Response
     public class CompraResumen
     {
         public int idCompra { get; set; }
-        public System.DateTime fechaCompra { get; set; }
+        public DateTime fechaCompra { get; set; }
         public decimal total { get; set; }
-        public int items { get; set; }
+        public decimal items { get; set; }   // <-- CAMBIAR a decimal
         public string notas { get; set; }
     }
+
 }

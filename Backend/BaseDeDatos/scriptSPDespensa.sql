@@ -868,6 +868,10 @@ GO
 
 GO
 
+SELECT * FROM Purchases
+SELECT * FROM Products
+SELECT * FROM UserSessions
+
 
 
 

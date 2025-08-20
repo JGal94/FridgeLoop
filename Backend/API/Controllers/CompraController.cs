@@ -84,8 +84,13 @@ namespace API.Controllers
                 };
             }
 
-            // Garantiza defaults si no vino el objeto por querystring
+            // Defaults si no vino querystring
             if (req == null) req = new ReqObtenerCompras();
+
+            // (Opcional) saneo rápido aquí también
+            if (req.page < 1) req.page = 1;
+            if (req.pageSize < 1) req.pageSize = 20;
+            if (req.pageSize > 100) req.pageSize = 100;
 
             return CreateLogic().ObtenerCompras(userId, req);
         }
