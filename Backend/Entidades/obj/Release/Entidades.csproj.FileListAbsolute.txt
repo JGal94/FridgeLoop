@@ -4,3 +4,9 @@ C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.cspr
 C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.dll
 C:\Users\jfigu\Desktop\movilViernes\backend\Entidades\obj\Release\Entidades.pdb
+C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Release\Entidades.dll
+C:\Users\juanf\FridgeLoop\Backend\Entidades\bin\Release\Entidades.pdb
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.dll
+C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.pdb

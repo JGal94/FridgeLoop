@@ -5,3 +5,10 @@ C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.
 C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.dll
 C:\Users\jfigu\Desktop\movilViernes\backend\AccesoDatos\obj\Release\AccesoDatos.pdb
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.dll.config
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.pdb
