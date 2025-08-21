@@ -6,68 +6,127 @@
              BackgroundColor="#EAF4FF">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+        <VerticalStackLayout Padding="24" Spacing="18">
 
-            <Image Source="logofridgeloop.png"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0,10,0,10" />
+            <Label Text="Lista de Compras"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#003366"/>
 
-            <Grid ColumnDefinitions="*,Auto">
-                <Label Text="Lista sugerida por la app"
-                       FontSize="20"
-                       FontFamily="OpenSansBold"
-                       TextColor="#003366"
-                       Grid.Column="0"
-                       VerticalOptions="Center" />  
-
+            <HorizontalStackLayout HorizontalOptions="End">
                 <Button Text="📊 Ver historial de compras"
-                        BackgroundColor="#5A738E"
+                        BackgroundColor="#667892"
                         TextColor="White"
                         CornerRadius="10"
-                        FontSize="14"
-                        Padding="10,5"
-                        Clicked="OnVerHistorialClicked"
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        Margin="10,0,0,0"/>
-            </Grid>
+                        Padding="14,8"
+                        Clicked="OnVerHistorialClicked"/>
+            </HorizontalStackLayout>
 
+            <Label Text="Lista sugerida por la app"
+                   FontSize="16"
+                   TextColor="#003366"
+                   Margin="0,6,0,0"/>
 
-            <!-- Lista de productos -->
-            <Frame BackgroundColor="#FFFFFF" CornerRadius="12" Padding="15" HasShadow="True">
-                <VerticalStackLayout>
-                    <Label Text="• Tomates (3)"
-                           FontSize="16"
-                           TextColor="#003366" />
-                    <Label Text="• Pasta (500g)"
-                           FontSize="16"
-                           TextColor="#003366" />
-                    <Label Text="• Leche (2)"
-                           FontSize="16"
-                           TextColor="#003366" />
-                    <Label Text="• Atún (2 latas)"
-                           FontSize="16"
-                           TextColor="#003366" />
-                </VerticalStackLayout>
+            <!-- Lista dinámica con swipe -->
+            <Frame BackgroundColor="#FFFFFF"
+                   CornerRadius="12"
+                   Padding="6"
+                   HasShadow="True">
+
+                <CollectionView x:Name="cvLista"
+                                SelectionMode="None">
+                    <!-- Mensaje cuando está vacía -->
+                    <CollectionView.EmptyView>
+                        <Grid Padding="16">
+                            <Label Text="— Sin productos —"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontSize="16"
+                                   TextColor="#667892"/>
+                        </Grid>
+                    </CollectionView.EmptyView>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems Mode="Reveal">
+                                        <SwipeItem Text="Editar"
+                                                   BackgroundColor="#007ACC"
+                                                   Invoked="OnEditarItem"
+                                                   CommandParameter="{Binding .}" />
+                                        <SwipeItem Text="Eliminar"
+                                                   BackgroundColor="#D9534F"
+                                                   Invoked="OnEliminarItem"
+                                                   CommandParameter="{Binding .}" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+
+                                <!-- Tarjeta del item -->
+                                <Grid Padding="10"
+                                      ColumnDefinitions="*,Auto"
+                                      RowDefinitions="Auto,Auto">
+
+                                    <!-- Nombre -->
+                                    <Label Grid.Row="0" Grid.Column="0"
+                                           Text="{Binding Nombre}"
+                                           FontSize="17"
+                                           TextColor="#003366"
+                                           FontAttributes="Bold"/>
+
+                                    <!-- Unidad (con cantidad) -->
+                                    <Label Grid.Row="1" Grid.Column="0"
+                                           FontSize="15"
+                                           TextColor="#335">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="Unidad: {0} {1}">
+                                                <Binding Path="Cantidad" StringFormat="0.##"/>
+                                                <Binding Path="Unidad"/>
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+
+                                    <!-- Precio (formato es-CR) -->
+                                    <VerticalStackLayout Grid.RowSpan="2" Grid.Column="1"
+                                                         HorizontalOptions="End"
+                                                         Spacing="2"
+                                                         Margin="12,0,4,0">
+                                        <Label Text="Precio"
+                                               FontSize="12"
+                                               TextColor="#666"
+                                               HorizontalTextAlignment="End" />
+                                        <Label FontSize="15"
+                                               TextColor="#335"
+                                               HorizontalTextAlignment="End"
+                                               Text="{Binding PrecioUnitario, Converter={StaticResource CrcConverter}}" />
+                                    </VerticalStackLayout>
+
+                                </Grid>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Frame>
 
             <!-- Botones -->
-            <Button Text="✏️ Editar manualmente"
-                    BackgroundColor="#5A738E"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnEditarClicked" />
-
-            <Button Text="📤 Exportar / Imprimir"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnExportarClicked" />
-
-            <Button Text="🔄 Sincronizar con apps"
+            <Button Text="➕ Agregar producto"
                     BackgroundColor="#28A745"
                     TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    Clicked="OnAgregarProductoClicked" />
+
+            <Button Text="Realizar compra"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    Clicked="OnRealizarCompraClicked" />
+
+            <Button Text="🔄 Sincronizar con apps"
+                    BackgroundColor="#FFAA1A"
+                    TextColor="White"
+                    FontSize="18"
                     CornerRadius="10"
                     Clicked="OnSincronizarClicked" />
 

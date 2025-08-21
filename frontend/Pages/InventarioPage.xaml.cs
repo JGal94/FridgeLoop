@@ -90,10 +90,5 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 await Navigation.PushAsync(new DetalleProductoPage(p));
             }
         }
-
-        private async void OnAgregarClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AgregarProductoPage());
-        }
     }
 }

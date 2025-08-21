@@ -77,6 +77,16 @@
                 </Picker>
             </Frame>
 
+            <!-- Precio unitario (opcional) -->
+            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+                <Entry x:Name="txtPrecio"
+                   Placeholder="Precio unitario (opcional)"
+                   Keyboard="Numeric"
+                   FontSize="16"
+                   BackgroundColor="Transparent"
+                   TextColor="#003366" />
+            </Frame>
+
             <!-- Código de barras (rellenado por ScanPage) -->
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
                 <Entry x:Name="codigoEntry"

@@ -38,7 +38,7 @@
                                 <Label Grid.Row="3" Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#336699" />
 
                                 <Button Grid.Column="1" Grid.RowSpan="4"
-                                    Text="Detalle"
+                                    Text="Editar"
                                     BackgroundColor="#007ACC"
                                     TextColor="White"
                                     CornerRadius="8"
@@ -56,13 +56,6 @@
                 <Label x:Name="lblPagina" VerticalTextAlignment="Center" TextColor="#003366" />
                 <Button Text="Siguiente ⟩" Clicked="OnNextClicked" />
             </HorizontalStackLayout>
-
-            <Button Text="Agregar producto"
-                BackgroundColor="#28A745"
-                TextColor="White"
-                CornerRadius="10"
-                Clicked="OnAgregarClicked" />
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

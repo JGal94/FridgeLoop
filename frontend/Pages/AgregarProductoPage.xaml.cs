@@ -29,53 +29,48 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
             try
             {
-                // Requeridos mínimos
+                // Validaciones mínimas (como las que ya tienes)
                 if (string.IsNullOrWhiteSpace(txtNombre?.Text))
                 { await DisplayAlert("Faltan datos", "Nombre obligatorio.", "OK"); return; }
-
                 if (pkCategoria?.SelectedIndex is null || pkCategoria.SelectedIndex < 0)
                 { await DisplayAlert("Faltan datos", "Selecciona una categoría.", "OK"); return; }
-
                 if (pkUnidad?.SelectedIndex is null || pkUnidad.SelectedIndex < 0)
                 { await DisplayAlert("Faltan datos", "Selecciona una unidad.", "OK"); return; }
 
-                // Mapeos desde los Pickers
+                // Mapeos
                 var catId = _categoryIdByIndex[pkCategoria.SelectedIndex];
                 var unit = _unidadByIndex[pkUnidad.SelectedIndex];
 
                 // Opcionales
-                decimal? qty = null;
-                if (decimal.TryParse(txtCantidad?.Text?.Trim(), out var q)) qty = q;
+                decimal cantidad = 1m;
+                if (!string.IsNullOrWhiteSpace(txtCantidad?.Text) && decimal.TryParse(txtCantidad.Text.Trim(), out var q) && q > 0)
+                    cantidad = q;
 
                 DateTime? exp = dpExpira?.Date;
 
-                // DTO SIN UserID (el backend lo toma del token)
-                var dto = new ProductService.ProductoDto
+                // (Opcional) Si tienes un Entry de precio, úsalo; si no, queda null
+                decimal? precio = null;
+                if (!string.IsNullOrWhiteSpace(txtPrecio?.Text) && decimal.TryParse(txtPrecio.Text.Trim(), out var p) && p >= 0)
+                    precio = p;
+
+                // Crea ítem local y agrégalo a la lista de compras
+                var item = new ShoppingItem
                 {
-                    Name = txtNombre.Text!.Trim(),
-                    CategoryID = catId,
-                    Unit = unit,         //  del Picker
-                    Quantity = qty,
-                    ExpirationDate = exp
+                    Nombre = txtNombre.Text!.Trim(),
+                    IdCategoria = catId,
+                    Unidad = unit,
+                    Cantidad = cantidad,
+                    PrecioUnitario = precio,
+                    FechaExpiracion = exp
                 };
+                ShoppingList.Items.Add(item);
 
-                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
-                var r = await _svc.InsertarAsync(dto, cts.Token);
-
-                if (r?.resultado == true)
-                {
-                    //AppEvents.InventoryDirty = true; // para refrescar Inventario al volver (si usas el banderín)
-                    await DisplayAlert("OK", "Producto insertado.", "Cerrar");
-                    await Navigation.PopAsync();
-                }
-                else
-                {
-                    await DisplayAlert("Error", ProductService.FirstError(r, "No se pudo insertar."), "OK");
-                }
+                await DisplayAlert("Agregado", $"{item.Nombre} ? a la lista de compras.", "OK");
+                await Navigation.PopAsync(); // volvemos a ListaComprasPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Excepcion", ex.Message, "OK");
+                await DisplayAlert("Excepción", ex.Message, "OK");
             }
             finally
             {
