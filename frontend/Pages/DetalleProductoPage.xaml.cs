@@ -29,14 +29,6 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
             try
             {
-                // Si vino sin id, intentamos resolverlo por nombre
-                if (_p.ProductID <= 0)
-                {
-                    using var ctsId = new CancellationTokenSource(TimeSpan.FromSeconds(15));
-                    var resolved = await _svc.ResolverIdPorNombreAsync(_p.Name, ctsId.Token);
-                    _p.ProductID = resolved;
-                }
-
                 if (_p.ProductID <= 0)
                 {
                     await DisplayAlert("Dato faltante",
@@ -49,15 +41,8 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 if (decimal.TryParse(txtCantidad.Text?.Trim(), out var q)) qty = q;
                 DateTime? exp = dpExpira.Date;
 
-                var req = new ProductService.ReqActualizarInventario
-                {
-                    ProductID = _p.ProductID,
-                    Quantity = qty,
-                    ExpirationDate = exp
-                };
-
                 using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
-                var r = await _svc.ActualizarInventarioAsync(req, cts.Token);
+                var r = await _svc.ActualizarInventarioAsync(_p.ProductID, qty, exp, cts.Token);
 
                 await DisplayAlert(r?.resultado == true ? "Ok" : "Error",
                     ProductService.FirstError(r, r?.resultado == true ? "Inventario actualizado." : "No se pudo actualizar el inventario."),
@@ -67,10 +52,10 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             {
                 await DisplayAlert("Excepción", ex.Message, "OK");
             }
-            finally { IsBusy = false; }
+            finally
+            {
+                IsBusy = false;
+            }
         }
-
-
-
     }
 }

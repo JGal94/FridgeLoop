@@ -9,10 +9,18 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         private readonly ProductService _svc = new();
         private CancellationTokenSource? _cts;
 
-        // Mapea índice del Picker a IDs reales
+        // Mapeos 1:1 con los Items de los Pickers en XAML
         private readonly int[] _categoryIdByIndex = new[] { 1, 2, 3, 4, 99 };
+        private readonly string[] _unidadByIndex = { "kg", "g", "ml", "L", "pz", "unid", "pack" };
 
-        public AgregarProductoPage() => InitializeComponent();
+        public AgregarProductoPage()
+        {
+            InitializeComponent();
+
+            // valores por defecto (ajústalos si quieres)
+            if (pkCategoria.SelectedIndex < 0) pkCategoria.SelectedIndex = 0;
+            if (pkUnidad.SelectedIndex < 0) pkUnidad.SelectedIndex = 0;
+        }
 
         private async void OnGuardarProductoClicked(object sender, EventArgs e)
         {
@@ -21,19 +29,19 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
             try
             {
-                // SOLO requerimos: Nombre, Unidad y Categoría
+                // Requeridos mínimos
                 if (string.IsNullOrWhiteSpace(txtNombre?.Text))
                 { await DisplayAlert("Faltan datos", "Nombre obligatorio.", "OK"); return; }
-
-                if (string.IsNullOrWhiteSpace(txtUnidad?.Text))
-                { await DisplayAlert("Faltan datos", "Unidad obligatoria.", "OK"); return; }
 
                 if (pkCategoria?.SelectedIndex is null || pkCategoria.SelectedIndex < 0)
                 { await DisplayAlert("Faltan datos", "Selecciona una categoría.", "OK"); return; }
 
-                // Mapeo de categoría (ajusta si tu arreglo es distinto)
-                var categoryMap = new[] { 1, 2, 3, 4, 99 };
-                var catId = categoryMap[pkCategoria.SelectedIndex];
+                if (pkUnidad?.SelectedIndex is null || pkUnidad.SelectedIndex < 0)
+                { await DisplayAlert("Faltan datos", "Selecciona una unidad.", "OK"); return; }
+
+                // Mapeos desde los Pickers
+                var catId = _categoryIdByIndex[pkCategoria.SelectedIndex];
+                var unit = _unidadByIndex[pkUnidad.SelectedIndex];
 
                 // Opcionales
                 decimal? qty = null;
@@ -41,19 +49,14 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
                 DateTime? exp = dpExpira?.Date;
 
-                // Código de barras: OPCIONAL (NO se valida)
-                // string? barcode = string.IsNullOrWhiteSpace(codigoEntry?.Text) ? null : codigoEntry.Text.Trim();
-                // Si más adelante tu backend acepta barcode, añade la propiedad al DTO y envíala solo si no es null.
-
+                // DTO SIN UserID (el backend lo toma del token)
                 var dto = new ProductService.ProductoDto
                 {
                     Name = txtNombre.Text!.Trim(),
                     CategoryID = catId,
-                    Unit = txtUnidad.Text!.Trim(),
-                    UserID = Sesion.Id,
-                    Quantity = qty,               // opcional
-                    ExpirationDate = exp                // opcional
-                                                        // Barcode = barcode (solo si tu API lo soporta)
+                    Unit = unit,         //  del Picker
+                    Quantity = qty,
+                    ExpirationDate = exp
                 };
 
                 using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
@@ -61,6 +64,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
                 if (r?.resultado == true)
                 {
+                    //AppEvents.InventoryDirty = true; // para refrescar Inventario al volver (si usas el banderín)
                     await DisplayAlert("OK", "Producto insertado.", "Cerrar");
                     await Navigation.PopAsync();
                 }
@@ -71,7 +75,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Excepción", ex.Message, "OK");
+                await DisplayAlert("Excepcion", ex.Message, "OK");
             }
             finally
             {
@@ -85,7 +89,6 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             // Evita dobles suscripciones si tocan varias veces
             try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
 
-            // Si tienes ScanPage, nos suscribimos
             MessagingCenter.Subscribe<object, string>(this, "BarcodeScanned", (sender2, code) =>
             {
                 codigoEntry.Text = code;
@@ -96,10 +99,9 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             var scanType = Type.GetType("Frontend_Proyecto_Fridgeloop.Pages.ScanPage");
             if (scanType == null)
             {
-                await DisplayAlert("Escáner no disponible",
-                    "Aún no está implementada la pantalla de escaneo.",
+                await DisplayAlert("Escaner no disponible",
+                    "Aun no está implementada la pantalla de escaneo.",
                     "OK");
-                // Limpia la suscripción que creamos arriba
                 try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
                 return;
             }
@@ -109,18 +111,18 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 if (Activator.CreateInstance(scanType) is Page scanPage)
                     await Navigation.PushAsync(scanPage);
                 else
-                    await DisplayAlert("Escáner no disponible", "No se pudo crear la pantalla de escaneo.", "OK");
+                    await DisplayAlert("Escaner no disponible", "No se pudo crear la pantalla de escaneo.", "OK");
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Escáner no disponible", ex.Message, "OK");
+                await DisplayAlert("Escaner no disponible", ex.Message, "OK");
             }
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            try { MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned"); } catch { }
+            try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
             _cts?.Cancel();
         }
     }

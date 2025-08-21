@@ -32,14 +32,25 @@
                        TextColor="#003366" />
             </Frame>
 
-            <!-- Unit -->
+            <!-- Unidad (Picker) -->
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="txtUnidad"
-                       Placeholder="Unidad (Unit, ej: kg, ml, pz)"
-                       FontSize="16"
-                       BackgroundColor="Transparent"
-                       TextColor="#003366" />
+                <Picker x:Name="pkUnidad"
+            Title="Seleccionar unidad"
+            TitleColor="#666"
+            TextColor="#003366">
+                    <!-- El orden debe coincidir con _unidadByIndex del code-behind -->
+                    <Picker.Items>
+                        <x:String>kg</x:String>
+                        <x:String>g</x:String>
+                        <x:String>ml</x:String>
+                        <x:String>L</x:String>
+                        <x:String>pz</x:String>
+                        <x:String>unid</x:String>
+                        <x:String>pack</x:String>
+                    </Picker.Items>
+                </Picker>
             </Frame>
+
 
             <!-- ExpirationDate (opcional) -->
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
