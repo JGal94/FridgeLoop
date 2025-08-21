@@ -322,11 +322,15 @@ namespace Backend
 
                     if (data.status != 1) return null;
 
+                    string nombre = data.product.product_name;
+                    string cantidad = data.product.quantity;
+                    string categorias = data.product.categories;
+
                     return new Productos
                     {
-                        nombre = data.product.product_name ?? "Producto desconocido",
+                        nombre = !string.IsNullOrEmpty(nombre) ? nombre : "Producto desconocido",
                         idCategoria = 1, 
-                        unidad = "unidad" 
+                        unidad = !string.IsNullOrEmpty(cantidad) ? cantidad : "unidad"
                     };
                 }
             }
@@ -335,6 +339,8 @@ namespace Backend
                 return null;
             }
         }
+    
+        
 
         //Metodo para insetar producto por código de barras
         public ResInsertarProducto InsertarProductoPorCodigo(int userId, ReqInsertarProductoPorCodigo req)
