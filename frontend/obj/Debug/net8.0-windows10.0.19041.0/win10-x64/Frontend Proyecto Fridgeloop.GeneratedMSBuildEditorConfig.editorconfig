@@ -1,0 +1,161 @@
+is_global = true
+build_property.TargetFramework = net8.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Frontend_Proyecto_Fridgeloop
+build_property.ProjectDir = C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/AgregarProductoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.AgregarProductoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AgregarProductoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AgregarProductoPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/ConfiguracionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.ConfiguracionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ConfiguracionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ConfiguracionPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\DashboardPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/DetalleProductoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.DetalleProductoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\DetalleProductoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\DetalleProductoPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/DetalleRecetaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.DetalleRecetaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\DetalleRecetaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\DetalleRecetaPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/HistorialComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.HistorialComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HistorialComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HistorialComprasPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/HistorialRecetasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.HistorialRecetasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HistorialRecetasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HistorialRecetasPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/InventarioPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.InventarioPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\InventarioPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\InventarioPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/ListaComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.ListaComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ListaComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ListaComprasPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/NotificacionesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.NotificacionesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NotificacionesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NotificacionesPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/PerfilPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.PerfilPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PerfilPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PerfilPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/PresupuestoMensualPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.PresupuestoMensualPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PresupuestoMensualPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PresupuestoMensualPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/RecetasSugeridasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.RecetasSugeridasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RecetasSugeridasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RecetasSugeridasPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/RegistroPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.RegistroPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RegistroPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RegistroPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/ScanPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.ScanPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScanPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScanPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/StartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.StartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\StartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\StartPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Pages/VerificacionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Pages.VerificacionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\VerificacionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\VerificacionPage.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/saulg/OneDrive/Escritorio/ProjectMovile/FridgeLoop/frontend/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Frontend_Proyecto_Fridgeloop.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

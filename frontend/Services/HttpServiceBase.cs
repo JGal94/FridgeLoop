@@ -14,39 +14,59 @@ namespace Frontend_Proyecto_Fridgeloop.Services
 {
     public abstract class HttpServiceBase
     {
-        // HttpClient común para todos los servicios
         protected readonly HttpClient Http;
 
-        // Constructor SIN parámetros (como pedías)
         protected HttpServiceBase()
         {
+#if DEBUG && ANDROID
+            // Solo DEBUG en Android: aceptar cert de desarrollo (Kestrel).
+            var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (msg, cert, chain, errors) => true
+            };
+            Http = new HttpClient(handler)
+            {
+                BaseAddress = new Uri(Constants.BaseApi),
+                Timeout = TimeSpan.FromSeconds(30)
+            };
+#else
             Http = new HttpClient
             {
                 BaseAddress = new Uri(Constants.BaseApi),
                 Timeout = TimeSpan.FromSeconds(30)
             };
+#endif
+            if (!Http.DefaultRequestHeaders.Accept.Contains(new MediaTypeWithQualityHeaderValue("application/json")))
+                Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        // 1) Pone el bearer si existe en SecureStorage
+        /// <summary>
+        /// Establece el Authorization: Bearer {token} si existe en SecureStorage ("auth_token").
+        /// No reasigna si ya es el mismo valor.
+        /// </summary>
         protected async Task EnsureBearerAsync()
         {
-            var token = await SecureStorage.GetAsync("auth_token");
+            var token = await SecureStorage.GetAsync("auth_token"); // <- cambia la clave si usas otra
+            var current = Http.DefaultRequestHeaders.Authorization;
+
             if (!string.IsNullOrWhiteSpace(token))
             {
-                Http.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", token);
+                if (current == null || current.Scheme != "Bearer" || current.Parameter != token)
+                    Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }
             else
             {
-                Http.DefaultRequestHeaders.Authorization = null;
+                if (current != null) Http.DefaultRequestHeaders.Authorization = null;
             }
         }
 
-        // 2) Serializa a JSON
         protected StringContent J(object body) =>
             new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
 
-        // 3) Envío robusto con reintentos y CancellationToken requerido (firma que usa ProductService)
+        /// <summary>
+        /// Envío robusto: adjunta Bearer, reintenta 5xx/timeout/429 con backoff
+        /// y loguea body en errores para diagnóstico.
+        /// </summary>
         protected async Task<T?> SendAsync<T>(Func<Task<HttpResponseMessage>> send, CancellationToken ct, int maxRetries = 2)
         {
             await EnsureBearerAsync().ConfigureAwait(false);
@@ -66,8 +86,14 @@ namespace Frontend_Proyecto_Fridgeloop.Services
                     if ((int)res.StatusCode >= 200 && (int)res.StatusCode < 300)
                     {
                         try { return JsonConvert.DeserializeObject<T>(payload); }
-                        catch { return default; }
+                        catch
+                        {
+                            System.Diagnostics.Debug.WriteLine($"[HttpServiceBase] Falló deserialización (200). Payload:\n{payload}");
+                            return default;
+                        }
                     }
+
+                    System.Diagnostics.Debug.WriteLine($"[HTTP ERROR] {(int)res.StatusCode} {res.StatusCode}\n{payload}");
 
                     // 4xx (excepto 429) => no reintentar
                     if ((int)res.StatusCode >= 400 && (int)res.StatusCode < 500 && res.StatusCode != (HttpStatusCode)429)
@@ -83,7 +109,7 @@ namespace Frontend_Proyecto_Fridgeloop.Services
                 }
                 catch (TaskCanceledException) when (!ct.IsCancellationRequested)
                 {
-                    // timeout -> reintentar
+                    // Timeout => reintentar
                     attempt++;
                     if (attempt > maxRetries) throw;
                     await Task.Delay(delay, ct).ConfigureAwait(false);

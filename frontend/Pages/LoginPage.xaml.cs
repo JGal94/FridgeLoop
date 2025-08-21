@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using Frontend_Proyecto_Fridgeloop.Services;
 using Frontend_Proyecto_Fridgeloop.Helpers;
+using Microsoft.Maui.Storage;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
 {

@@ -1,4 +1,8 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;              // SecureStorage
 using Frontend_Proyecto_Fridgeloop.Services;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
@@ -6,6 +10,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
     public partial class InventarioPage : ContentPage
     {
         private readonly ProductService _svc = new();
+
         private int _page = 1;
         private const int _pageSize = 20;
         private string? _q;
@@ -23,28 +28,38 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         {
             if (IsBusy) return;
             IsBusy = true;
+
             try
             {
+                // (Opcional) ver si hay token en Android/iOS físico
+                var tok = await SecureStorage.GetAsync("auth_token");
+                System.Diagnostics.Debug.WriteLine($"[Inventario] token? {(string.IsNullOrWhiteSpace(tok) ? "NO" : "SÍ")}");
+
                 lblPagina.Text = $"Página {_page}";
+
                 using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
 
+                // <-- Tu servicio devuelve una LISTA directa
                 var lista = await _svc.ObtenerListaAsync(_page, _pageSize, _q, cts.Token);
+
                 if (lista != null)
                 {
-                    cvInventario.ItemsSource = lista; // ProductoDto (Name, Unit, Quantity, ExpirationDate)
+                    // Bind directo
+                    cvInventario.ItemsSource = lista; // List<ProductService.ProductoDto>
                 }
                 else
                 {
-                    // Ayuda de depuración: JSON crudo
-                    var raw = await _svc.ObtenerRawAsync(_page, _pageSize, _q, cts.Token);
-                    await DisplayAlert("Error", "No se pudo obtener el inventario.\n\nDetalle:\n" + raw, "OK");
+                    await DisplayAlert("Error", "No se pudo obtener el inventario.", "OK");
                 }
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Excepción", ex.Message, "OK");
             }
-            finally { IsBusy = false; }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async void OnRefreshRequested(object sender, EventArgs e)
@@ -58,14 +73,23 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         {
             _ctsSearch?.Cancel();
             _ctsSearch = new CancellationTokenSource();
+
             try
             {
-                await Task.Delay(400, _ctsSearch.Token); // debounce
-                _q = string.IsNullOrWhiteSpace(txtBuscar?.Text) ? null : txtBuscar.Text.Trim();
+                // Debounce
+                await Task.Delay(400, _ctsSearch.Token);
+
+                _q = string.IsNullOrWhiteSpace(txtBuscar?.Text)
+                    ? null
+                    : txtBuscar.Text.Trim();
+
                 _page = 1;
                 await CargarAsync();
             }
-            catch (TaskCanceledException) { }
+            catch (TaskCanceledException)
+            {
+                // ignorar si se canceló por tecleo continuo
+            }
         }
 
         private async void OnPrevClicked(object sender, EventArgs e)
@@ -79,7 +103,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
         private async void OnNextClicked(object sender, EventArgs e)
         {
-            _page++; // si luego tu API devuelve "total", aquí puedes limitar
+            _page++;   // Si luego agregas total páginas desde backend, aquí puedes limitar
             await CargarAsync();
         }
 
