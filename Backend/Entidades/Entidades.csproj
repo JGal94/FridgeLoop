@@ -70,6 +70,7 @@
     <Compile Include="Request\ReqDetalleCompraInsertar.cs" />
     <Compile Include="Request\ReqEliminarCompra.cs" />
     <Compile Include="Request\ReqInsertarProducto.cs" />
+    <Compile Include="Request\ReqInsertarProductoPorCodigo.cs" />
     <Compile Include="Request\ReqInsertarReseta.cs" />
     <Compile Include="Request\ReqInsertarUsuario.cs" />
     <Compile Include="Request\ReqInventarioInsertar.cs" />

@@ -58,3 +58,9 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\ob
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\bin\Debug\Entidades.dll
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\bin\Debug\Entidades.pdb
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\obj\Debug\Entidades.dll
+D:\Universidad\programacion movil\Proyecto Ale final\Backend\Entidades\obj\Debug\Entidades.pdb

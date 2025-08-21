@@ -3,9 +3,11 @@ using Entidades.Entity;
 using Entidades.Enum;
 using Entidades.Request;
 using Entidades.Response;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -302,6 +304,120 @@ namespace Backend
                 return res;
             }
         }
+
+        //metodo que consulta api externo para obtener los datos del producto por código de barras
+        private async Task<Productos> ObtenerProductoDeApi(string codigoBarras)
+        {
+            try
+            {
+                using (var http = new HttpClient())
+                {
+                    string url = $"https://world.openfoodfacts.org/api/v0/product/{codigoBarras}.json";
+                    var response = await http.GetAsync(url);
+
+                    if (!response.IsSuccessStatusCode) return null;
+
+                    string json = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(json);
+
+                    if (data.status != 1) return null;
+
+                    return new Productos
+                    {
+                        nombre = data.product.product_name ?? "Producto desconocido",
+                        idCategoria = 1, 
+                        unidad = "unidad" 
+                    };
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        //Metodo para insetar producto por código de barras
+        public ResInsertarProducto InsertarProductoPorCodigo(int userId, ReqInsertarProductoPorCodigo req)
+        {
+            var res = new ResInsertarProducto();
+
+            try
+            {
+                if (userId <= 0)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+            };
+                    return res;
+                }
+
+                if (req == null || string.IsNullOrWhiteSpace(req.codigoBarras) || req.cantidad <= 0 || !req.fechaExpiracion.HasValue)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "Código de barras, cantidad y fecha de expiración son obligatorios." }
+            };
+                    return res;
+                }
+
+                // 1. Consultar Open Food Facts
+                var productoApi = ObtenerProductoDeApi(req.codigoBarras).Result;
+
+                if (productoApi == null)
+                {
+                    res.resultado = false;
+                    res.listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.ProductoNoEncontrado, Message = "Producto no encontrado en Open Food Facts." }
+            };
+                    return res;
+                }
+
+                using (var linq = new linqDataContext())
+                {
+                    int? productID = null;
+                    int? errorId = null;
+                    string errorMensaje = null;
+
+                    // 2. Insertar producto
+                    linq.InsertProduct(
+                        productoApi.nombre,
+                        productoApi.idCategoria,
+                        productoApi.unidad,
+                        userId,
+                        req.cantidad,
+                        req.fechaExpiracion?.ToUniversalTime(),
+                        ref productID,
+                        ref errorId,
+                        ref errorMensaje
+                    );
+
+                    if (errorId.GetValueOrDefault() > 0)
+                    {
+                        res.resultado = false;
+                        res.listaDeErrores = new List<Error> {
+                    new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = errorMensaje ?? "Error al insertar el producto." }
+                };
+                        return res;
+                    }
+
+                    res.idProducto = productID ?? 0;
+                    res.resultado = true;
+                    res.mensaje = "Producto insertado correctamente desde Open Food Facts.";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                res.listaDeErrores = new List<Error> {
+            new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
+        };
+            }
+
+            return res;
+        }
+
+
     }
 
 }
