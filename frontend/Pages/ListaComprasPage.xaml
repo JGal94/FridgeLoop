@@ -86,7 +86,7 @@
                                         </Label.Text>
                                     </Label>
 
-                                    <!-- Precio (formato es-CR) -->
+                                    <!-- Precio (₡ con separadores; si es null muestra —) -->
                                     <VerticalStackLayout Grid.RowSpan="2" Grid.Column="1"
                                                          HorizontalOptions="End"
                                                          Spacing="2"
@@ -97,8 +97,13 @@
                                                HorizontalTextAlignment="End" />
                                         <Label FontSize="15"
                                                TextColor="#335"
-                                               HorizontalTextAlignment="End"
-                                               Text="{Binding PrecioUnitario, Converter={StaticResource CrcConverter}}" />
+                                               HorizontalTextAlignment="End">
+                                            <Label.Text>
+                                                <Binding Path="PrecioUnitario"
+                                                         StringFormat="₡{0:N0}"
+                                                         TargetNullValue="—" />
+                                            </Label.Text>
+                                        </Label>
                                     </VerticalStackLayout>
 
                                 </Grid>

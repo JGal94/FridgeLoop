@@ -26,15 +26,6 @@
                        BackgroundColor="Transparent" />
             </Frame>
 
-            <!-- Correo -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Entry Placeholder="Correo electrónico"
-                       FontSize="16"
-                       Keyboard="Email"
-                       TextColor="#003366"
-                       BackgroundColor="Transparent" />
-            </Frame>
-
             <!-- Contraseña -->
             <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
                 <Entry Placeholder="Contraseña"

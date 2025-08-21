@@ -65,7 +65,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 };
                 ShoppingList.Items.Add(item);
 
-                await DisplayAlert("Agregado", $"{item.Nombre} ? a la lista de compras.", "OK");
+                await DisplayAlert("Agregado", $"{item.Nombre} a la lista de compras.", "OK");
                 await Navigation.PopAsync(); // volvemos a ListaComprasPage
             }
             catch (Exception ex)

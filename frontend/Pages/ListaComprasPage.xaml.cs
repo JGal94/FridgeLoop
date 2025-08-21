@@ -143,7 +143,16 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
         private async void OnVerHistorialClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Próximamente", "Historial de compras aún no implementado.", "OK");
+            if (IsBusy) return;
+            IsBusy = true;
+            try
+            {
+                await Navigation.PushAsync(new HistorialComprasPage());
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async void OnSincronizarClicked(object sender, EventArgs e)
