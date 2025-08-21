@@ -1,4 +1,4 @@
-USE [DespensaDB]
+--USE [DespensaDB]
 
 Go 
 -- ========================================
@@ -866,11 +866,275 @@ BEGIN
 END
 GO
 
+--------------------------------------------
+CREATE OR ALTER PROCEDURE dbo.SP_Compras_RegistrarDesdeItemsNominales
+  @UserID         INT,
+  @FechaCompra    DATETIME        = NULL,
+  @ItemsJson      NVARCHAR(MAX),
+  @PurchaseID     INT             OUTPUT,
+  @ErrorId        INT             OUTPUT,
+  @ErrorMensaje   NVARCHAR(500)   OUTPUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SET XACT_ABORT ON;
+
+  SET @PurchaseID = 0;
+  SET @ErrorId = 0;
+  SET @ErrorMensaje = N'';
+
+  BEGIN TRY
+    IF @UserID IS NULL OR @UserID <= 0
+      THROW 50001, 'UserID inválido.', 1;
+
+    IF @ItemsJson IS NULL OR LTRIM(RTRIM(@ItemsJson)) = N'' OR ISJSON(@ItemsJson) <> 1
+      THROW 50002, 'ItemsJson requerido.', 1;
+
+    -- 1) Parseo JSON nominal
+    DECLARE @ItemsNominal TABLE (
+      Nombre           NVARCHAR(200)  NOT NULL,
+      NombreKey        NVARCHAR(200)  NOT NULL,
+      CategoryID       INT            NOT NULL,
+      Unit             NVARCHAR(50)   NOT NULL,
+      UnitKey          NVARCHAR(50)   NOT NULL,
+      Quantity         DECIMAL(18,3)  NOT NULL,
+      UnitPrice        DECIMAL(18,4)  NULL,
+      ExpirationDate   DATE           NULL
+    );
+
+    INSERT INTO @ItemsNominal (Nombre, NombreKey, CategoryID, Unit, UnitKey, Quantity, UnitPrice, ExpirationDate)
+    SELECT
+      LTRIM(RTRIM(j.Nombre)),
+      LOWER(LTRIM(RTRIM(j.Nombre))),
+      j.idCategoria,
+      LTRIM(RTRIM(j.unidad)),
+      LOWER(LTRIM(RTRIM(j.unidad))),
+      j.cantidad,
+      j.precioUnitario,
+      TRY_CONVERT(date, j.fechaExpiracion)
+    FROM OPENJSON(@ItemsJson)
+    WITH (
+      Nombre           NVARCHAR(200)  '$.nombre',
+      idCategoria      INT            '$.idCategoria',
+      unidad           NVARCHAR(50)   '$.unidad',
+      cantidad         DECIMAL(18,3)  '$.cantidad',
+      precioUnitario   DECIMAL(18,4)  '$.precioUnitario',
+      fechaExpiracion  NVARCHAR(30)   '$.fechaExpiracion'
+    ) AS j;
+
+    IF NOT EXISTS (SELECT 1 FROM @ItemsNominal)
+      THROW 50003, 'ItemsJson vacío o inválido.', 1;
+
+    IF EXISTS (SELECT 1 FROM @ItemsNominal WHERE Quantity <= 0 OR CategoryID <= 0 OR NombreKey = '' OR UnitKey = '')
+      THROW 50004, 'Cada ítem debe traer nombre, idCategoria, unidad y cantidad > 0.', 1;
+
+    -- 2) Resolver/crear Products
+    DECLARE @DistinctNominal TABLE (NombreKey NVARCHAR(200), CategoryID INT, UnitKey NVARCHAR(50));
+    INSERT INTO @DistinctNominal SELECT DISTINCT NombreKey, CategoryID, UnitKey FROM @ItemsNominal;
+
+    DECLARE @NominalToProduct TABLE (NombreKey NVARCHAR(200), CategoryID INT, UnitKey NVARCHAR(50), ProductID INT);
+
+    ;WITH ExistingProducts AS (
+      SELECT p.ProductID,
+             LOWER(LTRIM(RTRIM(p.Name))) AS NombreKey,
+             p.CategoryID,
+             LOWER(LTRIM(RTRIM(p.Unit))) AS UnitKey
+      FROM dbo.Products p
+    )
+    MERGE dbo.Products AS tgt
+    USING (
+      SELECT dn.NombreKey, dn.CategoryID, dn.UnitKey
+      FROM @DistinctNominal dn
+      LEFT JOIN ExistingProducts ep
+        ON ep.NombreKey = dn.NombreKey AND ep.CategoryID = dn.CategoryID AND ep.UnitKey = dn.UnitKey
+      WHERE ep.ProductID IS NULL
+    ) AS src
+      ON 1=0
+    WHEN NOT MATCHED THEN
+      INSERT (Name, CategoryID, Unit)
+      VALUES (src.NombreKey, src.CategoryID, src.UnitKey)
+    OUTPUT inserted.Name, inserted.CategoryID, inserted.Unit, inserted.ProductID
+      INTO @NominalToProduct(NombreKey, CategoryID, UnitKey, ProductID);
+
+    INSERT INTO @NominalToProduct (NombreKey, CategoryID, UnitKey, ProductID)
+    SELECT ep.NombreKey, ep.CategoryID, ep.UnitKey, ep.ProductID
+    FROM @DistinctNominal dn
+    JOIN (
+      SELECT p.ProductID,
+             LOWER(LTRIM(RTRIM(p.Name))) AS NombreKey,
+             p.CategoryID,
+             LOWER(LTRIM(RTRIM(p.Unit))) AS UnitKey
+      FROM dbo.Products p
+    ) ep
+      ON ep.NombreKey = dn.NombreKey AND ep.CategoryID = dn.CategoryID AND ep.UnitKey = dn.UnitKey
+    WHERE NOT EXISTS (
+      SELECT 1 FROM @NominalToProduct m
+      WHERE m.NombreKey = dn.NombreKey AND m.CategoryID = dn.CategoryID AND m.UnitKey = dn.UnitKey
+    );
+
+    -- 3) Consolidar por ProductID para inventario (no necesitamos precio aquí)
+    DECLARE @ItemsByProduct TABLE (ProductID INT, Quantity DECIMAL(18,3), MinExpiration DATE NULL);
+
+    INSERT INTO @ItemsByProduct(ProductID, Quantity, MinExpiration)
+    SELECT m.ProductID,
+           SUM(n.Quantity),
+           MIN(n.ExpirationDate)
+    FROM @ItemsNominal n
+    JOIN @NominalToProduct m
+      ON m.NombreKey = n.NombreKey AND m.CategoryID = n.CategoryID AND m.UnitKey = n.UnitKey
+    GROUP BY m.ProductID;
+
+    -- 4) Insertar Purchases (usa TotalAmount, no 'Total')
+    DECLARE @Total DECIMAL(18,4) =
+    ( SELECT SUM(ISNULL(n.UnitPrice,0) * n.Quantity) FROM @ItemsNominal n );
+
+    INSERT INTO dbo.Purchases(UserID, PurchaseDate, TotalAmount)
+    VALUES (@UserID, ISNULL(@FechaCompra, SYSUTCDATETIME()), ISNULL(@Total, 0));
+
+    SET @PurchaseID = SCOPE_IDENTITY();
+
+    -- 5) Insertar PurchaseDetails (SIN ExpirationDate porque no existe en la tabla)
+    INSERT INTO dbo.PurchaseDetails (PurchaseID, ProductID, Quantity, UnitPrice)
+    SELECT @PurchaseID,
+           m.ProductID,
+           n.Quantity,
+           n.UnitPrice
+    FROM @ItemsNominal n
+    JOIN @NominalToProduct m
+      ON m.NombreKey = n.NombreKey AND m.CategoryID = n.CategoryID AND m.UnitKey = n.UnitKey;
+
+    -- 6) MERGE a UserInventory (usa MinExpiration)
+    MERGE dbo.UserInventory AS tgt
+    USING @ItemsByProduct AS src
+      ON tgt.UserID = @UserID AND tgt.ProductID = src.ProductID
+    WHEN MATCHED THEN
+      UPDATE SET
+        Quantity = ISNULL(tgt.Quantity, 0) + ISNULL(src.Quantity, 0),
+        ExpirationDate =
+          CASE
+            WHEN src.MinExpiration IS NULL THEN tgt.ExpirationDate
+            WHEN tgt.ExpirationDate IS NULL THEN src.MinExpiration
+            WHEN src.MinExpiration <= tgt.ExpirationDate THEN src.MinExpiration
+            ELSE tgt.ExpirationDate
+          END
+    WHEN NOT MATCHED THEN
+      INSERT (UserID, ProductID, Quantity, ExpirationDate)
+      VALUES (@UserID, src.ProductID, src.Quantity, src.MinExpiration);
+
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = N'Compra registrada correctamente.';
+    RETURN 0;
+
+  END TRY
+  BEGIN CATCH
+    SET @ErrorId = ERROR_NUMBER();
+    SET @ErrorMensaje = LEFT(ERROR_MESSAGE(), 500);
+    IF XACT_STATE() <> 0 ROLLBACK TRANSACTION;
+    RETURN @ErrorId;
+  END CATCH
+END
+GO
+---------------------------------------------------------------
+CREATE OR ALTER PROCEDURE dbo.GetUserSecurityById
+  @UserID INT
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  SELECT 
+      u.UserID,
+      u.PasswordHash AS PASSWORD_HASH,
+      u.IsActive     AS IS_ACTIVE
+  FROM dbo.Users AS u WITH (NOLOCK)
+  WHERE u.UserID = @UserID;
+END
 GO
 
-SELECT * FROM Purchases
-SELECT * FROM Products
-SELECT * FROM UserSessions
+-------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE dbo.SP_Usuario_CambiarPassword
+  @UserID         INT,
+  @NuevoHash      NVARCHAR(255),
+  @ErrorId        INT           OUTPUT,
+  @ErrorMensaje   NVARCHAR(500) OUTPUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SET XACT_ABORT ON;
+
+  BEGIN TRY
+    IF (@UserID IS NULL OR @UserID <= 0)
+      THROW 50001, 'UserID inválido.', 1;
+
+    IF (@NuevoHash IS NULL OR LTRIM(RTRIM(@NuevoHash)) = N'')
+      THROW 50002, 'Hash de contraseña requerido.', 1;
+
+    IF NOT EXISTS (SELECT 1 FROM dbo.Users WHERE UserID = @UserID AND IsActive = 1)
+      THROW 50003, 'Usuario no encontrado o inactivo.', 1;
+
+    UPDATE dbo.Users
+      SET PasswordHash = @NuevoHash
+    WHERE UserID = @UserID;
+
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = N'Contraseña actualizada.';
+    RETURN 0;
+  END TRY
+  BEGIN CATCH
+    SET @ErrorId = ERROR_NUMBER();
+    SET @ErrorMensaje = LEFT(ERROR_MESSAGE(), 500);
+    IF XACT_STATE() <> 0 ROLLBACK TRANSACTION;
+    RETURN @ErrorId;
+  END CATCH
+END
+GO
+
+GO
+
+------------------------------------------------------
+CREATE OR ALTER PROCEDURE dbo.SP_Usuario_ActualizarNombre
+  @UserID         INT,
+  @NuevoNombre    NVARCHAR(100),
+  @ErrorId        INT           OUTPUT,
+  @ErrorMensaje   NVARCHAR(500) OUTPUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SET XACT_ABORT ON;
+
+  BEGIN TRY
+    IF (@UserID IS NULL OR @UserID <= 0)
+      THROW 50011, 'UserID inválido.', 1;
+
+    IF (@NuevoNombre IS NULL OR LTRIM(RTRIM(@NuevoNombre)) = N'')
+      THROW 50012, 'El nombre no puede estar vacío.', 1;
+
+    IF (LEN(@NuevoNombre) > 100)
+      THROW 50013, 'El nombre supera el máximo permitido.', 1;
+
+    IF NOT EXISTS (SELECT 1 FROM dbo.Users WHERE UserID = @UserID AND IsActive = 1)
+      THROW 50014, 'Usuario no encontrado o inactivo.', 1;
+
+    UPDATE dbo.Users
+      SET FullName = @NuevoNombre
+    WHERE UserID = @UserID;
+
+    SET @ErrorId = 0;
+    SET @ErrorMensaje = N'Nombre actualizado.';
+    RETURN 0;
+  END TRY
+  BEGIN CATCH
+    SET @ErrorId = ERROR_NUMBER();
+    SET @ErrorMensaje = LEFT(ERROR_MESSAGE(), 500);
+    IF XACT_STATE() <> 0 ROLLBACK TRANSACTION;
+    RETURN @ErrorId;
+  END CATCH
+END
+GO
+
+
+
+
+
 
 
 

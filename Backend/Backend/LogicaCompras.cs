@@ -21,102 +21,92 @@ namespace Backend
 {
     public class LogicaCompras
     {
-        // Registra compra + actualiza inventario (upsert) por cada item
         public ResRegistrarCompra RegistrarCompra(int userId, ReqRegistrarCompra req)
         {
-            var res = new ResRegistrarCompra { listaDeErrores = new List<Error>() };
+            // ---------- Validaciones base ----------
+            if (req == null)
+                return Fail("La solicitud es nula.", EnumErrores.RequestNulo);
+
+            if (req.items == null || req.items.Count == 0)
+                return Fail("Debes enviar al menos un item.", EnumErrores.CampoRequeridoFaltante);
+
+            foreach (var it in req.items)
+            {
+                if (string.IsNullOrWhiteSpace(it.nombre) || it.idCategoria <= 0 || string.IsNullOrWhiteSpace(it.unidad))
+                    return Fail("Cada item requiere nombre, idCategoria y unidad.", EnumErrores.CampoRequeridoFaltante);
+
+                if (it.cantidad <= 0)
+                    return Fail("La cantidad debe ser > 0.", EnumErrores.FormatoDatoInvalido);
+
+                if (it.precioUnitario.HasValue && it.precioUnitario.Value < 0)
+                    return Fail("El precio no puede ser negativo.", EnumErrores.FormatoDatoInvalido);
+            }
+
+            // ---------- Serializar items NOMINALES tal cual los pide el SP ----------
+            // (sin IDs: nombre, idCategoria, unidad, cantidad, precioUnitario, fechaExpiracion)
+            string itemsJson = Newtonsoft.Json.JsonConvert.SerializeObject(req.items);
 
             try
             {
-                if (userId <= 0)
-                {
-                    res.resultado = false;
-                    res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." });
-                    return res;
-                }
-
-                if (req == null || req.items == null || req.items.Count == 0)
-                {
-                    res.resultado = false;
-                    res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "La compra debe tener al menos un item." });
-                    return res;
-                }
-
-                // Validaciones rápidas de cada item
-                foreach (var it in req.items)
-                {
-                    if (it.idProducto <= 0 || it.cantidad <= 0)
-                    {
-                        res.resultado = false;
-                        res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "idProducto y cantidad son obligatorios y deben ser > 0." });
-                        return res;
-                    }
-                    if (it.precioUnitario.HasValue && it.precioUnitario.Value < 0)
-                    {
-                        res.resultado = false;
-                        res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.FormatoDatoInvalido, Message = "precioUnitario no puede ser negativo." });
-                        return res;
-                    }
-                }
-
-                // JSON que espera el SP: [{ProductID, Quantity, UnitPrice?, ExpirationDate?}]
-                var itemsJson = JsonConvert.SerializeObject(
-                    req.items.Select(i => new
-                    {
-                        ProductID = i.idProducto,
-                        Quantity = i.cantidad,
-                        UnitPrice = i.precioUnitario,                          // null si no viene
-                        ExpirationDate = i.fechaExpiracion?.Date               // el SP lo lee como DATE
-                    })
-                );
-
                 using (var linq = new linqDataContext())
                 {
                     int? purchaseId = 0;
-                    int? errorId = 0;
-                    string errorMsg = "";
+                    int? spErr = 0;
+                    string spMsg = "";
 
-                    // El SP inserta Purchases + PurchaseDetails y actualiza inventario en una transacción
-                    linq.SP_Compras_Registrar(
+                    linq.SP_Compras_RegistrarDesdeItemsNominales(
                         userId,
-                        req.fechaCompra ?? DateTime.UtcNow,                    // el SP usa GETUTCDATE() si viene NULL
+                        req.fechaCompra.HasValue ? req.fechaCompra.Value : DateTime.UtcNow,
                         itemsJson,
                         ref purchaseId,
-                        ref errorId,
-                        ref errorMsg
-                    ); // 
+                        ref spErr,
+                        ref spMsg
+                    );
 
-                    if ((errorId ?? 0) != 0)
+                    if (spErr.GetValueOrDefault() != 0)
+                        return Fail(
+                            string.IsNullOrWhiteSpace(spMsg) ? "No se pudo registrar la compra." : spMsg,
+                            EnumErrores.CompraNoRegistrada
+                        );
+
+                    // Éxito
+                    decimal total = req.items.Sum(i => (i.precioUnitario.HasValue ? i.precioUnitario.Value : 0m) * i.cantidad);
+
+                    return new ResRegistrarCompra
                     {
-                        res.resultado = false;
-                        res.listaDeErrores.Add(new Error { ErrorCode = (EnumErrores)(errorId ?? 0), Message = errorMsg });
-                        return res;
-                    }
-
-                    // Total calculado igual que en el SP (suma de UnitPrice*Quantity)
-                    res.total = req.items.Sum(i => (i.precioUnitario ?? 0m) * i.cantidad);
-                    res.idCompra = purchaseId ?? 0;
-                    res.resultado = true;
-                    res.mensaje = "Compra registrada correctamente.";
-                    return res;
+                        resultado = true,
+                        mensaje = string.IsNullOrWhiteSpace(spMsg) ? "Compra registrada correctamente." : spMsg,
+                        idCompra = purchaseId.GetValueOrDefault(),
+                        total = total,
+                        listaDeErrores = new List<Error>()
+                    };
                 }
             }
             catch (Exception ex)
             {
-                res.resultado = false;
-                if (res.listaDeErrores == null)
-                    res.listaDeErrores = new List<Error>();
-
-                res.listaDeErrores.Add(new Error
-                {
-                    ErrorCode = EnumErrores.ErrorNoControlado,
-                    Message = ex.Message
-                });
-
-                return res;
+                // Puedes loguear 'ex' aquí si tienes logger
+                return Fail("Ocurrió un error no controlado al registrar la compra.", EnumErrores.ErrorNoControlado);
             }
-
         }
+
+        // ---------- Helper local uniforme ----------
+        private ResRegistrarCompra Fail(string msg, EnumErrores code)
+        {
+            return new ResRegistrarCompra
+            {
+                resultado = false,
+                mensaje = msg,
+                idCompra = 0,
+                total = 0m,
+                listaDeErrores = new List<Error>
+            {
+                new Error { ErrorCode = code, Message = msg }     // ✅
+
+            }
+            };
+        }
+
+
 
         // Placeholders: implementa cuando tengas tablas de compras en BD
         public ResObtenerCompras ObtenerCompras(int userId, ReqObtenerCompras req)

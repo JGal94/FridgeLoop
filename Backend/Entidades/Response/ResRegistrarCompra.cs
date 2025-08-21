@@ -7,13 +7,10 @@ using Entidades.Entity;
 
 namespace Entidades.Response
 {
-    public class ResRegistrarCompra
+    public class ResRegistrarCompra : ResBase
     {
-        public bool resultado { get; set; }
-        public string mensaje { get; set; }
-        public List<Error> listaDeErrores { get; set; }
-
-        public int idCompra { get; set; }  // 0 si aún no persistes compras en BD
+        public int idCompra { get; set; }
         public decimal total { get; set; }
+        public string mensaje { get; set; }   // ✅ ahora sí compila
     }
 }

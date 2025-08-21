@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DespensaDB" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:sqladminfl.database.windows.net,1433;Initial Catalog=DespensaDB;Persist Security Info=True;User ID=sqladminfl;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DespensaDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=fridgeloop.database.windows.net;Initial Catalog=DespensaDB;Persist Security Info=True;User ID=sqladminfl;Trust Server Certificate=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DespensaDBConnectionString2" Provider="System.Data.SqlClient" />
   <Function Name="dbo.ActiveUser" Method="ActiveUser">
     <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(10)" />
@@ -59,12 +59,55 @@
       <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetProductsByUser" Method="GetProductsByUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Q" Parameter="q" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Page" Parameter="page" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetProductsByUserResult">
+      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.GetPurchases" Method="GetPurchases">
     <ElementType Name="GetPurchasesResult">
       <Column Name="PurchaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPurchases" Method="GetPurchases1">
+    <ElementType Name="GetPurchasesResult1">
+      <Column Name="PurchaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUserByEmail" Method="GetUserByEmail">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetUserByEmailResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PASSWORD_HASH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUserById" Method="GetUserById">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetUserByIdResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.GetUserInventory" Method="GetUserInventory">
@@ -123,6 +166,16 @@
     <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.InsertUser" Method="InsertUser">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CodigoVerificacion" Parameter="codigoVerificacion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.InsertUserInventory" Method="InsertUserInventory">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
@@ -145,96 +198,6 @@
   </Function>
   <Function Name="dbo.MarkNotificationAsRead" Method="MarkNotificationAsRead">
     <Parameter Name="NotificationID" Parameter="notificationID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdateProduct" Method="UpdateProduct">
-    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
-    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdateUser" Method="UpdateUser">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdateUserInventory" Method="UpdateUserInventory">
-    <Parameter Name="InventoryID" Parameter="inventoryID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.InsertUser" Method="InsertUser">
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="CodigoVerificacion" Parameter="codigoVerificacion" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_RegistrarRecetaYActualizarInventario" Method="SP_RegistrarRecetaYActualizarInventario">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="PreparationTime" Parameter="preparationTime" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Difficulty" Parameter="difficulty" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="Calories" Parameter="calories" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Style" Parameter="style" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="IngredientesJson" Parameter="ingredientesJson" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.GetUserByEmail" Method="GetUserByEmail">
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="GetUserByEmailResult">
-      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="PASSWORD_HASH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetProductsByUser" Method="GetProductsByUser">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Q" Parameter="q" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Page" Parameter="page" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
-    <ElementType Name="GetProductsByUserResult">
-      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.UpdateUserInventoryForUser" Method="UpdateUserInventoryForUser">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdateProductForUser" Method="UpdateProductForUser">
-    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_Compras_Eliminar" Method="SP_Compras_Eliminar">
@@ -277,6 +240,29 @@
     <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_Compras_RegistrarDesdeItemsNominales" Method="SP_Compras_RegistrarDesdeItemsNominales">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaCompra" Parameter="fechaCompra" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ItemsJson" Parameter="itemsJson" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_RegistrarRecetaYActualizarInventario" Method="SP_RegistrarRecetaYActualizarInventario">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PreparationTime" Parameter="preparationTime" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Difficulty" Parameter="difficulty" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Calories" Parameter="calories" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Style" Parameter="style" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IngredientesJson" Parameter="ingredientesJson" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RecipeID" Parameter="recipeID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.SP_UserInventory_PorVencer" Method="SP_UserInventory_PorVencer">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Dias" Parameter="dias" Type="System.Int32" DbType="Int" />
@@ -294,37 +280,65 @@
       <Column Name="DiasRestantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_Usuario_ActualizarNombre" Method="SP_Usuario_ActualizarNombre">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+  <Function Name="dbo.UpdateProduct" Method="UpdateProduct">
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_Usuario_CambiarPassword" Method="SP_Usuario_CambiarPassword">
+  <Function Name="dbo.UpdateProductForUser" Method="UpdateProductForUser">
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_Sesion_CerrarTodasPorUsuario" Method="SP_Sesion_CerrarTodasPorUsuario">
+  <Function Name="dbo.UpdatePurchase" Method="UpdatePurchase">
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateUser" Method="UpdateUser">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateUserInventory" Method="UpdateUserInventory">
+    <Parameter Name="InventoryID" Parameter="inventoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateUserInventoryForUser" Method="UpdateUserInventoryForUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="ExpirationDate" Parameter="expirationDate" Type="System.DateTime" DbType="Date" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.GetUserSecurityById" Method="GetUserSecurityById">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <ElementType Name="GetUserSecurityByIdResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PASSWORD_HASH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetUserById" Method="GetUserById">
+  <Function Name="dbo.SP_Usuario_CambiarPassword" Method="SP_Usuario_CambiarPassword">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="GetUserByIdResult">
-      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CORREO_ELECTRONICO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </ElementType>
+    <Parameter Name="NuevoHash" Parameter="nuevoHash" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Usuario_ActualizarNombre" Method="SP_Usuario_ActualizarNombre">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoNombre" Parameter="nuevoNombre" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

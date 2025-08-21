@@ -56,5 +56,17 @@ namespace AccesoDatos.Properties {
                 return ((string)(this["DespensaDBConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=fridgeloop.database.windows.net;Initial Catalog=DespensaDB;Persist Se" +
+            "curity Info=True;User ID=sqladminfl;Password=20FLSJA**;TrustServerCertificate=Tr" +
+            "ue")]
+        public string DespensaDBConnectionString2 {
+            get {
+                return ((string)(this["DespensaDBConnectionString2"]));
+            }
+        }
     }
 }

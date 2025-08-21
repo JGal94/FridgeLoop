@@ -8,24 +8,25 @@ namespace Entidades.Enum
 {
     public enum EnumErrores
     {
-        ErrorNoControlado = 100,              // Excepción no manejada por el sistema
-        ErrorDeBaseDatos = 101,               // Error al acceder o consultar la base de datos
-        ConexionFallida = 102,                // No se pudo conectar al servidor o base de datos
+        ErrorNoControlado = 100,
+        ErrorDeBaseDatos = 101,
+        ConexionFallida = 102,
 
         // ============================
         // 200–299 → Errores de validación / entrada de datos
         // ============================
 
-        RequestNulo = 200,                    // La solicitud es nula
-        NombreNuloOVacio = 201,               // El nombre está vacío o no fue enviado
-        ApellidoNuloOVacio = 202,             // El apellido está vacío o no fue enviado
-        CorreoNuloOVacio = 203,               // El correo no fue proporcionado
-        FormatoCorreoInvalido = 204,          // El formato del correo electrónico no es válido
-        PasswordNuloOVacio = 205,             // La contraseña está vacía
-        PasswordDebil = 206,                  // La contraseña no cumple con requisitos mínimos
-        UsuarioFaltante = 207,                // Faltan datos del usuario en la solicitud
-        CampoRequeridoFaltante = 208,         // Uno o más campos obligatorios no fueron enviados
-        FormatoDatoInvalido = 209,            // Algún dato enviado no cumple el formato esperado
+        Validacion = 200,                     // Error genérico de validación
+        RequestNulo = 201,
+        NombreNuloOVacio = 202,
+        ApellidoNuloOVacio = 203,
+        CorreoNuloOVacio = 204,
+        FormatoCorreoInvalido = 205,
+        PasswordNuloOVacio = 206,
+        PasswordDebil = 207,
+        UsuarioFaltante = 208,
+        CampoRequeridoFaltante = 209,
+        FormatoDatoInvalido = 210,            // Algún dato enviado no cumple el formato esperado
 
         // ============================
         // 300–399 → Errores de autenticación / seguridad / sesión

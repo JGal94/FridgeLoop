@@ -1,4 +1,4 @@
-CREATE DATABASE [DespensaDB]
+--CREATE DATABASE [DespensaDB]
 GO
 USE [DespensaDB]
 
