@@ -306,7 +306,7 @@ namespace Backend
         }
 
         //metodo que consulta api externo para obtener los datos del producto por código de barras
-        private async Task<Productos> ObtenerProductoDeApi(string codigoBarras)
+        public async Task<Productos> ObtenerProductoDeApi(string codigoBarras)
         {
             try
             {
