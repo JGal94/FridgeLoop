@@ -1,19 +1,19 @@
-﻿using System;
+﻿using AccesoDatos;
+using Backend.Backend;
+using Entidades.Entity;
+using Entidades.Enum;
+using Entidades.Request;
+using Entidades.Response;
+using Entidades.Response.Entidades.Response;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AccesoDatos;
-using Entidades.Entity;
-using Entidades.Enum;
-using Entidades.Response;
-using Entidades.Request;
-
 using Tx = System.Transactions;
-using Newtonsoft.Json;
-using Entidades.Response.Entidades.Response;
-using System.Data.SqlClient;
 
 
 
@@ -282,5 +282,40 @@ namespace Backend
                 listaDeErrores = new List<Error> { new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = "No existe tabla de compras/detalle." } }
             };
         }
+
+
+        public async Task<ResListaCompra> GenerarListaCompraSoloIA(int userId)
+        {
+            // 1. Traer inventario del usuario
+            var inventario = ObtenerInventarioUsuario(userId);
+
+            // 2. Pasar a IA
+            LogicaComprasIA ia = new LogicaComprasIA();
+            return await ia.GenerarListaCompraConIA(userId, inventario);
+        }
+
+        private List<Productos> ObtenerInventarioUsuario(int userId)
+        {
+            using (var linq = new linqDataContext())
+            {
+                var prods = linq.GetProducts().ToList();
+                var inv = linq.GetUserInventory().ToList();
+
+                return (from ui in inv
+                        where ui.UserID == userId
+                        join p in prods on ui.ProductID equals p.ProductID
+                        select new Productos
+                        {
+                            nombre = p.Name,
+                            idCategoria = p.CategoryID ?? 0,
+                            unidad = p.Unit,
+                            userID = ui.UserID,
+                            quantity = ui.Quantity,
+                            expirationDate = ui.ExpirationDate
+                        }).ToList();
+            }
+        }
+
+
     }
 }

@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogicaCompras.cs" />
+    <Compile Include="LogicaComprasIA.cs" />
     <Compile Include="LogicaDespensa.cs" />
     <Compile Include="LogicaPerfil.cs" />
     <Compile Include="LogicaProducto.cs" />
