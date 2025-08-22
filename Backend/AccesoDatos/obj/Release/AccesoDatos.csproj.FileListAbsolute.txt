@@ -12,3 +12,10 @@ C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.Ass
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.dll
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.dll.config
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\AccesoDatos\obj\Release\AccesoDatos.pdb

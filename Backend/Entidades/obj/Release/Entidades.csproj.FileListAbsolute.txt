@@ -10,3 +10,9 @@ C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.Assembl
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.dll
 C:\Users\juanf\FridgeLoop\Backend\Entidades\obj\Release\Entidades.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Release\Entidades.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\bin\Release\Entidades.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.AssemblyReference.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Release\Entidades.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Entidades\obj\Release\Entidades.pdb

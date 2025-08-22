@@ -9,3 +9,14 @@ C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Release\Gateway.csproj.CoreCompile
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Release\Gateway.csproj.Up2Date
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Release\Gateway.dll
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Release\Gateway.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Gateway.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Gateway.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Entidades.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Newtonsoft.Json.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Entidades.pdb
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\bin\Release\Newtonsoft.Json.xml
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\obj\Release\Gateway.csproj.AssemblyReference.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\obj\Release\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\obj\Release\Gateway.csproj.Up2Date
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\obj\Release\Gateway.dll
+C:\Users\juanf\proyecto\FridgeLoop\Backend\Gateway\obj\Release\Gateway.pdb

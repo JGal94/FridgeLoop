@@ -6,6 +6,7 @@ using System.Security.Claims;
 using Entidades.Enum;
 using Entidades.Entity;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace API.Controllers   
 {
@@ -147,7 +148,7 @@ namespace API.Controllers
         // GET api/producto/porvencer?dias=7&incluirVencidos=false&page=1&pageSize=50
         [HttpGet]
         [Route("porvencer")]
-        [JwtAuthorize]
+        
         public ResProductosPorVencer ProductosPorVencer([FromUri] int dias = 7, [FromUri] bool incluirVencidos = false,
                                                         [FromUri] int maxDiasVencidos = 7, [FromUri] int page = 1, [FromUri] int pageSize = 50)
         {
@@ -166,6 +167,57 @@ namespace API.Controllers
             }
 
             return CreateLogic().ObtenerProductosPorVencer_SP(userId, dias, incluirVencidos, maxDiasVencidos, page, pageSize);
+        }
+        // ... dentro de la clase ProductoController (ya tiene [JwtAuthorize] y RoutePrefix("api/producto"))
+        [HttpGet]
+        [Route("obtenerporcodigo")]
+        public async Task<ResObtenerProductoPorCodigo> ObtenerProductoPorCodigo([FromUri] string codigoBarras)
+        {
+            var res = new ResObtenerProductoPorCodigo
+            {
+                resultado = false,
+                listaDeErrores = new List<Error>()
+            };
+
+            // Si tu controller está con [JwtAuthorize], mantenemos la validación
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.TokenInvalido,
+                    Message = "Usuario no autenticado."
+                });
+                return res;
+            }
+
+            if (string.IsNullOrWhiteSpace(codigoBarras))
+            {
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.CampoRequeridoFaltante,
+                    Message = "El código de barras es obligatorio."
+                });
+                return res;
+            }
+
+            // Llama a tu lógica que consulta el API externo (sin insertar)
+            // Debe devolver Entidades.Entity.Productos o null si no existe
+            var producto = await CreateLogic().ObtenerProductoDeApi(codigoBarras);
+
+            if (producto == null)
+            {
+                res.listaDeErrores.Add(new Error
+                {
+                    ErrorCode = EnumErrores.ProductoNoEncontrado,
+                    Message = "Producto no encontrado en la fuente externa."
+                });
+                return res;
+            }
+
+            res.Producto = producto;   // <- respeta tu clase ResObtenerProductoPorCodigo
+            res.resultado = true;
+            return res;
         }
 
     }

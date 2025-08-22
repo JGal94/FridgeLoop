@@ -107,6 +107,7 @@
     <Compile Include="Response\ResObtenerCompra.cs" />
     <Compile Include="Response\ResObtenerCompras.cs" />
     <Compile Include="Response\ResObtenerIngredientes.cs" />
+    <Compile Include="Response\ResObtenerProductoPorCodigo.cs" />
     <Compile Include="Response\ResObtenerProductos.cs" />
     <Compile Include="Response\ResObtenerReceta.cs" />
     <Compile Include="Response\ResObtenerUsuario.cs" />
