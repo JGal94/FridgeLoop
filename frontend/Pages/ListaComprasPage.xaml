@@ -180,6 +180,14 @@
                     CornerRadius="10"
                     Clicked="OnRealizarCompraClicked" />
 
+            <Button Text="🗑️ Vaciar lista"
+        BackgroundColor="#D9534F"
+        TextColor="White"
+        FontSize="18"
+        CornerRadius="10"
+        Clicked="OnVaciarListaClicked" />
+
+
             <Button Text="🔄 Sincronizar con apps"
                     BackgroundColor="#FFAA1A"
                     TextColor="White"

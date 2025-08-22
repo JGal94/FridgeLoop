@@ -177,6 +177,34 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             }
         }
 
+        private async void OnVaciarListaClicked(object sender, EventArgs e)
+        {
+            if (ShoppingList.Items.Count == 0)
+            {
+                await DisplayAlert("Lista vacía", "No hay productos para eliminar.", "OK");
+                return;
+            }
+
+            var confirmar = await DisplayAlert(
+                "Vaciar lista",
+                "¿Eliminar todos los productos de la lista de compras?",
+                "Sí", "No");
+
+            if (!confirmar) return;
+
+            try
+            {
+                if (sender is Button b) b.IsEnabled = false; // evita doble click
+                ShoppingList.Items.Clear();                  // ?? vacía toda la lista
+                RecalcTotal();                               // forzar actualización inmediata del total (extra)
+                await DisplayAlert("Listo", "Se vació la lista de compras.", "OK");
+            }
+            finally
+            {
+                if (sender is Button b2) b2.IsEnabled = true;
+            }
+        }
+
         private async void OnVerHistorialClicked(object sender, EventArgs e)
         {
             if (IsBusy) return;

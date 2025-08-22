@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\helpers\\categorymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:helpers\\categorymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\listacompraspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\listacompraspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\listacomprasiapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\listacomprasiapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\listacomprasiapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\listacomprasiapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\listacompraspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\listacompraspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,40 +39,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CategoryMapper.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Helpers\\CategoryMapper.cs",
-              "RelativeDocumentMoniker": "Helpers\\CategoryMapper.cs",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Helpers\\CategoryMapper.cs",
-              "RelativeToolTip": "Helpers\\CategoryMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALgAAAABAAAAAAAAAA==",
+              "Title": "ListaComprasPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\ListaComprasPage.xaml.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasPage.xaml.cs",
+              "RelativeToolTip": "Pages\\ListaComprasPage.xaml.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAmwM4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T13:01:25.978Z",
+              "WhenOpened": "2025-08-22T13:31:25.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ListaComprasIAPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasIAPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\ListaComprasIAPage.xaml.cs",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasIAPage.xaml.cs",
-              "RelativeToolTip": "Pages\\ListaComprasIAPage.xaml.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAgwFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T12:11:58.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListaComprasIAPage.xaml",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasIAPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\ListaComprasIAPage.xaml",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasIAPage.xaml",
-              "RelativeToolTip": "Pages\\ListaComprasIAPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ListaComprasPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\ListaComprasPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ListaComprasPage.xaml",
+              "RelativeToolTip": "Pages\\ListaComprasPage.xaml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T12:06:22.42Z",
+              "WhenOpened": "2025-08-22T13:30:53.173Z",
               "EditorCaption": ""
             }
           ]
