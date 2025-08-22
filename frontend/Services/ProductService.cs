@@ -11,7 +11,8 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json.Linq;
+
+using System.Text.Json;
 
 
 namespace Frontend_Proyecto_Fridgeloop.Services
@@ -24,6 +25,40 @@ namespace Frontend_Proyecto_Fridgeloop.Services
     public class ProductService : HttpServiceBase
     {
         public ProductService() : base() { }
+
+
+
+        public class ResObtenerProductoPorCodigo : ResBase
+        {
+            public ProductoApiDto? producto { get; set; }
+            public List<ProductoApiDto>? productos { get; set; }
+        }
+
+        public async Task<ProductoDto?> ObtenerPorCodigoAsync(string codigo, CancellationToken ct = default)
+        {
+            var url = "api/producto/obtenerporcodigo";
+
+            var res = await SendAsync<ResObtenerProductoPorCodigo>(
+                () => Http.PostAsync(url, J(new { codigoBarras = codigo }), ct),
+                ct);
+
+            if (res == null || res.resultado != true) return null;
+
+            var p = res.producto ?? res.productos?.FirstOrDefault();
+            if (p == null) return null;
+
+            return new ProductoDto
+            {
+                ProductID = p.idProducto ?? 0,
+                Name = p.nombre,
+                CategoryID = p.idCategoria,
+                Unit = p.unidad,
+                Quantity = p.quantity,
+                ExpirationDate = p.expirationDate
+            };
+        }
+
+
 
         // ================= DTOs base (comunes) =================
         public class ErrorDto { public int ErrorCode { get; set; } public string Message { get; set; } = ""; }

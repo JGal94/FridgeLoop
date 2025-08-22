@@ -79,46 +79,91 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         }
 
         // Escáner con MessagingCenter (tu lógica)
+        // Escanear y suscripción correcta
         private async void OnEscanearClicked(object sender, EventArgs e)
         {
-            // Evita dobles suscripciones si tocan varias veces
-            try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
+            // Evita dobles suscripciones
+            try { MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned"); } catch { }
 
-            MessagingCenter.Subscribe<object, string>(this, "BarcodeScanned", (sender2, code) =>
+            // ?? Suscríbete al TIPO correcto: ScanPage
+            MessagingCenter.Subscribe<ScanPage, string>(this, "BarcodeScanned", (sender2, code) =>
             {
+                // Rellena el Entry con el código
                 codigoEntry.Text = code;
-                MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned");
+
+                // (Opcional) dispara la búsqueda automáticamente:
+                // OnBuscarPorCodigoClicked(this, EventArgs.Empty);
+
+                // Ya no necesitamos seguir suscritos
+                MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned");
             });
 
-            // Intenta crear ScanPage; si no existe, avisa y sal
-            var scanType = Type.GetType("Frontend_Proyecto_Fridgeloop.Pages.ScanPage");
-            if (scanType == null)
-            {
-                await DisplayAlert("Escaner no disponible",
-                    "Aun no está implementada la pantalla de escaneo.",
-                    "OK");
-                try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
-                return;
-            }
-
-            try
-            {
-                if (Activator.CreateInstance(scanType) is Page scanPage)
-                    await Navigation.PushAsync(scanPage);
-                else
-                    await DisplayAlert("Escaner no disponible", "No se pudo crear la pantalla de escaneo.", "OK");
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Escaner no disponible", ex.Message, "OK");
-            }
+            // Navega de forma directa (sin reflection)
+            await Navigation.PushAsync(new ScanPage());
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            try { MessagingCenter.Unsubscribe<object, string>(this, "BarcodeScanned"); } catch { }
+
+            // ? NO te desuscribas aquí; si lo haces, pierdes el mensaje.
+            // try { MessagingCenter.Unsubscribe<ScanPage, string>(this, "BarcodeScanned"); } catch { }
+
+            // Esto sí: cancelar llamadas pendientes
             _cts?.Cancel();
         }
+
+
+        private async void OnBuscarPorCodigoClicked(object sender, EventArgs e)
+        {
+            if (IsBusy) return;
+
+            var codigo = codigoEntry?.Text?.Trim();
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                await DisplayAlert("Falta el código", "Escanea o escribe un código de barras.", "OK");
+                return;
+            }
+
+            IsBusy = true;
+            try
+            {
+                _cts?.Cancel();
+                _cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
+
+                var dto = await _svc.ObtenerPorCodigoAsync(codigo, _cts.Token);
+                if (dto == null)
+                {
+                    await DisplayAlert("No encontrado", "No se halló un producto para ese código.", "OK");
+                    return;
+                }
+
+                // Mapea a tus controles actuales
+                txtNombre.Text = dto.Name;
+
+                var catIndex = Array.IndexOf(_categoryIdByIndex, dto.CategoryID);
+                if (catIndex >= 0) pkCategoria.SelectedIndex = catIndex;
+
+                var uIndex = Array.FindIndex(_unidadByIndex, u =>
+                    string.Equals(u, dto.Unit, StringComparison.OrdinalIgnoreCase));
+                if (uIndex >= 0) pkUnidad.SelectedIndex = uIndex;
+
+                txtCantidad.Text = (dto.Quantity ?? 1m).ToString();
+                if (dto.ExpirationDate.HasValue) dpExpira.Date = dto.ExpirationDate.Value;
+            }
+            catch (TaskCanceledException)
+            {
+                await DisplayAlert("Tiempo agotado", "La solicitud tardó demasiado.", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
     }
 }

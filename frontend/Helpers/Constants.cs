@@ -11,6 +11,6 @@ namespace Frontend_Proyecto_Fridgeloop.Helpers
         // AJUSTA el puerto a tu API local:
         //  - Emulador Android: http://10.0.2.2:PUERTO/
         //  - Dispositivo real (misma red): http://IP_DE_TU_PC:PUERTO/
-        public const string BaseApi = "https://localhost:44380/";
+        public const string BaseApi = "https://fridgeloop-gfbfg6bxaqdweafq.canadacentral-01.azurewebsites.net";
     }
 }

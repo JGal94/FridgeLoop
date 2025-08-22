@@ -91,11 +91,12 @@
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
                 <Entry x:Name="codigoEntry"
                        Placeholder="Código de barras (se completa al escanear)"
-                       IsReadOnly="True"
+                       
                        FontSize="16"
                        BackgroundColor="Transparent"
                        TextColor="#003366" />
             </Frame>
+            <Button Text="Buscar por código" Clicked="OnBuscarPorCodigoClicked" />
 
             <Button Text="📷 Escanear código de barras"
                     BackgroundColor="#005A9E"
@@ -108,6 +109,9 @@
                     TextColor="White"
                     CornerRadius="10"
                     Clicked="OnGuardarProductoClicked" />
+            
+            
+
 
         </VerticalStackLayout>
     </ScrollView>
