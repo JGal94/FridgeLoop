@@ -111,7 +111,14 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         {
             if ((sender as Button)?.CommandParameter is ProductService.ProductoDto p)
             {
-                await Navigation.PushAsync(new DetalleProductoPage(p));
+                // lee el id si existiera en tu DTO (cualquiera de estos nombres)
+                var t = p.GetType();
+                int? TryGet(string prop) => t.GetProperty(prop) != null
+                    ? t.GetProperty(prop)!.GetValue(p) as int?
+                    : null;
+
+                var id = TryGet("IdProducto") ?? TryGet("ProductId") ?? TryGet("ProductID");
+                await Navigation.PushAsync(new DetalleProductoPage(p, id));
             }
         }
     }

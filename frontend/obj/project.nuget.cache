@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ouea84W24hg=",
+  "dgSpecHash": "wtBrm4FV3d4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+  "projectFilePath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saulg\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\saulg\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

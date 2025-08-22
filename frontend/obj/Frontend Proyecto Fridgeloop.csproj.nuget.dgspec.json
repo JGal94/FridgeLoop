@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {}
+    "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {
+    "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+        "projectUniqueName": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
         "projectName": "Frontend Proyecto Fridgeloop",
-        "projectPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+        "projectPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
         "packagesPath": "C:\\Users\\saulg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\obj\\",
+        "outputPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
