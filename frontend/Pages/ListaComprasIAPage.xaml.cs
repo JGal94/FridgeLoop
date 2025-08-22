@@ -78,23 +78,53 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 return;
             }
 
-            // Pasamos cada sugerencia a ShoppingList.Items (en memoria)
-            foreach (var s in _ultimoResultado)
+            if (sender is Button btn) btn.IsEnabled = false;
+            try
             {
-                ShoppingList.Items.Add(new ShoppingItem
+                foreach (var s in _ultimoResultado)
                 {
-                    Nombre = s.nombre?.Trim() ?? "Producto",
-                    IdCategoria = 99, // por ahora 'Otros' hasta decidir mapeos
-                    Unidad = string.IsNullOrWhiteSpace(s.unidad) ? "unid" : s.unidad!.Trim(),
-                    Cantidad = s.cantidadRecomendada <= 0 ? 1 : s.cantidadRecomendada,
-                    PrecioUnitario = null,
-                    FechaExpiracion = null
-                });
+                    var idCat = CategoryMapper.Map(s.nombre);
+                    // ? mapeo seguro (1..46; default 46)
+
+                    ShoppingList.Items.Add(new ShoppingItem
+                    {
+                        Nombre = s.nombre?.Trim() ?? "Producto",
+                        IdCategoria = idCat,
+                        Unidad = string.IsNullOrWhiteSpace(s.unidad) ? "unid" : s.unidad!.Trim(),
+                        Cantidad = s.cantidadRecomendada <= 0 ? 1 : s.cantidadRecomendada,
+                        PrecioUnitario = null,
+                        FechaExpiracion = null
+                    });
+                }
+
+                await NavigateToListaComprasAsync(); // como ya lo dejaste
+            }
+            finally
+            {
+                if (sender is Button btn2) btn2.IsEnabled = true;
+            }
+        }
+
+
+        private async Task NavigateToListaComprasAsync()
+        {
+            // Si ya existe una ListaComprasPage en la pila, volver a ella
+            var stack = Navigation?.NavigationStack;
+            if (stack != null)
+            {
+                var target = stack.FirstOrDefault(p => p is ListaComprasPage);
+                if (target != null)
+                {
+                    while (Navigation.NavigationStack.Last() != target)
+                        await Navigation.PopAsync(animated: false);
+                    return; // OnAppearing de ListaComprasPage recalcula el total
+                }
             }
 
-            await DisplayAlert("OK", "Sugerencias agregadas a tu lista.", "Cerrar");
-            RefrescarVistaPrev();
+            // Si no existe, crea una nueva instancia
+            await Navigation.PushAsync(new ListaComprasPage());
         }
+
 
         private void RefrescarVistaPrev()
         {

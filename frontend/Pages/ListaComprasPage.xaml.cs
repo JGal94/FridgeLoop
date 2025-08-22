@@ -136,6 +136,14 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 await DisplayAlert("Lista vacía", "No hay productos para comprar.", "OK");
                 return;
             }
+            // Blindaje: asegurar IDs válidos 1..46 (si algo viejo quedó mal seteado)
+            var validIds = new HashSet<int>(Enumerable.Range(1, 46));
+            foreach (var it in ShoppingList.Items)
+            {
+                if (!validIds.Contains(it.IdCategoria))
+                    it.IdCategoria = 46; // Otros
+            }
+
 
             var confirmar = await DisplayAlert("Confirmar",
                 "¿Deseas registrar la compra y mover los productos al inventario?",
