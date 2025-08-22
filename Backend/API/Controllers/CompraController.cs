@@ -1,12 +1,14 @@
-﻿using System.Web.Http; // ← no System.Web.Mvc
-using Backend;
+﻿using Backend;
+using Entidades.Entity;
+using Entidades.Enum;
 using Entidades.Request;
 using Entidades.Response;
-using System.Security.Claims;
-using Entidades.Enum;
-using Entidades.Entity;
-using System.Collections.Generic;
 using Entidades.Response.Entidades.Response;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web.Http; // ← no System.Web.Mvc
 
 namespace API.Controllers
 {
@@ -142,5 +144,42 @@ namespace API.Controllers
 
             return CreateLogic().EliminarCompra(userId, req);
         }
+
+
+        [HttpGet]
+        [Route("predice-lista-compra")]
+        public async Task<ResListaCompra> GenerarListaCompraIA()
+        {
+            var userId = GetUserId();
+            if (userId <= 0)
+            {
+                return new ResListaCompra
+                {
+                    resultado = false,
+                    productos = new List<ProductoRecomendado>(),
+                    listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." }
+            }
+                };
+            }
+
+            try
+            {
+                var logica = new LogicaCompras();
+                return await logica.GenerarListaCompraSoloIA(userId);
+            }
+            catch (Exception ex)
+            {
+                return new ResListaCompra
+                {
+                    resultado = false,
+                    productos = new List<ProductoRecomendado>(),
+                    listaDeErrores = new List<Error> {
+                new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message }
+            }
+                };
+            }
+        }
+
     }
 }
