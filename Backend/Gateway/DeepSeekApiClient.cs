@@ -15,17 +15,15 @@ namespace Gateway
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey = "sk-768e8b2116f148328d53458675ab0f1a";
-        private const string ApiBaseUrl = "https://api.deepseek.com/v1"; // Reemplazar con URL real
+        private const string ApiBaseUrl = "https://api.deepseek.com/"; // Reemplazar con URL real
 
         //public DeepSeekApiClient()
         //{ }
         public DeepSeekApiClient()
         {
-           // _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
             _httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
-
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
-            _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _apiKey);
+            _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<DeepSeekResponse> SendChatRequestAsync(DeepSeekRequest request)
@@ -66,22 +64,31 @@ namespace Gateway
                 throw new ArgumentException("La lista de productos no puede estar vacía.");
 
             // 1. Generar prompt con ingredientes del usuario
-            var ingredientesPrompt = string.Join(", ", productos.Select(p => $"{p.nombre} ({p.quantity} {p.unidad})"));
-            string prompt = $"Tengo los siguientes ingredientes en casa: {ingredientesPrompt}. " +
-                            "¿Podés sugerirme 3 recetas en formato JSON? Cada receta debe tener: nombre, descripción, calorías, dificultad, tiempo de preparación (en minutos), estilo y lista de ingredientes (nombre y cantidad).";
-
+            var ingredientesPrompt = string.Join(", ", productos.Select(p => $"{p.nombre} ({p.quantity} {p.unidad})  {p.expirationDate}"));
+            // string prompt = $"Tengo los siguientes ingredientes en casa: {ingredientesPrompt}. " +
+            //               "¿Podés sugerirme 3 recetas en formato JSON? Cada receta debe tener: nombre, descripción, calorías, dificultad, tiempo de preparación (en minutos), estilo y lista de ingredientes (nombre y cantidad).";
+            string prompt = $"Genera EXACTAMENTE 3 recetas en formato JSON usando algunos de estos ingredientes: {ingredientesPrompt}. " +
+                   "Formato EXACTO requerido: [{" +
+                   "\"Name\": \"string\"," +
+                   "\"Description\": \"string\"," +
+                   "\"PreparationTime\": number," +
+                   "\"Difficulty\": \"string\"," +
+                   "\"Calories\": number," +
+                   "\"Style\": \"string\"," +
+                   "\"Ingredients\": [{\"Nombre\": \"string\", \"Cantidad\": \"string\"}]" +
+                   "}]. Solo responde con el JSON, sin texto adicional. En Style es indicar si es vegana, keto, baja en calorias, etc. En descripcion son los pasos para preparar la receta. " +
+                   "No puede faltar ningun espacio del json, la lista de ingrediente debe venir.";
             // 2. Construir el request a DeepSeek
             var request = new DeepSeekRequest
             {
-                Model = "deepseek-chat", // ← Usar modelo correcto si es distinto
+                Model = "deepseek-chat",
                 Messages = new List<ChatMessage>
-                {
-                    new ChatMessage
-                    {
-                        Role = "user",
-                        Content = prompt
-                    }
-                }
+        {
+            new ChatMessage { Role = "system", Content = "Eres un asistente que solo responde con JSON válido sin texto adicional." },
+            new ChatMessage { Role = "user", Content = prompt }
+        },
+                MaxTokens = 1000,
+                Temperature = 0.1
             };
 
             // 3. Enviar request a la IA

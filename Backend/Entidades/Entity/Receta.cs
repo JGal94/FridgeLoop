@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Entity
 {
-   public class Receta
+    public class Receta
     {
         public int RecipeID { get; set; }
         public string Name { get; set; }
@@ -15,5 +15,7 @@ namespace Entidades.Entity
         public string Difficulty { get; set; }
         public int Calories { get; set; }
         public string Style { get; set; }
+
+        public List<Ingrediente> Ingredients { get; set; } = new List<Ingrediente>();
     }
 }

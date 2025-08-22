@@ -16,6 +16,12 @@ namespace Gateway.Request
 
         [JsonProperty("messages")]
         public List<ChatMessage> Messages { get; set; } = new List<ChatMessage>();
+
+        [JsonProperty("temperature")]
+        public double Temperature { get; set; } = 0.7; // ← Asegúrate de tener esta propiedad
+
+        [JsonProperty("max_tokens")]
+        public int? MaxTokens { get; set; }
     }
 
     public class ChatMessage
