@@ -1,3 +1,8 @@
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
 using Frontend_Proyecto_Fridgeloop.Services;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
@@ -21,53 +26,88 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            try { _cts?.Cancel(); } catch { }
+            try { _cts?.Cancel(); } catch { /* ignorar */ }
         }
 
         private async Task CargarAsync()
         {
+            _cts?.Cancel();
+            _cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
+
             try
             {
-                _cts?.Cancel();
-                _cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
-
                 var items = await _svc.ObtenerNotificacionesAsync(
-                    dias: 7, incluirVencidos: true, maxDiasVencidos: 7,
-                    page: 1, pageSize: 50, ct: _cts.Token);
+                    dias: 7,
+                    incluirVencidos: true,
+                    maxDiasVencidos: 7,
+                    page: 1,
+                    pageSize: 100,
+                    ct: _cts.Token
+                );
 
                 cvNotificaciones.ItemsSource = items;
             }
+            catch (TaskCanceledException) { /* ignorar */ }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", NotificacionesService.FirstError(null, ex.Message), "OK");
+                System.Diagnostics.Debug.WriteLine($"[Notificaciones] error: {ex}");
+                await DisplayAlert("Error", "No se pudieron cargar las notificaciones.", "OK");
             }
         }
 
-        private async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        // ==== Selección por CollectionView ====
+        private async void OnNotificacionSeleccionada(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                if (e.CurrentSelection == null || e.CurrentSelection.Count == 0) return;
-                var noti = e.CurrentSelection[0] as NotificacionesService.NotificacionItem;
-                ((CollectionView)sender).SelectedItem = null;
+                var col = (CollectionView)sender;
+                var noti = e.CurrentSelection?.FirstOrDefault() as NotificacionesService.NotificacionItem;
+
+                // limpiar la selección visual para que no quede marcada
+                col.SelectedItem = null;
+
                 if (noti == null) return;
 
-                // Si quieres ir al detalle del producto, arma el DTO mínimo:
-                var p = new ProductService.ProductoDto
-                {
-                    ProductID = noti.IdProducto,
-                    Name = noti.Titulo,
-                    Unit = noti.Unidad,
-                    Quantity = noti.Cantidad,
-                    ExpirationDate = noti.FechaExpira
-                };
-
-                await Navigation.PushAsync(new DetalleProductoPage(p));
+                await NavegarADetalleAsync(noti);
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "OK");
+                System.Diagnostics.Debug.WriteLine(ex);
             }
+        }
+
+        // ==== TapGesture en el item ====
+        private async void OnItemTapped(object sender, TappedEventArgs e)
+        {
+            try
+            {
+                var noti = e.Parameter as NotificacionesService.NotificacionItem
+                           ?? (sender as Element)?.BindingContext as NotificacionesService.NotificacionItem;
+
+                if (noti == null) return;
+
+                await NavegarADetalleAsync(noti);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
+        }
+
+        // ==== Ir a la pantalla de Detalle con Id explícito ====
+        private async Task NavegarADetalleAsync(NotificacionesService.NotificacionItem noti)
+        {
+            // Armamos el DTO con la información disponible en la notificación
+            var p = new ProductService.ProductoDto
+            {
+                Name = noti.Titulo ?? "(sin nombre)",
+                Unit = noti.Unidad ?? "",
+                Quantity = noti.Cantidad,
+                ExpirationDate = noti.FechaExpira
+            };
+
+            // Pasamos el idProducto como segundo argumento (sin nombre de parámetro)
+            await Navigation.PushAsync(new DetalleProductoPage(p, noti.IdProducto));
         }
     }
 }

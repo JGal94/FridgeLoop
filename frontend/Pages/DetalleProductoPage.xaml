@@ -8,7 +8,7 @@
         <VerticalStackLayout Padding="20" Spacing="14">
 
             <!-- Solo mostramos el nombre -->
-            <Label Text="Producto" FontAttributes="Bold" TextColor="#003366" />
+            <Label x:Name="txtNombre" Text="Producto" FontAttributes="Bold" TextColor="#003366" />
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
                 <Label x:Name="lblNombre"
                        TextColor="#003366" />
@@ -35,7 +35,7 @@
                     BackgroundColor="#28A745"
                     TextColor="White"
                     CornerRadius="10"
-                    Clicked="OnGuardarInventarioClicked" />
+                    Clicked="OnActualizarInventarioClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

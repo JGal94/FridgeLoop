@@ -1,60 +1,88 @@
+using System;
 using Microsoft.Maui.Controls;
-
 using Frontend_Proyecto_Fridgeloop.Services;
-using Frontend_Proyecto_Fridgeloop.Helpers;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
 {
     public partial class DetalleProductoPage : ContentPage
     {
-        private readonly ProductService _svc = new();
-        private readonly ProductService.ProductoDto _p;
+        private int? _idProducto;
 
-        public DetalleProductoPage(ProductService.ProductoDto p)
+        // Constructor que recibe el DTO y, opcionalmente, el idProducto
+        public DetalleProductoPage(ProductService.ProductoDto p, int? idProducto = null)
         {
             InitializeComponent();
-            _p = p;
 
-            // Mostrar solo el nombre, y precargar cantidad/fecha si vienen
-            lblNombre.Text = _p.Name;
-            txtCantidad.Text = _p.Quantity?.ToString();
-            if (_p.ExpirationDate.HasValue)
-                dpExpira.Date = _p.ExpirationDate.Value;
+            _idProducto = idProducto;
+
+            // Mostrar siempre el nombre
+            txtNombre.Text = p?.Name ?? "(sin nombre)";
+
+            // Precargar cantidad y fecha si vienen
+            if (p?.Quantity != null)
+                txtCantidad.Text = p.Quantity.Value.ToString("0.##");
+
+            dpExpira.Date = p?.ExpirationDate ?? DateTime.Today;
         }
 
-        private async void OnGuardarInventarioClicked(object sender, EventArgs e)
+        private async void OnActualizarInventarioClicked(object sender, EventArgs e)
         {
-            if (IsBusy) return;
-            IsBusy = true;
+            // valida id
+            if (!_idProducto.HasValue)
+            {
+                await DisplayAlert("Dato faltante",
+                    "No se encontró el id del producto. Regresa al inventario y vuelve a abrir el detalle.",
+                    "OK");
+                return;
+            }
+
+            // valida cantidad
+            if (!decimal.TryParse(txtCantidad.Text?.Trim(), out var cant))
+            {
+                await DisplayAlert("Validación", "Cantidad inválida.", "OK");
+                return;
+            }
+
+            DateTime? expira = dpExpira.Date;
 
             try
             {
-                if (_p.ProductID <= 0)
+                var svc = new ProductService();
+                using var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(20));
+
+                // IMPORTANTE: ActualizarInventarioAsync devuelve un objeto de respuesta (NO bool)
+                var r = await svc.ActualizarInventarioAsync(
+                    _idProducto.Value,  // idProducto
+                    cant,               // cantidad
+                    expira,             // fechaExpiracion
+                    cts.Token);         // ct
+
+                var ok = r?.resultado == true;
+
+                if (ok)
                 {
-                    await DisplayAlert("Dato faltante",
-                        "No se encontró el id del producto. Regresa al inventario y vuelve a abrir el detalle.",
-                        "OK");
-                    return;
+                    await DisplayAlert("Listo", "Inventario actualizado.", "OK");
+                    await Navigation.PopAsync();
                 }
+                else
+                {
+                    // Si tienes ProductService.FirstError, úsalo; si no, arma un mensaje básico.
+                    string msg;
+                    try
+                    {
+                        msg = ProductService.FirstError(r, "No se pudo actualizar el inventario.");
+                    }
+                    catch
+                    {
+                        msg = r?.mensaje ?? "No se pudo actualizar el inventario.";
+                    }
 
-                decimal? qty = null;
-                if (decimal.TryParse(txtCantidad.Text?.Trim(), out var q)) qty = q;
-                DateTime? exp = dpExpira.Date;
-
-                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
-                var r = await _svc.ActualizarInventarioAsync(_p.ProductID, qty, exp, cts.Token);
-
-                await DisplayAlert(r?.resultado == true ? "Ok" : "Error",
-                    ProductService.FirstError(r, r?.resultado == true ? "Inventario actualizado." : "No se pudo actualizar el inventario."),
-                    "OK");
+                    await DisplayAlert("Error", msg, "OK");
+                }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Excepción", ex.Message, "OK");
-            }
-            finally
-            {
-                IsBusy = false;
+                await DisplayAlert("Error", ex.Message, "OK");
             }
         }
     }
