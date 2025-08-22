@@ -62,7 +62,7 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 if (ok)
                 {
                     await DisplayAlert("Listo", "Inventario actualizado.", "OK");
-                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(new DashboardPage());
                 }
                 else
                 {

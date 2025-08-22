@@ -8,10 +8,19 @@
         <VerticalStackLayout Padding="20" Spacing="14">
 
             <!-- Solo mostramos el nombre -->
-            <Label x:Name="txtNombre" Text="Producto" FontAttributes="Bold" TextColor="#003366" />
+            <Label 
+                   Text="Producto" 
+                   FontAttributes="Bold" 
+                   TextColor="#003366" />
+            
             <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Label x:Name="lblNombre"
-                       TextColor="#003366" />
+
+                <Entry x:Name="txtNombre"
+                           FontSize="16"
+                           TextColor="#003366"
+                           BackgroundColor="Transparent"
+                           IsReadOnly="True"
+                           Placeholder="Nombre del producto"/>
             </Frame>
 
             <Label Text="Inventario (usuario)" FontAttributes="Bold" TextColor="#003366" />
