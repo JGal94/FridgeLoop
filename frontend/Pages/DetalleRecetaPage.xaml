@@ -3,66 +3,633 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.DetalleRecetaPage"
              Title="Detalle de Receta"
-             BackgroundColor="#EAF4FF">
+             BackgroundColor="#F8FAFC">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+        <StackLayout Spacing="20" Padding="20">
 
-            <Image Source="logofridgeloop.png"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0,10,0,10" />
+            <!-- Header con botón de regreso -->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <Label Text="🥗 Ensalada con atún"
-                   FontSize="24"
-                   FontFamily="OpenSansBold"
-                   TextColor="#003366" />
+                <Frame Grid.Column="0" 
+                       BackgroundColor="White" 
+                       CornerRadius="20" 
+                       Padding="0" 
+                       HasShadow="True"
+                       WidthRequest="44"
+                       HeightRequest="44"
+                       VerticalOptions="Center">
+                    <Button Text="←"
+                            BackgroundColor="Transparent"
+                            TextColor="#6B7280"
+                            FontSize="18"
+                            FontAttributes="Bold" />
+                </Frame>
 
-            <Label Text="Estilo: Keto"
-                   FontSize="14"
-                   TextColor="#5A738E" />
+                <Frame Grid.Column="1" 
+                       BackgroundColor="White" 
+                       HasShadow="True" 
+                       CornerRadius="20" 
+                       Padding="24"
+                       Margin="12,0,0,0">
+                    <StackLayout Orientation="Horizontal" Spacing="16">
+                        <Frame BackgroundColor="#F59E0B" 
+                               CornerRadius="25" 
+                               Padding="12" 
+                               HasShadow="False"
+                               WidthRequest="50"
+                               HeightRequest="50">
+                            <Label Text="👨‍🍳" 
+                                   FontSize="20" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Frame>
+                        <StackLayout VerticalOptions="Center" Spacing="4">
+                            <Label Text="Detalle de Receta" 
+                                   FontSize="22" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Información completa para cocinar" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
 
-            <Label Text="Calorías: 200 kcal"
-                   FontSize="14"
-                   TextColor="#5A738E" />
+            <!-- Imagen y título de la receta -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="20" 
+                   Padding="24">
+                <StackLayout Spacing="20" HorizontalOptions="Center">
+                    <!-- Imagen placeholder con diseño -->
+                    <Frame BackgroundColor="#FEF3C7" 
+                           CornerRadius="20" 
+                           Padding="24" 
+                           HasShadow="False"
+                           HorizontalOptions="Center">
+                        <StackLayout HorizontalOptions="Center" Spacing="12">
+                            <Frame BackgroundColor="#F59E0B" 
+                                   CornerRadius="25" 
+                                   Padding="16" 
+                                   HasShadow="False">
+                                <Label Text="🥗" 
+                                       FontSize="32" 
+                                       HorizontalOptions="Center" />
+                            </Frame>
+                            <Label Text="Imagen de la receta" 
+                                   FontSize="12" 
+                                   TextColor="#92400E"
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Título y categoría -->
+                    <StackLayout Spacing="8" HorizontalOptions="Center">
+                        <Label Text="🥗 Ensalada con Atún" 
+                               FontSize="24" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937"
+                               HorizontalTextAlignment="Center" />
+
+                        <!-- Tags de información -->
+                        <StackLayout Orientation="Horizontal" 
+                                   HorizontalOptions="Center"
+                                   Spacing="8">
+                            <Frame BackgroundColor="#8B5CF6" 
+                                   CornerRadius="12" 
+                                   Padding="8,4" 
+                                   HasShadow="False">
+                                <Label Text="🥑 Keto" 
+                                       FontSize="12" 
+                                       FontAttributes="Bold"
+                                       TextColor="White" />
+                            </Frame>
+                            <Frame BackgroundColor="#10B981" 
+                                   CornerRadius="12" 
+                                   Padding="8,4" 
+                                   HasShadow="False">
+                                <Label Text="🔥 200 kcal" 
+                                       FontSize="12" 
+                                       FontAttributes="Bold"
+                                       TextColor="White" />
+                            </Frame>
+                            <Frame BackgroundColor="#3B82F6" 
+                                   CornerRadius="12" 
+                                   Padding="8,4" 
+                                   HasShadow="False">
+                                <Label Text="⏱️ 10 min" 
+                                       FontSize="12" 
+                                       FontAttributes="Bold"
+                                       TextColor="White" />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Información nutricional -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="16">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12">
+                        <Label Text="📊" FontSize="16" />
+                        <Label Text="Información Nutricional" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
+
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Calorías -->
+                        <Frame Grid.Column="0" 
+                               BackgroundColor="#FEF3C7" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="12">
+                            <StackLayout Spacing="4" HorizontalOptions="Center">
+                                <Label Text="🔥" FontSize="16" HorizontalOptions="Center" />
+                                <Label Text="200" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#92400E"
+                                       HorizontalTextAlignment="Center" />
+                                <Label Text="kcal" 
+                                       FontSize="10" 
+                                       TextColor="#B45309"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Proteínas -->
+                        <Frame Grid.Column="1" 
+                               BackgroundColor="#F0FDF4" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="12">
+                            <StackLayout Spacing="4" HorizontalOptions="Center">
+                                <Label Text="💪" FontSize="16" HorizontalOptions="Center" />
+                                <Label Text="25g" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#059669"
+                                       HorizontalTextAlignment="Center" />
+                                <Label Text="proteína" 
+                                       FontSize="10" 
+                                       TextColor="#047857"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Carbos -->
+                        <Frame Grid.Column="2" 
+                               BackgroundColor="#E0F2FE" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="12">
+                            <StackLayout Spacing="4" HorizontalOptions="Center">
+                                <Label Text="🌾" FontSize="16" HorizontalOptions="Center" />
+                                <Label Text="5g" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#0369A1"
+                                       HorizontalTextAlignment="Center" />
+                                <Label Text="carbos" 
+                                       FontSize="10" 
+                                       TextColor="#0284C7"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Grasas -->
+                        <Frame Grid.Column="3" 
+                               BackgroundColor="#F3E8FF" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="12">
+                            <StackLayout Spacing="4" HorizontalOptions="Center">
+                                <Label Text="🥑" FontSize="16" HorizontalOptions="Center" />
+                                <Label Text="12g" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#7C3AED"
+                                       HorizontalTextAlignment="Center" />
+                                <Label Text="grasas" 
+                                       FontSize="10" 
+                                       TextColor="#8B5CF6"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+            </Frame>
 
             <!-- Ingredientes -->
-            <Label Text="Ingredientes:"
-                   FontSize="18"
-                   FontFamily="OpenSansSemiBold"
-                   TextColor="#003366" />
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="16">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12">
+                        <Label Text="🥬" FontSize="16" />
+                        <Label Text="Ingredientes Necesarios" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="- Atún (1 lata)\n- Lechuga (1 taza)\n- Tomate (1)\n- Aceite de oliva (1 cda)"
-                       FontSize="14"
-                       TextColor="#003366" />
+                    <!-- Lista de ingredientes -->
+                    <StackLayout Spacing="12">
+
+                        <!-- Atún -->
+                        <Frame BackgroundColor="#E0F2FE" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#0EA5E9" 
+                                       CornerRadius="8" 
+                                       Padding="6" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="🐟" 
+                                           FontSize="14" 
+                                           TextColor="White" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Atún en agua" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#0C4A6E" />
+                                    <Label Text="Fuente principal de proteína" 
+                                           FontSize="11" 
+                                           TextColor="#0369A1" />
+                                </StackLayout>
+                                <Frame Grid.Column="2" 
+                                       BackgroundColor="#BFDBFE" 
+                                       CornerRadius="8" 
+                                       Padding="8,4" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="1 lata" 
+                                           FontSize="12" 
+                                           FontAttributes="Bold"
+                                           TextColor="#1E40AF" />
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Lechuga -->
+                        <Frame BackgroundColor="#F0FDF4" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#10B981" 
+                                       CornerRadius="8" 
+                                       Padding="6" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="🥬" 
+                                           FontSize="14" 
+                                           TextColor="White" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Lechuga fresca" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#064E3B" />
+                                    <Label Text="Base de la ensalada" 
+                                           FontSize="11" 
+                                           TextColor="#059669" />
+                                </StackLayout>
+                                <Frame Grid.Column="2" 
+                                       BackgroundColor="#BBF7D0" 
+                                       CornerRadius="8" 
+                                       Padding="8,4" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="1 taza" 
+                                           FontSize="12" 
+                                           FontAttributes="Bold"
+                                           TextColor="#16A34A" />
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Tomate -->
+                        <Frame BackgroundColor="#FEF3C7" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#F59E0B" 
+                                       CornerRadius="8" 
+                                       Padding="6" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="🍅" 
+                                           FontSize="14" 
+                                           TextColor="White" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Tomate maduro" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#92400E" />
+                                    <Label Text="Sabor y frescura" 
+                                           FontSize="11" 
+                                           TextColor="#B45309" />
+                                </StackLayout>
+                                <Frame Grid.Column="2" 
+                                       BackgroundColor="#FDE68A" 
+                                       CornerRadius="8" 
+                                       Padding="8,4" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="1 unidad" 
+                                           FontSize="12" 
+                                           FontAttributes="Bold"
+                                           TextColor="#D97706" />
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Aceite -->
+                        <Frame BackgroundColor="#F3E8FF" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#8B5CF6" 
+                                       CornerRadius="8" 
+                                       Padding="6" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="🫒" 
+                                           FontSize="14" 
+                                           TextColor="White" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Aceite de oliva" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#6B21A8" />
+                                    <Label Text="Grasas saludables" 
+                                           FontSize="11" 
+                                           TextColor="#9333EA" />
+                                </StackLayout>
+                                <Frame Grid.Column="2" 
+                                       BackgroundColor="#DDD6FE" 
+                                       CornerRadius="8" 
+                                       Padding="8,4" 
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="1 cda" 
+                                           FontSize="12" 
+                                           FontAttributes="Bold"
+                                           TextColor="#7C3AED" />
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
             </Frame>
 
-            <!-- Pasos -->
-            <Label Text="Pasos:"
-                   FontSize="18"
-                   FontFamily="OpenSansSemiBold"
-                   TextColor="#003366" />
+            <!-- Pasos de preparación -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="16">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12">
+                        <Label Text="👩‍🍳" FontSize="16" />
+                        <Label Text="Pasos de Preparación" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="8">
-                <Label Text="1. Lava y corta la lechuga y el tomate.\n2. Mezcla con el atún.\n3. Añade aceite de oliva.\n4. Serví frío."
-                       FontSize="14"
-                       TextColor="#003366" />
+                    <!-- Lista de pasos -->
+                    <StackLayout Spacing="12">
+
+                        <!-- Paso 1 -->
+                        <Frame BackgroundColor="#F0F9FF" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#0EA5E9" 
+                                       CornerRadius="20" 
+                                       Padding="8" 
+                                       HasShadow="False"
+                                       WidthRequest="32"
+                                       HeightRequest="32"
+                                       VerticalOptions="Start">
+                                    <Label Text="1" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Preparar las verduras" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#0C4A6E" />
+                                    <Label Text="Lava y corta la lechuga y el tomate en trozos medianos" 
+                                           FontSize="12" 
+                                           TextColor="#0369A1"
+                                           LineBreakMode="WordWrap" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Paso 2 -->
+                        <Frame BackgroundColor="#F0FDF4" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#10B981" 
+                                       CornerRadius="20" 
+                                       Padding="8" 
+                                       HasShadow="False"
+                                       WidthRequest="32"
+                                       HeightRequest="32"
+                                       VerticalOptions="Start">
+                                    <Label Text="2" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Mezclar con el atún" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#064E3B" />
+                                    <Label Text="Escurre el atún y mézclalo con las verduras cortadas" 
+                                           FontSize="12" 
+                                           TextColor="#059669"
+                                           LineBreakMode="WordWrap" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Paso 3 -->
+                        <Frame BackgroundColor="#FEF3C7" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#F59E0B" 
+                                       CornerRadius="20" 
+                                       Padding="8" 
+                                       HasShadow="False"
+                                       WidthRequest="32"
+                                       HeightRequest="32"
+                                       VerticalOptions="Start">
+                                    <Label Text="3" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Añadir el aceite" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#92400E" />
+                                    <Label Text="Rocía el aceite de oliva y mezcla suavemente" 
+                                           FontSize="12" 
+                                           TextColor="#B45309"
+                                           LineBreakMode="WordWrap" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Paso 4 -->
+                        <Frame BackgroundColor="#F3E8FF" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="16">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Frame Grid.Column="0" 
+                                       BackgroundColor="#8B5CF6" 
+                                       CornerRadius="20" 
+                                       Padding="8" 
+                                       HasShadow="False"
+                                       WidthRequest="32"
+                                       HeightRequest="32"
+                                       VerticalOptions="Start">
+                                    <Label Text="4" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                </Frame>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="¡Listo para servir!" 
+                                           FontSize="14" 
+                                           FontAttributes="Bold"
+                                           TextColor="#6B21A8" />
+                                    <Label Text="Sirve inmediatamente en platos fríos y disfruta" 
+                                           FontSize="12" 
+                                           TextColor="#9333EA"
+                                           LineBreakMode="WordWrap" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
             </Frame>
 
-            <!-- Botones -->
-            <Button Text="👨‍🍳 Preparar"
-                    BackgroundColor="#28A745"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnPrepararClicked" />
+            <!-- Botones de Acción -->
+            <StackLayout Spacing="12" Margin="0,8,0,40">
 
-            <Button Text="💾 Guardar Receta"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnGuardarClicked" />
+                <!-- Comenzar a preparar -->
+                <Frame BackgroundColor="#10B981" 
+                       CornerRadius="25" 
+                       Padding="0" 
+                       HasShadow="True">
+                    <Button Text="👨‍🍳 Comenzar a Preparar" 
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            HeightRequest="56"
+                            Clicked="OnPrepararClicked" />
+                </Frame>
 
-        </VerticalStackLayout>
+                <!-- Opciones adicionales -->
+                <Grid ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Guardar receta -->
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="#6366F1" 
+                           CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="True">
+                        <Button Text="💾 Guardar" 
+                                BackgroundColor="Transparent"
+                                TextColor="White"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HeightRequest="48"
+                                Clicked="OnGuardarClicked" />
+                    </Frame>
+
+                    <!-- Compartir -->
+                    <Frame Grid.Column="1" 
+                           BackgroundColor="White" 
+                           CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False"
+                           BorderColor="#8B5CF6">
+                        <Button Text="📤 Compartir" 
+                                BackgroundColor="Transparent"
+                                TextColor="#8B5CF6"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HeightRequest="48" />
+                    </Frame>
+                </Grid>
+
+            </StackLayout>
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>

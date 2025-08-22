@@ -172,121 +172,137 @@
 
                         <!-- Inventario -->
                         <Frame Grid.Row="0" Grid.Column="0" 
-                               BackgroundColor="#E0F2FE" 
-                               HasShadow="False" 
-                               CornerRadius="16" 
-                               Padding="16"
-                               HeightRequest="100">
+           BackgroundColor="#E0F2FE" 
+           HasShadow="False" 
+           CornerRadius="16" 
+           Padding="16,20,16,24"
+           HeightRequest="130">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="GoToInventario" />
                             </Frame.GestureRecognizers>
                             <StackLayout VerticalOptions="Center" 
-                                       HorizontalOptions="Center" 
-                                       Spacing="8">
+                   HorizontalOptions="Center" 
+                   Spacing="12">
                                 <Frame BackgroundColor="#0EA5E9" 
-                                       CornerRadius="20" 
-                                       Padding="8" 
-                                       HasShadow="False"
-                                       HorizontalOptions="Center">
+                   CornerRadius="20" 
+                   Padding="10" 
+                   HasShadow="False"
+                   HorizontalOptions="Center">
                                     <Label Text="📦" 
-                                           FontSize="20" 
-                                           TextColor="White" />
+                       FontSize="22" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
                                 </Frame>
                                 <Label Text="Inventario" 
-                                       FontSize="14" 
-                                       FontAttributes="Bold" 
-                                       TextColor="#0C4A6E"
-                                       HorizontalTextAlignment="Center" />
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   TextColor="#0C4A6E"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="NoWrap" />
                             </StackLayout>
                         </Frame>
 
                         <!-- Lista de Compras -->
                         <Frame Grid.Row="0" Grid.Column="1" 
-                               BackgroundColor="#F0FDF4" 
-                               HasShadow="False" 
-                               CornerRadius="16" 
-                               Padding="16"
-                               HeightRequest="100">
+           BackgroundColor="#F0FDF4" 
+           HasShadow="False" 
+           CornerRadius="16" 
+           Padding="16,20,16,24"
+           HeightRequest="130">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="GoToCompras" />
                             </Frame.GestureRecognizers>
                             <StackLayout VerticalOptions="Center" 
-                                       HorizontalOptions="Center" 
-                                       Spacing="8">
+                   HorizontalOptions="Center" 
+                   Spacing="12">
                                 <Frame BackgroundColor="#10B981" 
-                                       CornerRadius="20" 
-                                       Padding="8" 
-                                       HasShadow="False"
-                                       HorizontalOptions="Center">
+                   CornerRadius="20" 
+                   Padding="10" 
+                   HasShadow="False"
+                   HorizontalOptions="Center">
                                     <Label Text="🛒" 
-                                           FontSize="20" 
-                                           TextColor="White" />
+                       FontSize="22" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
                                 </Frame>
                                 <Label Text="Compras" 
-                                       FontSize="14" 
-                                       FontAttributes="Bold" 
-                                       TextColor="#064E3B"
-                                       HorizontalTextAlignment="Center" />
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   TextColor="#064E3B"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="NoWrap" />
                             </StackLayout>
                         </Frame>
 
                         <!-- Recetas -->
                         <Frame Grid.Row="1" Grid.Column="0" 
-                               BackgroundColor="#FEF3C7" 
-                               HasShadow="False" 
-                               CornerRadius="16" 
-                               Padding="16"
-                               HeightRequest="100">
+           BackgroundColor="#FEF3C7" 
+           HasShadow="False" 
+           CornerRadius="16" 
+           Padding="16,20,16,24"
+           HeightRequest="130">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="GoToRecetas" />
                             </Frame.GestureRecognizers>
                             <StackLayout VerticalOptions="Center" 
-                                       HorizontalOptions="Center" 
-                                       Spacing="8">
+                   HorizontalOptions="Center" 
+                   Spacing="12">
                                 <Frame BackgroundColor="#F59E0B" 
-                                       CornerRadius="20" 
-                                       Padding="8" 
-                                       HasShadow="False"
-                                       HorizontalOptions="Center">
+                   CornerRadius="20" 
+                   Padding="10" 
+                   HasShadow="False"
+                   HorizontalOptions="Center">
                                     <Label Text="👨‍🍳" 
-                                           FontSize="20" 
-                                           TextColor="White" />
+                       FontSize="22" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
                                 </Frame>
                                 <Label Text="Recetas" 
-                                       FontSize="14" 
-                                       FontAttributes="Bold" 
-                                       TextColor="#92400E"
-                                       HorizontalTextAlignment="Center" />
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   TextColor="#92400E"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="NoWrap" />
                             </StackLayout>
                         </Frame>
 
                         <!-- Presupuesto -->
                         <Frame Grid.Row="1" Grid.Column="1" 
-                               BackgroundColor="#F3E8FF" 
-                               HasShadow="False" 
-                               CornerRadius="16" 
-                               Padding="16"
-                               HeightRequest="100">
+           BackgroundColor="#F3E8FF" 
+           HasShadow="False" 
+           CornerRadius="16" 
+           Padding="16,20,16,24"
+           HeightRequest="130">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="GoToGastos" />
                             </Frame.GestureRecognizers>
                             <StackLayout VerticalOptions="Center" 
-                                       HorizontalOptions="Center" 
-                                       Spacing="8">
+                   HorizontalOptions="Center" 
+                   Spacing="12">
                                 <Frame BackgroundColor="#8B5CF6" 
-                                       CornerRadius="20" 
-                                       Padding="8" 
-                                       HasShadow="False"
-                                       HorizontalOptions="Center">
+                   CornerRadius="20" 
+                   Padding="10" 
+                   HasShadow="False"
+                   HorizontalOptions="Center">
                                     <Label Text="💰" 
-                                           FontSize="20" 
-                                           TextColor="White" />
+                       FontSize="22" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
                                 </Frame>
                                 <Label Text="Gastos" 
-                                       FontSize="14" 
-                                       FontAttributes="Bold" 
-                                       TextColor="#6B21A8"
-                                       HorizontalTextAlignment="Center" />
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   TextColor="#6B21A8"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="NoWrap" />
                             </StackLayout>
                         </Frame>
                     </Grid>
