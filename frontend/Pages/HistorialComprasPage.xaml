@@ -3,87 +3,236 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.HistorialComprasPage"
              Title="Historial de Compras"
-             BackgroundColor="#EAF4FF">
+             BackgroundColor="#F8FAFC">
 
     <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="18">
+        <StackLayout Spacing="16" Padding="20">
 
-            <Label Text="Historial de compras anteriores"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   TextColor="#003366" />
+            <!-- Header Principal -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="20" 
+                   Padding="24"
+                   Margin="0,0,0,8">
+                <StackLayout Orientation="Horizontal" Spacing="16">
+                    <Frame BackgroundColor="#8B5CF6" 
+                           CornerRadius="25" 
+                           Padding="12" 
+                           HasShadow="False"
+                           WidthRequest="50"
+                           HeightRequest="50">
+                        <Label Text="📊" 
+                               FontSize="20" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Frame>
+                    <StackLayout VerticalOptions="Center" Spacing="4">
+                        <Label Text="Historial de Compras" 
+                               FontSize="22" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                        <Label Text="Revisa tus compras anteriores" 
+                               FontSize="14" 
+                               TextColor="#6B7280" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
 
-            <CollectionView x:Name="cvCompras"
-                            SelectionMode="None">
-                <CollectionView.EmptyView>
-                    <Grid Padding="16">
-                        <Label Text="Aún no hay compras registradas."
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               FontSize="16"
-                               TextColor="#667892"/>
-                    </Grid>
-                </CollectionView.EmptyView>
+            <!-- Sección de Compras -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="0"
+                   Margin="0,0,0,8">
+                <StackLayout Spacing="0">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12" 
+                                 Padding="20,16,20,12">
+                        <Label Text="🛒" FontSize="16" />
+                        <Label Text="Compras Realizadas" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BackgroundColor="#FFFFFF"
-                               CornerRadius="12"
-                               Padding="15"
-                               HasShadow="True">
+                    <CollectionView x:Name="cvCompras"
+                                    SelectionMode="None"
+                                    Margin="8,0,8,8">
 
-                            <!-- 👇 GestureRecognizer para abrir detalle -->
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Compra_Tapped"
-                                                      CommandParameter="{Binding idCompra}" />
-                            </Frame.GestureRecognizers>
+                        <!-- Mensaje cuando está vacía -->
+                        <CollectionView.EmptyView>
+                            <Grid Padding="40,60">
+                                <StackLayout HorizontalOptions="Center" 
+                                           VerticalOptions="Center" 
+                                           Spacing="12">
+                                    <Frame BackgroundColor="#F3F4F6" 
+                                           CornerRadius="30" 
+                                           Padding="20" 
+                                           HasShadow="False"
+                                           HorizontalOptions="Center">
+                                        <Label Text="📋" 
+                                               FontSize="30" 
+                                               HorizontalOptions="Center" />
+                                    </Frame>
+                                    <Label Text="Sin historial de compras" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold" 
+                                           TextColor="#374151"
+                                           HorizontalOptions="Center" />
+                                    <Label Text="Realiza tu primera compra para ver el historial aquí" 
+                                           FontSize="14" 
+                                           TextColor="#6B7280"
+                                           HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                        </CollectionView.EmptyView>
 
-                            <VerticalStackLayout Spacing="8">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="White" 
+                                       HasShadow="True" 
+                                       CornerRadius="16" 
+                                       Padding="20"
+                                       Margin="0,4">
 
-                                <!-- Encabezado: fecha de compra -->
-                                <Label FontSize="16"
-                                       TextColor="#004C99"
-                                       FontAttributes="Bold">
-                                    <Label.Text>
-                                        <Binding Path="fechaCompra"
-                                                 StringFormat="🛒 Compra del {0:dd/MM/yyyy}"
-                                                 TargetNullValue="🛒 Compra sin fecha"/>
-                                    </Label.Text>
-                                </Label>
+                                    <!-- Gesture para tap -->
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Compra_Tapped"
+                                                              CommandParameter="{Binding idCompra}" />
+                                    </Frame.GestureRecognizers>
 
-                                <!-- Lista de items -->
-                                <VerticalStackLayout Spacing="2"
+                                    <StackLayout Spacing="16">
+
+                                        <!-- Header de la compra -->
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Icono de fecha -->
+                                            <Frame Grid.Column="0" 
+                                                   BackgroundColor="#3B82F6" 
+                                                   CornerRadius="20" 
+                                                   Padding="8" 
+                                                   HasShadow="False"
+                                                   WidthRequest="36"
+                                                   HeightRequest="36">
+                                                <Label Text="📅" 
+                                                       FontSize="14" 
+                                                       HorizontalOptions="Center" 
+                                                       VerticalOptions="Center" />
+                                            </Frame>
+
+                                            <!-- Fecha de compra -->
+                                            <StackLayout Grid.Column="1" 
+                                                       VerticalOptions="Center" 
+                                                       Spacing="2"
+                                                       Margin="12,0">
+                                                <Label Text="Compra realizada" 
+                                                       FontSize="12" 
+                                                       TextColor="#6B7280" />
+                                                <Label FontSize="16"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#1F2937"
+                                                       Text="{Binding fechaCompra, StringFormat='{0:dd/MM/yyyy}', TargetNullValue='Sin fecha'}" />
+                                            </StackLayout>
+
+                                            <!-- Total destacado -->
+                                            <StackLayout Grid.Column="2" 
+                                                       VerticalOptions="Center" 
+                                                       Spacing="2"
+                                                       HorizontalOptions="End">
+                                                <Label Text="Total" 
+                                                       FontSize="12" 
+                                                       TextColor="#6B7280"
+                                                       HorizontalTextAlignment="End" />
+                                                <Label FontSize="18"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#059669"
+                                                       HorizontalTextAlignment="End"
+                                                       Text="{Binding total, StringFormat='₡{0:N0}'}" />
+                                            </StackLayout>
+                                        </Grid>
+
+                                        <!-- Separador sutil -->
+                                        <BoxView HeightRequest="1" 
+                                                 BackgroundColor="#E5E7EB" 
+                                                 HorizontalOptions="FillAndExpand" />
+
+                                        <!-- Lista de productos -->
+                                        <StackLayout Spacing="8"
                                                      BindableLayout.ItemsSource="{Binding items}">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <Label FontSize="14" TextColor="#333">
-                                                <Label.Text>
-                                                    <MultiBinding StringFormat="• {0} x{1:0.##} - ₡{2:N0}">
-                                                        <Binding Path="nombre"/>
-                                                        <Binding Path="cantidad"/>
-                                                        <Binding Path="precioUnitario" TargetNullValue="0"/>
-                                                    </MultiBinding>
-                                                </Label.Text>
-                                            </Label>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
-                                </VerticalStackLayout>
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid ColumnDefinitions="Auto,*,Auto" 
+                                                          ColumnSpacing="12"
+                                                          Padding="0,4">
 
-                                <!-- Total -->
-                                <Label FontSize="14"
-                                       TextColor="#003366"
-                                       FontAttributes="Bold">
-                                    <Label.Text>
-                                        <Binding Path="total" StringFormat="Total: ₡{0:N0}"/>
-                                    </Label.Text>
-                                </Label>
+                                                        <!-- Bullet point -->
+                                                        <Frame Grid.Column="0" 
+                                                               BackgroundColor="#F3F4F6" 
+                                                               CornerRadius="4" 
+                                                               Padding="6,3" 
+                                                               HasShadow="False"
+                                                               VerticalOptions="Start">
+                                                            <Label Text="•" 
+                                                                   FontSize="12" 
+                                                                   TextColor="#9CA3AF"
+                                                                   HorizontalOptions="Center" />
+                                                        </Frame>
 
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                                        <!-- Nombre y cantidad del producto -->
+                                                        <StackLayout Grid.Column="1" 
+                                                                   VerticalOptions="Center" 
+                                                                   Spacing="2">
+                                                            <Label Text="{Binding nombre}" 
+                                                                   FontSize="14" 
+                                                                   FontAttributes="Bold"
+                                                                   TextColor="#374151"
+                                                                   LineBreakMode="TailTruncation" />
+                                                            <Label Text="{Binding cantidad, StringFormat='Cantidad: {0:0.##}'}" 
+                                                                   FontSize="12" 
+                                                                   TextColor="#6B7280" />
+                                                        </StackLayout>
 
-        </VerticalStackLayout>
+                                                        <!-- Precio del producto -->
+                                                        <Label Grid.Column="2" 
+                                                               Text="{Binding precioUnitario, StringFormat='₡{0:N0}', TargetNullValue='—'}"
+                                                               FontSize="13"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#059669"
+                                                               VerticalOptions="Center"
+                                                               HorizontalTextAlignment="End" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+
+                                        <!-- Indicador de tap -->
+                                        <StackLayout Orientation="Horizontal" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="8"
+                                                   Margin="0,8,0,0">
+                                            <Label Text="👆" 
+                                                   FontSize="12" 
+                                                   TextColor="#9CA3AF" />
+                                            <Label Text="Toca para ver más detalles" 
+                                                   FontSize="12" 
+                                                   TextColor="#9CA3AF"
+                                                   FontAttributes ="Italic" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>

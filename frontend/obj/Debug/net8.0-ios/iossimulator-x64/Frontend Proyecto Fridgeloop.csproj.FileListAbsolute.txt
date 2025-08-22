@@ -1055,6 +1055,3 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Fronten
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Frontend Proyecto Fridgeloop.sourcelink.json
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Frontend Proyecto Fridgeloop.dll
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\refint\Frontend Proyecto Fridgeloop.dll
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\Frontend Proyecto Fridgeloop.pdb

@@ -4,128 +4,292 @@
              xmlns:local="clr-namespace:Frontend_Proyecto_Fridgeloop.Pages"
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.CompraDetallePage"
              x:Name="page"
-             Title="Detalle de compra"
-             BackgroundColor="#F6F8FC">
+             Title="Detalle de Compra"
+             BackgroundColor="#F8FAFC">
 
     <!-- ====== Recursos de estilos/colores ====== -->
     <ContentPage.Resources>
-        <Color x:Key="PrimaryText">#0F172A</Color>
-        <Color x:Key="SecondaryText">#64748B</Color>
-        <Color x:Key="Accent">#2563EB</Color>
-        <Color x:Key="Good">#0F766E</Color>
-        <Color x:Key="CardBg">#FFFFFF</Color>
-        <Color x:Key="CardStroke">#E5E7EB</Color>
-        <Color x:Key="PillBg">#E0F2FE</Color>
-        <Color x:Key="PillText">#0C4A6E</Color>
-
-        <Style TargetType="Label" x:Key="Title">
-            <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
-            <Setter Property="FontSize" Value="22" />
-            <Setter Property="FontAttributes" Value="Bold" />
-        </Style>
-
-        <Style TargetType="Label" x:Key="Muted">
-            <Setter Property="TextColor" Value="{StaticResource SecondaryText}" />
-            <Setter Property="FontSize" Value="13" />
-        </Style>
-
         <!-- Converters -->
         <local:SubtotalConverter x:Key="SubtotalConverter"/>
     </ContentPage.Resources>
 
     <ScrollView>
-        <VerticalStackLayout Padding="16" Spacing="16">
+        <StackLayout Spacing="16" Padding="20">
 
-            <!-- ====== Tarjeta de cabecera ====== -->
-            <Border BackgroundColor="{StaticResource CardBg}"
-              Stroke="{StaticResource CardStroke}"
-              StrokeShape="RoundRectangle 16"
-              Padding="16">
-                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" RowSpacing="6">
-                    <Label Grid.ColumnSpan="2"
-                 Style="{StaticResource Title}"
-                 Text="Detalles de la compra" />
+            <!-- Header Principal -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="20" 
+                   Padding="24"
+                   Margin="0,0,0,8">
+                <StackLayout Orientation="Horizontal" Spacing="16">
+                    <Frame BackgroundColor="#3B82F6" 
+                           CornerRadius="25" 
+                           Padding="12" 
+                           HasShadow="False"
+                           WidthRequest="50"
+                           HeightRequest="50">
+                        <Label Text="🧾" 
+                               FontSize="20" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Frame>
+                    <StackLayout VerticalOptions="Center" Spacing="4">
+                        <Label Text="Detalle de Compra" 
+                               FontSize="22" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                        <Label Text="Información completa de la transacción" 
+                               FontSize="14" 
+                               TextColor="#6B7280" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
 
+            <!-- Información de la Compra -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1"
-                 Text="{Binding compra.fechaCompra, StringFormat='📅 {0:dd MMM yyyy, HH:mm}'}"
-                 Style="{StaticResource Muted}" />
+                    <!-- Título de la sección -->
+                    <StackLayout Grid.Row="0" Grid.ColumnSpan="2" 
+                               Orientation="Horizontal" 
+                               Spacing="12" 
+                               Margin="0,0,0,16">
+                        <Label Text="📋" FontSize="16" />
+                        <Label Text="Resumen de Compra" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-                    <Label Grid.Row="2"
-                 Text="{Binding compra.items.Count, StringFormat='🧾 {0} ítems'}"
-                 Style="{StaticResource Muted}" />
+                    <!-- Fecha -->
+                    <StackLayout Grid.Row="1" Grid.Column="0" 
+                               Orientation="Horizontal" 
+                               Spacing="8" 
+                               Margin="0,4">
+                        <Frame BackgroundColor="#10B981" 
+                               CornerRadius="12" 
+                               Padding="6" 
+                               HasShadow="False"
+                               VerticalOptions="Center">
+                            <Label Text="📅" 
+                                   FontSize="12" 
+                                   TextColor="White" />
+                        </Frame>
+                        <StackLayout VerticalOptions="Center">
+                            <Label Text="Fecha de compra" 
+                                   FontSize="12" 
+                                   TextColor="#6B7280" />
+                            <Label Text="{Binding compra.fechaCompra, StringFormat='{0:dd MMM yyyy, HH:mm}'}"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="#1F2937" />
+                        </StackLayout>
+                    </StackLayout>
 
-                    <Label Grid.RowSpan="3" Grid.Column="1"
-                 Text="{Binding compra.total, StringFormat='{0:N2}'}"
-                 HorizontalTextAlignment="End"
-                 TextColor="{StaticResource Good}"
-                 FontSize="28"
-                 FontAttributes="Bold" />
+                    <!-- Cantidad de items -->
+                    <StackLayout Grid.Row="2" Grid.Column="0" 
+                               Orientation="Horizontal" 
+                               Spacing="8" 
+                               Margin="0,8,0,4">
+                        <Frame BackgroundColor="#8B5CF6" 
+                               CornerRadius="12" 
+                               Padding="6" 
+                               HasShadow="False"
+                               VerticalOptions="Center">
+                            <Label Text="🛒" 
+                                   FontSize="12" 
+                                   TextColor="White" />
+                        </Frame>
+                        <StackLayout VerticalOptions="Center">
+                            <Label Text="Productos comprados" 
+                                   FontSize="12" 
+                                   TextColor="#6B7280" />
+                            <Label Text="{Binding compra.items.Count, StringFormat='{0} ítems'}"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="#1F2937" />
+                        </StackLayout>
+                    </StackLayout>
 
+                    <!-- Total destacado -->
+                    <StackLayout Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="End"
+                               Spacing="4">
+                        <Label Text="Total Pagado" 
+                               FontSize="12" 
+                               TextColor="#6B7280"
+                               HorizontalTextAlignment="End" />
+                        <Frame BackgroundColor="White" 
+                               CornerRadius="12" 
+                               Padding="12,8" 
+                               HasShadow="False">
+                            <Label Text="{Binding compra.total, StringFormat='₡{0:N0}'}"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="#059669"
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+                    </StackLayout>
                 </Grid>
-            </Border>
+            </Frame>
 
-            <!-- ====== Título de sección ====== -->
-            <Label Text="Productos" Style="{StaticResource Title}" FontSize="18"/>
+            <!-- Lista de Productos -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="0"
+                   Margin="0,0,0,8">
+                <StackLayout Spacing="0">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12" 
+                                 Padding="20,16,20,12">
+                        <Label Text="🛍️" FontSize="16" />
+                        <Label Text="Productos Comprados" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-            <!-- ====== Lista de ítems ====== -->
-            <CollectionView ItemsSource="{Binding compra.items}">
-                <CollectionView.EmptyView>
-                    <Label Text="Sin productos en esta compra."
-                 HorizontalTextAlignment="Center"
-                 TextColor="{StaticResource SecondaryText}"
-                 Margin="0,24,0,0"/>
-                </CollectionView.EmptyView>
+                    <CollectionView ItemsSource="{Binding compra.items}"
+                                    Margin="8,0,8,8">
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BackgroundColor="{StaticResource CardBg}"
-                    Stroke="{StaticResource CardStroke}"
-                    StrokeShape="RoundRectangle 14"
-                    Padding="14"
-                    Margin="0,6">
-                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="12">
-
-                                <!-- Nombre + id -->
-                                <HorizontalStackLayout Spacing="6">
-                                    <Label Text="{Binding nombre}" FontAttributes="Bold" TextColor="{StaticResource PrimaryText}"
-                         LineBreakMode="TailTruncation"/>
-                                    <Label Text="{Binding idProducto, StringFormat='(#{0})'}"
-                         Style="{StaticResource Muted}" />
-                                </HorizontalStackLayout>
-
-                                <!-- Cantidad como pill -->
-                                <Border Grid.Column="1"
-                        BackgroundColor="{StaticResource PillBg}"
-                        StrokeShape="RoundRectangle 999"
-                        Padding="6,2"
-                        VerticalOptions="Start">
-                                    <Label Text="{Binding cantidad, StringFormat='x{0:#,##0.##}'}"
-                         TextColor="{StaticResource PillText}"
-                         FontAttributes="Bold"
-                         FontSize="12"/>
-                                </Border>
-
-                                <!-- Unidad y precio -->
-                                <HorizontalStackLayout Grid.Row="1" Spacing="10">
-                                    <Label Text="{Binding unidad}" Style="{StaticResource Muted}" />
-                                    <Label Text="·" Style="{StaticResource Muted}" />
-                                    <Label Text="{Binding precioUnitario, StringFormat='@ {0:N2}'}"
-                         TextColor="{StaticResource SecondaryText}" />
-                                </HorizontalStackLayout>
-
-                                <!-- Subtotal a la derecha -->
-                                <Label Grid.Row="1" Grid.Column="1"
-                       Text="{Binding ., Converter={StaticResource SubtotalConverter}}"
-                       HorizontalTextAlignment="End"
-                       TextColor="{StaticResource PrimaryText}"
-                       FontAttributes="Bold"/>
+                        <!-- Mensaje cuando está vacía -->
+                        <CollectionView.EmptyView>
+                            <Grid Padding="40,60">
+                                <StackLayout HorizontalOptions="Center" 
+                                           VerticalOptions="Center" 
+                                           Spacing="12">
+                                    <Frame BackgroundColor="#F3F4F6" 
+                                           CornerRadius="30" 
+                                           Padding="20" 
+                                           HasShadow="False"
+                                           HorizontalOptions="Center">
+                                        <Label Text="📦" 
+                                               FontSize="30" 
+                                               HorizontalOptions="Center" />
+                                    </Frame>
+                                    <Label Text="Sin productos" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold" 
+                                           TextColor="#374151"
+                                           HorizontalOptions="Center" />
+                                    <Label Text="No se encontraron productos en esta compra" 
+                                           FontSize="14" 
+                                           TextColor="#6B7280"
+                                           HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
                             </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                        </CollectionView.EmptyView>
 
-        </VerticalStackLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="#F8FAFC" 
+                                       HasShadow="False" 
+                                       CornerRadius="12" 
+                                       Padding="16"
+                                       Margin="4,2">
+                                    <Grid ColumnDefinitions="*,Auto" 
+                                          RowDefinitions="Auto,Auto,Auto" 
+                                          ColumnSpacing="12">
+
+                                        <!-- Nombre del producto -->
+                                        <StackLayout Grid.Row="0" Grid.Column="0" 
+                                                   Orientation="Horizontal" 
+                                                   Spacing="8">
+                                            <Label Text="{Binding nombre}" 
+                                                   FontSize="16"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#1F2937"
+                                                   LineBreakMode="TailTruncation"
+                                                   VerticalOptions="Center" />
+                                            <Frame BackgroundColor="#E5E7EB" 
+                                                   CornerRadius="6" 
+                                                   Padding="4,2" 
+                                                   HasShadow="False"
+                                                   VerticalOptions="Center">
+                                                <Label Text="{Binding idProducto, StringFormat='#{0}'}"
+                                                       FontSize="10"
+                                                       TextColor="#6B7280" />
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <!-- Badge de cantidad -->
+                                        <Frame Grid.Row="0" Grid.Column="1"
+                                               BackgroundColor="#FEF3C7" 
+                                               CornerRadius="12" 
+                                               Padding="8,4" 
+                                               HasShadow="False"
+                                               VerticalOptions="Start">
+                                            <Label Text="{Binding cantidad, StringFormat='×{0:0.##}'}"
+                                                   FontSize="12"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#92400E" />
+                                        </Frame>
+
+                                        <!-- Información adicional -->
+                                        <StackLayout Grid.Row="1" Grid.Column="0" 
+                                                   Orientation="Horizontal" 
+                                                   Spacing="8"
+                                                   Margin="0,8,0,0">
+                                            <Frame BackgroundColor="#DBEAFE" 
+                                                   CornerRadius="6" 
+                                                   Padding="6,3" 
+                                                   HasShadow="False">
+                                                <Label Text="{Binding unidad}" 
+                                                       FontSize="11"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#1E40AF" />
+                                            </Frame>
+                                            <Label Text="•" 
+                                                   FontSize="12" 
+                                                   TextColor="#9CA3AF"
+                                                   VerticalOptions="Center" />
+                                            <Label Text="{Binding precioUnitario, StringFormat='₡{0:N0} c/u'}" 
+                                                   FontSize="12" 
+                                                   TextColor="#6B7280"
+                                                   VerticalOptions="Center" />
+                                        </StackLayout>
+
+                                        <!-- Subtotal -->
+                                        <StackLayout Grid.Row="1" Grid.Column="1" 
+                                                   VerticalOptions="End"
+                                                   HorizontalOptions="End"
+                                                   Spacing="2"
+                                                   Margin="0,8,0,0">
+                                            <Label Text="Subtotal" 
+                                                   FontSize="10" 
+                                                   TextColor="#6B7280"
+                                                   HorizontalTextAlignment="End" />
+                                            <Label Text="{Binding ., Converter={StaticResource SubtotalConverter}}"
+                                                   FontSize="14"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#059669"
+                                                   HorizontalTextAlignment="End" />
+                                        </StackLayout>
+
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -963,8 +963,6 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\arrow_back.PNG
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logofridgeloop.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -977,6 +975,8 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\arrow_back.PNG
+C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logofridgeloop.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
@@ -1000,6 +1000,3 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.sourcelink.json
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.dll
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\refint\Frontend Proyecto Fridgeloop.dll
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.pdb

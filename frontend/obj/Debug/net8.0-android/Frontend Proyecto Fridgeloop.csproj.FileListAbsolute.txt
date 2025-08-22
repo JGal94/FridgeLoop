@@ -3437,5 +3437,3 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fr
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.sourcelink.json
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.dll
-C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.pdb
