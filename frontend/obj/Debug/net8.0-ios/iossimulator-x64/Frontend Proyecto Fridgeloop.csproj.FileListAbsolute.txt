@@ -1271,9 +1271,6 @@ C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\libxama
 C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
 C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
-C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Users\juanf\FridgeLoop\frontend\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.inputs
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.inputs

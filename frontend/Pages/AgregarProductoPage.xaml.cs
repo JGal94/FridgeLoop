@@ -24,12 +24,12 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
         private async void OnGuardarProductoClicked(object sender, EventArgs e)
         {
-            if (IsBusy) return;
-            IsBusy = true;
+            // Evita doble tap sin usar IsBusy global
+            if (sender is Button b) b.IsEnabled = false;
 
             try
             {
-                // Validaciones mínimas (como las que ya tienes)
+                // Validaciones mínimas
                 if (string.IsNullOrWhiteSpace(txtNombre?.Text))
                 { await DisplayAlert("Faltan datos", "Nombre obligatorio.", "OK"); return; }
                 if (pkCategoria?.SelectedIndex is null || pkCategoria.SelectedIndex < 0)
@@ -43,17 +43,16 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
 
                 // Opcionales
                 decimal cantidad = 1m;
-                if (!string.IsNullOrWhiteSpace(txtCantidad?.Text) && decimal.TryParse(txtCantidad.Text.Trim(), out var q) && q > 0)
-                    cantidad = q;
+                if (!string.IsNullOrWhiteSpace(txtCantidad?.Text) &&
+                    decimal.TryParse(txtCantidad.Text.Trim(), out var q) && q > 0) cantidad = q;
 
                 DateTime? exp = dpExpira?.Date;
 
-                // (Opcional) Si tienes un Entry de precio, úsalo; si no, queda null
                 decimal? precio = null;
-                if (!string.IsNullOrWhiteSpace(txtPrecio?.Text) && decimal.TryParse(txtPrecio.Text.Trim(), out var p) && p >= 0)
-                    precio = p;
+                if (!string.IsNullOrWhiteSpace(txtPrecio?.Text) &&
+                    decimal.TryParse(txtPrecio.Text.Trim(), out var p) && p >= 0) precio = p;
 
-                // Crea ítem local y agrégalo a la lista de compras
+                // Crear y agregar a la lista observable
                 var item = new ShoppingItem
                 {
                     Nombre = txtNombre.Text!.Trim(),
@@ -66,7 +65,9 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 ShoppingList.Items.Add(item);
 
                 await DisplayAlert("Agregado", $"{item.Nombre} a la lista de compras.", "OK");
-                await Navigation.PopAsync(); // volvemos a ListaComprasPage
+
+                // Regresar a la lista (no hay spinner activo)
+                await Navigation.PopAsync();
             }
             catch (Exception ex)
             {
@@ -74,9 +75,10 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             }
             finally
             {
-                IsBusy = false;
+                if (sender is Button b2) b2.IsEnabled = true;
             }
         }
+
 
         // Escáner con MessagingCenter (tu lógica)
         // Escanear y suscripción correcta
