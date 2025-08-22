@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\juanf\\FridgeLoop\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|c:\\users\\juanf\\fridgeloop\\backend\\backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D666A5-3C23-450B-AC5C-F22A80B8E639}|Backend\\Backend.csproj|solutionrelative:backend\\utilitarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|c:\\users\\juanf\\fridgeloop\\backend\\api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71296E0-FDD7-412B-A006-4694A3F4C6F8}|API\\API.csproj|solutionrelative:api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 246,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Utilitarios.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeDocumentMoniker": "Backend\\Utilitarios.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\Utilitarios.cs",
+              "RelativeToolTip": "Backend\\Utilitarios.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAuwKQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T09:55:07.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ReqObtenerProductoPorCodigo.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Request\\ReqObtenerProductoPorCodigo.cs",
               "RelativeDocumentMoniker": "Entidades\\Request\\ReqObtenerProductoPorCodigo.cs",
@@ -62,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ResLogin.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Response\\ResLogin.cs",
               "RelativeDocumentMoniker": "Entidades\\Response\\ResLogin.cs",
@@ -74,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ResObtenerProductoPorCodigo.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Entidades\\Response\\ResObtenerProductoPorCodigo.cs",
               "RelativeDocumentMoniker": "Entidades\\Response\\ResObtenerProductoPorCodigo.cs",
@@ -86,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LogicaProducto.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\Backend\\LogicaProducto.cs",
               "RelativeDocumentMoniker": "Backend\\LogicaProducto.cs",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductoController.cs",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\Backend\\API\\Controllers\\ProductoController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ProductoController.cs",
