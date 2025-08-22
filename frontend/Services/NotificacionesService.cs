@@ -40,6 +40,7 @@ namespace Frontend_Proyecto_Fridgeloop.Services
             public int Dias { get; set; }
             public string? Unidad { get; set; }
             public decimal? Cantidad { get; set; }
+            public bool EstaVencido { get; set; }
         }
 
         /// <summary>

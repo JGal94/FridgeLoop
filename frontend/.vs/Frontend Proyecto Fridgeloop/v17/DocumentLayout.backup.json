@@ -7,6 +7,34 @@
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\frontend proyecto fridgeloop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:frontend proyecto fridgeloop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\notificacionespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\notificacionespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\notificacionespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\notificacionespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\services\\notificacionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:services\\notificacionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:entidades\\entity\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|c:\\users\\juanf\\fridgeloop\\frontend\\pages\\historialcompraspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5B9629C5-0A8C-4EF4-B141-EEEE5FBF8743}|Frontend Proyecto Fridgeloop.csproj|solutionrelative:pages\\historialcompraspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -50,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,7 +98,105 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\DashboardPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml*",
+              "RelativeToolTip": "Pages\\DashboardPage.xaml*",
+              "ViewState": "AgIAACUBAAAAAAAAAAAiwEABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T21:28:17.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DashboardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\DashboardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml.cs",
+              "RelativeToolTip": "Pages\\DashboardPage.xaml.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAwwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T23:08:20.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frontend Proyecto Fridgeloop",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+              "RelativeDocumentMoniker": "Frontend Proyecto Fridgeloop.csproj",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+              "RelativeToolTip": "Frontend Proyecto Fridgeloop.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-22T23:27:52.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotificacionesPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\NotificacionesPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\NotificacionesPage.xaml.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\NotificacionesPage.xaml.cs",
+              "RelativeToolTip": "Pages\\NotificacionesPage.xaml.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwC8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T22:42:31.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotificacionesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\NotificacionesPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\NotificacionesPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\NotificacionesPage.xaml",
+              "RelativeToolTip": "Pages\\NotificacionesPage.xaml",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAkwG0BAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T22:36:25.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PerfilPage.xaml",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\PerfilPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\PerfilPage.xaml",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\PerfilPage.xaml",
+              "RelativeToolTip": "Pages\\PerfilPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T22:42:31.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificacionesService.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Services\\NotificacionesService.cs",
+              "RelativeDocumentMoniker": "Services\\NotificacionesService.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Services\\NotificacionesService.cs",
+              "RelativeToolTip": "Services\\NotificacionesService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwCAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T22:46:05.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Notificacion.cs",
+              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Entidades\\Entity\\Notificacion.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entity\\Notificacion.cs",
+              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Entidades\\Entity\\Notificacion.cs",
+              "RelativeToolTip": "Entidades\\Entity\\Notificacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T22:45:31.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "HistorialComprasPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\HistorialComprasPage.xaml",
               "RelativeDocumentMoniker": "Pages\\HistorialComprasPage.xaml",
@@ -78,12 +204,11 @@
               "RelativeToolTip": "Pages\\HistorialComprasPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:58:55.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:58:55.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "DetalleProductoPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DetalleProductoPage.xaml",
               "RelativeDocumentMoniker": "Pages\\DetalleProductoPage.xaml",
@@ -91,12 +216,11 @@
               "RelativeToolTip": "Pages\\DetalleProductoPage.xaml",
               "ViewState": "AgIAAJsBAAAAAAAAAAAAAK0BAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:47:29.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:47:29.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "CompraDetallePage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\CompraDetallePage.xaml",
               "RelativeDocumentMoniker": "Pages\\CompraDetallePage.xaml",
@@ -104,25 +228,11 @@
               "RelativeToolTip": "Pages\\CompraDetallePage.xaml",
               "ViewState": "AgIAAIkBAAAAAAAAAAAAAK0BAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:44:45.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:44:45.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DashboardPage.xaml",
-              "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\DashboardPage.xaml",
-              "ToolTip": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DashboardPage.xaml",
-              "RelativeToolTip": "Pages\\DashboardPage.xaml",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAAADMBAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:28:17.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "DetalleRecetaPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\DetalleRecetaPage.xaml",
               "RelativeDocumentMoniker": "Pages\\DetalleRecetaPage.xaml",
@@ -130,12 +240,11 @@
               "RelativeToolTip": "Pages\\DetalleRecetaPage.xaml",
               "ViewState": "AgIAAGgCAAAAAAAAAAAAAHoCAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:49:12.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:49:12.188Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "ConfiguracionPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\ConfiguracionPage.xaml",
               "RelativeDocumentMoniker": "Pages\\ConfiguracionPage.xaml",
@@ -143,12 +252,11 @@
               "RelativeToolTip": "Pages\\ConfiguracionPage.xaml",
               "ViewState": "AgIAADYBAAAAAAAAAAAAAFoBAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:43:13.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:43:13.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "RegistroPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\RegistroPage.xaml",
               "RelativeDocumentMoniker": "Pages\\RegistroPage.xaml",
@@ -156,12 +264,11 @@
               "RelativeToolTip": "Pages\\RegistroPage.xaml",
               "ViewState": "AgIAAPoAAAAAAAAAAAAkwBkBAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:38:49.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:38:49.807Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "StartPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\StartPage.xaml",
               "RelativeDocumentMoniker": "Pages\\StartPage.xaml",
@@ -169,12 +276,11 @@
               "RelativeToolTip": "Pages\\StartPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:33:56.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:33:56.764Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "VerificacionPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\VerificacionPage.xaml",
               "RelativeDocumentMoniker": "Pages\\VerificacionPage.xaml",
@@ -182,12 +288,11 @@
               "RelativeToolTip": "Pages\\VerificacionPage.xaml",
               "ViewState": "AgIAAMgAAAAAAAAAAAAAAOAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:32:44.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:32:44.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "C:\\Users\\juanf\\FridgeLoop\\frontend\\Pages\\LoginPage.xaml",
               "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
@@ -195,8 +300,7 @@
               "RelativeToolTip": "Pages\\LoginPage.xaml",
               "ViewState": "AgIAAIoAAAAAAAAAAAAAANgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-22T21:31:37.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T21:31:37.925Z"
             }
           ]
         },
