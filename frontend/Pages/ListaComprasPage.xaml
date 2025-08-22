@@ -63,55 +63,107 @@
                                 </SwipeView.RightItems>
 
                                 <!-- Tarjeta del item -->
+                                <!-- Tarjeta del item -->
                                 <Grid Padding="10"
-                                      ColumnDefinitions="*,Auto"
-                                      RowDefinitions="Auto,Auto">
+      ColumnDefinitions="*,Auto"
+      RowDefinitions="Auto,Auto">
 
                                     <!-- Nombre -->
                                     <Label Grid.Row="0" Grid.Column="0"
-                                           Text="{Binding Nombre}"
-                                           FontSize="17"
-                                           TextColor="#003366"
-                                           FontAttributes="Bold"/>
+         Text="{Binding Nombre}"
+         FontSize="17"
+         TextColor="#003366"
+         LineBreakMode="TailTruncation"/>
 
-                                    <!-- Unidad (con cantidad) -->
+                                    <!-- Presentación (para kg/g/ml/L) -->
                                     <Label Grid.Row="1" Grid.Column="0"
-                                           FontSize="15"
-                                           TextColor="#335">
+         FontSize="15"
+         TextColor="#335"
+         IsVisible="True">
                                         <Label.Text>
-                                            <MultiBinding StringFormat="Unidad: {0} {1}">
-                                                <Binding Path="Cantidad" StringFormat="0.##"/>
+                                            <MultiBinding StringFormat="Presentación: {0:0.##} {1}">
+                                                <Binding Path="Cantidad"/>
                                                 <Binding Path="Unidad"/>
                                             </MultiBinding>
                                         </Label.Text>
+                                        <!-- Ocultar si es pieza/unidad/pack -->
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
+                                                <Setter Property="IsVisible" Value="False"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
+                                                <Setter Property="IsVisible" Value="False"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
+                                                <Setter Property="IsVisible" Value="False"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
                                     </Label>
 
-                                    <!-- Precio (₡ con separadores; si es null muestra —) -->
+                                    <!-- Cantidad de productos (solo pz/unid/pack) -->
+                                    <Label Grid.Row="1" Grid.Column="0"
+         FontSize="15"
+         TextColor="#335"
+         IsVisible="False">
+                                        <Label.Text>
+                                            <!-- muestralo como: Cantidad: ×2 -->
+                                            <Binding Path="Cantidad" StringFormat="Cantidad: ×{0:0}"/>
+                                        </Label.Text>
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
+                                                <Setter Property="IsVisible" Value="True"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
+                                                <Setter Property="IsVisible" Value="True"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
+                                                <Setter Property="IsVisible" Value="True"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+
+                                    <!-- Precio a la derecha -->
                                     <VerticalStackLayout Grid.RowSpan="2" Grid.Column="1"
-                                                         HorizontalOptions="End"
-                                                         Spacing="2"
-                                                         Margin="12,0,4,0">
-                                        <Label Text="Precio"
-                                               FontSize="12"
-                                               TextColor="#666"
-                                               HorizontalTextAlignment="End" />
+                       HorizontalOptions="End"
+                       Spacing="2"
+                       Margin="12,0,4,0">
+                                        <Label Text="Precio unitario"
+           FontSize="12"
+           TextColor="#666"
+           HorizontalTextAlignment="End" />
                                         <Label FontSize="15"
-                                               TextColor="#335"
-                                               HorizontalTextAlignment="End">
+           TextColor="#335"
+           HorizontalTextAlignment="End">
                                             <Label.Text>
                                                 <Binding Path="PrecioUnitario"
-                                                         StringFormat="₡{0:N0}"
-                                                         TargetNullValue="—" />
+                 StringFormat="₡{0:N0}"
+                 TargetNullValue="—" />
                                             </Label.Text>
                                         </Label>
                                     </VerticalStackLayout>
 
                                 </Grid>
+
+
                             </SwipeView>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                
             </Frame>
+            <Border BackgroundColor="#FFFFFF" Stroke="#E5E7EB" Padding="14" StrokeShape="RoundRectangle 12">
+                <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                    <Label Text="Total de la compra" FontSize="13" TextColor="#64748B" />
+                    <Label x:Name="lblTotal"
+           Grid.Column="1"
+           FontAttributes="Bold"
+           FontSize="18"
+           TextColor="#0F172A"
+           HorizontalTextAlignment="End"
+           HorizontalOptions="End" />
+                </Grid>
+            </Border>
+
 
             <!-- Botones -->
             <Button Text="➕ Agregar producto"

@@ -1,23 +1,51 @@
 using Microsoft.Maui.Controls;
 using Frontend_Proyecto_Fridgeloop.Helpers;
 using Frontend_Proyecto_Fridgeloop.Services;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace Frontend_Proyecto_Fridgeloop.Pages
 {
     public partial class ListaComprasPage : ContentPage
     {
+
+        // Exponemos la fuente que ya usas (si prefieres, puedes enlazar directo a ShoppingList.Items)
+        public ObservableCollection<ShoppingItem> ItemsSource => ShoppingList.Items;
+
+        private decimal _totalCompra;
+        public decimal TotalCompra
+        {
+            get => _totalCompra;
+            private set
+            {
+                if (_totalCompra != value)
+                {
+                    _totalCompra = value;
+                    OnPropertyChanged(nameof(TotalCompra));
+                }
+            }
+        }
+
         private readonly CompraService _compras = new();
+
+        private static readonly HashSet<string> _porPieza = new(StringComparer.OrdinalIgnoreCase)
+{ "pz", "unid", "pack" };
 
         public ListaComprasPage()
         {
             InitializeComponent();
-            cvLista.ItemsSource = ShoppingList.Items; // bind directo a la colección observable
+            BindingContext = this;                  // ?? habilita {Binding TotalCompra}
+            cvLista.ItemsSource = ShoppingList.Items;
+            ItemsSource.CollectionChanged += Items_CollectionChanged;
+            RecalcTotal();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            // No hace falta refrescar nada: ObservableCollection actualiza la UI sola
+            
+            // Por si cambió algo al volver de otra página
+            RecalcTotal();
         }
 
         private async void OnAgregarProductoClicked(object sender, EventArgs e)
@@ -159,5 +187,29 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         {
             await DisplayAlert("Próximamente", "Sincronización aún no implementada.", "OK");
         }
+        
+
+        private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+            RecalcTotal();
+        }
+
+        private void RecalcTotal()
+        {
+            decimal total = 0m;
+
+            foreach (var i in ItemsSource)
+            {
+                var precio = i.PrecioUnitario ?? 0m;
+                var cantidad = i.Cantidad > 0 ? i.Cantidad : 1m; // usa 1 si viene 0 o nulo
+                total += precio * cantidad;
+            }
+
+            TotalCompra = total;
+
+            
+            lblTotal.Text = $"CRC {TotalCompra:N0}";
+        }
+
     }
 }
