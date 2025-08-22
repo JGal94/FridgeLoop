@@ -266,7 +266,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Properties\PublishProfiles\foroapp - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FridgeLoop - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FridgeLoop - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />

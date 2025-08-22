@@ -79,6 +79,7 @@
     <Compile Include="Request\ReqObtenerCompras.cs" />
     <Compile Include="Request\ReqObtenerIngredientes.cs" />
     <Compile Include="Request\ReqObtenerInventario.cs" />
+    <Compile Include="Request\ReqObtenerProductoPorCodigo.cs" />
     <Compile Include="Request\ReqObtenerProductos.cs" />
     <Compile Include="Request\ReqObtenerReceta.cs" />
     <Compile Include="Request\ReqObtenerUsuario.cs" />
