@@ -27,7 +27,8 @@ namespace Frontend_Proyecto_Fridgeloop.Services
             Http = new HttpClient(handler)
             {
                 BaseAddress = new Uri(Constants.BaseApi),
-                Timeout = TimeSpan.FromSeconds(30)
+                Timeout = TimeSpan.FromSeconds(120)
+
             };
 #else
             Http = new HttpClient

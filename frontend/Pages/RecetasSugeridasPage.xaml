@@ -2,72 +2,113 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.RecetasSugeridasPage"
-             Title="Recetas Sugeridas"
+             Title="Recetas sugeridas"
              BackgroundColor="#EAF4FF">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+        <VerticalStackLayout Padding="20" Spacing="14">
 
-            <Image Source="logofridgeloop.png"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0,10,0,10" />
+            <Label Text="Recetas sugeridas por IA"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#003366"/>
 
-            <!-- Botón para historial -->
-            <Button Text="📜 Ver historial de recetas"
-                    BackgroundColor="#5A738E"
-                    TextColor="White"
-                    FontSize="16"
-                    CornerRadius="10"
-                    Clicked="OnVerHistorialClicked" />
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                <Label x:Name="lblEstado"
+                       Text="Pulsa el botón para generar recetas."
+                       FontSize="14"
+                       TextColor="#335"/>
+                <Button x:Name="btnGenerar"
+                        Grid.Column="1"
+                        Text="🍳 Generar"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="12,8"
+                        Clicked="OnGenerarClicked"/>
+            </Grid>
 
-            <Label Text="Recetas sugeridas según tu inventario"
-                   FontSize="20"
-                   FontFamily="OpenSansBold"
-                   TextColor="#003366" />
+            <ActivityIndicator x:Name="ai"
+                               IsVisible="False"
+                               IsRunning="False"
+                               Color="#007ACC" />
 
-            <!-- Filtros -->
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="⏱ Tiempo" Clicked="OnFiltroTiempo"
-                        BackgroundColor="#D6C8FF" TextColor="#333" CornerRadius="10" />
-                <Button Text="🔥 Calorías" Clicked="OnFiltroCalorias"
-                        BackgroundColor="#D6C8FF" TextColor="#333" CornerRadius="10" />
-            </HorizontalStackLayout>
+            <CollectionView x:Name="cv"
+                            SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <Grid Padding="16">
+                        <Label Text="— Aún no hay recetas —"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               TextColor="#667892"/>
+                    </Grid>
+                </CollectionView.EmptyView>
 
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="🥦 Vegano" Clicked="OnFiltroVegano"
-                        BackgroundColor="#D6C8FF" TextColor="#333" CornerRadius="10" />
-                <Button Text="💪 Keto" Clicked="OnFiltroKeto"
-                        BackgroundColor="#D6C8FF" TextColor="#333" CornerRadius="10" />
-            </HorizontalStackLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="White"
+                               CornerRadius="12"
+                               Padding="12"
+                               Margin="0,6"
+                               HasShadow="True">
+                            <VerticalStackLayout Spacing="6">
+                                <!-- Nombre -->
+                                <Label Text="{Binding Name}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#003366"/>
 
-            <!-- Receta visible -->
-            <Frame BackgroundColor="White"
-                   CornerRadius="12"
-                   Padding="15"
-                   HasShadow="True"
-                   Margin="0,10">
-                <VerticalStackLayout>
-                    <Label Text="🥗 Ensalada con atún"
-                           FontSize="18"
-                           FontFamily="OpenSansSemiBold"
-                           TextColor="#004C99" />
+                                <!-- Descripción -->
+                                <Label Text="{Binding Description}"
+                                       FontSize="14"
+                                       TextColor="#334"/>
 
-                    <Label Text="Tiempo: 10 min | Calorías: 200"
-                           FontSize="14"
-                           TextColor="#666" />
+                                <!-- Chips: tiempo / dificultad / calorías -->
+                                <HorizontalStackLayout Spacing="8">
+                                    <Frame BackgroundColor="#E6F2FF" Padding="8,4" CornerRadius="8">
+                                        <Label Text="{Binding PreparationTime, StringFormat='⏱ {0} min'}"
+                                               FontSize="12"
+                                               TextColor="#003366"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="#FFF8E1" Padding="8,4" CornerRadius="8">
+                                        <Label Text="{Binding Difficulty, StringFormat='🎚 {0}'}"
+                                               FontSize="12"
+                                               TextColor="#665500"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="#FFE6E6" Padding="8,4" CornerRadius="8">
+                                        <Label Text="{Binding Calories, StringFormat='🔥 {0} kcal'}"
+                                               FontSize="12"
+                                               TextColor="#8A1F1F"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
 
-                    <Label Text="Estilo: Keto"
-                           FontSize="14"
-                           TextColor="#666" />
+                                <!-- Ingredientes (multilínea) -->
+                                <Label FontSize="13" TextColor="#335">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Ingredientes: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Ingredients, Converter={x:Reference Name=conv}, ConverterParameter=line}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                    <Button Text="Ver Receta"
-                            BackgroundColor="#007ACC"
-                            TextColor="White"
-                            CornerRadius="8"
-                            Clicked="OnVerRecetaClicked"/>
-                </VerticalStackLayout>
-            </Frame>
+                                <!-- Botones -->
+                                <HorizontalStackLayout Spacing="10">
+                                    <Button Text="Preparar"
+                                            BackgroundColor="#28A745"
+                                            TextColor="White"
+                                            CornerRadius="10"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnPrepararClicked"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Converter inline (sin tocar App.xaml): simple binding proxy -->
+            <ContentView x:Name="conv" IsVisible="False"/>
 
         </VerticalStackLayout>
     </ScrollView>
