@@ -920,6 +920,50 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.pdb
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.genruntimeconfig.cache
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\Frontend Proyecto Fridgeloop.dll
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\arrow_back.PNG
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logofridgeloop.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@3x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@3x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@3x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_PartialAppManifest.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_ProcessedCoreMLModelsPath.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\_ProcessedBundleResourcesPath.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\_ProcessedContentPath.items
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.csproj.AssemblyReference.cache
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.AssemblyInfoInputs.cache
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.sourcelink.json
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.dll
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\refint\Frontend Proyecto Fridgeloop.dll
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.pdb
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.runtimeconfig.json
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.pdb
@@ -1180,51 +1224,7 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet-nativeaot.a
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.a
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.dylib
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\arrow_back.PNG
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logofridgeloop.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@3x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@3x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@3x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.stamp
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_PartialAppManifest.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\coremlc\_ProcessedCoreMLModelsPath.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\_ProcessedBundleResourcesPath.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\_ProcessedContentPath.items
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.csproj.AssemblyReference.cache
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.AssemblyInfoInputs.cache
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.sourcelink.json
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend.1CCF4B84.Up2Date
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.dll
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\refint\Frontend Proyecto Fridgeloop.dll
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.pdb
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\Frontend Proyecto Fridgeloop.genruntimeconfig.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\Frontend Proyecto Fridgeloop.dll

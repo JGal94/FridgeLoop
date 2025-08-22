@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-08-21T20:09:01.542</Modified>
+      <Modified>2025-08-22T00:16:19.832</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-08-21T20:09:01.369</Modified>
+      <Modified>2025-08-21T23:40:49.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.runtimeconfig.json">
       <PackagePath>Frontend Proyecto Fridgeloop.runtimeconfig.json</PackagePath>
-      <Modified>2025-08-21T20:09:01.037</Modified>
+      <Modified>2025-08-21T23:49:43.663</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.dll">
       <PackagePath>Frontend Proyecto Fridgeloop.dll</PackagePath>
-      <Modified>2025-08-21T20:09:00.087</Modified>
+      <Modified>2025-08-22T00:16:19.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Frontend Proyecto Fridgeloop.exe</PackagePath>
-      <Modified>2025-08-21T20:09:00.128</Modified>
+      <Modified>2025-08-22T00:16:19.397</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,23 +55,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:58.522</Modified>
+      <Modified>2025-08-21T23:40:47.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:58.538</Modified>
+      <Modified>2025-08-21T23:40:47.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:58.552</Modified>
+      <Modified>2025-08-21T23:40:47.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:58.570</Modified>
+      <Modified>2025-08-21T23:40:47.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:58.646</Modified>
+      <Modified>2025-08-21T23:40:47.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -81,221 +81,221 @@
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
       <Modified>2025-08-21T15:14:07.588</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png">
-      <PackagePath>logofridgeloop.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG">
-      <PackagePath>arrow_back.scale-100.PNG</PackagePath>
-      <Modified>2025-08-21T20:08:59.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
-      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
-      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
-      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
-      <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+      <PackagePath>appicon.ico</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
-      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+      <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
-      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
-      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
-      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
-      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
-      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
-      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
-      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
-      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
-      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
-      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
-      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
-      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
-      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
-      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
-      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
-      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
-      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
-      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
-      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
-      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
-      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
-      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
-      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
-      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
-      <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
-      <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
-      <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
-      <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
-      <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+      <PackagePath>appiconLogo.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
-      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+      <PackagePath>appiconLogo.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
-      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+      <PackagePath>appiconLogo.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
-      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+      <PackagePath>appiconLogo.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
-      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\arrow_back.scale-100.PNG">
+      <PackagePath>arrow_back.scale-100.PNG</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-08-21T20:08:59.581</Modified>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logofridgeloop.scale-100.png">
+      <PackagePath>logofridgeloop.scale-100.png</PackagePath>
+      <Modified>2025-08-21T23:40:48.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Frontend Proyecto Fridgeloop.deps.json">
       <PackagePath>Frontend Proyecto Fridgeloop.deps.json</PackagePath>
-      <Modified>2025-08-21T20:09:01.005</Modified>
+      <Modified>2025-08-21T23:49:43.626</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saulg\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

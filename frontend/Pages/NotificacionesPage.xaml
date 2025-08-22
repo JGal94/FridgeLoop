@@ -6,45 +6,107 @@
              BackgroundColor="#EAF4FF">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+        <VerticalStackLayout Padding="24" Spacing="18">
 
-            <Image Source="logofridgeloop.png"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0,10,0,10" />
-
-            <Label Text="Centro de notificaciones"
-                   FontSize="22"
-                   FontFamily="OpenSansBold"
+            <Label Text="Notificaciones"
+                   FontSize="28"
+                   FontAttributes="Bold"
                    TextColor="#003366" />
 
-            <!-- Notificación 1 -->
-            <Frame BackgroundColor="#FFF8E1" CornerRadius="10" Padding="15">
-                <Label Text="🕒 3 productos están por vencer esta semana"
-                       FontSize="14"
-                       TextColor="#856404" />
-            </Frame>
+            <CollectionView x:Name="cvNotificaciones"
+                            SelectionMode="None">
 
-            <!-- Notificación 2 -->
-            <Frame BackgroundColor="#E2F0D9" CornerRadius="10" Padding="15">
-                <Label Text="🔁 Hay productos repetidos en tu inventario"
-                       FontSize="14"
-                       TextColor="#155724" />
-            </Frame>
+                <CollectionView.EmptyView>
+                    <Grid Padding="24">
+                        <Label Text="— Sin notificaciones —"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="16"
+                               TextColor="#667892"/>
+                    </Grid>
+                </CollectionView.EmptyView>
 
-            <!-- Notificación 3 -->
-            <Frame BackgroundColor="#F8D7DA" CornerRadius="10" Padding="15">
-                <Label Text="⚠️ Has superado el 90% de tu presupuesto mensual"
-                       FontSize="14"
-                       TextColor="#721C24" />
-            </Frame>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Tarjeta: por defecto AMARILLO; si Tipo == danger, se pinta ROJO -->
+                        <Frame Padding="14"
+                               CornerRadius="12"
+                               HasShadow="True"
+                               Margin="0,0,0,12"
+                               BackgroundColor="#FFF3CD"
+                               BorderColor="#E0B200">
 
-            <!-- Notificación 4 -->
-            <Frame BackgroundColor="#D1ECF1" CornerRadius="10" Padding="15">
-                <Label Text="📌 Hoy podrías preparar: Ensalada con atún"
-                       FontSize="14"
-                       TextColor="#0C5460" />
-            </Frame>
+                            <!-- Cambios de color si es 'danger' -->
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame"
+                                             Binding="{Binding Tipo}"
+                                             Value="danger">
+                                    <Setter Property="BackgroundColor" Value="#F8D7DA"/>
+                                    <Setter Property="BorderColor" Value="#C82333"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
+
+                            <!-- Estilos internos dependientes de 'Tipo' -->
+                            <Frame.Resources>
+                                <Style TargetType="BoxView">
+                                    <Setter Property="Color" Value="#E0B200"/>
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="BoxView"
+                                                     Binding="{Binding Tipo}"
+                                                     Value="danger">
+                                            <Setter Property="Color" Value="#C82333"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+
+                                <Style TargetType="Label">
+                                    <Setter Property="TextColor" Value="#856404"/>
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Label"
+                                                     Binding="{Binding Tipo}"
+                                                     Value="danger">
+                                            <Setter Property="TextColor" Value="#721C24"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Frame.Resources>
+
+                            <Grid ColumnDefinitions="6,*,Auto"
+                                  RowDefinitions="Auto,Auto">
+
+                                <!-- Indicador lateral -->
+                                <BoxView Grid.RowSpan="2"
+                                         Grid.Column="0"
+                                         WidthRequest="6"
+                                         HeightRequest="40"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         CornerRadius="3"/>
+
+                                <!-- Título -->
+                                <Label Grid.Row="0" Grid.Column="1"
+                                       Text="{Binding Titulo}"
+                                       FontSize="17"
+                                       FontAttributes="Bold"/>
+
+                                <!-- Subtítulo -->
+                                <Label Grid.Row="1" Grid.Column="1"
+                                       Text="{Binding Subtitulo}"
+                                       FontSize="14"/>
+
+                                <!-- Fecha -->
+                                <Label Grid.RowSpan="2" Grid.Column="2"
+                                       Text="{Binding FechaExpira, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                       FontSize="12"
+                                       TextColor="#607D8B"
+                                       HorizontalTextAlignment="End"
+                                       VerticalTextAlignment="Center" />
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>

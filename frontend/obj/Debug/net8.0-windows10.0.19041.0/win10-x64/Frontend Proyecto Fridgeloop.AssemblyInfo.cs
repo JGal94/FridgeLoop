@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Frontend Proyecto Fridgeloop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+584cdec2cf4f0afd16a8497f1ac189a8946bf7d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+45c6f41aba0ca4a41c47c8972346a3e5995be2da")]
 [assembly: System.Reflection.AssemblyProductAttribute("Frontend Proyecto Fridgeloop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Frontend Proyecto Fridgeloop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4,6 +4,11 @@
         <name>Frontend Proyecto Fridgeloop</name>
     </assembly>
     <members>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Pages.DashboardPage.CargarProductosPorVencerAsync">
+            <summary>
+            Carga el resumen de productos por vencer para la tarjeta del dashboard.
+            </summary>
+        </member>
         <member name="M:Frontend_Proyecto_Fridgeloop.Services.CompraService.RegistrarCompraAsync(System.Nullable{System.DateTime},System.Collections.Generic.IEnumerable{Frontend_Proyecto_Fridgeloop.Helpers.ShoppingItem},System.Threading.CancellationToken)">
             <summary>
             Contrato backend: ReqRegistrarCompra + ItemCompraSinId
@@ -21,6 +26,18 @@
             <summary>
             Envío robusto: adjunta Bearer, reintenta 5xx/timeout/429 con backoff
             y loguea body en errores para diagnóstico.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Frontend_Proyecto_Fridgeloop.Services.NotificacionesService.ObtenerNotificacionesAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)" -->
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.NotificacionesService.ObtenerNotificacionesRawAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Útil para depurar si algo sale vacío. Devuelve el JSON crudo.
+            </summary>
+        </member>
+        <member name="T:Frontend_Proyecto_Fridgeloop.Services.PerfilService">
+            <summary>
+            Cliente para /api/perfil (PUT nombre, PUT password).
+            Reutiliza HttpServiceBase (BaseApi, bearer, SendAsync).
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "T:Frontend_Proyecto_Fridgeloop.Services.ProductService" -->

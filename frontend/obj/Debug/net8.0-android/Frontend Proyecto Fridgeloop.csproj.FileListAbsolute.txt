@@ -3221,14 +3221,6 @@ C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\stamp\_ConvertResour
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\juanf\FridgeLoop\frontend\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.runtimeconfig.json
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.dll
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.pdb
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop.apk
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop.aab
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.aab
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.apk
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.apk.idsig
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\build.props
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\adb.props
@@ -3237,18 +3229,8 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\mauiimage.inputs
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\mauifont.inputs
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\mauisplash.inputs
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-hdpi\splash.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-mdpi\splash.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xhdpi\splash.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxhdpi\splash.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxxhdpi\splash.png
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\values\maui_colors.xml
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\mauisplash.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\mauifont.stamp
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Regular.ttf
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\r\drawable\arrow_back.PNG
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\r\drawable\logofridgeloop.png
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
@@ -3280,7 +3262,6 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\case_map.txt
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\__Microsoft.Android.Resource.Designer.cs
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\res.flag
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\A52E68AE06E1868A-files.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\2E90E89EAD89A570-files.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\lp\98\jl\files.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\lp\99\jl\files.cache
@@ -3346,9 +3327,28 @@ C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\n
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.AssemblyInfo.cs
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.csproj.CoreCompileInputs.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.sourcelink.json
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\XamlC.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.dll
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.pdb
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-hdpi\splash.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-mdpi\splash.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xhdpi\splash.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxhdpi\splash.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxxhdpi\splash.png
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\sp\values\maui_colors.xml
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Regular.ttf
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Semibold.ttf
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\resizetizer\A52E68AE06E1868A-files.cache
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.runtimeconfig.json
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.dll
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\Frontend Proyecto Fridgeloop.pdb
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop.apk
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop.aab
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.aab
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.apk
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\bin\Debug\net8.0-android\com.companyname.frontendproyectofridgeloop-Signed.apk.idsig
+C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\XamlC.stamp
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.genruntimeconfig.cache
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\Frontend Proyecto Fridgeloop.runtimeconfig.json.bin
 C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\obj\Debug\net8.0-android\android\bin\com.companyname.frontendproyectofridgeloop.apk
