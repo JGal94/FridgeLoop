@@ -12,6 +12,8 @@ using Entidades.Request;
 
 using Tx = System.Transactions;
 using Newtonsoft.Json;
+using Entidades.Response.Entidades.Response;
+using System.Data.SqlClient;
 
 
 
@@ -185,13 +187,90 @@ namespace Backend
 
         public ResObtenerCompra ObtenerCompra(int userId, ReqObtenerCompra req)
         {
-            return new ResObtenerCompra
+            var res = new ResObtenerCompra { listaDeErrores = new List<Error>() };
+
+            try
             {
-                resultado = false,
-                mensaje = "Detalle de compra pendiente de persistencia en BD.",
-                listaDeErrores = new List<Error> { new Error { ErrorCode = EnumErrores.ErrorDeBaseDatos, Message = "No existe tabla de compras/detalle." } },
-                compra = null
-            };
+                if (userId <= 0)
+                {
+                    res.resultado = false;
+                    res.mensaje = "Usuario no autenticado.";
+                    res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.TokenInvalido, Message = "Usuario no autenticado." });
+                    return res;
+                }
+                if (req == null || req.idCompra <= 0)
+                {
+                    res.resultado = false;
+                    res.mensaje = "idCompra es requerido.";
+                    res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.CampoRequeridoFaltante, Message = "Parámetros inválidos." });
+                    return res;
+                }
+
+                // Usa la misma connectionString que tu DataContext
+                string cs;
+                using (var linq = new linqDataContext())
+                    cs = linq.Connection.ConnectionString;
+
+                using (var cn = new SqlConnection(cs))
+                using (var cmd = new SqlCommand("SP_Compras_ObtenerDetalle", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@UserID", SqlDbType.Int) { Value = userId });
+                    cmd.Parameters.Add(new SqlParameter("@PurchaseID", SqlDbType.Int) { Value = req.idCompra });
+
+                    cn.Open();
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        // --- 1er resultset: header ---
+                        if (!rd.Read())
+                        {
+                            res.resultado = false;
+                            res.mensaje = "Compra no encontrada o no pertenece al usuario.";
+                            return res;
+                        }
+
+                        var compra = new CompraDetalle
+                        {
+                            idCompra = rd.GetInt32(rd.GetOrdinal("PurchaseID")),
+                            fechaCompra = rd.GetDateTime(rd.GetOrdinal("PurchaseDate")),
+                            total = rd.IsDBNull(rd.GetOrdinal("TotalAmount")) ? 0m : rd.GetDecimal(rd.GetOrdinal("TotalAmount")),
+                            notas = null,
+                            items = new List<ItemCompra>()
+                        };
+
+                        // --- 2º resultset: items ---
+                        if (rd.NextResult())
+                        {
+                            while (rd.Read())
+                            {
+                                var item = new ItemCompra
+                                {
+                                    idProducto = rd.GetInt32(rd.GetOrdinal("ProductID")),
+                                    nombre = rd.IsDBNull(rd.GetOrdinal("ProductName")) ? null : rd.GetString(rd.GetOrdinal("ProductName")),
+                                    idCategoria = rd.IsDBNull(rd.GetOrdinal("CategoryID")) ? 0 : rd.GetInt32(rd.GetOrdinal("CategoryID")),
+                                    unidad = rd.IsDBNull(rd.GetOrdinal("Unit")) ? null : rd.GetString(rd.GetOrdinal("Unit")),
+                                    cantidad = rd.IsDBNull(rd.GetOrdinal("Quantity")) ? 0m : rd.GetDecimal(rd.GetOrdinal("Quantity")),
+                                    precioUnitario = rd.IsDBNull(rd.GetOrdinal("UnitPrice")) ? (decimal?)null : rd.GetDecimal(rd.GetOrdinal("UnitPrice"))
+                                };
+                                compra.items.Add(item);
+                            }
+                        }
+
+                        res.compra = compra;
+                        res.resultado = true;
+                    }
+                }
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.resultado = false;
+                if (res.listaDeErrores == null) res.listaDeErrores = new List<Error>();
+                res.listaDeErrores.Add(new Error { ErrorCode = EnumErrores.ErrorNoControlado, Message = ex.Message });
+                res.mensaje = "Error al obtener el detalle de compra.";
+                return res;
+            }
         }
 
         public ResEliminarCompra EliminarCompra(int userId, ReqEliminarCompra req)

@@ -244,13 +244,6 @@ namespace AccesoDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Compras_ObtenerDetalle")]
-		public ISingleResult<SP_Compras_ObtenerDetalleResult> SP_Compras_ObtenerDetalle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PurchaseID", DbType="Int")] System.Nullable<int> purchaseID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, purchaseID);
-			return ((ISingleResult<SP_Compras_ObtenerDetalleResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Compras_ObtenerPorUsuario")]
 		public ISingleResult<SP_Compras_ObtenerPorUsuarioResult> SP_Compras_ObtenerPorUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Desde", DbType="DateTime")] System.Nullable<System.DateTime> desde, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hasta", DbType="DateTime")] System.Nullable<System.DateTime> hasta)
 		{
@@ -360,6 +353,13 @@ namespace AccesoDatos
 			errorId = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			errorMensaje = ((string)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_Compras_ObtenerDetalle")]
+		public ISingleResult<SP_Compras_ObtenerDetalleResult> SP_Compras_ObtenerDetalle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PurchaseID", DbType="Int")] System.Nullable<int> purchaseID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, purchaseID);
+			return ((ISingleResult<SP_Compras_ObtenerDetalleResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1647,86 +1647,6 @@ namespace AccesoDatos
 		}
 	}
 	
-	public partial class SP_Compras_ObtenerDetalleResult
-	{
-		
-		private int _PurchaseID;
-		
-		private System.Nullable<int> _UserID;
-		
-		private System.Nullable<System.DateTime> _PurchaseDate;
-		
-		private System.Nullable<decimal> _TotalAmount;
-		
-		public SP_Compras_ObtenerDetalleResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchaseID", DbType="Int NOT NULL")]
-		public int PurchaseID
-		{
-			get
-			{
-				return this._PurchaseID;
-			}
-			set
-			{
-				if ((this._PurchaseID != value))
-				{
-					this._PurchaseID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		public System.Nullable<int> UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchaseDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> PurchaseDate
-		{
-			get
-			{
-				return this._PurchaseDate;
-			}
-			set
-			{
-				if ((this._PurchaseDate != value))
-				{
-					this._PurchaseDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> TotalAmount
-		{
-			get
-			{
-				return this._TotalAmount;
-			}
-			set
-			{
-				if ((this._TotalAmount != value))
-				{
-					this._TotalAmount = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_Compras_ObtenerPorUsuarioResult
 	{
 		
@@ -1998,6 +1918,68 @@ namespace AccesoDatos
 				if ((this._IS_ACTIVE != value))
 				{
 					this._IS_ACTIVE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_Compras_ObtenerDetalleResult
+	{
+		
+		private int _PurchaseID;
+		
+		private System.Nullable<System.DateTime> _PurchaseDate;
+		
+		private System.Nullable<decimal> _TotalAmount;
+		
+		public SP_Compras_ObtenerDetalleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchaseID", DbType="Int NOT NULL")]
+		public int PurchaseID
+		{
+			get
+			{
+				return this._PurchaseID;
+			}
+			set
+			{
+				if ((this._PurchaseID != value))
+				{
+					this._PurchaseID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchaseDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PurchaseDate
+		{
+			get
+			{
+				return this._PurchaseDate;
+			}
+			set
+			{
+				if ((this._PurchaseDate != value))
+				{
+					this._PurchaseDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
 				}
 			}
 		}

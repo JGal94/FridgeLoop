@@ -382,45 +382,12 @@ END;
 GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE OR ALTER PROCEDURE InsertNotification
-    @UserID INT,
-    @Message NVARCHAR(255),
-    @Type NVARCHAR(50)
-AS
-BEGIN
-    INSERT INTO Notifications (UserID, Message, Type)
-    VALUES (@UserID, @Message, @Type)
-END;
-GO
+
 ----------------------------------------------------------------------------------------------------
 
-CREATE OR ALTER PROCEDURE GetUserNotifications
-    @UserID INT
-AS
-BEGIN
-    SELECT *
-    FROM Notifications
-    WHERE UserID = @UserID
-    ORDER BY SentAt DESC
-END;
-GO
 ----------------------------------------------------------------------------------------------------
 
-CREATE OR ALTER PROCEDURE MarkNotificationAsRead
-    @NotificationID INT
-AS
-BEGIN
-    UPDATE Notifications
-    SET IsRead = 1
-    WHERE NotificationID = @NotificationID
-END;
-GO
 
-
-
-IF OBJECT_ID('GetProductosInventarioUsuario', 'P') IS NOT NULL
-    DROP PROCEDURE GetProductosInventarioUsuario;
-GO
 ----------------------------------------------------------------------------------------------------
 
 CREATE OR ALTER PROCEDURE GetProductosInventarioUsuario
@@ -752,23 +719,37 @@ END
 GO
 -------------------------------------------------------------------------------
 CREATE OR ALTER PROCEDURE SP_Compras_ObtenerDetalle
- @UserID     INT,
- @PurchaseID INT
+  @UserID     INT,
+  @PurchaseID INT
 AS
 BEGIN
   SET NOCOUNT ON;
 
-  -- Header (solo si pertenece al usuario)
-  SELECT TOP 1 p.PurchaseID, p.UserID, p.PurchaseDate, p.TotalAmount
+  -- Encabezado
+  SELECT 
+      p.PurchaseID,
+      p.PurchaseDate,
+      p.TotalAmount,
+      p.Notas
   FROM Purchases p
-  WHERE p.PurchaseID = @PurchaseID AND p.UserID = @UserID;
+  WHERE p.PurchaseID = @PurchaseID
+    AND p.UserID = @UserID;
 
   -- Items
-  SELECT d.DetailID, d.ProductID, d.Quantity, d.UnitPrice
+  SELECT 
+      d.PurchaseDetailID,
+      d.ProductID,
+      pr.Name       AS ProductName,
+      pr.CategoryID,
+      pr.Unit,
+      d.Quantity,
+      d.UnitPrice
   FROM PurchaseDetails d
+  JOIN Products pr ON pr.ProductID = d.ProductID
   WHERE d.PurchaseID = @PurchaseID;
-END
+END;
 GO
+
 ----------------------------------------------------------------------------------
 CREATE OR ALTER PROCEDURE SP_Compras_Eliminar
  @UserID             INT,

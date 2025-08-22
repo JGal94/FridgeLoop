@@ -6,6 +6,7 @@ using System.Security.Claims;
 using Entidades.Enum;
 using Entidades.Entity;
 using System.Collections.Generic;
+using Entidades.Response.Entidades.Response;
 
 namespace API.Controllers
 {
@@ -95,7 +96,7 @@ namespace API.Controllers
             return CreateLogic().ObtenerCompras(userId, req);
         }
 
-        // GET api/compra/{id}
+        // GET api/compra/{id}  ← DETALLE (encabezado + items)
         [HttpGet]
         [Route("{id:int}")]
         public ResObtenerCompra ObtenerCompra(int id)

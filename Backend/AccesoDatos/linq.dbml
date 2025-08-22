@@ -208,16 +208,6 @@
     <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_Compras_ObtenerDetalle" Method="SP_Compras_ObtenerDetalle">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_Compras_ObtenerDetalleResult">
-      <Column Name="PurchaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_Compras_ObtenerPorUsuario" Method="SP_Compras_ObtenerPorUsuario">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Page" Parameter="page" Type="System.Int32" DbType="Int" />
@@ -340,5 +330,14 @@
     <Parameter Name="ErrorId" Parameter="errorId" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ErrorMensaje" Parameter="errorMensaje" Type="System.String" DbType="NVarChar(500)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Compras_ObtenerDetalle" Method="SP_Compras_ObtenerDetalle">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Compras_ObtenerDetalleResult">
+      <Column Name="PurchaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

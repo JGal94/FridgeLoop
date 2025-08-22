@@ -97,7 +97,6 @@
     <Compile Include="Response\ResCategoriaObtener.cs" />
     <Compile Include="Response\ResCerrarSesion.cs" />
     <Compile Include="Response\ResCompraObtener.cs" />
-    <Compile Include="Response\ResDetalleCompraObtener.cs" />
     <Compile Include="Response\ResEliminarCompra.cs" />
     <Compile Include="Response\ResInsertarProducto.cs" />
     <Compile Include="Response\ResInsertarReceta.cs" />
