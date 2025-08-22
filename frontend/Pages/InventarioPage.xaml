@@ -5,57 +5,70 @@
              Title="Inventario"
              BackgroundColor="#F0F6FF">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="12" Spacing="10">
+    <!-- Grid: 3 filas (buscador / lista / paginación) -->
+    <Grid Padding="12" RowDefinitions="Auto,*,Auto" RowSpacing="10">
 
-            <!-- Búsqueda (usa TextChanged con debounce en .cs) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="txtBuscar"
-                   Placeholder="Buscar por nombre..."
-                   TextChanged="OnBuscarTextChanged"
-                   BackgroundColor="Transparent"
-                   TextColor="#003366" />
-            </Frame>
+        <!-- Búsqueda -->
+        <Frame Grid.Row="0" BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
+            <Entry x:Name="txtBuscar"
+             Placeholder="Buscar por nombre..."
+             TextChanged="OnBuscarTextChanged"
+             BackgroundColor="Transparent"
+             TextColor="#003366" />
+        </Frame>
 
-            <!-- Pull-to-refresh (opcional) -->
-            <RefreshView x:Name="rv" RefreshColor="#007ACC" Refreshing="OnRefreshRequested">
-                <CollectionView x:Name="cvInventario" SelectionMode="None">
-                    <CollectionView.EmptyView>
-                        <VerticalStackLayout Padding="20" Spacing="6">
-                            <Label Text="No hay productos" HorizontalOptions="Center" TextColor="#003366"/>
-                            <Label Text="Agrega uno con el botón de abajo" HorizontalOptions="Center" FontSize="12" TextColor="#336699"/>
-                        </VerticalStackLayout>
-                    </CollectionView.EmptyView>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Padding="10" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto,Auto" BackgroundColor="White">
-                                <Label Grid.ColumnSpan="2" Grid.Row="0"
-                                   Text="{Binding Name}"
-                                   FontAttributes="Bold"
-                                   TextColor="#003366" />
-                                <Label Grid.Row="1" Text="{Binding Unit}" FontSize="12" TextColor="#336699" />
-                                <Label Grid.Row="2" Text="{Binding Quantity, StringFormat='Cantidad: {0}'}" FontSize="12" TextColor="#336699" />
-                                <Label Grid.Row="3" Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#336699" />
+        <!-- Lista con pull-to-refresh (SIN ScrollView alrededor) -->
+        <RefreshView Grid.Row="1"
+                 x:Name="rv"
+                 RefreshColor="#007ACC"
+                 Refreshing="OnRefreshRequested">
+            <CollectionView x:Name="cvInventario"
+                      SelectionMode="None"
+                      ItemsLayout="VerticalList"
+                      VerticalOptions="FillAndExpand">
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout Padding="20" Spacing="6">
+                        <Label Text="No hay productos" HorizontalOptions="Center" TextColor="#003366"/>
+                        <Label Text="Agrega uno con el botón..." HorizontalOptions="Center" FontSize="12" TextColor="#336699"/>
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
 
-                                <Button Grid.Column="1" Grid.RowSpan="4"
-                                    Text="Editar"
-                                    BackgroundColor="#007ACC"
-                                    TextColor="White"
-                                    CornerRadius="8"
-                                    CommandParameter="{Binding .}"
-                                    Clicked="OnIrDetalleClicked" />
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10"
+                  ColumnDefinitions="*,Auto"
+                  RowDefinitions="Auto,Auto,Auto,Auto"
+                  BackgroundColor="White">
+                            <Label Grid.ColumnSpan="2" Grid.Row="0"
+                     Text="{Binding Name}"
+                     FontAttributes="Bold"
+                     TextColor="#003366" />
+                            <Label Grid.Row="1" Text="{Binding Unit}" FontSize="12" TextColor="#336699" />
+                            <Label Grid.Row="2" Text="{Binding Quantity, StringFormat='Cantidad: {0}'}" FontSize="12" TextColor="#336699" />
+                            <Label Grid.Row="3" Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#336699" />
 
-            <!-- Paginación -->
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="16" Padding="4">
-                <Button Text="⟨ Anterior" Clicked="OnPrevClicked" />
-                <Label x:Name="lblPagina" VerticalTextAlignment="Center" TextColor="#003366" />
-                <Button Text="Siguiente ⟩" Clicked="OnNextClicked" />
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+                            <Button Grid.Column="1" Grid.RowSpan="4"
+                      Text="Editar"
+                      BackgroundColor="#007ACC"
+                      TextColor="White"
+                      CornerRadius="8"
+                      CommandParameter="{Binding .}"
+                      Clicked="OnIrDetalleClicked" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <!-- Paginación -->
+        <HorizontalStackLayout Grid.Row="2"
+                           HorizontalOptions="Center"
+                           Spacing="16"
+                           Padding="4">
+            <Button Text="⟨ Anterior" Clicked="OnPrevClicked" />
+            <Label x:Name="lblPagina" VerticalTextAlignment="Center" TextColor="#003366" />
+            <Button Text="Siguiente ⟩" Clicked="OnNextClicked" />
+        </HorizontalStackLayout>
+
+    </Grid>
 </ContentPage>

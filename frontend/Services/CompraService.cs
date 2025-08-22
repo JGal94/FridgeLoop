@@ -59,6 +59,41 @@ namespace Frontend_Proyecto_Fridgeloop.Services
             return await SendAsync<ResRegistrarCompra>(
                 () => Http.PostAsync("api/compra/registrar", J(body), ct), ct);
         }
+        //=================== Compra Detalle ==============
+        public class ItemCompraDetalleDto
+        {
+            public int idProducto { get; set; }
+            public string nombre { get; set; }           // puede venir null si el SP no lo devuelve
+            public int idCategoria { get; set; }
+            public string unidad { get; set; }
+            public decimal cantidad { get; set; }
+            public decimal? precioUnitario { get; set; }
+        }
+
+        public class CompraDetalleDto
+        {
+            public int idCompra { get; set; }
+            public DateTime fechaCompra { get; set; }
+            public decimal total { get; set; }
+            public string notas { get; set; }            // si tu DB no tiene notas, vendrá null
+            public List<ItemCompraDetalleDto> items { get; set; } = new();
+        }
+
+        public class ResObtenerCompra : ResBase
+        {
+            public CompraDetalleDto compra { get; set; }
+        }
+
+
+        /// <summary>
+        /// Obtiene el detalle (encabezado + items) de una compra por ID.
+        /// GET api/compra/{id}
+        /// </summary>
+        public Task<ResObtenerCompra> ObtenerCompraPorIdAsync(int idCompra, CancellationToken ct = default)
+        {
+            // Usa Http.GetAsync y deja que HttpServiceBase se encargue del Bearer/errores/reintentos
+            return SendAsync<ResObtenerCompra>(() => Http.GetAsync($"api/compra/{idCompra}", ct), ct);
+        }
 
         // ================= Historial compras ==============
         public class ItemCompraDto

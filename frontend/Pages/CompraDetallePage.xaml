@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Frontend_Proyecto_Fridgeloop.Pages"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.CompraDetallePage"
+             x:Name="page"
+             Title="Detalle de compra"
+             BackgroundColor="#F6F8FC">
+
+    <!-- ====== Recursos de estilos/colores ====== -->
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryText">#0F172A</Color>
+        <Color x:Key="SecondaryText">#64748B</Color>
+        <Color x:Key="Accent">#2563EB</Color>
+        <Color x:Key="Good">#0F766E</Color>
+        <Color x:Key="CardBg">#FFFFFF</Color>
+        <Color x:Key="CardStroke">#E5E7EB</Color>
+        <Color x:Key="PillBg">#E0F2FE</Color>
+        <Color x:Key="PillText">#0C4A6E</Color>
+
+        <Style TargetType="Label" x:Key="Title">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="Muted">
+            <Setter Property="TextColor" Value="{StaticResource SecondaryText}" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <!-- Converters -->
+        <local:SubtotalConverter x:Key="SubtotalConverter"/>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+
+            <!-- ====== Tarjeta de cabecera ====== -->
+            <Border BackgroundColor="{StaticResource CardBg}"
+              Stroke="{StaticResource CardStroke}"
+              StrokeShape="RoundRectangle 16"
+              Padding="16">
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" RowSpacing="6">
+                    <Label Grid.ColumnSpan="2"
+                 Style="{StaticResource Title}"
+                 Text="Detalles de la compra" />
+
+
+                    <Label Grid.Row="1"
+                 Text="{Binding compra.fechaCompra, StringFormat='📅 {0:dd MMM yyyy, HH:mm}'}"
+                 Style="{StaticResource Muted}" />
+
+                    <Label Grid.Row="2"
+                 Text="{Binding compra.items.Count, StringFormat='🧾 {0} ítems'}"
+                 Style="{StaticResource Muted}" />
+
+                    <Label Grid.RowSpan="3" Grid.Column="1"
+                 Text="{Binding compra.total, StringFormat='{0:N2}'}"
+                 HorizontalTextAlignment="End"
+                 TextColor="{StaticResource Good}"
+                 FontSize="28"
+                 FontAttributes="Bold" />
+
+                </Grid>
+            </Border>
+
+            <!-- ====== Título de sección ====== -->
+            <Label Text="Productos" Style="{StaticResource Title}" FontSize="18"/>
+
+            <!-- ====== Lista de ítems ====== -->
+            <CollectionView ItemsSource="{Binding compra.items}">
+                <CollectionView.EmptyView>
+                    <Label Text="Sin productos en esta compra."
+                 HorizontalTextAlignment="Center"
+                 TextColor="{StaticResource SecondaryText}"
+                 Margin="0,24,0,0"/>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="{StaticResource CardBg}"
+                    Stroke="{StaticResource CardStroke}"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="14"
+                    Margin="0,6">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="12">
+
+                                <!-- Nombre + id -->
+                                <HorizontalStackLayout Spacing="6">
+                                    <Label Text="{Binding nombre}" FontAttributes="Bold" TextColor="{StaticResource PrimaryText}"
+                         LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding idProducto, StringFormat='(#{0})'}"
+                         Style="{StaticResource Muted}" />
+                                </HorizontalStackLayout>
+
+                                <!-- Cantidad como pill -->
+                                <Border Grid.Column="1"
+                        BackgroundColor="{StaticResource PillBg}"
+                        StrokeShape="RoundRectangle 999"
+                        Padding="6,2"
+                        VerticalOptions="Start">
+                                    <Label Text="{Binding cantidad, StringFormat='x{0:#,##0.##}'}"
+                         TextColor="{StaticResource PillText}"
+                         FontAttributes="Bold"
+                         FontSize="12"/>
+                                </Border>
+
+                                <!-- Unidad y precio -->
+                                <HorizontalStackLayout Grid.Row="1" Spacing="10">
+                                    <Label Text="{Binding unidad}" Style="{StaticResource Muted}" />
+                                    <Label Text="·" Style="{StaticResource Muted}" />
+                                    <Label Text="{Binding precioUnitario, StringFormat='@ {0:N2}'}"
+                         TextColor="{StaticResource SecondaryText}" />
+                                </HorizontalStackLayout>
+
+                                <!-- Subtotal a la derecha -->
+                                <Label Grid.Row="1" Grid.Column="1"
+                       Text="{Binding ., Converter={StaticResource SubtotalConverter}}"
+                       HorizontalTextAlignment="End"
+                       TextColor="{StaticResource PrimaryText}"
+                       FontAttributes="Bold"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

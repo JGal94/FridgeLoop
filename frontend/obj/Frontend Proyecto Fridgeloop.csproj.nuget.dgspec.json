@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {}
+    "C:\\Users\\juanf\\proyecto\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {
+    "C:\\Users\\juanf\\proyecto\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+        "projectUniqueName": "C:\\Users\\juanf\\proyecto\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
         "projectName": "Frontend Proyecto Fridgeloop",
-        "projectPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
-        "packagesPath": "C:\\Users\\saulg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\ProjectMovile\\FridgeLoop\\frontend\\obj\\",
+        "projectPath": "C:\\Users\\juanf\\proyecto\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+        "packagesPath": "C:\\Users\\juanf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juanf\\proyecto\\FridgeLoop\\frontend\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\saulg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juanf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -61,7 +61,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-android34.0": {
@@ -82,7 +82,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.16, )",
+              "version": "[8.0.14, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -112,23 +112,23 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Android.Ref.34",
-              "version": "[34.0.154, 34.0.154]"
+              "version": "[34.0.147, 34.0.147]"
             },
             {
               "name": "Microsoft.Android.Runtime.34.android-arm",
-              "version": "[34.0.154, 34.0.154]"
+              "version": "[34.0.147, 34.0.147]"
             },
             {
               "name": "Microsoft.Android.Runtime.34.android-arm64",
-              "version": "[34.0.154, 34.0.154]"
+              "version": "[34.0.147, 34.0.147]"
             },
             {
               "name": "Microsoft.Android.Runtime.34.android-x64",
-              "version": "[34.0.154, 34.0.154]"
+              "version": "[34.0.147, 34.0.147]"
             },
             {
               "name": "Microsoft.Android.Runtime.34.android-x86",
-              "version": "[34.0.154, 34.0.154]"
+              "version": "[34.0.147, 34.0.147]"
             }
           ],
           "frameworkReferences": {
@@ -139,7 +139,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
@@ -159,7 +159,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.16, )",
+              "version": "[8.0.14, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -189,11 +189,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.iOS.Ref.net8.0_18.0",
-              "version": "[18.0.8324, 18.0.8324]"
+              "version": "[18.0.8319, 18.0.8319]"
             },
             {
               "name": "Microsoft.iOS.Runtime.iossimulator-x64.net8.0_18.0",
-              "version": "[18.0.8324, 18.0.8324]"
+              "version": "[18.0.8319, 18.0.8319]"
             }
           ],
           "frameworkReferences": {
@@ -204,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
@@ -224,7 +224,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.16, )",
+              "version": "[8.0.14, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -255,11 +255,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.MacCatalyst.Ref.net8.0_18.0",
-              "version": "[18.0.8324, 18.0.8324]"
+              "version": "[18.0.8319, 18.0.8319]"
             },
             {
               "name": "Microsoft.MacCatalyst.Runtime.maccatalyst-x64.net8.0_18.0",
-              "version": "[18.0.8324, 18.0.8324]"
+              "version": "[18.0.8319, 18.0.8319]"
             }
           ],
           "frameworkReferences": {
@@ -270,7 +270,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
@@ -325,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

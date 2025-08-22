@@ -4,7 +4,7 @@
         <name>Frontend Proyecto Fridgeloop</name>
     </assembly>
     <members>
-        <member name="M:Frontend_Proyecto_Fridgeloop.Pages.DashboardPage.CargarProductosPorVencerAsync">
+        <member name="F:Frontend_Proyecto_Fridgeloop.Pages.DashboardPage._canTap">
             <summary>
             Carga el resumen de productos por vencer para la tarjeta del dashboard.
             </summary>
@@ -13,6 +13,12 @@
             <summary>
             Contrato backend: ReqRegistrarCompra + ItemCompraSinId
             POST /api/compra/registrar
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.CompraService.ObtenerCompraPorIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Obtiene el detalle (encabezado + items) de una compra por ID.
+            GET api/compra/{id}
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:Frontend_Proyecto_Fridgeloop.Services.CompraService.ObtenerComprasAsync(System.Int32,System.Int32,System.Threading.CancellationToken)" -->

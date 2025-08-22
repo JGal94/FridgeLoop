@@ -13,7 +13,7 @@ target triple = "x86_64-unknown-linux-android21"
 	ptr ; MonoClass klass
 }
 
-@assembly_image_cache = dso_local local_unnamed_addr global [316 x ptr] zeroinitializer, align 16
+@assembly_image_cache = dso_local local_unnamed_addr global [319 x ptr] zeroinitializer, align 16
 
 ; Each entry maps hash of an assembly name to an index into the `assembly_image_cache` array
 @assembly_image_cache_hashes = dso_local local_unnamed_addr constant [632 x i64] [
@@ -1343,7 +1343,7 @@ attributes #2 = { noreturn "no-trapping-math"="true" nounwind "stack-protector-b
 !0 = !{i32 1, !"wchar_size", i32 4}
 !1 = !{i32 7, !"PIC Level", i32 2}
 !llvm.ident = !{!2}
-!2 = !{!"Xamarin.Android remotes/origin/release/8.0.4xx @ 82d8938cf80f6d5fa6c28529ddfbdb753d805ab4"}
+!2 = !{!"Xamarin.Android remotes/origin/release/8.0.4xx @ a8cd27e430e55df3e3c1e3a43d35c11d9512a2db"}
 !3 = !{!4, !4, i64 0}
 !4 = !{!"any pointer", !5, i64 0}
 !5 = !{!"omnipotent char", !6, i64 0}

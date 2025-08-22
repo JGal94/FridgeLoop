@@ -27,7 +27,17 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="#FFFFFF" CornerRadius="12" Padding="15" HasShadow="True">
+                        <Frame BackgroundColor="#FFFFFF"
+                               CornerRadius="12"
+                               Padding="15"
+                               HasShadow="True">
+
+                            <!-- 👇 GestureRecognizer para abrir detalle -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Compra_Tapped"
+                                                      CommandParameter="{Binding idCompra}" />
+                            </Frame.GestureRecognizers>
+
                             <VerticalStackLayout Spacing="8">
 
                                 <!-- Encabezado: fecha de compra -->
@@ -35,7 +45,9 @@
                                        TextColor="#004C99"
                                        FontAttributes="Bold">
                                     <Label.Text>
-                                        <Binding Path="fechaCompra" StringFormat="🛒 Compra del {0:dd/MM/yyyy}" TargetNullValue="🛒 Compra sin fecha"/>
+                                        <Binding Path="fechaCompra"
+                                                 StringFormat="🛒 Compra del {0:dd/MM/yyyy}"
+                                                 TargetNullValue="🛒 Compra sin fecha"/>
                                     </Label.Text>
                                 </Label>
 

@@ -1,1 +1,1 @@
-C:\Users\saulg\OneDrive\Escritorio\ProjectMovile\FridgeLoop\frontend\Frontend Proyecto Fridgeloop.csproj;x64
+C:\Users\juanf\proyecto\FridgeLoop\frontend\Frontend Proyecto Fridgeloop.csproj;x64

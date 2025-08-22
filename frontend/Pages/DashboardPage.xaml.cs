@@ -32,19 +32,24 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         /// <summary>
         /// Carga el resumen de productos por vencer para la tarjeta del dashboard.
         /// </summary>
+
+        private bool _canTap; // controla la navegación
+
         private async Task CargarProductosPorVencerAsync()
         {
-            // Estados iniciales
             lblPVTitle.Text = "Productos por vencer";
             lblPVSubtitle.Text = "Cargando…";
-            btnVerNotificaciones.IsEnabled = false;
+
+            // Deshabilitar interacción mientras carga
+            _canTap = false;
+            cardPV.InputTransparent = true; // bloquea toques
+            cardPV.Opacity = 0.6;
 
             _cts?.Cancel();
             _cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
 
             try
             {
-                // mismos parámetros que usamos en NotificacionesPage
                 var list = await _noti.ObtenerNotificacionesAsync(
                     dias: 7, incluirVencidos: true, maxDiasVencidos: 7,
                     page: 1, pageSize: 50, ct: _cts.Token);
@@ -54,29 +59,62 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 if (total <= 0)
                 {
                     lblPVSubtitle.Text = "No hay productos por vencer en la próxima semana.";
-                    btnVerNotificaciones.IsEnabled = false;
+                    _canTap = false;
+                    cardPV.InputTransparent = true;
+                    cardPV.Opacity = 0.6;
                     return;
                 }
 
                 var vencidos = list!.Count(n => n.Tipo == "danger");
                 var porVencer = total - vencidos;
 
-                // Título fijo y subtítulo con conteo
-                lblPVTitle.Text = "Productos por vencer";
                 lblPVSubtitle.Text = porVencer > 0
                     ? $"{porVencer} producto(s) vencen esta semana" + (vencidos > 0 ? $" • {vencidos} vencido(s)" : "")
                     : $"{vencidos} producto(s) vencido(s)";
 
-                btnVerNotificaciones.IsEnabled = true;
+                // Habilitar interacción
+                _canTap = true;
+                cardPV.InputTransparent = false;
+                cardPV.Opacity = 1.0;
             }
-            catch (TaskCanceledException) { /* ignorar */ }
+            catch (TaskCanceledException)
+            {
+                lblPVSubtitle.Text = "Tiempo de espera agotado.";
+                _canTap = false;
+                cardPV.InputTransparent = true;
+                cardPV.Opacity = 0.6;
+            }
             catch (Exception ex)
             {
                 lblPVSubtitle.Text = "No se pudieron cargar las notificaciones.";
                 System.Diagnostics.Debug.WriteLine($"[Dashboard] {ex}");
-                btnVerNotificaciones.IsEnabled = true; // deja ver la lista por si acaso
+
+                // Permitir navegar aún con error (si quieres)
+                _canTap = true;
+                cardPV.InputTransparent = false;
+                cardPV.Opacity = 1.0;
             }
         }
+
+        private bool _isNavigating;
+
+        private async void OnFrameTapped(object sender, TappedEventArgs e)
+        {
+            if (!_canTap || _isNavigating) return;
+
+            try
+            {
+                _isNavigating = true;
+                await Navigation.PushAsync(new NotificacionesPage());
+            }
+            finally
+            {
+                _isNavigating = false;
+            }
+        }
+
+
+
 
         // ====== Botones del encabezado ======
 
@@ -100,6 +138,10 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
         {
             await Navigation.PushAsync(new NotificacionesPage());
         }
+        
+
+        
+
 
         // ====== Accesos rápidos ======
 

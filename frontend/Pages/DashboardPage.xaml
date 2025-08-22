@@ -43,29 +43,23 @@
             </Grid>
 
             <!-- Tarjeta única: Productos por vencer -->
-            <Frame BackgroundColor="White"
-                   CornerRadius="12"
-                   Padding="15"
-                   HasShadow="True">
+            <Frame x:Name="cardPV"
+       BackgroundColor="White"
+       CornerRadius="12"
+       Padding="15"
+       HasShadow="True">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnFrameTapped" />
+                </Frame.GestureRecognizers>
+
                 <VerticalStackLayout Spacing="6">
-                    <Label x:Name="lblPVTitle"
-                           Text="Productos por vencer"
-                           FontSize="18"
-                           TextColor="#333" />
-
-                    <Label x:Name="lblPVSubtitle"
-                           Text="Cargando..."
-                           FontSize="14"
-                           TextColor="#666" />
-
-                    <Button x:Name="btnVerNotificaciones"
-                            Text="Ver notificaciones"
-                            BackgroundColor="#007ACC"
-                            TextColor="White"
-                            CornerRadius="10"
-                            Clicked="OnVerTodasNotiClicked" />
+                    <Label x:Name="lblPVTitle" Text="Productos por vencer" FontSize="18" TextColor="#333" />
+                    <Label x:Name="lblPVSubtitle" Text="Cargando…" FontSize="14" TextColor="#666" />
                 </VerticalStackLayout>
             </Frame>
+
+
+
 
             <!-- Accesos rápidos -->
             <Label Text="Accesos rápidos"
