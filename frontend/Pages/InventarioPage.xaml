@@ -5,68 +5,99 @@
              Title="Inventario"
              BackgroundColor="#F0F6FF">
 
-    <!-- Grid: 3 filas (buscador / lista / paginación) -->
+    <!-- Grid: 3 filas (buscador + botón IA / lista / paginación) -->
     <Grid Padding="12" RowDefinitions="Auto,*,Auto" RowSpacing="10">
 
-        <!-- Búsqueda -->
-        <Frame Grid.Row="0" BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-            <Entry x:Name="txtBuscar"
-             Placeholder="Buscar por nombre..."
-             TextChanged="OnBuscarTextChanged"
-             BackgroundColor="Transparent"
-             TextColor="#003366" />
-        </Frame>
+        <!-- Fila 0: Buscador + Botón IA -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+            <Frame Grid.Column="0"
+                   BackgroundColor="#D6F0FF"
+                   CornerRadius="10"
+                   Padding="10,6">
+                <Entry x:Name="txtBuscar"
+                       Placeholder="Buscar por nombre..."
+                       TextChanged="OnBuscarTextChanged"
+                       BackgroundColor="Transparent"
+                       TextColor="#003366" />
+            </Frame>
 
-        <!-- Lista con pull-to-refresh (SIN ScrollView alrededor) -->
+            <!-- Botón para ir a la página de “Lista de compras con IA” -->
+            <Button Grid.Column="1"
+                    x:Name="btnIrListaIA"
+                    Text="🧠 Lista IA"
+                    BackgroundColor="#28A745"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="14,10"
+                    Clicked="OnIrListaIAClicked"/>
+        </Grid>
+
+        <!-- Fila 1: Lista con pull-to-refresh (SIN ScrollView alrededor) -->
         <RefreshView Grid.Row="1"
-                 x:Name="rv"
-                 RefreshColor="#007ACC"
-                 Refreshing="OnRefreshRequested">
+                     x:Name="rv"
+                     RefreshColor="#007ACC"
+                     Refreshing="OnRefreshRequested">
             <CollectionView x:Name="cvInventario"
-                      SelectionMode="None"
-                      ItemsLayout="VerticalList"
-                      VerticalOptions="FillAndExpand">
+                            SelectionMode="None"
+                            ItemsLayout="VerticalList"
+                            VerticalOptions="FillAndExpand">
                 <CollectionView.EmptyView>
                     <VerticalStackLayout Padding="20" Spacing="6">
-                        <Label Text="No hay productos" HorizontalOptions="Center" TextColor="#003366"/>
-                        <Label Text="Agrega uno con el botón..." HorizontalOptions="Center" FontSize="12" TextColor="#336699"/>
+                        <Label Text="No hay productos"
+                               HorizontalOptions="Center"
+                               TextColor="#003366"/>
+                        <Label Text="Agrega uno con el botón..."
+                               HorizontalOptions="Center"
+                               FontSize="12"
+                               TextColor="#336699"/>
                     </VerticalStackLayout>
                 </CollectionView.EmptyView>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10"
-                  ColumnDefinitions="*,Auto"
-                  RowDefinitions="Auto,Auto,Auto,Auto"
-                  BackgroundColor="White">
+                              ColumnDefinitions="*,Auto"
+                              RowDefinitions="Auto,Auto,Auto,Auto"
+                              BackgroundColor="White">
                             <Label Grid.ColumnSpan="2" Grid.Row="0"
-                     Text="{Binding Name}"
-                     FontAttributes="Bold"
-                     TextColor="#003366" />
-                            <Label Grid.Row="1" Text="{Binding Unit}" FontSize="12" TextColor="#336699" />
-                            <Label Grid.Row="2" Text="{Binding Quantity, StringFormat='Cantidad: {0}'}" FontSize="12" TextColor="#336699" />
-                            <Label Grid.Row="3" Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#336699" />
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   TextColor="#003366" />
+                            <Label Grid.Row="1"
+                                   Text="{Binding Unit}"
+                                   FontSize="12"
+                                   TextColor="#336699" />
+                            <Label Grid.Row="2"
+                                   Text="{Binding Quantity, StringFormat='Cantidad: {0}'}"
+                                   FontSize="12"
+                                   TextColor="#336699" />
+                            <Label Grid.Row="3"
+                                   Text="{Binding ExpirationDate, StringFormat='Expira: {0:dd/MM/yyyy}'}"
+                                   FontSize="12"
+                                   TextColor="#336699" />
 
                             <Button Grid.Column="1" Grid.RowSpan="4"
-                      Text="Editar"
-                      BackgroundColor="#007ACC"
-                      TextColor="White"
-                      CornerRadius="8"
-                      CommandParameter="{Binding .}"
-                      Clicked="OnIrDetalleClicked" />
+                                    Text="Editar"
+                                    BackgroundColor="#007ACC"
+                                    TextColor="White"
+                                    CornerRadius="8"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnIrDetalleClicked" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </RefreshView>
 
-        <!-- Paginación -->
+        <!-- Fila 2: Paginación -->
         <HorizontalStackLayout Grid.Row="2"
-                           HorizontalOptions="Center"
-                           Spacing="16"
-                           Padding="4">
+                               HorizontalOptions="Center"
+                               Spacing="16"
+                               Padding="4">
             <Button Text="⟨ Anterior" Clicked="OnPrevClicked" />
-            <Label x:Name="lblPagina" VerticalTextAlignment="Center" TextColor="#003366" />
+            <Label x:Name="lblPagina"
+                   VerticalTextAlignment="Center"
+                   TextColor="#003366" />
             <Button Text="Siguiente ⟩" Clicked="OnNextClicked" />
         </HorizontalStackLayout>
 

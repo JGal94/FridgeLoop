@@ -121,5 +121,11 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
                 await Navigation.PushAsync(new DetalleProductoPage(p, id));
             }
         }
+
+        private async void OnIrListaIAClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListaComprasIAPage());
+        }
+
     }
 }

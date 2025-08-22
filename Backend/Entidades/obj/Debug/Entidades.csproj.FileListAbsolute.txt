@@ -70,3 +70,9 @@ D:\Universidad\programacion movil\Proyecto final final\Backend\Entidades\obj\Deb
 D:\Universidad\programacion movil\Proyecto final final\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Universidad\programacion movil\Proyecto final final\Backend\Entidades\obj\Debug\Entidades.dll
 D:\Universidad\programacion movil\Proyecto final final\Backend\Entidades\obj\Debug\Entidades.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\bin\Debug\Entidades.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Entidades\obj\Debug\Entidades.pdb

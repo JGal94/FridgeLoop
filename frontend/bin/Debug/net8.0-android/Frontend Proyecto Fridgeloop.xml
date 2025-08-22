@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend Proyecto Fridgeloop</name>
+    </assembly>
+    <members>
+        <member name="F:Frontend_Proyecto_Fridgeloop.Pages.DashboardPage._canTap">
+            <summary>
+            Carga el resumen de productos por vencer para la tarjeta del dashboard.
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.CompraService.RegistrarCompraAsync(System.Nullable{System.DateTime},System.Collections.Generic.IEnumerable{Frontend_Proyecto_Fridgeloop.Helpers.ShoppingItem},System.Threading.CancellationToken)">
+            <summary>
+            Contrato backend: ReqRegistrarCompra + ItemCompraSinId
+            POST /api/compra/registrar
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.CompraService.ObtenerCompraPorIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Obtiene el detalle (encabezado + items) de una compra por ID.
+            GET api/compra/{id}
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Frontend_Proyecto_Fridgeloop.Services.CompraService.ObtenerComprasAsync(System.Int32,System.Int32,System.Threading.CancellationToken)" -->
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.HttpServiceBase.EnsureBearerAsync">
+            <summary>
+            Establece el Authorization: Bearer {token} si existe en SecureStorage ("auth_token").
+            No reasigna si ya es el mismo valor.
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.HttpServiceBase.SendAsync``1(System.Func{System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}},System.Threading.CancellationToken,System.Int32)">
+            <summary>
+            Envío robusto: adjunta Bearer, reintenta 5xx/timeout/429 con backoff
+            y loguea body en errores para diagnóstico.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Frontend_Proyecto_Fridgeloop.Services.NotificacionesService.ObtenerNotificacionesAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)" -->
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.NotificacionesService.ObtenerNotificacionesRawAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Útil para depurar si algo sale vacío. Devuelve el JSON crudo.
+            </summary>
+        </member>
+        <member name="T:Frontend_Proyecto_Fridgeloop.Services.PerfilService">
+            <summary>
+            Cliente para /api/perfil (PUT nombre, PUT password).
+            Reutiliza HttpServiceBase (BaseApi, bearer, SendAsync).
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Frontend_Proyecto_Fridgeloop.Services.ProductService" -->
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.ProductService.InsertarAsync(Frontend_Proyecto_Fridgeloop.Services.ProductService.ProductoDto,System.Threading.CancellationToken)">
+            <summary>
+            POST /api/producto/insertar  — body: { productos = { nombre, idCategoria, unidad, quantity?, expirationDate? } }
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.ProductService.ObtenerListaAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            GET /api/producto/obtener — devuelve español; mapeamos a ProductoDto para la UI.
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.ProductService.ObtenerRawAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Solo para depurar: devuelve el JSON crudo del GET /obtener.
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.ProductService.ActualizarInventarioAsync(System.Int32,System.Nullable{System.Decimal},System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            PUT /api/producto/inventario — cambia cantidad/fecha (body en español).
+            </summary>
+        </member>
+        <member name="M:Frontend_Proyecto_Fridgeloop.Services.ProductService.ObtenerPorVencerAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            (Opcional) GET /api/producto/porvencer
+            </summary>
+        </member>
+    </members>
+</doc>

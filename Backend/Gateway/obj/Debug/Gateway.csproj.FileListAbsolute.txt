@@ -53,3 +53,14 @@ C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileIn
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.dll
 C:\Users\juanf\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Gateway.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Gateway.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Entidades.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Newtonsoft.Json.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Entidades.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\bin\Debug\Newtonsoft.Json.xml
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.csproj.Up2Date
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\Gateway\obj\Debug\Gateway.pdb

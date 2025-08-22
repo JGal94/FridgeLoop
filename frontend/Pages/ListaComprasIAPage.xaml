@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Proyecto_Fridgeloop.Pages.ListaComprasIAPage"
+             Title="Lista de Compras IA"
+             BackgroundColor="#EAF4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="18">
+
+            <!-- Logo grande -->
+            <Image Source="logofridgeloop.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="260"
+                   WidthRequest="260"
+                   Margin="0,0,0,10" />
+
+            <Label Text="Generar lista de compras con IA"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#003366"
+                   HorizontalOptions="Center" />
+
+            <!-- Botones principales -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Button Grid.Column="0"
+                        Text="🧠 Generar con IA"
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnGenerarClicked" />
+
+                <Button Grid.Column="1"
+                        Text="➕ Agregar a mi lista"
+                        BackgroundColor="#28A745"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnAgregarALaListaClicked" />
+            </Grid>
+
+            <!-- Estado -->
+            <ActivityIndicator x:Name="ai"
+                               IsVisible="False"
+                               IsRunning="False"
+                               Color="#007ACC" />
+
+            <!-- Vista previa resultante -->
+            <Frame BackgroundColor="#FFFFFF"
+                   CornerRadius="12"
+                   Padding="14"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Vista previa"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#003366" />
+                    <Editor x:Name="txtLista"
+                            AutoSize="TextChanges"
+                            IsReadOnly="True"
+                            TextColor="#003366"
+                            BackgroundColor="#F8FBFF"
+                            MinimumHeightRequest="160" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Helper inferior -->
+            <Label Text="* Luego podrás editar la lista final antes de comprar."
+                   FontSize="12"
+                   TextColor="#667892"
+                   HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

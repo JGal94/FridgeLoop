@@ -35860,11 +35860,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+      "projectUniqueName": "C:\\Users\\saulg\\OneDrive\\Escritorio\\proyectomovil\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
       "projectName": "Frontend Proyecto Fridgeloop",
-      "projectPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
+      "projectPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\proyectomovil\\FridgeLoop\\frontend\\Frontend Proyecto Fridgeloop.csproj",
       "packagesPath": "C:\\Users\\saulg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\repoclone\\FridgeLoop\\frontend\\obj\\",
+      "outputPath": "C:\\Users\\saulg\\OneDrive\\Escritorio\\proyectomovil\\FridgeLoop\\frontend\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

@@ -47,3 +47,10 @@ C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.csproj.Assem
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\juanf\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\bin\Debug\AccesoDatos.dll.config
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\saulg\OneDrive\Escritorio\proyectomovil\FridgeLoop\Backend\AccesoDatos\obj\Debug\AccesoDatos.pdb
