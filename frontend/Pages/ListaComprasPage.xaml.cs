@@ -53,6 +53,10 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             await Navigation.PushAsync(new AgregarProductoPage());
         }
 
+        // Agregar este método a tu clase AgregarProductoPage
+
+        
+
         private async void OnEditarItem(object sender, EventArgs e)
         {
             if ((sender as SwipeItem)?.CommandParameter is not ShoppingItem item) return;

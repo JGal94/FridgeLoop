@@ -1,118 +1,293 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage x:Class="Frontend_Proyecto_Fridgeloop.Pages.AgregarProductoPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Frontend_Proyecto_Fridgeloop.Pages.AgregarProductoPage"
              Title="Agregar Producto"
-             BackgroundColor="#EAF4FF">
+             BackgroundColor="#F8FAFC">
 
     <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="14">
+        <StackLayout Spacing="16" Padding="20">
 
-            <Label Text="Agregar nuevo producto"
-                   FontSize="22"
-                   FontAttributes="Bold"
-                   TextColor="#003366" />
-
-            <!-- Name -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="txtNombre"
-                       Placeholder="Nombre (Name)"
-                       FontSize="16"
-                       BackgroundColor="Transparent"
-                       TextColor="#003366" />
+            <!-- Header Principal -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="20" 
+                   Padding="24"
+                   Margin="0,0,0,8">
+                <StackLayout Orientation="Horizontal" Spacing="16">
+                    <Frame BackgroundColor="#6366F1" 
+                           CornerRadius="25" 
+                           Padding="12" 
+                           HasShadow="False"
+                           WidthRequest="50"
+                           HeightRequest="50">
+                        <Label Text="🛒" 
+                               FontSize="20" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Frame>
+                    <StackLayout VerticalOptions="Center" Spacing="4">
+                        <Label Text="Nuevo Producto" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                        <Label Text="Completa la información del producto" 
+                               FontSize="14" 
+                               TextColor="#6B7280" />
+                    </StackLayout>
+                </StackLayout>
             </Frame>
 
-            <!-- Quantity (opcional) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="txtCantidad"
-                       Placeholder="Cantidad (Quantity, opcional)"
-                       Keyboard="Numeric"
-                       FontSize="16"
-                       BackgroundColor="Transparent"
-                       TextColor="#003366" />
+            <!-- Sección Escanear Código -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="12">
+                    <Label Text="📱 Escanear Código" 
+                           FontSize="16" 
+                           FontAttributes="Bold" 
+                           TextColor="#1F2937" />
+
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Column="0" 
+                               BackgroundColor="#F8FAFC" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="0">
+                            <Entry x:Name="codigoEntry" 
+                                   Placeholder="Código de barras" 
+                                   BackgroundColor="Transparent"
+                                   TextColor="#1F2937"
+                                   PlaceholderColor="#9CA3AF"
+                                   FontSize="16"
+                                   HeightRequest="48" />
+                        </Frame>
+
+                        <Frame Grid.Column="1" 
+                               BackgroundColor="#10B981" 
+                               CornerRadius="12" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Button Text="📷" 
+                                    BackgroundColor="Transparent"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Clicked="OnEscanearClicked" />
+                        </Frame>
+
+                        <Frame Grid.Column="2" 
+                               BackgroundColor="#059669" 
+                               CornerRadius="12" 
+                               Padding="0" 
+                               HasShadow="False">
+                            <Button Text="🔍" 
+                                    BackgroundColor="Transparent"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Clicked="OnBuscarPorCodigoClicked" />
+                        </Frame>
+                    </Grid>
+                </StackLayout>
             </Frame>
 
-            <!-- Unidad (Picker) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Picker x:Name="pkUnidad"
-            Title="Seleccionar unidad"
-            TitleColor="#666"
-            TextColor="#003366">
-                    <!-- El orden debe coincidir con _unidadByIndex del code-behind -->
-                    <Picker.Items>
-                        <x:String>kg</x:String>
-                        <x:String>g</x:String>
-                        <x:String>ml</x:String>
-                        <x:String>L</x:String>
-                        <x:String>pz</x:String>
-                        <x:String>unid</x:String>
-                        <x:String>pack</x:String>
-                    </Picker.Items>
-                </Picker>
+            <!-- Información Básica -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="16">
+                    <Label Text="📝 Información Básica" 
+                           FontSize="16" 
+                           FontAttributes="Bold" 
+                           TextColor="#1F2937" />
+
+                    <StackLayout Spacing="8">
+                        <Label Text="Nombre del Producto *" 
+                               FontSize="14" 
+                               FontAttributes="Bold" 
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="White" 
+                               HasShadow="False" 
+                               CornerRadius="12" 
+                               Padding="0">
+                            <Entry x:Name="txtNombre" 
+                                   Placeholder="Ej: Leche entera" 
+                                   BackgroundColor="Transparent"
+                                   TextColor="#1F2937"
+                                   PlaceholderColor="#9CA3AF"
+                                   FontSize="16"
+                                   HeightRequest="48" />
+                        </Frame>
+                    </StackLayout>
+
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Spacing="8">
+                            <Label Text="Categoría *" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#374151" />
+                            <Picker x:Name="pkCategoria" 
+                                    Title="Selecciona..."
+                                    BackgroundColor="White"
+                                    TextColor="#1F2937"
+                                    TitleColor="#9CA3AF"
+                                    FontSize="16"
+                                    HeightRequest="48">
+                                <Picker.Items>
+                                    <x:String>🥛 Lácteos</x:String>
+                                    <x:String>🥩 Carnes</x:String>
+                                    <x:String>🥬 Verduras</x:String>
+                                    <x:String>🍎 Frutas</x:String>
+                                    <x:String>📦 Otros</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Spacing="8">
+                            <Label Text="Unidad *" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#374151" />
+                            <Picker x:Name="pkUnidad" 
+                                    Title="Selecciona..."
+                                    BackgroundColor="White"
+                                    TextColor="#1F2937"
+                                    TitleColor="#9CA3AF"
+                                    FontSize="16"
+                                    HeightRequest="48">
+                                <Picker.Items>
+                                    <x:String>kg</x:String>
+                                    <x:String>g</x:String>
+                                    <x:String>ml</x:String>
+                                    <x:String>L</x:String>
+                                    <x:String>pz</x:String>
+                                    <x:String>unid</x:String>
+                                    <x:String>pack</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
             </Frame>
 
+            <!-- Información Adicional -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <StackLayout Spacing="16">
+                    <Label Text="📊 Información Adicional" 
+                           FontSize="16" 
+                           FontAttributes="Bold" 
+                           TextColor="#1F2937" />
 
-            <!-- ExpirationDate (opcional) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                    <Label Text="Expira:" VerticalTextAlignment="Center" TextColor="#003366" />
-                    <DatePicker x:Name="dpExpira" Grid.Column="1" TextColor="#003366" />
-                </Grid>
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Spacing="8">
+                            <Label Text="Cantidad" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#374151" />
+                            <Frame BackgroundColor="White" 
+                                   HasShadow="False" 
+                                   CornerRadius="12" 
+                                   Padding="0">
+                                <Entry x:Name="txtCantidad" 
+                                       Placeholder="1" 
+                                       Keyboard="Numeric"
+                                       BackgroundColor="Transparent"
+                                       TextColor="#1F2937"
+                                       PlaceholderColor="#9CA3AF"
+                                       FontSize="16"
+                                       HeightRequest="48" />
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Spacing="8">
+                            <Label Text="Precio" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#374151" />
+                            <Frame BackgroundColor="White" 
+                                   HasShadow="False" 
+                                   CornerRadius="12" 
+                                   Padding="0">
+                                <Entry x:Name="txtPrecio" 
+                                       Placeholder="$0.00" 
+                                       Keyboard="Numeric"
+                                       BackgroundColor="Transparent"
+                                       TextColor="#1F2937"
+                                       PlaceholderColor="#9CA3AF"
+                                       FontSize="16"
+                                       HeightRequest="48" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                    <StackLayout Spacing="8">
+                        <Label Text="Fecha de Expiración" 
+                               FontSize="14" 
+                               FontAttributes="Bold" 
+                               TextColor="#374151" />
+                        <DatePicker x:Name="dpExpira" 
+                                    BackgroundColor="White"
+                                    TextColor="#1F2937"
+                                    FontSize="16"
+                                    HeightRequest="48" />
+                    </StackLayout>
+                </StackLayout>
             </Frame>
 
-            <!-- CategoryID (Picker → se mapea a IDs en code-behind) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Picker x:Name="pkCategoria"
-                        Title="Seleccionar categoría"
-                        TitleColor="#666"
-                        TextColor="#003366">
-                    <!-- Orden debe coincidir con el arreglo _categoryIdByIndex del code-behind -->
-                    <Picker.Items>
-                        <x:String>Enlatados</x:String>
-                        <x:String>Lácteos</x:String>
-                        <x:String>Verduras</x:String>
-                        <x:String>Frutas</x:String>
-                        <x:String>Otros</x:String>
-                    </Picker.Items>
-                </Picker>
-            </Frame>
+            <!-- Botones de Acción -->
+            <StackLayout Spacing="12" Margin="0,8,0,20">
+                <Frame BackgroundColor="#6366F1" 
+                       CornerRadius="25" 
+                       Padding="0" 
+                       HasShadow="True">
+                    <Button Text="✅ Guardar Producto" 
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HeightRequest="54"
+                            Clicked="OnGuardarProductoClicked" />
+                </Frame>
 
-            <!-- Precio unitario (opcional) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="txtPrecio"
-                   Placeholder="Precio unitario (opcional)"
-                   Keyboard="Numeric"
-                   FontSize="16"
-                   BackgroundColor="Transparent"
-                   TextColor="#003366" />
-            </Frame>
+                <Frame BackgroundColor="White" 
+                       CornerRadius="25" 
+                       Padding="0" 
+                       HasShadow="False"
+                       BorderColor="#6366F1">
+                    <Button Text="❌ Cancelar" 
+                            BackgroundColor="Transparent"
+                            TextColor="#6366F1"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HeightRequest="54"
+                            Clicked="OnCancelarClicked" />
+                </Frame>
+            </StackLayout>
 
-            <!-- Código de barras (rellenado por ScanPage) -->
-            <Frame BackgroundColor="#D6F0FF" CornerRadius="10" Padding="10,6">
-                <Entry x:Name="codigoEntry"
-                       Placeholder="Código de barras (se completa al escanear)"
-                       
-                       FontSize="16"
-                       BackgroundColor="Transparent"
-                       TextColor="#003366" />
-            </Frame>
-            <Button Text="Buscar por código" Clicked="OnBuscarPorCodigoClicked" />
-
-            <Button Text="📷 Escanear código de barras"
-                    BackgroundColor="#005A9E"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnEscanearClicked" />
-
-            <Button Text="Guardar"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    CornerRadius="10"
-                    Clicked="OnGuardarProductoClicked" />
-            
-            
-
-
-        </VerticalStackLayout>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

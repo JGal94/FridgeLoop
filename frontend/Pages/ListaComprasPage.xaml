@@ -3,198 +3,375 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Proyecto_Fridgeloop.Pages.ListaComprasPage"
              Title="Lista de Compras"
-             BackgroundColor="#EAF4FF">
+             BackgroundColor="#F8FAFC">
 
     <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="18">
+        <StackLayout Spacing="16" Padding="20">
 
-            <Label Text="Lista de Compras"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   TextColor="#003366"/>
+            <!-- Header Principal -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="20" 
+                   Padding="24"
+                   Margin="0,0,0,8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            <HorizontalStackLayout HorizontalOptions="End">
-                <Button Text="📊 Ver historial de compras"
-                        BackgroundColor="#667892"
-                        TextColor="White"
-                        CornerRadius="10"
-                        Padding="14,8"
-                        Clicked="OnVerHistorialClicked"/>
-            </HorizontalStackLayout>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="16">
+                        <Frame BackgroundColor="#6366F1" 
+                               CornerRadius="25" 
+                               Padding="12" 
+                               HasShadow="False"
+                               WidthRequest="50"
+                               HeightRequest="50">
+                            <Label Text="🛍️" 
+                                   FontSize="20" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Frame>
+                        <StackLayout VerticalOptions="Center" Spacing="4">
+                            <Label Text="Lista de Compras" 
+                                   FontSize="22" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Gestiona tus productos" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" />
+                        </StackLayout>
+                    </StackLayout>
 
-            <Label Text="Lista sugerida por la app"
-                   FontSize="16"
-                   TextColor="#003366"
-                   Margin="0,6,0,0"/>
-
-            <!-- Lista dinámica con swipe -->
-            <Frame BackgroundColor="#FFFFFF"
-                   CornerRadius="12"
-                   Padding="6"
-                   HasShadow="True">
-
-                <CollectionView x:Name="cvLista"
-                                SelectionMode="None">
-                    <!-- Mensaje cuando está vacía -->
-                    <CollectionView.EmptyView>
-                        <Grid Padding="16">
-                            <Label Text="— Sin productos —"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   FontSize="16"
-                                   TextColor="#667892"/>
-                        </Grid>
-                    </CollectionView.EmptyView>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems Mode="Reveal">
-                                        <SwipeItem Text="Editar"
-                                                   BackgroundColor="#007ACC"
-                                                   Invoked="OnEditarItem"
-                                                   CommandParameter="{Binding .}" />
-                                        <SwipeItem Text="Eliminar"
-                                                   BackgroundColor="#D9534F"
-                                                   Invoked="OnEliminarItem"
-                                                   CommandParameter="{Binding .}" />
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-
-                                <!-- Tarjeta del item -->
-                                <!-- Tarjeta del item -->
-                                <Grid Padding="10"
-      ColumnDefinitions="*,Auto"
-      RowDefinitions="Auto,Auto">
-
-                                    <!-- Nombre -->
-                                    <Label Grid.Row="0" Grid.Column="0"
-         Text="{Binding Nombre}"
-         FontSize="17"
-         TextColor="#003366"
-         LineBreakMode="TailTruncation"/>
-
-                                    <!-- Presentación (para kg/g/ml/L) -->
-                                    <Label Grid.Row="1" Grid.Column="0"
-         FontSize="15"
-         TextColor="#335"
-         IsVisible="True">
-                                        <Label.Text>
-                                            <MultiBinding StringFormat="Presentación: {0:0.##} {1}">
-                                                <Binding Path="Cantidad"/>
-                                                <Binding Path="Unidad"/>
-                                            </MultiBinding>
-                                        </Label.Text>
-                                        <!-- Ocultar si es pieza/unidad/pack -->
-                                        <Label.Triggers>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
-                                                <Setter Property="IsVisible" Value="False"/>
-                                            </DataTrigger>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
-                                                <Setter Property="IsVisible" Value="False"/>
-                                            </DataTrigger>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
-                                                <Setter Property="IsVisible" Value="False"/>
-                                            </DataTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-
-                                    <!-- Cantidad de productos (solo pz/unid/pack) -->
-                                    <Label Grid.Row="1" Grid.Column="0"
-         FontSize="15"
-         TextColor="#335"
-         IsVisible="False">
-                                        <Label.Text>
-                                            <!-- muestralo como: Cantidad: ×2 -->
-                                            <Binding Path="Cantidad" StringFormat="Cantidad: ×{0:0}"/>
-                                        </Label.Text>
-                                        <Label.Triggers>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
-                                                <Setter Property="IsVisible" Value="True"/>
-                                            </DataTrigger>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
-                                                <Setter Property="IsVisible" Value="True"/>
-                                            </DataTrigger>
-                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
-                                                <Setter Property="IsVisible" Value="True"/>
-                                            </DataTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-
-                                    <!-- Precio a la derecha -->
-                                    <VerticalStackLayout Grid.RowSpan="2" Grid.Column="1"
-                       HorizontalOptions="End"
-                       Spacing="2"
-                       Margin="12,0,4,0">
-                                        <Label Text="Precio unitario"
-           FontSize="12"
-           TextColor="#666"
-           HorizontalTextAlignment="End" />
-                                        <Label FontSize="15"
-           TextColor="#335"
-           HorizontalTextAlignment="End">
-                                            <Label.Text>
-                                                <Binding Path="PrecioUnitario"
-                 StringFormat="₡{0:N0}"
-                 TargetNullValue="—" />
-                                            </Label.Text>
-                                        </Label>
-                                    </VerticalStackLayout>
-
-                                </Grid>
-
-
-                            </SwipeView>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                
-            </Frame>
-            <Border BackgroundColor="#FFFFFF" Stroke="#E5E7EB" Padding="14" StrokeShape="RoundRectangle 12">
-                <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
-                    <Label Text="Total de la compra" FontSize="13" TextColor="#64748B" />
-                    <Label x:Name="lblTotal"
-           Grid.Column="1"
-           FontAttributes="Bold"
-           FontSize="18"
-           TextColor="#0F172A"
-           HorizontalTextAlignment="End"
-           HorizontalOptions="End" />
+                    <Frame Grid.Column="1" 
+                           BackgroundColor="#8B5CF6" 
+                           CornerRadius="12" 
+                           Padding="0" 
+                           HasShadow="False"
+                           VerticalOptions="Center">
+                        <Button Text="📊 Historial" 
+                                BackgroundColor="Transparent"
+                                TextColor="White"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HeightRequest="44"
+                                Padding="12,0"
+                                Clicked="OnVerHistorialClicked" />
+                    </Frame>
                 </Grid>
-            </Border>
+            </Frame>
 
+            <!-- Total de Compra Card -->
+            <Frame BackgroundColor="#E0F2FE" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            <!-- Botones -->
-            <Button Text="➕ Agregar producto"
-                    BackgroundColor="#28A745"
-                    TextColor="White"
-                    FontSize="18"
-                    CornerRadius="10"
-                    Clicked="OnAgregarProductoClicked" />
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="#10B981" 
+                           CornerRadius="20" 
+                           Padding="10" 
+                           HasShadow="False"
+                           WidthRequest="40"
+                           HeightRequest="40">
+                        <Label Text="💰" 
+                               FontSize="16" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Frame>
 
-            <Button Text="Realizar compra"
-                    BackgroundColor="#007ACC"
-                    TextColor="White"
-                    FontSize="18"
-                    CornerRadius="10"
-                    Clicked="OnRealizarCompraClicked" />
+                    <StackLayout Grid.Column="1" 
+                                 VerticalOptions="Center" 
+                                 Spacing="2"
+                                 Margin="12,0">
+                        <Label Text="Total de la Compra" 
+                               FontSize="14" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                        <Label Text="Suma de todos los productos" 
+                               FontSize="12" 
+                               TextColor="#6B7280" />
+                    </StackLayout>
 
-            <Button Text="🗑️ Vaciar lista"
-        BackgroundColor="#D9534F"
-        TextColor="White"
-        FontSize="18"
-        CornerRadius="10"
-        Clicked="OnVaciarListaClicked" />
+                    <Label x:Name="lblTotal"
+                           Grid.Column="2"
+                           Text="CRC 0"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           TextColor="#059669"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                </Grid>
+            </Frame>
 
+            <!-- Lista de Productos -->
+            <Frame BackgroundColor="White" 
+                   HasShadow="True" 
+                   CornerRadius="16" 
+                   Padding="0"
+                   Margin="0,0,0,8">
+                <StackLayout Spacing="0">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="12" 
+                                 Padding="20,16,20,12">
+                        <Label Text="📋" FontSize="16" />
+                        <Label Text="Productos en tu Lista" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#1F2937" />
+                    </StackLayout>
 
-            <Button Text="🔄 Sincronizar con apps"
-                    BackgroundColor="#FFAA1A"
-                    TextColor="White"
-                    FontSize="18"
-                    CornerRadius="10"
-                    Clicked="OnSincronizarClicked" />
+                    <CollectionView x:Name="cvLista"
+                                    SelectionMode="None"
+                                    Margin="8,0">
+                        <!-- Mensaje cuando está vacía -->
+                        <CollectionView.EmptyView>
+                            <Grid Padding="40,60">
+                                <StackLayout HorizontalOptions="Center" 
+                                           VerticalOptions="Center" 
+                                           Spacing="12">
+                                    <Frame BackgroundColor="#F3F4F6" 
+                                           CornerRadius="30" 
+                                           Padding="20" 
+                                           HasShadow="False"
+                                           HorizontalOptions="Center">
+                                        <Label Text="🛒" 
+                                               FontSize="30" 
+                                               HorizontalOptions="Center" />
+                                    </Frame>
+                                    <Label Text="Tu lista está vacía" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold" 
+                                           TextColor="#374151"
+                                           HorizontalOptions="Center" />
+                                    <Label Text="Agrega productos para comenzar tu compra" 
+                                           FontSize="14" 
+                                           TextColor="#6B7280"
+                                           HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                        </CollectionView.EmptyView>
 
-        </VerticalStackLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView Margin="0,4">
+                                    <SwipeView.RightItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem Text="✏️ Editar"
+                                                       BackgroundColor="#3B82F6"
+                                                       Invoked="OnEditarItem"
+                                                       CommandParameter="{Binding .}" />
+                                            <SwipeItem Text="🗑️ Eliminar"
+                                                       BackgroundColor="#EF4444"
+                                                       Invoked="OnEliminarItem"
+                                                       CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+
+                                    <!-- Tarjeta del producto -->
+                                    <Frame BackgroundColor="#F8FAFC" 
+                                           HasShadow="False" 
+                                           CornerRadius="12" 
+                                           Padding="16"
+                                           Margin="4,2">
+                                        <Grid ColumnDefinitions="*,Auto" 
+                                              RowDefinitions="Auto,Auto,Auto">
+
+                                            <!-- Nombre del producto -->
+                                            <Label Grid.Row="0" Grid.Column="0"
+                                                   Text="{Binding Nombre}"
+                                                   FontSize="16"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#1F2937"
+                                                   LineBreakMode="TailTruncation" />
+
+                                            <!-- Información de cantidad/presentación -->
+                                            <StackLayout Grid.Row="1" Grid.Column="0" 
+                                                       Orientation="Horizontal" 
+                                                       Spacing="8"
+                                                       Margin="0,4,0,0">
+
+                                                <!-- Para kg/g/ml/L - mostrar como presentación -->
+                                                <Frame BackgroundColor="#E0F2FE" 
+                                                       HasShadow="False" 
+                                                       CornerRadius="6" 
+                                                       Padding="6,3"
+                                                       IsVisible="True">
+                                                    <Label FontSize="12" 
+                                                           TextColor="#0369A1" 
+                                                           FontAttributes="Bold"
+                                                           Text="{Binding Unidad}">
+                                                        <Label.Triggers>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
+                                                                <Setter Property="IsVisible" Value="False"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
+                                                                <Setter Property="IsVisible" Value="False"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
+                                                                <Setter Property="IsVisible" Value="False"/>
+                                                            </DataTrigger>
+                                                        </Label.Triggers>
+                                                    </Label>
+                                                    <Frame.Triggers>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="pz">
+                                                            <Setter Property="IsVisible" Value="False"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="unid">
+                                                            <Setter Property="IsVisible" Value="False"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="pack">
+                                                            <Setter Property="IsVisible" Value="False"/>
+                                                        </DataTrigger>
+                                                    </Frame.Triggers>
+                                                </Frame>
+
+                                                <!-- Para pz/unid/pack - mostrar cantidad -->
+                                                <Frame BackgroundColor="#FEF3C7" 
+                                                       HasShadow="False" 
+                                                       CornerRadius="6" 
+                                                       Padding="6,3"
+                                                       IsVisible="False">
+                                                    <Label FontSize="12" 
+                                                           TextColor="#92400E" 
+                                                           FontAttributes="Bold"
+                                                           Text="{Binding Cantidad}">
+                                                        <Label.Triggers>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pz">
+                                                                <Setter Property="IsVisible" Value="True"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="unid">
+                                                                <Setter Property="IsVisible" Value="True"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding Unidad}" Value="pack">
+                                                                <Setter Property="IsVisible" Value="True"/>
+                                                            </DataTrigger>
+                                                        </Label.Triggers>
+                                                    </Label>
+                                                    <Frame.Triggers>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="pz">
+                                                            <Setter Property="IsVisible" Value="True"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="unid">
+                                                            <Setter Property="IsVisible" Value="True"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Frame" Binding="{Binding Unidad}" Value="pack">
+                                                            <Setter Property="IsVisible" Value="True"/>
+                                                        </DataTrigger>
+                                                    </Frame.Triggers>
+                                                </Frame>
+                                            </StackLayout>
+
+                                            <!-- Precio -->
+                                            <StackLayout Grid.RowSpan="3" Grid.Column="1"
+                                                       HorizontalOptions="End"
+                                                       VerticalOptions="Center"
+                                                       Spacing="2">
+                                                <Label Text="Precio unit." 
+                                                       FontSize="10" 
+                                                       TextColor="#6B7280"
+                                                       HorizontalTextAlignment="End" />
+                                                <Label FontSize="14"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#059669"
+                                                       HorizontalTextAlignment="End">
+                                                    <Label.Text>
+                                                        <Binding Path="PrecioUnitario"
+                                                                 StringFormat="₡{0:N0}"
+                                                                 TargetNullValue="—" />
+                                                    </Label.Text>
+                                                </Label>
+                                            </StackLayout>
+
+                                        </Grid>
+                                    </Frame>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+
+            <!-- Botones de Acción -->
+            <StackLayout Spacing="12" Margin="0,8,0,20">
+
+                <!-- Agregar Producto -->
+                <Frame BackgroundColor="#10B981" 
+                       CornerRadius="25" 
+                       Padding="0" 
+                       HasShadow="True">
+                    <Button Text="➕ Agregar Producto" 
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HeightRequest="54"
+                            Clicked="OnAgregarProductoClicked" />
+                </Frame>
+
+                <!-- Realizar Compra -->
+                <Frame BackgroundColor="#6366F1" 
+                       CornerRadius="25" 
+                       Padding="0" 
+                       HasShadow="True">
+                    <Button Text="✅ Realizar Compra" 
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HeightRequest="54"
+                            Clicked="OnRealizarCompraClicked" />
+                </Frame>
+
+                <!-- Botones secundarios en grid -->
+                <Grid ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Vaciar Lista -->
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="White" 
+                           CornerRadius="25" 
+                           Padding="0" 
+                           HasShadow="False"
+                           BorderColor="#EF4444">
+                        <Button Text="🗑️ Vaciar" 
+                                BackgroundColor="Transparent"
+                                TextColor="#EF4444"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HeightRequest="48"
+                                Clicked="OnVaciarListaClicked" />
+                    </Frame>
+
+                    <!-- Sincronizar -->
+                    <Frame Grid.Column="1" 
+                           BackgroundColor="White" 
+                           CornerRadius="25" 
+                           Padding="0" 
+                           HasShadow="False"
+                           BorderColor="#F59E0B">
+                        <Button Text="🔄 Sincronizar" 
+                                BackgroundColor="Transparent"
+                                TextColor="#F59E0B"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HeightRequest="48"
+                                Clicked="OnSincronizarClicked" />
+                    </Frame>
+                </Grid>
+
+            </StackLayout>
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>

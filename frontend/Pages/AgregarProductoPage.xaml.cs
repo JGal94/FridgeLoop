@@ -104,6 +104,32 @@ namespace Frontend_Proyecto_Fridgeloop.Pages
             await Navigation.PushAsync(new ScanPage());
         }
 
+        // Agregar este método a tu clase AgregarProductoPage
+
+        private async void OnCancelarClicked(object sender, EventArgs e)
+        {
+            // Verificar si hay cambios sin guardar
+            bool hasChanges = !string.IsNullOrWhiteSpace(txtNombre?.Text) ||
+                             !string.IsNullOrWhiteSpace(txtCantidad?.Text) ||
+                             !string.IsNullOrWhiteSpace(txtPrecio?.Text) ||
+                             !string.IsNullOrWhiteSpace(codigoEntry?.Text) ||
+                             pkCategoria.SelectedIndex > 0 ||
+                             pkUnidad.SelectedIndex > 0;
+
+            if (hasChanges)
+            {
+                bool confirm = await DisplayAlert(
+                    "¿Cancelar?",
+                    "Se perderán los cambios no guardados. ¿Continuar?",
+                    "Sí, cancelar",
+                    "No");
+
+                if (!confirm) return;
+            }
+
+            await Navigation.PopAsync();
+        }
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
